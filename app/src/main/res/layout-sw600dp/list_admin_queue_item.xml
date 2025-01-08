@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/header_queue_height">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/header_queue_height"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/horizontal_margin"
+        android:paddingRight="@dimen/horizontal_margin">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layoutGridItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button_queue"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/order"
+                android:layout_width="@dimen/queue_height"
+                android:layout_height="@dimen/queue_height"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:minHeight="10dp"
+                android:minWidth="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="123"
+                android:textColor="@drawable/button_state_color"
+                android:textSize="@dimen/text_normal"
+                android:textStyle="bold"
+                android:transitionName="title_transition" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/queue_car_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:gravity="center"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:minHeight="10dp"
+            android:minWidth="10dp"
+            android:text="A001BBB"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_smallest" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/queue_live_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/background_queue_tag_item"
+
+        android:paddingLeft="@dimen/horizontal_margin_third"
+        android:paddingRight="@dimen/horizontal_margin_third"
+        android:text="1"
+        android:textColor="@color/BlueLight"
+        android:textSize="@dimen/text_smaller"
+        android:textStyle="bold" />
+
+</FrameLayout>

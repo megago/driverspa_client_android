@@ -1,0 +1,5 @@
+uk.co.senab.photoview.test.photoView-androidTest-0 /Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/generated/res/resValues/androidTest/debug
+uk.co.senab.photoview.test.photoView-mergeDebugAndroidTestResources-1 /Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+uk.co.senab.photoview.test.photoView-mergeDebugAndroidTestResources-2 /Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+uk.co.senab.photoview.test.photoView-debugAndroidTest-3 /Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+uk.co.senab.photoview.test.photoView-debug-4 /Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources

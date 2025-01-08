@@ -1,0 +1,290 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ru_values-ru.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ru/values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,206",
+                        "endColumns": "79,70,83",
+                        "endOffsets": "130,201,285"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pt_values-pt.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,131,204",
+                        "endColumns": "75,72,83",
+                        "endOffsets": "126,199,283"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-it_values-it.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-it/values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,131,205",
+                        "endColumns": "75,73,81",
+                        "endOffsets": "126,200,282"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ko_values-ko.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ko/values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,121,188",
+                        "endColumns": "65,66,68",
+                        "endOffsets": "116,183,252"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-de_values-de.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-de/values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,136,204",
+                        "endColumns": "80,67,86",
+                        "endOffsets": "131,199,286"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-es_values-es.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-es/values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,133,204",
+                        "endColumns": "77,70,81",
+                        "endOffsets": "128,199,281"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-fi_values-fi.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-fi/values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,146,260,368,447,521",
+                        "endColumns": "90,113,107,78,73,80",
+                        "endOffsets": "141,255,363,442,516,597"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,188",
+                        "endColumns": "64,67,66",
+                        "endOffsets": "115,183,250"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-he_values-he.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-he/values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,123,190",
+                        "endColumns": "67,66,70",
+                        "endOffsets": "118,185,256"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-nl_values-nl.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-nl/values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,134,202",
+                        "endColumns": "78,67,84",
+                        "endOffsets": "129,197,282"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pt-rBR_values-pt-rBR.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,131,204",
+                        "endColumns": "75,72,80",
+                        "endOffsets": "126,199,280"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-fr_values-fr.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,133,206",
+                        "endColumns": "77,72,83",
+                        "endOffsets": "128,201,285"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-cs_values-cs.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-cs/values-cs.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,133,204",
+                        "endColumns": "77,70,82",
+                        "endOffsets": "128,199,282"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pl_values-pl.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pl/values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,136,210",
+                        "endColumns": "80,73,78",
+                        "endOffsets": "131,205,284"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ar_values-ar.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ar/values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,124,192",
+                        "endColumns": "68,67,71",
+                        "endOffsets": "119,187,259"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ro_values-ro.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ro/values-ro.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,139,211",
+                        "endColumns": "83,71,91",
+                        "endOffsets": "134,206,298"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-iw_values-iw.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-iw/values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,123,190",
+                        "endColumns": "67,66,70",
+                        "endOffsets": "118,185,256"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-zh_values-zh.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-zh/values-zh.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,116,183",
+                        "endColumns": "60,66,64",
+                        "endOffsets": "111,178,243"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,119,183,238,295,350,388,428,465,567,681,789,861,931,1009",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,83",
+                        "endColumns": "63,63,54,56,54,37,39,36,101,113,107,71,69,77,24",
+                        "endOffsets": "114,178,233,290,345,383,423,460,562,676,784,856,926,1004,2993"
+                    }
+                }
+            ]
+        }
+    ]
+}

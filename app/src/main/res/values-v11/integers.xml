@@ -1,0 +1,8 @@
+<resources>
+     <integer name="image_cache_size">50</integer>
+     <integer name="grid_columns">3</integer>
+     
+         <!-- The duration (in milliseconds) of a short animation. -->
+    <integer name="config_shortAnimTime">300</integer>
+     
+</resources>

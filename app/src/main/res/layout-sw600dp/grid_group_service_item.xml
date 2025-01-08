@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutGridItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_button_grid_item_cars"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:minHeight="10dp"
+            android:minWidth="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:maxLines="1"
+            android:text="Бокс 1"
+            android:ellipsize="end"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/text_smaller" />
+
+        <TextView
+            android:id="@+id/service_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="top|center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="оффлайн"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/text_smallest" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dot_detail"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="right|top"
+        android:paddingLeft="@dimen/horizontal_margin_third"
+        android:paddingBottom="@dimen/horizontal_margin_third"
+        android:src="@drawable/button_three_dot" />
+
+</FrameLayout>

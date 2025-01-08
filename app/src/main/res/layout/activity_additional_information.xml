@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_admin_detail_custom_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_margin_half"
+        android:gravity="center"
+        android:text="Дополнительно"
+        android:visibility="gone"
+        android:textColor="@color/White"
+        android:textSize="@dimen/text_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/horizontal_margin_half"
+        android:layout_marginRight="@dimen/horizontal_margin_half"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin_half"
+            android:text="Телефон"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+
+        <EditText
+            android:id="@+id/phone"
+            style="@style/EditText.Transparent.WhiteBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:inputType="text"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half"
+            android:singleLine="true"
+            android:textColor="@color/White"
+            android:textColorHint="@color/BlueLight"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_normal" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin_half"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:text="Email"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/EditText.Transparent.WhiteBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:inputType="textUri"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half"
+            android:singleLine="true"
+            android:textColor="@color/White"
+            android:textColorHint="@color/BlueLight"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_normal" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/txtWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin_half"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:text="Веб"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+
+        <EditText
+            android:id="@+id/web"
+            style="@style/EditText.Transparent.WhiteBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_third"
+            android:inputType="textUri"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half"
+            android:singleLine="true"
+            android:textColor="@color/White"
+            android:textColorHint="@color/BlueLight"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_normal" >
+        </EditText>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@color/BlueTransparent" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_list_item_buttons"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half" >
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:paddingLeft="@dimen/horizontal_margin_half"
+                android:text="Чаcы работы"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/text_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/BlueTransparent" >
+        </FrameLayout>
+        
+        <LinearLayout
+            android:id="@+id/payType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_list_item_buttons"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half" >
+
+            <TextView
+                android:id="@+id/txtPayType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:paddingLeft="@dimen/horizontal_margin_half"
+                android:text="Вид оплаты"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/text_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/BlueTransparent" >
+        </FrameLayout>
+        
+
+        <LinearLayout
+            android:id="@+id/addinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_list_item_buttons"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/vertical_margin_half"
+            android:paddingTop="@dimen/vertical_margin_half" >
+
+            <TextView
+                android:id="@+id/txtAddInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:paddingLeft="@dimen/horizontal_margin_half"
+                android:text="Доп. информация"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/text_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/BlueTransparent" >
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

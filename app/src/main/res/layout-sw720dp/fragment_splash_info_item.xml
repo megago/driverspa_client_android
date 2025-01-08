@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Автомобилистам"
+        android:layout_alignParentTop="true"
+        android:textSize="25sp"
+        android:textColor="@color/White"
+        android:layout_marginTop="@dimen/vertical_margin_double"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:src="@drawable/ic_splash_info_2"/>
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/vertical_margin_half"
+        android:src="@drawable/ic_splash_logo"/>
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Находите ближайшие автомойки и бронируйте удобное для вас время"
+        android:textSize="19sp"
+        android:layout_marginRight="@dimen/horizontal_margin_double"
+        android:layout_marginLeft="@dimen/horizontal_margin_double"
+        android:textColor="@color/White"
+        android:gravity="center"
+        android:layout_below="@id/image_logo"
+        android:layout_marginTop="@dimen/vertical_margin_double"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

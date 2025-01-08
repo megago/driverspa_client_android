@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_admin_detail_custom_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:gravity="center"
+        android:text="Время работы"
+        android:visibility="gone"
+        android:textColor="@color/White"
+        android:textSize="@dimen/text_normal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:text="Комментарии"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+            <EditText
+                android:id="@+id/comment"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+          <RadioGroup
+              android:id="@+id/radio_group"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/vertical_margin"
+              android:layout_marginLeft="@dimen/horizontal_margin">
+              <RadioButton
+                  android:id="@+id/allweek"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="с 00 до 24"/>
+              <RadioButton
+                  android:id="@+id/daytime"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="с 09 до 21"/>
+              <RadioButton
+                  android:id="@+id/daytime2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="с 09 до 23"/>
+              <RadioButton
+                  android:id="@+id/other"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Другое"/>
+          </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:text="Понедельник"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/monday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Вторник"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/tuesday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Среда"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/wednesday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Четверг"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/thursday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Пятница"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/friday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Суббота"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/saturday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:text="Воскресенье"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <EditText
+                android:id="@+id/sunday"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:inputType="textUri"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

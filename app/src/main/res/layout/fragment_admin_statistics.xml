@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="На дату"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:textColor="@color/AntiqueWhite" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:text="20/10/2009"
+            android:textColor="@drawable/button_state_color" />
+          <TextView
+            android:id="@+id/dateTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:visibility="gone"
+            android:text="20/10/2009"
+            android:textColor="@drawable/button_state_color" />
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/expandable_list_view"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"
+        android:groupIndicator="@null" />
+
+</LinearLayout>

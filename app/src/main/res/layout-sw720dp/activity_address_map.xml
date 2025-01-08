@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    android:background="@drawable/background">
+
+<include
+    android:id="@+id/toolbar_actionbar"
+    layout="@layout/toolbar_admin_detail_custom_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
+
+<fragment
+    android:id="@+id/mapThis"
+    android:name="kz.washme.view.MySupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+</LinearLayout>

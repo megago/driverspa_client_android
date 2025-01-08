@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="astrology_names">
+        <item>Овен</item>
+        <item>Телец</item>
+        <item>Близнецы</item>
+        <item>Рак</item>
+        <item>Лев</item>
+        <item>Близнецы</item>
+        <item>Дева</item>
+        <item>Весы</item>
+        <item>Скорпион</item>
+        <item>Стрелец</item>
+        <item>Козерог</item>
+        <item>Водолей</item>
+        <item>Рыбы</item>
+    </string-array>
+    
+    <string-array name="photo_options">
+        <item>Добавить фото</item>
+        <item>Открыть фото</item>
+    </string-array>
+
+    <string-array name="admin_approved_book_options">
+        <item>Да, услуга оказана</item>
+        <item>Клиент не явился</item>
+        <item>Отменить бронь</item>
+        <item>Детали</item>
+    </string-array>
+
+    <string-array name="admin_pending_book_options">
+        <item>Принять бронь</item>
+        <item>Отклонить бронь</item>
+        <item>Детали</item>
+    </string-array>
+    <string-array name="admin_approved_queue_options">
+        <item>Продлить на 10 минут</item>
+        <item>Завершить вручную</item>
+        <item>Отклонить</item>
+        <item>Детали</item>
+    </string-array>
+    <string-array name="admin_approved_queue_not_paid_options">
+        <item>Клиент оплатил за мойку</item>
+        <item>Продлить на 10 минут</item>
+        <item>Завершить вручную</item>
+        <item>Отклонить</item>
+        <item>Детали</item>
+    </string-array>
+    <string-array name="admin_not_paid_options">
+        <item>Клиент оплатил за мойку</item>
+        <item>Детали</item>
+    </string-array>
+    <string-array name="add_to_favs">
+        <item>Добавить в избранное</item>
+        <item>Детали мойки</item>
+    </string-array>
+
+
+    <string-array name="campaign_info_options">
+        <item>Забронировать</item>
+    </string-array>
+
+
+    <string-array name="approved_washer_info_options">
+        <item>Забронировать</item>
+        <item>Позвонить</item>
+        <item>Проложить маршрут</item>
+        <item>Оставить отзыв</item>
+        <item>Пожаловаться</item>
+    </string-array>
+
+    <string-array name="information_washer_info_options">
+        <item>Позвонить</item>
+        <item>Проложить маршрут</item>
+        <item>Оставить отзыв</item>
+        <item>Пожаловаться</item>
+    </string-array>
+
+    <string-array name="cancel_washer_book_options">
+        <item>Отменить бронь</item>
+        <item>Позвонить</item>
+        <item>Проложить маршрут</item>
+        <item>Оставить отзыв</item>
+        <item>Пожаловаться</item>
+    </string-array>
+
+
+    <array name="day">
+        <item>день</item>
+        <item>дня</item>
+        <item>дней</item>
+    </array>
+    <array name="hour">
+        <item>час</item>
+        <item>часа</item>
+        <item>часов</item>
+    </array>
+    <array name="minute">
+        <item>минута</item>
+        <item>минуты</item>
+        <item>минут</item>
+    </array>
+    <array name="second">
+        <item>секунда</item>
+        <item>секунды</item>
+        <item>секунд</item>
+    </array>
+
+</resources>

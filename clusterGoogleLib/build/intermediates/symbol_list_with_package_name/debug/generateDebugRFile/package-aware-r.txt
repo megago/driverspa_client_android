@@ -1,0 +1,12 @@
+com.google.maps.android
+drawable bubble_blue
+drawable bubble_green
+drawable bubble_orange
+drawable bubble_purple
+drawable bubble_red
+drawable bubble_white
+id text
+layout text_bubble
+style Bubble_TextAppearance_Dark
+style Bubble_TextAppearance_Light
+style ClusterIcon_TextAppearance

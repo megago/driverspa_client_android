@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/vertical_margin"
+    android:paddingTop="@dimen/vertical_margin"
+    android:paddingRight="@dimen/vertical_margin"
+    android:background="@drawable/background_list_item_white"
+    android:paddingLeft="@dimen/vertical_margin" >
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Качество радует! Одна из моих любимых автомоек!"
+        android:textColor="@color/Black"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10.15.2016 в 20:30"
+        android:textColor="@color/Gray"
+        android:layout_marginTop="@dimen/vertical_margin_third"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/text"
+        android:textSize="@dimen/text_smaller" />
+
+</RelativeLayout>

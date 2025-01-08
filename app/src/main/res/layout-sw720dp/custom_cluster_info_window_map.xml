@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#30050505"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <Button
+            android:id="@+id/btnClose"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/button_blue_background2"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Закрыть"
+            android:textColor="#fff" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:layout_weight="0"
+        android:background="@drawable/background">
+
+        <ListView
+            android:id="@+id/detailClusterList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:listSelector="@drawable/row_selector2"
+            android:dividerHeight="1dp"
+            android:paddingLeft="@dimen/horizontal_margin_half"
+            android:paddingRight="@dimen/horizontal_margin_half"></ListView>
+    </FrameLayout>
+
+</LinearLayout>

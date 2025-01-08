@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:paddingBottom="@dimen/vertical_margin">
+
+        <LinearLayout
+            android:id="@+id/remainingTimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/vertical_margin">
+
+            <TextView
+                android:id="@+id/remainingTimeDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:gravity="center"
+                android:text="Администратор автомойки в течении 15 минут обработает вашу бронь, а вам придёт\n push-уведомление."
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_normal" />
+
+            <TextView
+                android:id="@+id/remainingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@color/BlueTransparent" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/vertical_margin">
+
+                <LinearLayout
+                    android:id="@+id/layoutQueue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/vertical_margin_half"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/vertical_margin_half"
+                    android:paddingLeft="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Номер очереди"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_normal" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_button_queue"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/vertical_margin_third"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/order"
+                            android:layout_width="@dimen/queue_height"
+                            android:layout_height="@dimen/queue_height"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:minHeight="10dp"
+                            android:minWidth="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:text="123"
+                            android:textColor="@drawable/button_state_color"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold"
+                            android:transitionName="title_transition" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/queue_car_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/vertical_margin_third"
+                        android:gravity="center"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:minHeight="10dp"
+                        android:minWidth="10dp"
+                        android:text="A001BBB"
+                        android:visibility="gone"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_smallest" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/vertical_margin"
+                        android:text="Мойка на имя"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Телефон:"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mobileLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtClientName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientPhoneNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:visibility="gone"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtClientCarType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientCarNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Марка авто:"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientCarMark"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Тип авто"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtClientGroupName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/White"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientServiceType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textview_loading_data"
+                            android:gravity="center"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Бокс:"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/priceLayout"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="за"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientServicePrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPriceDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:gravity="center"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/discountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="со скидкой"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/vertical_margin"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtClientServiceDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:text="в"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtClientServiceTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:text="@string/textview_loading_data"
+                            android:textStyle="bold"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/durationLayout"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="длительность"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Статус:"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                        <TextView
+                            android:id="@+id/txtBookingStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/vertical_margin"
+                        android:background="@color/BlueTransparent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/vertical_margin_half"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtWasherNameTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/vertical_margin_half"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtWasherAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtWasherPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textview_loading_data"
+                            android:textColor="@color/GreenYellow"
+                            android:textSize="@dimen/text_normal" />
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:id="@+id/commentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/vertical_margin_half"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_about_us"/>
+                            <TextView
+                                android:id="@+id/comment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/textview_loading_data"
+                                android:drawablePadding="@dimen/horizontal_margin_third"
+                                android:textColor="@color/White"
+                                android:textStyle="italic"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/countsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/vertical_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="обслужили"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <TextView
+                        android:id="@+id/txtFinishedBooksCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin_third"
+                        android:text="@string/textview_loading_data"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin_third"
+                        android:text="раз(а) "
+                        android:visibility="gone"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/countsDateLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Последняя мойка"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <TextView
+                        android:id="@+id/txtFinishedBooksDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/horizontal_margin_third"
+                        android:text="@string/textview_loading_data"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_normal" />
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/vertical_margin_half"
+                    android:background="@color/BlueTransparent" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/btnCall"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:background="@drawable/background_green_button_oval">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/ic_phone_material" />
+    </FrameLayout>
+</FrameLayout>

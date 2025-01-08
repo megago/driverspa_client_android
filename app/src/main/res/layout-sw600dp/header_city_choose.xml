@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_list_item">
+
+    <LinearLayout
+        android:id="@+id/currentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:paddingTop="@dimen/vertical_margin_half"
+        android:paddingBottom="@dimen/vertical_margin_half">
+
+        <TextView
+            android:id="@+id/myLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="Мое местоположение"
+            android:gravity="center|left"
+            android:drawablePadding="@dimen/horizontal_margin_third"
+            android:textColor="@color/White"
+            android:drawableLeft="@drawable/ic_gps_24dp"
+            android:textColorHint="@color/BlueLight"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/text_normal" />
+
+        <ImageView
+            android:id="@+id/myLocationCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:src="@drawable/background_list_item_checkmark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#0257a7"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:text="ВЫБЕРИТЕ ГОРОД"
+            android:gravity="center"
+            android:paddingTop="@dimen/vertical_margin_third"
+            android:paddingBottom="@dimen/vertical_margin_third"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+    </LinearLayout>
+</LinearLayout>

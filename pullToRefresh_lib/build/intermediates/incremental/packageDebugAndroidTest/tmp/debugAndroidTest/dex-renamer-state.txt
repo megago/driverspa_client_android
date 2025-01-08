@@ -1,0 +1,4 @@
+#Wed Jan 08 12:53:14 ALMT 2025
+base.0=/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/dex/debugAndroidTest/mergeDexDebugAndroidTest/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

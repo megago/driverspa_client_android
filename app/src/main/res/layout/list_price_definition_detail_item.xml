@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/vertical_margin"
+    android:paddingTop="@dimen/vertical_margin" >
+
+    <LinearLayout
+        android:id="@+id/txtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/horizontal_margin_half"
+        android:layout_marginRight="@dimen/horizontal_margin_half"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кузов"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/priceItem"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:hint="Цена"
+                android:inputType="number"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="@dimen/horizontal_margin_third"
+                android:text="₸."
+                android:textSize="@dimen/text_medium" />
+
+            <EditText
+                android:id="@+id/timeItem"
+                style="@style/EditText.Transparent.WhiteBorder"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:hint="Время"
+                android:inputType="number"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:textColor="@color/White"
+                android:textColorHint="@color/BlueLight"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_normal" >
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="@dimen/horizontal_margin_third"
+                android:text="мин."
+                android:textSize="@dimen/text_medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

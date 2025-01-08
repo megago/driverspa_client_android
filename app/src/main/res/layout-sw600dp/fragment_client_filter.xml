@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/title_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:padding="@dimen/vertical_margin"
+                    android:src="@drawable/ic_close_white_24dp" />
+
+                <TextView
+                    android:id="@+id/action_bar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/abc_action_bar_default_height_material"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:drawablePadding="@dimen/horizontal_margin_third"
+                    android:gravity="center"
+                    android:text="Фильтры"
+                    android:textColor="@drawable/button_state_color"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueTransparent" />
+
+
+            <LinearLayout
+                android:id="@+id/cityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_list_item"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/vertical_margin_half">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_city_white" />
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Астана"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="@dimen/horizontal_margin_third"
+                        android:gravity="center|right"
+                        android:src="@drawable/ic_arrow_right" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/sortingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/vertical_margin_half">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_sorting_white" />
+
+                <kz.washme.view.NDSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:drawSelectorOnTop="true"
+                    android:popupBackground="@color/background_main"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@drawable/button_state_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueTransparent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Отображать мойки в рудиусе:"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text_normal" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="4 км"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text_normal" />
+
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seek_distance"
+                style="@style/SeekBarAppTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueTransparent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Кузов-салон не более"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text_normal" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_weight=".5">
+
+                    <ImageView
+                        android:id="@+id/minus_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/horizontal_margin_third"
+                        android:layout_toLeftOf="@+id/price"
+                        android:paddingLeft="@dimen/horizontal_margin_third"
+                        android:paddingRight="@dimen/horizontal_margin_third"
+                        android:src="@drawable/ic_remove_circle_outline_white_18dp" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/tenge"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="1000"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <ImageView
+                        android:id="@+id/tenge"
+                        android:layout_width="11dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toLeftOf="@+id/plus_price"
+                        android:src="@drawable/ic_tenge" />
+
+                    <ImageView
+                        android:id="@+id/plus_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/horizontal_margin_third"
+                        android:paddingLeft="@dimen/horizontal_margin_third"
+                        android:src="@drawable/ic_add_circle_outline_white_18dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent"
+                android:visibility="gone"></FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Рейтинг более"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text_normal" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_weight="1.5"
+                    android:gravity="center|right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RatingBar
+                        style="@style/RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:max="5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/star1"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:src="@drawable/background_image_star_small" />
+
+                    <ImageView
+                        android:id="@+id/star2"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:src="@drawable/background_image_star_small" />
+
+                    <ImageView
+                        android:id="@+id/star3"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:src="@drawable/background_image_star_small" />
+
+                    <ImageView
+                        android:id="@+id/star4"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:src="@drawable/background_image_star_small" />
+
+                    <ImageView
+                        android:id="@+id/star5"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:src="@drawable/background_image_star_small" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/campaignLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Скидки"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_campaign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/cafeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_cafe_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Кафе"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_cafe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/coffeeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_coffee_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Кофе"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_coffee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/wifiLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_wifi_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Wi-Fi"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_wifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/roomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_restroom_white" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Зона отдыха"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_room"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/gameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_playstation_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Игровые приставки"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_games"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Банкомат"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_atm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+            <LinearLayout
+                android:id="@+id/nocashLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/horizontal_margin_third"
+                    android:gravity="center|right"
+                    android:src="@drawable/ic_cardpayment_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Оплата по карте"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/text_normal" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_nocash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/toggle_button"
+                        android:gravity="right"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:textOff=""
+                        android:textOn="" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:background="@color/BlueTransparent" />
+
+
+            <Button
+                android:id="@+id/btnApply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin_double"
+                android:background="@drawable/background_button_border"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:text="ПРИМЕНИТЬ"
+                android:textColor="@drawable/button_state_color"
+                android:textSize="@dimen/text_normal" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

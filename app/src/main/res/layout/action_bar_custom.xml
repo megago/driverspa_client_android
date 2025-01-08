@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="@dimen/vertical_margin_third"        
+    android:background="@drawable/background">
+
+    <ImageButton
+        android:id="@+id/customActionBarFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"        
+        android:layout_gravity="left"
+        android:background="@null"
+        android:src="@drawable/ic_search"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/actionBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"                
+        android:layout_gravity="center"
+        android:text="Астана"                
+        android:textColor="@color/White"
+        android:textSize="25sp" />
+
+    <ProgressBar
+        android:id="@+id/customActionBarProgress"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0"
+        android:visibility="invisible" />
+
+</FrameLayout>

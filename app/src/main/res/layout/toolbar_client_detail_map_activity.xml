@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    style="@style/ToolBarStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:minHeight="@dimen/abc_action_bar_default_height_material">
+    <TextView
+        android:id="@+id/action_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фильтры"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_medium"
+        android:gravity="center"
+        android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"
+        android:drawablePadding="@dimen/horizontal_margin_third"
+        android:clickable="true"
+        android:textColor="@drawable/button_state_color"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:layout_gravity="right"
+        />
+
+    </android.support.v7.widget.Toolbar>

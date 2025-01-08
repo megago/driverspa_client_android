@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <!--android:background="@color/background_color" >-->
+    <ImageView
+        android:id="@+id/copy_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/vertical_margin_double"
+        android:src="@drawable/copy_right" />
+
+    <ImageView
+        android:id="@+id/wash_me_logo_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:src="@drawable/ic_wash_1" />
+
+    <FrameLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/circle1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/transparent_circle" />
+
+        <ImageView
+            android:id="@+id/circle2"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:src="@drawable/transparent_circle" />
+
+        <ImageView
+            android:id="@+id/circle3"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_gravity="center"
+            android:src="@drawable/transparent_circle" />
+
+        <ImageView
+            android:id="@+id/washme_logo"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_washme_main_logo" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:id="@+id/noConnectionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ошибка соединения"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+
+        <TextView
+            android:id="@+id/repeatConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"
+            android:textStyle="bold"
+            android:padding="@dimen/vertical_margin_half"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/button_state_color"
+            android:textSize="@dimen/text_normal" />
+
+    </LinearLayout>
+
+</FrameLayout>

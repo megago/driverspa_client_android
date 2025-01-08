@@ -1,0 +1,5 @@
+com.handmark.pulltorefresh.library.test.pullToRefresh_lib-androidTest-0 /Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/generated/res/resValues/androidTest/debug
+com.handmark.pulltorefresh.library.test.pullToRefresh_lib-mergeDebugAndroidTestResources-1 /Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.handmark.pulltorefresh.library.test.pullToRefresh_lib-mergeDebugAndroidTestResources-2 /Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3 /Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debug-4 /Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources

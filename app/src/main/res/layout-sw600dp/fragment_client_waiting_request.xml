@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/mapThis"
+        android:name="kz.washme.view.MySupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/BlackTransparent2"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/actionBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/gradient_bg_white_action_bar"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:background="@color/White"
+                android:gravity="center|right">
+
+                <TextView
+                    android:id="@+id/cancelRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:gravity="center|right"
+                    android:maxLines="3"
+                    android:padding="@dimen/horizontal_margin"
+                    android:text="Отменить"
+                    android:textColor="@color/Gray"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/LightGrey" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/requestInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/actionBarLayout"
+            android:background="@drawable/gradient_bg_white_action_bar">
+
+            <TextView
+                android:id="@+id/requestInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:layout_marginBottom="@dimen/vertical_margin_half"
+                android:hint="Предлагаем вашу цену автомойкам, пожалуйста подождите"
+                android:maxLines="3"
+                android:text="Возможно #AMOUNT# ₸. не заинтересует автомоек, рекомендуем поднять цену"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.skyfishjy.library.RippleBackground xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rippleBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rb_color="#66FFFFFF"
+                app:rb_duration="4000"
+                app:rb_radius="32dp"
+                app:rb_rippleAmount="4"
+                app:rb_scale="6">
+
+            </com.skyfishjy.library.RippleBackground>
+
+            <ImageView
+                android:id="@+id/circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-30dp"
+                android:src="@drawable/ic_client_map" />
+
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/vertical_margin_half">
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/vertical_margin_half"
+                android:layout_marginRight="@dimen/vertical_margin_half">
+
+                <LinearLayout
+                    android:id="@+id/testLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:background="@drawable/rounded_half_rectangle_gray"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/horizontal_margin">
+
+                    <LinearLayout
+                        android:id="@+id/mainFieldsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/horizontal_margin_half"
+                        android:paddingRight="@dimen/horizontal_margin_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myCar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/horizontal_margin_third"
+                                android:layout_marginRight="@dimen/horizontal_margin_half"
+                                android:layout_weight="1"
+                                android:drawableLeft="@drawable/ic_car_black"
+                                android:drawablePadding="@dimen/vertical_margin_half"
+                                android:gravity="center|left"
+                                android:maxLength="20"
+                                android:maxLines="2"
+                                android:text="Mercedes cls, 122OOO02"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/text_normal" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/vertical_margin_half"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/services"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/horizontal_margin_third"
+                                android:layout_marginRight="@dimen/horizontal_margin_half"
+                                android:layout_weight="1"
+                                android:drawableLeft="@drawable/ic_service_wash"
+                                android:drawablePadding="@dimen/vertical_margin_half"
+                                android:gravity="center|left"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="2"
+                                android:text="Кузов + салон"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/Gray"
+                                android:textCursorDrawable="@null"
+                                android:textIsSelectable="false"
+                                android:textSize="@dimen/text_normal" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/fare"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:layout_marginRight="@dimen/horizontal_margin_half"
+                            android:layout_marginTop="@dimen/vertical_margin_third"
+                            android:drawableLeft="@drawable/ic_tenge_black"
+                            android:drawablePadding="@dimen/vertical_margin_half"
+                            android:gravity="center|left"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:text="100"
+                            android:textColor="@color/Black"
+                            android:textColorHint="@color/Gray"
+                            android:textCursorDrawable="@null"
+                            android:textIsSelectable="false"
+                            android:textSize="@dimen/text_normal" />
+
+
+                        <TextView
+                            android:id="@+id/comment"
+                            style="@style/EditText.Transparent"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/vertical_margin_half"
+                            android:layout_marginLeft="@dimen/horizontal_margin"
+                            android:layout_marginRight="@dimen/horizontal_margin_half"
+                            android:layout_marginTop="@dimen/vertical_margin_third"
+                            android:gravity="center|left"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="100"
+                            android:maxLines="2"
+                            android:text="Комментарий"
+                            android:textColor="@color/Black"
+                            android:textColorHint="@color/Gray"
+                            android:textCursorDrawable="@null"
+                            android:textIsSelectable="false"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/White"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/horizontal_margin_half"
+                        android:paddingRight="@dimen/horizontal_margin_half"
+                        android:paddingTop="@dimen/vertical_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/horizontal_margin_third"
+                            android:layout_marginRight="@dimen/horizontal_margin_half"
+                            android:layout_marginTop="@dimen/vertical_margin_half"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/minusPrice"
+                                android:layout_width="90dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/background_border_green_button"
+                                android:enabled="false"
+                                android:text="-50"
+                                android:textColor="@drawable/button_state_color_green"
+                                android:textSize="@dimen/text_normal"
+                                android:textStyle="bold" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/tempFare"
+                                    style="@style/EditText.Transparent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableRight="@drawable/ic_tenge_black"
+                                    android:gravity="center"
+                                    android:maxLines="3"
+                                    android:text="100"
+                                    android:textColor="@color/Black"
+                                    android:textSize="@dimen/text_medium"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                            <Button
+                                android:id="@+id/plusPrice"
+                                android:layout_width="90dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/background_border_green_button"
+                                android:text="+50"
+                                android:textColor="#66cd5b"
+                                android:textSize="@dimen/text_normal"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnChangeFare"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/vertical_margin"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:layout_marginRight="@dimen/horizontal_margin_half"
+                            android:layout_marginTop="@dimen/vertical_margin"
+                            android:background="@drawable/background_green_button"
+                            android:enabled="false"
+                            android:text="Поднять цену"
+                            android:textAllCaps="false"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/text_normal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/listLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/actionBarLayout"
+            android:background="@color/BlackTransparent3"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/listHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:maxLines="3"
+                android:text="Предложения от автомоек"
+                android:textColor="@color/White"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/listHeader"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/horizontal_margin_third"
+                android:cacheColorHint="#f3efd3"
+                android:divider="@null"
+                android:dividerHeight="@dimen/vertical_margin_half"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="30dp"
+                android:scrollbars="none" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/durationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/vertical_margin_half"
+            android:layout_marginRight="@dimen/vertical_margin_half">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/rounded_half_rectangle_gray"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/horizontal_margin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/horizontal_margin_half"
+                    android:paddingRight="@dimen/horizontal_margin_half">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/reviewLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/seekBarLayout"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <RatingBar
+                                    android:id="@+id/review"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="12dp"
+                                    android:layout_gravity="center|left"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:isIndicator="true"
+                                    android:numStars="5"
+                                    android:progressDrawable="@drawable/custom_ratingbar_map_selector"
+                                    android:rating="3.0"
+                                    android:stepSize="0.2" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/txtLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/reviewLayout"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:layout_marginRight="@dimen/horizontal_margin_double"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtWasherName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Автомойка "
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/text_normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/addressLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtLayout"
+                            android:layout_marginLeft="@dimen/horizontal_margin_half"
+                            android:layout_marginRight="@dimen/horizontal_margin_double"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtWasherAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtLayout"
+                                android:layout_gravity="top"
+                                android:layout_weight="1"
+                                android:gravity="left|top"
+                                android:text="Address"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/text_small" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="@dimen/vertical_margin_third"
+                        android:layout_marginLeft="@dimen/horizontal_margin_half"
+                        android:layout_marginRight="@dimen/horizontal_margin_half"
+                        android:gravity="right|top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="600 ₸."
+                            android:textColor="@color/Red"
+                            android:textSize="@dimen/text_small" />
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginLeft="@dimen/horizontal_margin"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_distance" />
+
+                        <TextView
+                            android:id="@+id/txtDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="3 km"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/text_small" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/horizontal_margin_half"
+                    android:paddingRight="@dimen/horizontal_margin_half"
+                    android:paddingTop="@dimen/vertical_margin">
+
+
+                    <TextView
+                        style="@style/EditText.Transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/horizontal_margin"
+                        android:layout_marginRight="@dimen/horizontal_margin"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="Через какое время можете быть на автомойке?"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/text_medium"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/min5"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/horizontal_margin_half"
+                        android:layout_marginRight="@dimen/horizontal_margin_half"
+                        android:layout_marginTop="@dimen/vertical_margin"
+                        android:background="@drawable/background_green_button"
+                        android:text="5 мин."
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <Button
+                        android:id="@+id/min10"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/horizontal_margin_half"
+                        android:layout_marginRight="@dimen/horizontal_margin_half"
+                        android:layout_marginTop="@dimen/horizontal_margin_half"
+                        android:background="@drawable/background_green_button"
+                        android:text="10 мин."
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <Button
+                        android:id="@+id/min20"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/horizontal_margin_half"
+                        android:layout_marginRight="@dimen/horizontal_margin_half"
+                        android:layout_marginTop="@dimen/horizontal_margin_half"
+                        android:background="@drawable/background_green_button"
+                        android:text="20 мин."
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                    <Button
+                        android:id="@+id/min30"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/vertical_margin"
+                        android:layout_marginLeft="@dimen/horizontal_margin_half"
+                        android:layout_marginRight="@dimen/horizontal_margin_half"
+                        android:layout_marginTop="@dimen/horizontal_margin_half"
+                        android:background="@drawable/background_green_button"
+                        android:text="30 мин."
+                        android:textAllCaps="false"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/text_normal" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

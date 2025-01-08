@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-mergeDebugAndroidTestResources-1:/values-it/values-it.xml",
+            "map": [
+                {
+                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-it/values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,131,205",
+                        "endColumns": "75,73,81",
+                        "endOffsets": "126,200,282"
+                    }
+                }
+            ]
+        }
+    ]
+}

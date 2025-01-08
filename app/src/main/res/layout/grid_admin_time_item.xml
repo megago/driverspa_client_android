@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutGridItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_button_grid_item">
+
+    <RelativeLayout
+        android:id="@+id/innerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="1dp">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/online"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_flag_online_list"
+                android:visibility="gone"/>
+
+               <ImageView
+                   android:id="@+id/notPaid"
+                   android:layout_width="wrap_content"
+                   android:layout_height="10dp"
+                   android:layout_alignParentRight="true"
+                   android:layout_alignParentTop="true"
+                   android:visibility="gone"
+                   android:src="@drawable/ic_dollar_paid" />
+
+           </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:minHeight="10dp"
+                android:minWidth="10dp"
+                android:text="08:00"
+                android:textColor="@drawable/button_state_color"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:minHeight="10dp"
+                android:minWidth="10dp"
+                android:text="Свободно"
+                android:textColor="@drawable/button_state_color"
+                android:textSize="@dimen/text_small" />
+
+            <ImageView
+                android:id="@+id/imgCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_third"
+                android:minHeight="10dp"
+                android:minWidth="10dp"
+                android:src="@drawable/ic_car"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:gravity="center"
+                android:lines="2"
+                android:text="X001XX\ndfd"
+                android:textColor="@drawable/button_state_color"
+                android:textSize="@dimen/text_smallest" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:background="@drawable/background_tag_item"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="Ожидание"
+                android:textColor="@color/BlueLight"
+                android:textSize="@dimen/text_smallest" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

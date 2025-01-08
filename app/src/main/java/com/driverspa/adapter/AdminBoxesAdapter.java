@@ -1,0 +1,63 @@
+package com.driverspa.adapter;
+
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import com.driverspa.R;
+import com.driverspa.model.api.response.AdminBoxesResponse.BoxType;
+import com.driverspa.util.Constants;
+
+public class AdminBoxesAdapter extends BaseDataAdapter<BoxType> {
+
+	public AdminBoxesAdapter(Context context) {
+		super(context);
+
+	}
+		
+	@Override
+	public View getView(int position, View view, ViewGroup parent) {
+     ViewHolder holder = null;	
+	 if(view == null){	
+		view = LayoutInflater.from(context).inflate(R.layout.list_admin_boxes_item, parent, false);
+		holder = new ViewHolder(view);
+		view.setTag(holder);
+	 }
+	 else{
+		 holder = (ViewHolder) view.getTag();
+	 }
+
+	  BoxType item = getItem(position);
+	  holder.boxNumber.setText(item.getBoxName());
+	  holder.boxType.setText(Constants.boxTypeMap.get(item.getBookingType()));
+		holder.washerPerson.setVisibility(View.VISIBLE);
+
+	  if(!TextUtils.isEmpty(item.getWasherPerson())){
+		  holder.washerPerson.setText(item.getWasherPerson());
+	  }
+		else
+		  holder.washerPerson.setText("Мойщик не указан");
+	  return view;
+	}
+	
+	static class ViewHolder {
+		 		 						
+		@InjectView(R.id.txtBox)
+		TextView boxNumber;
+		@InjectView(R.id.txtBoxType)
+		TextView boxType;
+		@InjectView(R.id.washerPerson)
+		TextView washerPerson;
+
+		public ViewHolder(View view) {
+			ButterKnife.inject(this, view);
+		}
+	}
+
+
+}

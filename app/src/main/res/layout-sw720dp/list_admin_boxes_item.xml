@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_list_item"
+    android:paddingBottom="@dimen/vertical_margin"
+    android:paddingTop="@dimen/vertical_margin" >
+
+    <LinearLayout
+        android:id="@+id/txtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/vertical_margin_half"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/txtBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="Бокс 1"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_normal" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/horizontal_margin_third"
+        android:src="@drawable/ic_arrow_right" />
+
+    <TextView
+        android:id="@+id/txtBoxType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLayout"
+        android:layout_weight="1.5"
+        android:text="Гибрид"
+        android:textColor="@color/Light"
+        android:textSize="@dimen/text_small" />
+    <TextView
+        android:id="@+id/washerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBoxType"
+        android:layout_weight="1.5"
+        android:text=""
+        android:paddingBottom="@dimen/vertical_margin_half"
+        android:textColor="@color/AntiqueWhite"
+        android:textSize="@dimen/text_small" />
+
+</RelativeLayout>
