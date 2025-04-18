@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -32,9 +32,9 @@ public class MainFragment extends BaseFragment {
 
 	private ActivityActions activityActions;
 
-	@InjectView(R.id.btnUserStart)
+	@BindView(R.id.btnUserStart)
 	Button userStartButton;
-	@InjectView(R.id.btnWasherStart)
+	@BindView(R.id.btnWasherStart)
 	Button userWasherButton;
 
 	@Override
@@ -42,6 +42,7 @@ public class MainFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_main, container, false);
 		ButterKnife.bind(this, view);
+
 		return view;
 	}
 

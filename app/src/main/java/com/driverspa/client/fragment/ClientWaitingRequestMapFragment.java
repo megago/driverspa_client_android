@@ -46,7 +46,7 @@ import java.util.Locale;
 
 import butterknife.ButterKnife;
 import com.squareup.otto.Subscribe;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -135,13 +135,13 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 	ListView listView;
 	@InjectView (R.id.durationLayout)
 	View durationLayout;
-	@InjectView(R.id.txtWasherAddress)
+	@BindView(R.id.txtWasherAddress)
 	TextView address;
-	@InjectView(R.id.txtWasherName)
+	@BindView(R.id.txtWasherName)
 	TextView name;
-	@InjectView(R.id.txtDistance)
+	@BindView(R.id.txtDistance)
 	TextView distance;
-	@InjectView(R.id.review)
+	@BindView(R.id.review)
 	RatingBar review;
 
 	FareRequest fareRequest;

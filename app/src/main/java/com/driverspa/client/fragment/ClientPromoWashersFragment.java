@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 
 public class ClientPromoWashersFragment extends ClientBaseHomeFragment implements AdapterView.OnItemClickListener {
@@ -21,7 +21,7 @@ public class ClientPromoWashersFragment extends ClientBaseHomeFragment implement
 		public void openProfileWasher(String washerId);
 	}
 
-	@InjectView(R.id.pull_to_refresh_listview)
+	@BindView(R.id.pull_to_refresh_listview)
 	PullToRefreshListView pullToRefreshView;
 
 	@Override

@@ -22,7 +22,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -52,13 +52,13 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 	public static final int TIMER_SECONDS = 30;
 	private long activationTime;
 
-	@InjectView(R.id.verificationCode)
+	@BindView(R.id.verificationCode)
 	EditText verificationCode;
-	@InjectView(R.id.btnNext)
+	@BindView(R.id.btnNext)
 	Button nextButton;
-	@InjectView(R.id.btnRetry)
+	@BindView(R.id.btnRetry)
 	Button retryButton;
-	@InjectView(R.id.txtPhoneNo)
+	@BindView(R.id.txtPhoneNo)
 	TextView txtPhoneNo;
 
 	@Override

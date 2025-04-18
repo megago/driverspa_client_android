@@ -15,7 +15,7 @@ import com.squareup.otto.Subscribe;
 import com.todddavies.components.progressbar.ProgressWheel;
 import java.util.Date;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 
@@ -51,13 +51,13 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 
 	private ActivityActions activityActions;
 
-    @InjectView(R.id.description)
+    @BindView(R.id.description)
     TextView description;
-    @InjectView(R.id.endDate)
+    @BindView(R.id.endDate)
     TextView endDate;
-    @InjectView(R.id.discount)
+    @BindView(R.id.discount)
     TextView discount;
-    @InjectView(R.id.campaignType)
+    @BindView(R.id.campaignType)
     TextView campaignType;
     Campaign campaign;
     Washer washer;
@@ -65,32 +65,32 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 	boolean loading = false;
 	private Handler customHandler = new Handler();
 
-	@InjectView(R.id.months)
+	@BindView(R.id.months)
 	TextView months;
-	@InjectView(R.id.months_label)
+	@BindView(R.id.months_label)
 	TextView monthsLabel;
-	@InjectView(R.id.days)
+	@BindView(R.id.days)
 	TextView days;
-	@InjectView(R.id.days_label)
+	@BindView(R.id.days_label)
 	TextView daysLabel;
-	@InjectView(R.id.hours)
+	@BindView(R.id.hours)
 	TextView hours;
-	@InjectView(R.id.hours_label)
+	@BindView(R.id.hours_label)
 	TextView hoursLabel;
-	@InjectView(R.id.minutes)
+	@BindView(R.id.minutes)
 	TextView minutes;
-	@InjectView(R.id.minutes_label)
+	@BindView(R.id.minutes_label)
 	TextView minutesLabel;
-	@InjectView(R.id.seconds)
+	@BindView(R.id.seconds)
 	TextView seconds;
-	@InjectView(R.id.seconds_label)
+	@BindView(R.id.seconds_label)
 	TextView secondsLabel;
 	Long lastRemainingSeconds;
-	@InjectView(R.id.remaining_time_unknown)
+	@BindView(R.id.remaining_time_unknown)
 	TextView timeUnknown;
-	@InjectView(R.id.times_layout)
+	@BindView(R.id.times_layout)
 	View timesLayout;
-	@InjectView(R.id.mon_days_layout)
+	@BindView(R.id.mon_days_layout)
 	View monthsDaysLayout;
 
 	String[] daysArr;
@@ -100,7 +100,7 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 	boolean runned;
 	int progress = 0;
 	int currentProgress;
-	@InjectView(R.id.progress_wheel)
+	@BindView(R.id.progress_wheel)
 	ProgressWheel progressWheel;
 	TextView titleView;
 	String washerId;

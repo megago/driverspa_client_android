@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -55,15 +55,15 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 		return fragment;
 	}
 	
-	@InjectView(R.id.txtPhoneNo)
+	@BindView(R.id.txtPhoneNo)
 	TextView txtPhoneNo;
-	@InjectView(R.id.button_registration)
+	@BindView(R.id.button_registration)
 	Button buttonRegistration;
-	@InjectView(R.id.clientName)
+	@BindView(R.id.clientName)
 	EditText clientName;
-	@InjectView(R.id.grid_cars)
+	@BindView(R.id.grid_cars)
 	ExpandableGridView gridCars;
-	@InjectView(R.id.txtCity)
+	@BindView(R.id.txtCity)
 	TextView cityText;
 	private CarsGridAdapter carAdapter;
 	private ActivityActions activityActions;

@@ -251,7 +251,7 @@
                 android:background="@color/BlueTransparent"></FrameLayout>
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/horizontal_margin"
@@ -271,7 +271,7 @@
                     android:textCursorDrawable="@null"
                     android:textIsSelectable="false"
                     android:textSize="@dimen/text_normal" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <FrameLayout
@@ -283,7 +283,7 @@
                 android:background="@color/BlueTransparent"></FrameLayout>
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/horizontal_margin"
@@ -303,7 +303,7 @@
                     android:textCursorDrawable="@null"
                     android:textIsSelectable="false"
                     android:textSize="@dimen/text_normal" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -313,7 +313,7 @@
                 android:layout_marginTop="@dimen/vertical_margin_half"
                 android:background="@color/BlueTransparent"></FrameLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/horizontal_margin"
@@ -333,7 +333,7 @@
                     android:textCursorDrawable="@null"
                     android:textIsSelectable="false"
                     android:textSize="@dimen/text_normal" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -344,7 +344,7 @@
                 android:background="@color/BlueTransparent"
                 android:visibility="gone"></FrameLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/horizontal_margin"
@@ -365,7 +365,7 @@
                     android:textCursorDrawable="@null"
                     android:textIsSelectable="false"
                     android:textSize="@dimen/text_normal" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -375,7 +375,7 @@
                 android:layout_marginTop="@dimen/vertical_margin_half"
                 android:background="@color/BlueTransparent"></FrameLayout>
 
-            <kz.washme.view.ExpandableGridView
+            <com.driverspa.view.ExpandableGridView
                 android:id="@+id/grid_services"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -69,23 +69,23 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     private boolean mFromSavedInstanceState;
     private int mCurrentSelectedPosition;
 
-    @InjectView(R.id.profile_avatar)
+    @BindView(R.id.profile_avatar)
     ImageView profileAvatar;
-    @InjectView(R.id.profile_name)
+    @BindView(R.id.profile_name)
     TextView profileName;
-    @InjectView(R.id.profile_phone)
+    @BindView(R.id.profile_phone)
     TextView profilePhone;
-    @InjectView(R.id.drawerList)
+    @BindView(R.id.drawerList)
     RecyclerView mDrawerList;
     NavigationDrawerAdapter adapter;
     List<NavigationItem> navigationItems;
-    @InjectView(R.id.logout)
+    @BindView(R.id.logout)
     View logoutView;
-    @InjectView(R.id.profile_avatar_invisible)
+    @BindView(R.id.profile_avatar_invisible)
     ImageView avatarBackground;
-    @InjectView(R.id.fade_for_avatar)
+    @BindView(R.id.fade_for_avatar)
     View fadeAvatar;
-    @InjectView(R.id.version)
+    @BindView(R.id.version)
     TextView version;
 
 

@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.splunk.mint.Mint;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -27,15 +27,15 @@ import com.driverspa.util.UserPreferences;
 
 public class SplashInfoActivity extends BaseActivity implements SplashInfoFragment.ActivityActions{
 
-	@InjectView(R.id.pager)
+	@BindView(R.id.pager)
 	ViewPager viewPager;
-	@InjectView(R.id.dot1)
+	@BindView(R.id.dot1)
 	ImageView dot1;
-	@InjectView(R.id.dot2)
+	@BindView(R.id.dot2)
 	ImageView dot2;
-	@InjectView(R.id.dot3)
+	@BindView(R.id.dot3)
 	ImageView dot3;
-	@InjectView(R.id.btnNext)
+	@BindView(R.id.btnNext)
 	Button nextButton;
 
 	SplashInfoPagerAdapter viewPagerAdapter;

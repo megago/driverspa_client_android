@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.Washer.Review;
 
@@ -107,17 +107,17 @@ public class WasherAdminReviewAdapter extends  RecyclerViewAdapter<WasherAdminRe
 
 	public class WasherReviewViewHolder extends RecyclerView.ViewHolder {
 
-		@InjectView(R.id.txtReview)
+		@BindView(R.id.txtReview)
 		TextView washerReviewText;
-		@InjectView(R.id.star1)
+		@BindView(R.id.star1)
 		ImageView star1;
-		@InjectView(R.id.star2)
+		@BindView(R.id.star2)
 		ImageView star2;
-		@InjectView(R.id.star3)
+		@BindView(R.id.star3)
 		ImageView star3;
-		@InjectView(R.id.star4)
+		@BindView(R.id.star4)
 		ImageView star4;
-		@InjectView(R.id.star5)
+		@BindView(R.id.star5)
 		ImageView star5;
 
 		public WasherReviewViewHolder(View view) {

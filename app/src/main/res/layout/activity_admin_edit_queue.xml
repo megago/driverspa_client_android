@@ -14,12 +14,12 @@
         android:orientation="vertical"
         android:paddingBottom="@dimen/vertical_margin">
 
-        <android.support.design.widget.CoordinatorLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinator"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.design.widget.AppBarLayout
+            <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,9 +31,9 @@
                     layout="@layout/toolbar_admin_detail_activity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </android.support.design.widget.AppBarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
 
-            <android.support.v4.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fillViewport="true">
@@ -151,7 +151,7 @@
                             </LinearLayout>
 
 
-                            <android.support.design.widget.TextInputLayout
+                            <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/clientNameWrapper"
                                 android:layout_width="match_parent"
                                 android:visibility="gone"
@@ -173,7 +173,7 @@
                                     android:textCursorDrawable="@null"
                                     android:textIsSelectable="false"
                                     android:textSize="@dimen/text_normal" />
-                            </android.support.design.widget.TextInputLayout>
+                            </com.google.android.material.textfield.TextInputLayout>
 
                             <FrameLayout
                                 android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                                 android:layout_marginTop="@dimen/vertical_margin_half"
                                 android:background="@color/BlueTransparent"></FrameLayout>
 
-                            <android.support.design.widget.TextInputLayout
+                            <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/horizontal_margin"
@@ -203,7 +203,7 @@
                                     android:textCursorDrawable="@null"
                                     android:textIsSelectable="false"
                                     android:textSize="@dimen/text_normal" />
-                            </android.support.design.widget.TextInputLayout>
+                            </com.google.android.material.textfield.TextInputLayout>
 
                             <FrameLayout
                                 android:layout_width="match_parent"
@@ -385,7 +385,7 @@
                                 android:layout_marginTop="@dimen/vertical_margin"
                                 android:background="@color/BlueTransparent"></FrameLayout>
 
-                            <kz.washme.view.ExpandableGridView
+                            <com.driverspa.view.ExpandableGridView
                                 android:id="@+id/grid_services"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -425,7 +425,7 @@
                                 android:layout_marginTop="@dimen/vertical_margin_half"
                                 android:background="@color/BlueTransparent"></FrameLayout>
 
-                            <kz.washme.view.ExpandableGridView
+                            <com.driverspa.view.ExpandableGridView
                                 android:id="@+id/grid_boxes"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -655,7 +655,7 @@
                                     android:layout_marginTop="@dimen/vertical_margin_half"
                                     android:background="@color/BlueTransparent"></FrameLayout>
 
-                                <android.support.design.widget.TextInputLayout
+                                <com.google.android.material.textfield.TextInputLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/horizontal_margin"
@@ -675,7 +675,7 @@
                                         android:textCursorDrawable="@null"
                                         android:textIsSelectable="false"
                                         android:textSize="@dimen/text_normal" />
-                                </android.support.design.widget.TextInputLayout>
+                                </com.google.android.material.textfield.TextInputLayout>
 
                                 <FrameLayout
                                     android:layout_width="match_parent"
@@ -688,8 +688,8 @@
                         </LinearLayout>
 
                     </LinearLayout>
-                </android.support.v4.widget.NestedScrollView>
-        </android.support.design.widget.CoordinatorLayout>
+                </androidx.core.widget.NestedScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </LinearLayout>
 
     <LinearLayout

@@ -67,7 +67,7 @@
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:context="kz.washme.client.activity.ClientWasherInfoActivity" />
+                        tools:context="com.driverspa.client.activity.ClientWasherInfoActivity" />
                 </FrameLayout>
 
                 <RelativeLayout
@@ -84,7 +84,7 @@
                         android:layout_marginLeft="@dimen/horizontal_margin"
                         android:layout_marginTop="@dimen/vertical_margin_half">
 
-                        <kz.washme.view.ImageViewSquared
+                        <com.driverspa.view.ImageViewSquared
                             android:id="@+id/imgWasherAvatar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                     </FrameLayout>
 
 
-                    <!--<kz.washme.view.ImageViewSquared-->
+                    <!--<com.driverspa.view.ImageViewSquared-->
                     <!--android:id="@+id/imgWasherAvatar"-->
                     <!--android:layout_width="@dimen/washer_profile_view_width"-->
                     <!--android:layout_height="wrap_content"-->
@@ -938,7 +938,7 @@
                                 android:layout_marginLeft="-2dp"
                                 android:src="@drawable/ic_car_black" />
 
-                            <kz.washme.view.NDSpinner
+                            <com.driverspa.view.NDSpinner
                                 android:id="@+id/carSpinner"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -991,7 +991,7 @@
                                 android:layout_marginTop="@dimen/vertical_margin_third"
                                 android:src="@drawable/ic_service_wash" />
 
-                            <kz.washme.view.NDSpinner
+                            <com.driverspa.view.NDSpinner
                                 android:id="@+id/serviceSpinner"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

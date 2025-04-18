@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.WasherPublic;
 import com.driverspa.util.Functions;
@@ -93,15 +93,15 @@ public class WasherCampaignsListAdapter extends BaseDataAdapter<WasherPublic> {
 	
 	static class ViewHolder {
 
-		@InjectView(R.id.txtWasherName)
+		@BindView(R.id.txtWasherName)
 		TextView name;
-		@InjectView(R.id.txtCampaignDescription)
+		@BindView(R.id.txtCampaignDescription)
 		TextView campaignDescription;
-		@InjectView(R.id.discountLayout)
+		@BindView(R.id.discountLayout)
 		View discount;
-		@InjectView(R.id.discountText)
+		@BindView(R.id.discountText)
 		TextView discountText;
-		@InjectView(R.id.txtCampaignTS)
+		@BindView(R.id.txtCampaignTS)
 		TextView campaignTS;
 
 		public ViewHolder(View view) {

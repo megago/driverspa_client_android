@@ -14,7 +14,7 @@ import com.splunk.mint.Mint;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.fragment.UserPhotoChangeFragment;
 import com.driverspa.model.PhotoParcelable;

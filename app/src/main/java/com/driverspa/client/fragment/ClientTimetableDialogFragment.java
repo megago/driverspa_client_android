@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -75,19 +75,19 @@ public class ClientTimetableDialogFragment extends DialogFragment {
     }
 
 
-    @InjectView(R.id.txtNoTime)
+    @BindView(R.id.txtNoTime)
     TextView washerNoTime;
-    @InjectView(R.id.btnRepeat)
+    @BindView(R.id.btnRepeat)
     Button buttonRepeat;
-    @InjectView(R.id.gridView)
+    @BindView(R.id.gridView)
     ExpandableGridView gridview;
-    @InjectView(R.id.btnToday)
+    @BindView(R.id.btnToday)
     TextView buttonToday;
-    @InjectView(R.id.btnTomorrow)
+    @BindView(R.id.btnTomorrow)
     TextView buttonTomorrow;
-    @InjectView(R.id.rootView)
+    @BindView(R.id.rootView)
     View rootView;
-    @InjectView(R.id.progressBar)
+    @BindView(R.id.progressBar)
     View progressBar;
 
     Date serverTime;

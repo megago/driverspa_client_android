@@ -23,7 +23,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import java.util.HashMap;
 import butterknife.ButterKnife;
 import com.squareup.otto.Subscribe;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -70,19 +70,19 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
         private ActivityActions activityActions;
 	    private int numberPage = 0;
 	    private BooksAdapter listAdapter;
-	    @InjectView(R.id.pull_to_refresh_listview)
+	    @BindView(R.id.pull_to_refresh_listview)
 		PullToRefreshListView pullToRefreshView;
-	    @InjectView(R.id.noInternetLayout)
+	    @BindView(R.id.noInternetLayout)
 		LinearLayout noInternetLayout;	    
-	    @InjectView(R.id.progressBar)
+	    @BindView(R.id.progressBar)
 		ProgressBar progressBar;
-	    @InjectView(R.id.repeatConnect)
+	    @BindView(R.id.repeatConnect)
 		Button repeatConnect;
-	    @InjectView(R.id.noInternetMessage)
+	    @BindView(R.id.noInternetMessage)
 	    TextView noIternetMsg;
-	    @InjectView(R.id.title)
+	    @BindView(R.id.title)
 	    TextView title;
-		@InjectView(R.id.login)
+		@BindView(R.id.login)
 		TextView loginText;
 
 	    boolean fragmentVisible;
@@ -92,7 +92,7 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
 		TextView titleView;
 	    boolean loggedIn = UserPreferences.isUserLoggedIn(BA.getContext());
 
-		@InjectView(R.id.noLoggedInLayout)
+		@BindView(R.id.noLoggedInLayout)
 		View noLoggedInLayout;
 
     	@Override

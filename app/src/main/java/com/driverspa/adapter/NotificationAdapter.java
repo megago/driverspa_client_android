@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.Notification;
 import com.driverspa.model.Washer.Review;
@@ -49,9 +49,9 @@ public class NotificationAdapter extends BaseDataAdapter<Notification> {
 
 	static class ViewHolder {
 
-		@InjectView(R.id.text)
+		@BindView(R.id.text)
 		TextView text;
-		@InjectView(R.id.date)
+		@BindView(R.id.date)
 		TextView date;
 
 		public ViewHolder(View view) {

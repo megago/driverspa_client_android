@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.adapter.PricesExpandableListAdapter;
@@ -33,10 +33,10 @@ import static com.driverspa.util.Constants.WASHER_DATA;
 
 public class ClientPriceDetailActivity extends ClientBaseActivity {
 		
-	@InjectView(R.id.txtTitle)
+	@BindView(R.id.txtTitle)
 	TextView textTitle;
 	Washer washer;
-	@InjectView(R.id.expandable_list_view)
+	@BindView(R.id.expandable_list_view)
 	ExpandableListView listView;
 	PricesExpandableListAdapter adapter;
 		

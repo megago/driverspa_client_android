@@ -29,9 +29,9 @@ public class ClientSettingsFragment extends ClientBaseFragment {
 	public interface ActivityActions{
 	}
 
-//	@InjectView(R.id.toggleGeoLocation)
+//	@BindView(R.id.toggleGeoLocation)
 //	ToggleButton geoLocation;
-//	@InjectView(R.id.info_check)
+//	@BindView(R.id.info_check)
 //	CheckBox check;
 	
 	private ActivityActions activityActions;

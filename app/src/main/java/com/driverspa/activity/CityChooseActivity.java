@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -39,11 +41,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.splunk.mint.Mint;
 
-import butterknife.InjectView;
-
 public class CityChooseActivity extends BaseActivity {
 
-    @InjectView(R.id.list_view)
+    @BindView(R.id.list_view)
     ListView listView;
     CityChooseAdapter adapter;
     TextView titleView;

@@ -18,7 +18,7 @@ import android.widget.TextView.OnEditorActionListener;
 import com.squareup.otto.Subscribe;
 import java.text.ParseException;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -36,7 +36,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	private final String TAG = "RegistrationFragment";	
 	private ActivityActions activityActions;
 	
-	@InjectView(R.id.login_phone)
+	@BindView(R.id.login_phone)
 	EditText phone;
 	
 	@Override

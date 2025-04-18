@@ -10,7 +10,7 @@ import android.widget.EditText;
 import androidx.fragment.app.DialogFragment;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -23,19 +23,19 @@ public class ClientUserCarDefinitionFragment extends DialogFragment {
 
 	CarType selectedCarType;
 
-	@InjectView(R.id.btnSedan)
+	@BindView(R.id.btnSedan)
 	View buttonSedan;
-	@InjectView(R.id.btnMoto)
+	@BindView(R.id.btnMoto)
 	View buttonMoto;
-	@InjectView(R.id.btnJeep)
+	@BindView(R.id.btnJeep)
 	View buttonJeep;
-	@InjectView(R.id.btnBigJeep)
+	@BindView(R.id.btnBigJeep)
 	View buttonBigJeep;
-	@InjectView(R.id.btnMinbus)
+	@BindView(R.id.btnMinbus)
 	View buttonMinbus;		
-	@InjectView(R.id.carMark)
+	@BindView(R.id.carMark)
 	EditText carMark;	
-	@InjectView(R.id.carNo)
+	@BindView(R.id.carNo)
 	EditText carNo;
 	
 	private View.OnClickListener buttonSelector = new View.OnClickListener() {

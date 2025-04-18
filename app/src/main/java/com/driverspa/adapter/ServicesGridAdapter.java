@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.ServiceItem;
 import com.driverspa.util.Functions;
@@ -88,10 +88,10 @@ public class ServicesGridAdapter extends BaseAdapter {
 
     static class ViewHolder {
 			
-		@InjectView(R.id.service_name)
+		@BindView(R.id.service_name)
 		TextView serviceName;
 		
-		@InjectView(R.id.layoutGridItem)
+		@BindView(R.id.layoutGridItem)
 		View gridItem;			
 
 		public ViewHolder(View view) {

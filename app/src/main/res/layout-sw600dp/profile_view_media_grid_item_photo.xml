@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <kz.washme.view.ImageViewProfileGridMedia
+    <com.driverspa.view.ImageViewProfileGridMedia
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.model.FareRequest;
@@ -176,19 +176,19 @@ public class BidsAdapter extends BaseDataAdapter<FareRequest.BidObject> {
 
     static class ViewHolder {
         FareRequest.BidObject bidObject;
-        @InjectView(R.id.txtWasherAddress)
+        @BindView(R.id.txtWasherAddress)
         TextView address;
-        @InjectView(R.id.txtWasherName)
+        @BindView(R.id.txtWasherName)
         TextView name;
-        @InjectView(R.id.txtDistance)
+        @BindView(R.id.txtDistance)
         TextView distance;
-        @InjectView(R.id.review)
+        @BindView(R.id.review)
         RatingBar review;
-        @InjectView(R.id.btnAcceptBid)
+        @BindView(R.id.btnAcceptBid)
         Button buttonAcceptBid;
-        @InjectView(R.id.cancelBid)
+        @BindView(R.id.cancelBid)
         View cancelBid;
-        @InjectView(R.id.seekBar)
+        @BindView(R.id.seekBar)
         SeekBar seekBar;
         BidsAdapter adapter;
         int position;

@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -72,21 +72,21 @@ public class ClientProfileFragment extends ClientBaseFragment {
 	public interface ActivityActions{
 	}
 
-	@InjectView(R.id.txtPhoneNo)
+	@BindView(R.id.txtPhoneNo)
 	TextView txtPhoneNo;
-	@InjectView(R.id.btnSave)
+	@BindView(R.id.btnSave)
 	Button buttonSave;			
-	@InjectView(R.id.clientName)
+	@BindView(R.id.clientName)
 	EditText clientName;		
-	@InjectView(R.id.imgClientAvatar)
+	@BindView(R.id.imgClientAvatar)
 	ImageView clientImage;
-	@InjectView(R.id.txtCity)
+	@BindView(R.id.txtCity)
 	TextView cityText;
-	@InjectView(R.id.images_count)
+	@BindView(R.id.images_count)
 	TextView imagesCount;
-	@InjectView(R.id.images_count_rect)
+	@BindView(R.id.images_count_rect)
 	View imagesCountRect;
-	@InjectView(R.id.images_circle)
+	@BindView(R.id.images_circle)
 	View imagesCircle;
 
 	private ActivityActions activityActions;
@@ -94,7 +94,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 	User user;
 	private ArrayList<PhotoParcelable> profilePhotos;
 
-	@InjectView(R.id.grid_cars)
+	@BindView(R.id.grid_cars)
 	ExpandableGridView gridCars;
 	private CarsGridAdapter carAdapter;
 	private ClientUserCarDefinitionFragment carDefinitionDialogFragment;

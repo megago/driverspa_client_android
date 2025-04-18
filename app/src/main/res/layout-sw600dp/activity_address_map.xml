@@ -14,7 +14,7 @@ android:orientation="vertical"
 
 <fragment
     android:id="@+id/mapThis"
-    android:name="kz.washme.view.MySupportMapFragment"
+    android:name="com.driverspa.view.MySupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 </LinearLayout>

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.Reference;
@@ -44,9 +44,9 @@ public class CityChooseAdapter extends BaseDataAdapter<Reference.City> {
 	
 	static class ViewHolder {
 		 		 						
-		@InjectView(R.id.desc)
+		@BindView(R.id.desc)
 		TextView description;
-		@InjectView(R.id.checkbox)
+		@BindView(R.id.checkbox)
 		View checkBox;
 						
 		public ViewHolder(View view) {

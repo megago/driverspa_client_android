@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.CarItem;
 import com.driverspa.util.Functions;
@@ -140,13 +140,13 @@ public class CarsGridAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-		@InjectView(R.id.car_number)
+		@BindView(R.id.car_number)
 		TextView carNumber;
-		@InjectView(R.id.layoutGridItem)
+		@BindView(R.id.layoutGridItem)
 		View gridItem;
-		@InjectView(R.id.car)
+		@BindView(R.id.car)
         ImageView car;
-		@InjectView(R.id.delete)
+		@BindView(R.id.delete)
         ImageView delete;
 		public ViewHolder(View view) {
 			ButterKnife.bind(this, view);

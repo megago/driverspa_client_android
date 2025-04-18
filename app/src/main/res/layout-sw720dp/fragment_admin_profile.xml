@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center">
 
-                        <kz.washme.view.ImageViewSquared
+                        <com.driverspa.view.ImageViewSquared
                             android:id="@+id/company_avatar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -85,13 +85,13 @@
                                 android:textSize="@dimen/text_normal" />
                         </FrameLayout>
                     </FrameLayout>
-                    <!--<kz.washme.view.ImageViewSquared-->
+                    <!--<com.driverspa.view.ImageViewSquared-->
                     <!--android:id="@+id/company_avatar"-->
                     <!--android:layout_width="@dimen/washer_profile_view_width"-->
                     <!--android:layout_height="wrap_content"-->
                     <!--android:layout_gravity="center"-->
                     <!--android:clickable="true" />-->
-                    <android.support.design.widget.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/mobileNoWrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -112,7 +112,7 @@
                             android:textCursorDrawable="@null"
                             android:textIsSelectable="false"
                             android:textSize="@dimen/text_normal" />
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <FrameLayout
                         android:layout_width="match_parent"

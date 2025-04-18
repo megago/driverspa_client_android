@@ -80,7 +80,7 @@
             android:layout_marginTop="@dimen/vertical_margin_third"
             android:background="@color/BlueTransparent" />
 
-        <kz.washme.view.TwoWayView
+        <com.driverspa.view.TwoWayView
             android:id="@+id/queue_horizontal_list"
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_queue_height"
@@ -110,7 +110,7 @@
         android:layout_marginLeft="@dimen/horizontal_margin"
         android:layout_marginRight="@dimen/horizontal_margin">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

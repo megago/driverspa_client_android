@@ -25,7 +25,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -55,17 +55,17 @@ public class ClientWasherReviewFragment extends ClientBaseFragment {
     	}
     	
 	    private WasherReviewAdapter listAdapter;
-	    @InjectView(R.id.listView)
+	    @BindView(R.id.listView)
 		ListView listView;	   
-	    @InjectView(R.id.noInternetLayout)
+	    @BindView(R.id.noInternetLayout)
 		LinearLayout noInternetLayout;	    
-	    @InjectView(R.id.progressBar)
+	    @BindView(R.id.progressBar)
 		ProgressBar progressBar;
-	    @InjectView(R.id.repeatConnect)
+	    @BindView(R.id.repeatConnect)
 		Button repeatConnect;
-	    @InjectView(R.id.noInternetMessage)
+	    @BindView(R.id.noInternetMessage)
 	    TextView noIternetMsg;
-	    @InjectView(R.id.title)
+	    @BindView(R.id.title)
 	    TextView title;	    	    
 	    Location currentLoc;
 	    Washer washer;

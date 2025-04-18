@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -23,13 +23,13 @@ public class SplashInfoFragment extends BaseFragment {
 		public void start();
 	}
 
-	@InjectView(R.id.title)
+	@BindView(R.id.title)
 	TextView title;
-	@InjectView(R.id.image)
+	@BindView(R.id.image)
 	ImageView image;
-	@InjectView(R.id.main_text)
+	@BindView(R.id.main_text)
 	TextView mainText;
-	@InjectView(R.id.parentView)
+	@BindView(R.id.parentView)
 	View parentView;
 	int index = 0;
 

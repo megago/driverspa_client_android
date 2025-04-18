@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnFocusChange;
 
@@ -80,12 +80,12 @@ public class ClientServiceDialogFragment extends DialogFragment {
 
     private WasherPublic washer;
     CarType selectedCarType;
-    @InjectView(R.id.txtPrice)
+    @BindView(R.id.txtPrice)
     TextView txtPrice;
-    @InjectView(R.id.txtTime)
+    @BindView(R.id.txtTime)
     TextView txtTime;
 
-    @InjectView(R.id.no_service)
+    @BindView(R.id.no_service)
     View noService;
 
     MultipleSelectDialog servicesDialog;
@@ -94,38 +94,38 @@ public class ClientServiceDialogFragment extends DialogFragment {
     HashMap<Integer, Double> menuServicesPrices = new HashMap<Integer, Double>();
     private User user;
 
-    @InjectView(R.id.grid_services)
+    @BindView(R.id.grid_services)
     ExpandableGridView gridServices;
     private ServicesGridAdapter serviceAdapter;
 
-    @InjectView(R.id.grid_group_services)
+    @BindView(R.id.grid_group_services)
     ExpandableGridView gridGroupServices;
 
-    @InjectView(R.id.cashAmount)
+    @BindView(R.id.cashAmount)
     EditText cashAmount;
-    @InjectView(R.id.cardAmount)
+    @BindView(R.id.cardAmount)
     EditText cardAmount;
-    @InjectView(R.id.bonusAmount)
+    @BindView(R.id.bonusAmount)
     EditText bonusAmount;
-    @InjectView(R.id.depositAmount)
+    @BindView(R.id.depositAmount)
     EditText depositAmount;
-    @InjectView(R.id.clientBonusAmount)
+    @BindView(R.id.clientBonusAmount)
     TextView clientBonusAmount;
-    @InjectView(R.id.clientDepositAmount)
+    @BindView(R.id.clientDepositAmount)
     TextView clientDepositAmount;
-    @InjectView(R.id.txtPriceDifference)
+    @BindView(R.id.txtPriceDifference)
     TextView txtPriceDifference;
-    @InjectView(R.id.cardLayout)
+    @BindView(R.id.cardLayout)
     View cardLayout;
-    @InjectView(R.id.cardLayoutLine)
+    @BindView(R.id.cardLayoutLine)
     View cardLayoutLine;
-    @InjectView(R.id.depositLayout)
+    @BindView(R.id.depositLayout)
     View depositLayout;
-    @InjectView(R.id.bonusLayout)
+    @BindView(R.id.bonusLayout)
     View bonusLayout;
-    @InjectView(R.id.bonusLayoutLine)
+    @BindView(R.id.bonusLayoutLine)
     View bonusLayoutLine;
-    @InjectView(R.id.rootView)
+    @BindView(R.id.rootView)
     View rootView;
 
     double finalPrice;

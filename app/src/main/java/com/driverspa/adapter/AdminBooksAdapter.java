@@ -25,7 +25,7 @@ import com.driverspa.model.Washer;
 import com.driverspa.model.BookInfo;
 import com.driverspa.util.Constants;
 import com.driverspa.util.Functions;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 import static com.driverspa.util.Constants.PENDING;
 import static com.driverspa.util.Constants.QUEUED_APPROVED;
@@ -209,34 +209,34 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 
 		BookInfo bookInfo;
 
-		@InjectView(R.id.txtBookTime)
+		@BindView(R.id.txtBookTime)
 		TextView bookTime;
-		@InjectView(R.id.txtBookTS)
+		@BindView(R.id.txtBookTS)
 		TextView bookTS;
-		@InjectView(R.id.txtBoxName)
+		@BindView(R.id.txtBoxName)
 		TextView txtBoxName;
-		@InjectView(R.id.txtBookKey)
+		@BindView(R.id.txtBookKey)
 		TextView bookKey;
-		@InjectView(R.id.txtBookStatus)
+		@BindView(R.id.txtBookStatus)
 		TextView bookStatus;
-		@InjectView(R.id.parentView)
+		@BindView(R.id.parentView)
 		View parentView;
-		@InjectView(R.id.remainingTimeLayout)
+		@BindView(R.id.remainingTimeLayout)
 		View remainingTimeLayout;
 
-		@InjectView(R.id.remainingTime)
+		@BindView(R.id.remainingTime)
 		TextView remainingTime;
-		@InjectView(R.id.layoutQueue)
+		@BindView(R.id.layoutQueue)
 		View layoutQueue;
-		@InjectView(R.id.arrowRight)
+		@BindView(R.id.arrowRight)
 		View arrowRight;
-		@InjectView(R.id.order)
+		@BindView(R.id.order)
 		TextView order;
-		@InjectView(R.id.queue_car_no)
+		@BindView(R.id.queue_car_no)
 		TextView queueCarNo;
-		@InjectView(R.id.imgAvailability)
+		@BindView(R.id.imgAvailability)
 		View onlineBook;
-		@InjectView(R.id.notPaid)
+		@BindView(R.id.notPaid)
 		View notPaid;
 
 

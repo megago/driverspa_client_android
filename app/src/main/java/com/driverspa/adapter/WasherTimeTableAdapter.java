@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.util.Functions;
 import com.driverspa.util.L;
@@ -112,13 +112,13 @@ public class WasherTimeTableAdapter extends BaseAdapter {
 
     static class ViewHolder {
 			
-		@InjectView(R.id.imgCar)
+		@BindView(R.id.imgCar)
 		ImageView imageCar;	
 
-		@InjectView(R.id.txtTime)
+		@BindView(R.id.txtTime)
 		TextView txtTime;	
 		
-		@InjectView(R.id.layoutGridItem)
+		@BindView(R.id.layoutGridItem)
 		View gridItem;			
 
 		public ViewHolder(View view) {

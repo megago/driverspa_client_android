@@ -64,7 +64,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/vertical_margin">
 
-                    <kz.washme.view.ExpandableGridView
+                    <com.driverspa.view.ExpandableGridView
                         android:id="@+id/grid_cars"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
                         android:textSize="@dimen/text_normal" />
                 </LinearLayout>
 
-                <kz.washme.view.ExpandableGridView
+                <com.driverspa.view.ExpandableGridView
                     android:id="@+id/grid_group_services"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                     android:verticalSpacing="5dp"
                     android:visibility="gone" />
 
-                <kz.washme.view.ExpandableGridView
+                <com.driverspa.view.ExpandableGridView
                     android:id="@+id/grid_services"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

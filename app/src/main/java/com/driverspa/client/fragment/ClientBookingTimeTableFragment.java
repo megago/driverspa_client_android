@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -81,23 +81,23 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 		return fragment;
 	}	
 	
-	@InjectView(R.id.txtWasherNameTitle)
+	@BindView(R.id.txtWasherNameTitle)
 	TextView washerTitleName;
-	@InjectView(R.id.txtNoTime)
+	@BindView(R.id.txtNoTime)
 	TextView washerNoTime;		
-	@InjectView(R.id.btnBookNext)
+	@BindView(R.id.btnBookNext)
 	Button buttonNext;
-	@InjectView(R.id.btnRepeat)
+	@BindView(R.id.btnRepeat)
 	Button buttonRepeat;				
-	@InjectView(R.id.gridView)
+	@BindView(R.id.gridView)
 	ExpandableGridView gridview;
-	@InjectView(R.id.btnToday)
+	@BindView(R.id.btnToday)
 	TextView buttonToday;		
-	@InjectView(R.id.btnTomorrow)
+	@BindView(R.id.btnTomorrow)
 	TextView buttonTomorrow;
-	@InjectView(R.id.txtTime)
+	@BindView(R.id.txtTime)
 	TextView txtTime;
-	@InjectView(R.id.txtPrice)
+	@BindView(R.id.txtPrice)
 	TextView txtPrice;
 
 	Date serverTime;

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.model.Washer.Prices;
@@ -60,11 +60,11 @@ public class PriceDefinitionDetailAdapter extends BaseDataAdapter<Prices> {
 	
 	static class ViewHolder {
 		 		 						
-		@InjectView(R.id.txtService)
+		@BindView(R.id.txtService)
 		TextView txtService;
-		@InjectView(R.id.priceItem)
+		@BindView(R.id.priceItem)
 		EditText priceItem;
-		@InjectView(R.id.timeItem)
+		@BindView(R.id.timeItem)
 		EditText timeItem;
 						
 		public ViewHolder(View view) {

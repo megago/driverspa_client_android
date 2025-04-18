@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.squareup.otto.Subscribe;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -38,19 +38,19 @@ public class ClientAddWasherReviewFragment extends ClientBaseFragment {
 	}		
 	
     int mark = 0;	
-	@InjectView(R.id.txtTitle)
+	@BindView(R.id.txtTitle)
 	TextView title;
-	@InjectView(R.id.feedback_text)
+	@BindView(R.id.feedback_text)
 	EditText feedBackText;
-	@InjectView(R.id.star1)
+	@BindView(R.id.star1)
 	ImageView star1;
-	@InjectView(R.id.star2)
+	@BindView(R.id.star2)
 	ImageView star2;
-	@InjectView(R.id.star3)
+	@BindView(R.id.star3)
 	ImageView star3;
-	@InjectView(R.id.star4)
+	@BindView(R.id.star4)
 	ImageView star4;
-	@InjectView(R.id.star5)
+	@BindView(R.id.star5)
 	ImageView star5;
     
 	private ActivityActions activityActions;

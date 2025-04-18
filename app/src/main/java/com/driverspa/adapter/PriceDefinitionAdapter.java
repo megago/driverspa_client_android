@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 
@@ -38,7 +38,7 @@ public class PriceDefinitionAdapter extends BaseDataAdapter<Integer> {
 	
 	static class ViewHolder {
 		 		 						
-		@InjectView(R.id.txtCarType)
+		@BindView(R.id.txtCarType)
 		TextView carTypeTxt;
 				
 		public ViewHolder(View view) {

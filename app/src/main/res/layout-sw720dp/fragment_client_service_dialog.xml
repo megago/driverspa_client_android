@@ -70,7 +70,7 @@
                     android:layout_marginRight="@dimen/horizontal_margin"
                     android:background="@color/LightGrey"></FrameLayout>
 
-                <kz.washme.view.ExpandableGridView
+                <com.driverspa.view.ExpandableGridView
                     android:id="@+id/grid_group_services"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     android:verticalSpacing="5dp"
                     android:visibility="gone" />
 
-                <kz.washme.view.ExpandableGridView
+                <com.driverspa.view.ExpandableGridView
                     android:id="@+id/grid_services"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

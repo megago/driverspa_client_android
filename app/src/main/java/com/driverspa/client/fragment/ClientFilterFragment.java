@@ -22,7 +22,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.squareup.otto.Subscribe;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 import butterknife.OnTouch;
@@ -50,52 +50,52 @@ public class ClientFilterFragment extends DialogFragment {
         public void showChooseCity();
     }
 
-    @InjectView(R.id.cityLayout)
+    @BindView(R.id.cityLayout)
     View cityLayout;
-    @InjectView(R.id.txtCity)
+    @BindView(R.id.txtCity)
     TextView txtCity;
-    @InjectView(R.id.price)
+    @BindView(R.id.price)
     TextView price;
-    @InjectView(R.id.distance)
+    @BindView(R.id.distance)
     TextView distance;
-    @InjectView(R.id.seek_distance)
+    @BindView(R.id.seek_distance)
     SeekBar seekDistance;
-    @InjectView(R.id.toggle_cafe)
+    @BindView(R.id.toggle_cafe)
     ToggleButton toggleCafe;
-    @InjectView(R.id.toggle_atm)
+    @BindView(R.id.toggle_atm)
     ToggleButton toggleAtm;
-    @InjectView(R.id.toggle_coffee)
+    @BindView(R.id.toggle_coffee)
     ToggleButton toggleCoffee;
-    @InjectView(R.id.toggle_nocash)
+    @BindView(R.id.toggle_nocash)
     ToggleButton toggleNocach;
-    @InjectView(R.id.toggle_room)
+    @BindView(R.id.toggle_room)
     ToggleButton toggleRoom;
-    @InjectView(R.id.toggle_games)
+    @BindView(R.id.toggle_games)
     ToggleButton toggleGames;
-    @InjectView(R.id.toggle_wifi)
+    @BindView(R.id.toggle_wifi)
     ToggleButton toggleWifi;
-    @InjectView(R.id.toggle_campaign)
+    @BindView(R.id.toggle_campaign)
     ToggleButton toggleCampaign;
 
-    @InjectView(R.id.star1)
+    @BindView(R.id.star1)
     ImageView star1;
-    @InjectView(R.id.star2)
+    @BindView(R.id.star2)
     ImageView star2;
-    @InjectView(R.id.star3)
+    @BindView(R.id.star3)
     ImageView star3;
-    @InjectView(R.id.star4)
+    @BindView(R.id.star4)
     ImageView star4;
-    @InjectView(R.id.star5)
+    @BindView(R.id.star5)
     ImageView star5;
 
-    @InjectView(R.id.minus_price)
+    @BindView(R.id.minus_price)
     View minusPrice;
-    @InjectView(R.id.plus_price)
+    @BindView(R.id.plus_price)
     View plusPrice;
 
-    @InjectView(R.id.root_view)
+    @BindView(R.id.root_view)
     View rootView;
-    @InjectView(R.id.spinner)
+    @BindView(R.id.spinner)
     NDSpinner spinner;
     private boolean isSpinnerTouched = false;
     int selectedSortingType = 0;

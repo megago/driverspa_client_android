@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnFocusChange;
 import com.driverspa.BA;
@@ -97,17 +97,17 @@ public class ClientBookingFragment extends ClientBaseFragment {
     private Washer washer;
     CarType selectedCarType;
     CarItem selectedCarItem;
-    @InjectView(R.id.txtWasherNameTitle)
+    @BindView(R.id.txtWasherNameTitle)
     TextView washerTitleName;
-    @InjectView(R.id.txtPrice)
+    @BindView(R.id.txtPrice)
     TextView txtPrice;
-    @InjectView(R.id.txtTime)
+    @BindView(R.id.txtTime)
     TextView txtTime;
-    @InjectView(R.id.btnBookNext)
+    @BindView(R.id.btnBookNext)
     Button buttonNext;
     TextView titleView;
 
-    @InjectView(R.id.no_service)
+    @BindView(R.id.no_service)
     View noService;
 
     private ActivityActions activityActions;
@@ -117,31 +117,31 @@ public class ClientBookingFragment extends ClientBaseFragment {
     HashMap<Integer, Double> menuServicesPrices = new HashMap<Integer, Double>();
     private User user;
 
-    @InjectView(R.id.grid_cars)
+    @BindView(R.id.grid_cars)
     ExpandableGridView gridCars;
-    @InjectView(R.id.grid_services)
+    @BindView(R.id.grid_services)
     ExpandableGridView gridServices;
     private CarsGridAdapter carAdapter;
     private ServicesGridAdapter serviceAdapter;
 
-    @InjectView(R.id.grid_group_services)
+    @BindView(R.id.grid_group_services)
     ExpandableGridView gridGroupServices;
-    @InjectView(R.id.serviceBtn)
+    @BindView(R.id.serviceBtn)
     View serviceBtn;
 
-    @InjectView(R.id.cashAmount)
+    @BindView(R.id.cashAmount)
     EditText cashAmount;
-    @InjectView(R.id.cardAmount)
+    @BindView(R.id.cardAmount)
     EditText cardAmount;
-    @InjectView(R.id.bonusAmount)
+    @BindView(R.id.bonusAmount)
     EditText bonusAmount;
-    @InjectView(R.id.depositAmount)
+    @BindView(R.id.depositAmount)
     EditText depositAmount;
-    @InjectView(R.id.clientBonusAmount)
+    @BindView(R.id.clientBonusAmount)
     TextView clientBonusAmount;
-    @InjectView(R.id.clientDepositAmount)
+    @BindView(R.id.clientDepositAmount)
     TextView clientDepositAmount;
-    @InjectView(R.id.txtPriceDifference)
+    @BindView(R.id.txtPriceDifference)
     TextView txtPriceDifference;
 
     ClientInfo selectedClient;

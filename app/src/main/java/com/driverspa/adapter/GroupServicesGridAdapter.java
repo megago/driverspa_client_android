@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.dialog.MultipleSelectDialog;
@@ -142,14 +142,14 @@ public class GroupServicesGridAdapter extends BaseAdapter {
 
     static class ViewHolder {
 			
-		@InjectView(R.id.service_name)
+		@BindView(R.id.service_name)
 		TextView serviceName;
-		@InjectView(R.id.service_desc)
+		@BindView(R.id.service_desc)
 		TextView serviceDesc;
 
-		@InjectView(R.id.layoutGridItem)
+		@BindView(R.id.layoutGridItem)
 		View gridItem;
-		@InjectView(R.id.dot_detail)
+		@BindView(R.id.dot_detail)
 		View dotDetail;
 
 		public ViewHolder(View view) {

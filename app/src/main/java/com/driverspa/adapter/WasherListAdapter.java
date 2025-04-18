@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.WasherPublic;
 import com.driverspa.util.LogUtil;
@@ -128,25 +128,25 @@ public class WasherListAdapter extends BaseDataAdapter<WasherPublic> {
 
 	static class ViewHolder {
 
-		@InjectView(R.id.imgAvailability)
+		@BindView(R.id.imgAvailability)
 		ImageView imageAvailability;
 
-		@InjectView(R.id.txtWasherAddress)
+		@BindView(R.id.txtWasherAddress)
 		TextView address;
 
-		@InjectView(R.id.txtWasherName)
+		@BindView(R.id.txtWasherName)
 		TextView name;
 
-		@InjectView(R.id.txtPrice)
+		@BindView(R.id.txtPrice)
 		TextView price;
 
-		@InjectView(R.id.txtRevCount)
+		@BindView(R.id.txtRevCount)
 		TextView reviewCount;
 
-		@InjectView(R.id.txtDistance)
+		@BindView(R.id.txtDistance)
 		TextView distance;
 
-		@InjectView(R.id.priceLayout)
+		@BindView(R.id.priceLayout)
 		View priceLayout;
 
 		public ViewHolder(View view) {

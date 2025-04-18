@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.api.response.WasherTimeTableResponse.BoxItem;
 
@@ -67,7 +67,7 @@ public class AdminTimeTableBoxesAdapter extends BaseDataAdapter {
 	
 	static class ViewHolder {
 		 		 						
-		@InjectView(R.id.txtBox)
+		@BindView(R.id.txtBox)
 		TextView boxNumber;
 				
 		public ViewHolder(View view) {

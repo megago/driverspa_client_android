@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.ServiceItem;
 import com.driverspa.model.Washer;
@@ -100,12 +100,12 @@ public class OfflineBoxesGridAdapter extends BaseAdapter {
 
     static class ViewHolder {
 			
-		@InjectView(R.id.item_name)
+		@BindView(R.id.item_name)
 		TextView itemName;
-		@InjectView(R.id.item_desc)
+		@BindView(R.id.item_desc)
 		TextView itemBookingType;
 
-		@InjectView(R.id.layoutGridItem)
+		@BindView(R.id.layoutGridItem)
 		View gridItem;			
 
 		public ViewHolder(View view) {

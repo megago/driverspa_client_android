@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -28,14 +28,14 @@ public class ClientBooksAndNotificationsFragment extends ClientBaseHomeFragment 
         public void hideShowFilterButton(int tab);
     }
 
-    @InjectView(R.id.pager)
+    @BindView(R.id.pager)
     ViewPager viewPager;
     PagerAdapter adapter;
 
     int selectedTab = 0;
-    @InjectView(R.id.books)
+    @BindView(R.id.books)
     View books;
-    @InjectView(R.id.notifications)
+    @BindView(R.id.notifications)
     View notifications;
 
     Toolbar toolbar;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.api.response.AdminBoxesResponse.BoxType;
 import com.driverspa.util.Constants;
@@ -47,11 +47,11 @@ public class AdminBoxesAdapter extends BaseDataAdapter<BoxType> {
 	
 	static class ViewHolder {
 		 		 						
-		@InjectView(R.id.txtBox)
+		@BindView(R.id.txtBox)
 		TextView boxNumber;
-		@InjectView(R.id.txtBoxType)
+		@BindView(R.id.txtBoxType)
 		TextView boxType;
-		@InjectView(R.id.washerPerson)
+		@BindView(R.id.washerPerson)
 		TextView washerPerson;
 
 		public ViewHolder(View view) {

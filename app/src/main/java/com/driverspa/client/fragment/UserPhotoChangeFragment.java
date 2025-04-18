@@ -13,7 +13,7 @@ import com.squareup.otto.Subscribe;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.adapter.UserPhotosAdapter;
@@ -33,7 +33,7 @@ public class UserPhotoChangeFragment extends ClientBaseFragment {
 		public void finishAfterUpdate();
 	}
 	
-	@InjectView(R.id.gridview)
+	@BindView(R.id.gridview)
 	protected GridView gridView;
 
 	protected String userId;

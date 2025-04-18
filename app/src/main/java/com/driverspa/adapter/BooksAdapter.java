@@ -28,7 +28,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.model.PushData;
@@ -205,37 +205,37 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
 
         BookInfo bookInfo;
 
-        @InjectView(R.id.txtBookTime)
+        @BindView(R.id.txtBookTime)
         TextView bookTime;
-        @InjectView(R.id.txtBookTS)
+        @BindView(R.id.txtBookTS)
         TextView bookTS;
-        @InjectView(R.id.txtBoxName)
+        @BindView(R.id.txtBoxName)
         TextView txtBoxName;
-        @InjectView(R.id.txtBookKey)
+        @BindView(R.id.txtBookKey)
         TextView bookKey;
-        @InjectView(R.id.txtCarwashName)
+        @BindView(R.id.txtCarwashName)
         TextView carwashName;
 
-        @InjectView(R.id.txtBookStatus)
+        @BindView(R.id.txtBookStatus)
         TextView bookStatus;
-        @InjectView(R.id.parentView)
+        @BindView(R.id.parentView)
         View parentView;
-        @InjectView(R.id.remainingTimeLayout)
+        @BindView(R.id.remainingTimeLayout)
         View remainingTimeLayout;
 
-        @InjectView(R.id.remainingTime)
+        @BindView(R.id.remainingTime)
         TextView remainingTime;
-        @InjectView(R.id.layoutQueue)
+        @BindView(R.id.layoutQueue)
         View layoutQueue;
-        @InjectView(R.id.arrowRight)
+        @BindView(R.id.arrowRight)
         View arrowRight;
-        @InjectView(R.id.order)
+        @BindView(R.id.order)
         TextView order;
-        @InjectView(R.id.queue_car_no)
+        @BindView(R.id.queue_car_no)
         TextView queueCarNo;
-        @InjectView(R.id.imgAvailability)
+        @BindView(R.id.imgAvailability)
         View onlineBook;
-        @InjectView(R.id.notPaid)
+        @BindView(R.id.notPaid)
         View notPaid;
 
         public void updateTimeRemaining(long currentTime) {

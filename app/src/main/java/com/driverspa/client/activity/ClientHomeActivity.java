@@ -1,7 +1,7 @@
 package com.driverspa.client.activity;
 
 import android.annotation.SuppressLint;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -155,15 +155,15 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         ClientTimetableDialogFragment.ActivityActions{
 
     private ClientTabPagerAdapter TabAdapter;
-    @InjectView(R.id.pager)
+    @BindView(R.id.pager)
     CustomViewPager pagerTab;
     int selectedTab = 0;
 
-    @InjectView(R.id.toolbar_actionbar)
+    @BindView(R.id.toolbar_actionbar)
     View toolbarActionBar;
-    @InjectView(R.id.container)
+    @BindView(R.id.container)
     View homeContainer;
-    @InjectView(R.id.fragment_container)
+    @BindView(R.id.fragment_container)
     View fragmentContainer;
     TextView titleView;
 
@@ -171,81 +171,81 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     Dialog dialog;
 
     //Bottom layout views
-    @InjectView(R.id.imgAvailability)
+    @BindView(R.id.imgAvailability)
     View imgAvailability;
-    @InjectView(R.id.txtWasherTime)
+    @BindView(R.id.txtWasherTime)
     TextView washerTime;
-    @InjectView(R.id.imgWasherAvatar)
+    @BindView(R.id.imgWasherAvatar)
     ImageView washerImage;
-    @InjectView(R.id.txtWasherNameTitle)
+    @BindView(R.id.txtWasherNameTitle)
     TextView name;
-    @InjectView(R.id.price)
+    @BindView(R.id.price)
     TextView price;
-    @InjectView(R.id.txtWasherCity)
+    @BindView(R.id.txtWasherCity)
     TextView address;
-    @InjectView(R.id.reviewCount)
+    @BindView(R.id.reviewCount)
     TextView reviewCount;
-    @InjectView(R.id.txtWasherPhone)
+    @BindView(R.id.txtWasherPhone)
     TextView washerPhone;
-    @InjectView(R.id.txtWasherComment)
+    @BindView(R.id.txtWasherComment)
     TextView comment;
-    @InjectView(R.id.review)
+    @BindView(R.id.review)
     RatingBar review;
-    @InjectView(R.id.btnMain)
+    @BindView(R.id.btnMain)
     Button mainButton;
-    @InjectView(R.id.washerWindow)
+    @BindView(R.id.washerWindow)
     View washerWindow;
-    @InjectView(R.id.requestWindow)
+    @BindView(R.id.requestWindow)
     View requestWindow;
-    @InjectView(R.id.mainContainer)
+    @BindView(R.id.mainContainer)
     View mainContainer;
-    @InjectView(R.id.mainLayout)
+    @BindView(R.id.mainLayout)
     View mainLayout;
-    @InjectView(R.id.fareLine)
+    @BindView(R.id.fareLine)
     View fareLine;
-    @InjectView(R.id.mainFieldsLayout)
+    @BindView(R.id.mainFieldsLayout)
     View mainFieldsLayout;
-    @InjectView(R.id.informationLayout)
+    @BindView(R.id.informationLayout)
     View informationLayout;
-    @InjectView(R.id.commentLayout)
+    @BindView(R.id.commentLayout)
     View commentLayout;
-    @InjectView(R.id.btnRequest)
+    @BindView(R.id.btnRequest)
     Button requestButton;
-    @InjectView(R.id.fare)
+    @BindView(R.id.fare)
     EditText fare;
-    @InjectView(R.id.comment)
+    @BindView(R.id.comment)
     EditText fareComment;
-    @InjectView(R.id.btnExpand)
+    @BindView(R.id.btnExpand)
     ImageView buttonExpand;
-    @InjectView(R.id.carSpinner)
+    @BindView(R.id.carSpinner)
     NDSpinner carSpinner;
-    @InjectView(R.id.serviceSpinner)
+    @BindView(R.id.serviceSpinner)
     NDSpinner serviceSpinner;
-    @InjectView(R.id.myCarText)
+    @BindView(R.id.myCarText)
     TextView myCarText;
-    @InjectView(R.id.services)
+    @BindView(R.id.services)
     TextView services;
-    @InjectView(R.id.fareLayout)
+    @BindView(R.id.fareLayout)
     View fareLayout;
-    @InjectView(R.id.bookTime)
+    @BindView(R.id.bookTime)
     TextView bookTime;
-    @InjectView(R.id.bookTimeLayout)
+    @BindView(R.id.bookTimeLayout)
     View bookTimeLayout;
-    @InjectView(R.id.bookService)
+    @BindView(R.id.bookService)
     View bookService;
-    @InjectView(R.id.washerDetail)
+    @BindView(R.id.washerDetail)
     View washerDetail;
-    @InjectView(R.id.bookServiceClose)
+    @BindView(R.id.bookServiceClose)
     View bookServiceClose;
-    @InjectView(R.id.bookTimeClose)
+    @BindView(R.id.bookTimeClose)
     View bookTimeClose;
-    @InjectView(R.id.bookServiceRightArrow)
+    @BindView(R.id.bookServiceRightArrow)
     View bookServiceRightArrow;
-    @InjectView(R.id.bookTimeRightArrow)
+    @BindView(R.id.bookTimeRightArrow)
     View bookTimeRightArrow;
-    @InjectView(R.id.btnRequireWashme)
+    @BindView(R.id.btnRequireWashme)
     Button requireWashmeButton;
-    @InjectView(R.id.reqireWashmeText)
+    @BindView(R.id.reqireWashmeText)
     TextView reqireWashmeText;
     HashMap<String, String> wantedWashers;
 

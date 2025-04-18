@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import com.driverspa.R;
 import com.driverspa.model.WasherPublic;
 import com.driverspa.util.Functions;
@@ -169,38 +169,38 @@ public class WasherListNearByAdapter extends BaseDataAdapter<WasherPublic> {
 	
 	static class ViewHolder {
 		 		 				
-		@InjectView(R.id.imgAvailability)
+		@BindView(R.id.imgAvailability)
 		ImageView imageAvailability;
-		@InjectView(R.id.txtWasherAddress)
+		@BindView(R.id.txtWasherAddress)
 		TextView address;
-		@InjectView(R.id.txtWasherName)
+		@BindView(R.id.txtWasherName)
 		TextView name;
-		@InjectView(R.id.txtPrice)
+		@BindView(R.id.txtPrice)
 		TextView price;
-		@InjectView(R.id.txtRevCount)
+		@BindView(R.id.txtRevCount)
 		TextView reviewCount;
-		@InjectView(R.id.txtDistance)
+		@BindView(R.id.txtDistance)
 		TextView distance;
-		@InjectView(R.id.priceLayout)
+		@BindView(R.id.priceLayout)
 		View priceLayout;
-		@InjectView(R.id.bottomLayout)
+		@BindView(R.id.bottomLayout)
 		View bottomLayout;
-		@InjectView(R.id.discountLayout)
+		@BindView(R.id.discountLayout)
 		View discount;
-		@InjectView(R.id.discountText)
+		@BindView(R.id.discountText)
 		TextView discountText;
-		@InjectView(R.id.review)
+		@BindView(R.id.review)
 		RatingBar review;
-		@InjectView(R.id.tenge)
+		@BindView(R.id.tenge)
 		View tenge;
 
-		@InjectView(R.id.txtDeposit)
+		@BindView(R.id.txtDeposit)
 		TextView depositText;
-		@InjectView(R.id.txtBonus)
+		@BindView(R.id.txtBonus)
 		TextView bonusText;
-		@InjectView(R.id.txtDiscount)
+		@BindView(R.id.txtDiscount)
 		TextView discountClientText;
-		@InjectView(R.id.clientLayout)
+		@BindView(R.id.clientLayout)
 		View clientLayout;
 
 		public ViewHolder(View view) {

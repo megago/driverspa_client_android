@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.util.UserPreferences;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class ClientAboutUSFragment extends ClientBaseFragment {
     String aboutUs = UserPreferences.getAboutUs(BA.getContext());
@@ -24,9 +24,9 @@ public class ClientAboutUSFragment extends ClientBaseFragment {
     public interface ActivityActions {
     }
 
-    @InjectView(R.id.web_view)
+    @BindView(R.id.web_view)
     WebView webView;
-    @InjectView(R.id.cover_view)
+    @BindView(R.id.cover_view)
     View coverView;
 
     @Override

@@ -44,7 +44,7 @@
                     android:layout_width="@dimen/washer_profile_view_width"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
-                    <kz.washme.view.ImageViewSquared
+                    <com.driverspa.view.ImageViewSquared
                         android:id="@+id/imgClientAvatar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                     android:background="@color/BlueTransparent" >
                 </FrameLayout>
 
-                <kz.washme.view.ExpandableGridView
+                <com.driverspa.view.ExpandableGridView
                     android:id="@+id/grid_cars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
