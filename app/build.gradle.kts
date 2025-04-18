@@ -84,7 +84,7 @@ dependencies {
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("com.google.android.gms:play-services-maps:18.0.0")
-
+    implementation("com.google.android.gms:play-services-location:21.0.1")
     // If you still want to use ButterKnife, you can keep these lines
     implementation("com.jakewharton:butterknife:10.2.3")
     annotationProcessor("com.jakewharton:butterknife-compiler:10.2.3")
