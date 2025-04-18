@@ -139,52 +139,52 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <!-- [START gcm_receiver] -->
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.driverspa" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name="com.google.android.gms.gcm.GcmReceiver"-->
+<!--            android:exported="true"-->
+<!--            android:permission="com.google.android.c2dm.permission.SEND">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+<!--                <category android:name="com.driverspa" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
         <!-- [END gcm_receiver] -->
 
         <!-- [START gcm_listener] -->
-        <service
-            android:name="com.driverspa.gcm.MyGcmListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </service>
+<!--        <service-->
+<!--            android:name="com.driverspa.gcm.MyGcmListenerService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
         <!-- [END gcm_listener] -->
 
         <!-- [START instanceId_listener] -->
-        <service
-            android:name="com.driverspa.gcm.MyInstanceIDListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID" />
-            </intent-filter>
-        </service>
-        <!-- [END instanceId_listener] -->
+<!--        <service-->
+<!--            android:name="com.driverspa.gcm.MyInstanceIDListenerService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.android.gms.iid.InstanceID" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+<!--        &lt;!&ndash; [END instanceId_listener] &ndash;&gt;-->
 
-        <service android:name="com.driverspa.gcm.RegistrationIntentService" android:exported="false"></service>
+<!--        <service android:name="com.driverspa.gcm.RegistrationIntentService" android:exported="false"></service>-->
 
         <service android:name=".service.Service"
-            android:label="Сервис wash!me"/>
+            android:label="Сервис DriverSpa"/>
 
 <!--        <meta-data-->
 <!--            android:name="com.google.android.gms.version"-->
 <!--            android:value="@integer/google_play_services_version" />-->
-        <service
-            android:name=".fcm.MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+<!--        <service-->
+<!--            android:name=".fcm.MyFirebaseMessagingService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB26de6oG6FEW2dKTVqYAQvaIKeMx_c_9k" />

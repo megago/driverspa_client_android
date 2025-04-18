@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">Wash!me</string>
+    <string name="app_name">DriverSpa</string>
     <string name="facebook_app_id">609265849262620</string>
 
     <!-- translatable -->

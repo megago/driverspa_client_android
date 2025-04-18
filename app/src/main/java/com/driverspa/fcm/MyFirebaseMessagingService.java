@@ -97,7 +97,7 @@ public class MyFirebaseMessagingService {
 ////
 ////            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, "default")
 ////                    .setSmallIcon(R.drawable.ic_launch)
-////                    .setContentTitle("Wash!me")
+////                    .setContentTitle("DriverSpa")
 ////                    .setContentText(data.getText())
 ////                    .setAutoCancel(true)
 ////                    .setSound(defaultSoundUri)
@@ -112,7 +112,7 @@ public class MyFirebaseMessagingService {
 //    private void createNotificationChannel() {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 //            CharSequence name = "Default Channel";
-//            String description = "Channel for Wash!me notifications";
+//            String description = "Channel for DriverSpa notifications";
 //            int importance = NotificationManager.IMPORTANCE_DEFAULT;
 //            //TODO: come here and uncomment
 ////            NotificationChannel channel = new NotificationChannel("default", name, importance);

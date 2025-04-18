@@ -53,7 +53,7 @@ public class AuthVerificationAssist extends BaseAssist {
 					
 //					if(isAdmin){
 					if(1!=1){
-					  displayToast("Ошибка! Ранее этот номер использыван при регистрации мойки. Свяжитесь с тех. поддержкой Wash!me");
+					  displayToast("Ошибка! Ранее этот номер использыван при регистрации мойки. Свяжитесь с тех. поддержкой DriverSpa");
 					  getEventsBus().post(new AuthClientVerificationResponseEvent(null));
 					}
 					else{

@@ -1154,7 +1154,7 @@ public class ClientWasherInfoFragment extends ClientBaseFragment {
 		}
 		else {
 			if(item.getUserWanted()) {
-				if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с Wash!me, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони");
+				if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони");
 				requireWashmeButton.setVisibility(View.GONE);
 				requireWashmeButton.setVisibility(View.GONE);
 			}
@@ -1163,8 +1163,8 @@ public class ClientWasherInfoFragment extends ClientBaseFragment {
 				requireWashmeButton.setVisibility(View.GONE);
 			}
 			else{
-				if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с Wash!me, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони, хотите ли вы тоже?");
-				else reqireWashmeText.setText("Данная автомойка не сотрудничает с Wash!me, хотите чтобы она стала принимать заказы и брони?");
+				if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони, хотите ли вы тоже?");
+				else reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, хотите чтобы она стала принимать заказы и брони?");
 				requireWashmeButton.setVisibility(View.VISIBLE);
 			}
 

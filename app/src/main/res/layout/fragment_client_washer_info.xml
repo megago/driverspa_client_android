@@ -890,7 +890,7 @@
                         android:drawableLeft="@drawable/ic_info"
                         android:drawablePadding="@dimen/vertical_margin_half"
                         android:maxLines="3"
-                        android:text="Данная автомойка не сотрудничает с Wash!me, хотите чтобы она стала принимать заказы и брони?"
+                        android:text="Данная автомойка не сотрудничает с DriverSpa, хотите чтобы она стала принимать заказы и брони?"
                         android:textColor="@color/Black"
                         android:textSize="@dimen/text_normal"
                         android:textStyle="italic" />

@@ -87,7 +87,7 @@ public class Service extends android.app.Service {
                     @SuppressLint("Range") String body = cursor1.getString(cursor1.getColumnIndex(columns[11]));
                     @SuppressLint("Range") String date = cursor1.getString(cursor1.getColumnIndex(columns[4]));
                     if (Long.parseLong(date) > smsLastSentTime) {
-                        if (body.contains("Wash!me code")) {
+                        if (body.contains("DriverSpa code")) {
                             try {
                                 String parseBody = Functions.Split(body, ":", 1);
                                 BA.getEventBus().post(new SmsRecoveryReceivedEvent(parseBody.trim()));
