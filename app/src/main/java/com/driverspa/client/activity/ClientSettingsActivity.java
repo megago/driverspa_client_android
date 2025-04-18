@@ -24,7 +24,7 @@ public class ClientSettingsActivity extends BaseActivity{
         setTitle("");        
 
         if( savedInstanceState == null ) {
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientSettingsFragment()).commitAllowingStateLoss();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientSettingsFragment()).commitAllowingStateLoss();
 		}        
 	  }
 	  

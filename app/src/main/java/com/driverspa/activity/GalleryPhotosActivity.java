@@ -5,13 +5,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentStatePagerAdapter;
-import android.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.splunk.mint.Mint;
 import com.squareup.otto.Subscribe;
@@ -93,7 +94,7 @@ public class GalleryPhotosActivity extends BaseActivity implements GalleryFragme
 				delete.setVisibility(View.GONE);
 		}
 		
-		viewPager.setAdapter(new GalleryPagerAdapter(getFragmentManager()));
+		viewPager.setAdapter(new GalleryPagerAdapter(getSupportFragmentManager()));
 		viewPager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.horizontal_margin));
 		viewPager.setOffscreenPageLimit(3);
 		viewPager.setCurrentItem(startIndex);
@@ -201,7 +202,7 @@ public class GalleryPhotosActivity extends BaseActivity implements GalleryFragme
 				   overridePendingTransitionWithCommonCloseTransition();
 			   }
 			   else{
-				   viewPager.setAdapter(new GalleryPagerAdapter(getFragmentManager()));
+				   viewPager.setAdapter(new GalleryPagerAdapter(getSupportFragmentManager()));
 				   viewPager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.horizontal_margin));
 				   viewPager.setOffscreenPageLimit(3);
 				   viewPager.setCurrentItem(0);

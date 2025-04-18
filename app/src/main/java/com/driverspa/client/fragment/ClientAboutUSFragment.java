@@ -32,7 +32,7 @@ public class ClientAboutUSFragment extends ClientBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_client_about_us, container, false);
-        ButterKnife.inject(this,view);
+        ButterKnife.bind(this,view);
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDefaultTextEncodingName("utf-8");

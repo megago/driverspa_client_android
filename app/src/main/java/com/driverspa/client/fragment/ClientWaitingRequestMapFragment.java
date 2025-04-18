@@ -11,9 +11,9 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.util.LruCache;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -246,7 +246,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 		
 	    if (mMap != null)
 	        setUpMap();

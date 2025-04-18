@@ -1,11 +1,12 @@
 package com.driverspa.client.activity;
 
+import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.widget.Toolbar;
 import android.view.MenuItem;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import com.splunk.mint.Mint;
 
@@ -28,11 +29,11 @@ public class ClientAboutUSActivity extends BaseActivity implements ClientAboutUS
 		  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		  getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-          fragmentManager = getFragmentManager();
+          fragmentManager = getSupportFragmentManager();
 
         if( savedInstanceState == null ) {
 			Fragment fragment = new ClientAboutUSFragment();
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 		}        
 	  }
 	  

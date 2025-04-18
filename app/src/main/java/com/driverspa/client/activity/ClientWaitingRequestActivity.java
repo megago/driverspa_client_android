@@ -2,7 +2,7 @@ package com.driverspa.client.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.FragmentManager;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import com.splunk.mint.Mint;
@@ -13,6 +13,8 @@ import com.driverspa.client.fragment.ClientWaitingRequestMapFragment;
 import com.driverspa.util.UserPreferences;
 
 import static com.driverspa.util.Constants.EXTRA_BOOKING_ID;
+
+import androidx.fragment.app.FragmentManager;
 
 public class ClientWaitingRequestActivity extends BaseActivity implements ClientWaitingRequestMapFragment.ActivityActions
 {
@@ -26,9 +28,9 @@ public class ClientWaitingRequestActivity extends BaseActivity implements Client
         Mint.initAndStartSession(this.getApplication(), "b054ddc0");
         Mint.setUserIdentifier(UserPreferences.getUserPhone(this));
         setContentView(R.layout.activity_client_waiting_request);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         ClientWaitingRequestMapFragment fragment = ClientWaitingRequestMapFragment.init(getIntent().getStringExtra(REQUEST_DATA));
 
         if( arg0 == null ) {
@@ -63,5 +65,6 @@ public class ClientWaitingRequestActivity extends BaseActivity implements Client
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
     }
 }

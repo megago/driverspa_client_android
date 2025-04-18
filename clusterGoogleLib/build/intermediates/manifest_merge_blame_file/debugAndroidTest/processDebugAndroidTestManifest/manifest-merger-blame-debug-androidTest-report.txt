@@ -3,298 +3,300 @@
 3    package="com.google.maps.android.test" >
 4
 5    <uses-sdk
-5-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:5:5-74
-6        android:minSdkVersion="16"
-6-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:5:15-41
-7        android:targetSdkVersion="26" />
-7-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:5:42-71
+5-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:5:5-74
+6        android:minSdkVersion="23"
+6-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:5:15-41
+7        android:targetSdkVersion="34" />
+7-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:5:42-71
 8
 9    <instrumentation
-9-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:11:5-15:78
+9-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:11:5-15:78
 10        android:name="android.test.InstrumentationTestRunner"
-10-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:11:22-75
+10-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:11:22-75
 11        android:functionalTest="false"
-11-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:14:22-52
+11-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:13:22-53
+12-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:13:22-53
 13        android:label="Tests for com.google.maps.android.test"
-13-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:15:22-76
+13-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:15:22-76
 14        android:targetPackage="com.google.maps.android.test" />
-14-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:12:22-74
+14-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:12:22-74
 15    <!-- Include required permissions for Google Mobile Ads to run -->
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:19:5-66
-16-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:19:22-64
+16-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:19:5-66
+16-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:19:22-64
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Optional permission for Analytics to run. -->
-17-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:20:5-78
-17-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:20:22-76
+17-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:20:5-78
+17-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:20:22-76
 18    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Permissions required for GCM -->
-18-->[com.google.android.gms:play-services-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/467df44028e1ccae940420dd2aec8dba/transformed/play-services-analytics-11.0.4/AndroidManifest.xml:24:5-67
-18-->[com.google.android.gms:play-services-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/467df44028e1ccae940420dd2aec8dba/transformed/play-services-analytics-11.0.4/AndroidManifest.xml:24:22-65
+18-->[com.google.android.gms:play-services-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\9d0fe869b296915e0caac1ac70625ecc\transformed\jetified-play-services-analytics-11.0.4\AndroidManifest.xml:24:5-67
+18-->[com.google.android.gms:play-services-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\9d0fe869b296915e0caac1ac70625ecc\transformed\jetified-play-services-analytics-11.0.4\AndroidManifest.xml:24:22-65
 19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-19-->[com.google.android.gms:play-services-gcm:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7bb52a74798792968bb57e7fb96829a3/transformed/play-services-gcm-11.0.4/AndroidManifest.xml:20:5-81
-19-->[com.google.android.gms:play-services-gcm:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7bb52a74798792968bb57e7fb96829a3/transformed/play-services-gcm-11.0.4/AndroidManifest.xml:20:22-79
+19-->[com.google.android.gms:play-services-gcm:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\7e7259b95f120fb1cfa196f592225f47\transformed\jetified-play-services-gcm-11.0.4\AndroidManifest.xml:20:5-81
+19-->[com.google.android.gms:play-services-gcm:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\7e7259b95f120fb1cfa196f592225f47\transformed\jetified-play-services-gcm-11.0.4\AndroidManifest.xml:20:22-79
 20
 21    <uses-feature
-21-->[com.google.android.gms:play-services-maps:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/5f1705b360afe4288149dc6fe96a4456/transformed/play-services-maps-11.0.4/AndroidManifest.xml:21:5-77
+21-->[com.google.android.gms:play-services-maps:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\6284275c6f30e286bb6a70ce99a2e704\transformed\jetified-play-services-maps-11.0.4\AndroidManifest.xml:21:5-77
 22        android:glEsVersion="0x00020000"
-22-->[com.google.android.gms:play-services-maps:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/5f1705b360afe4288149dc6fe96a4456/transformed/play-services-maps-11.0.4/AndroidManifest.xml:21:19-51
+22-->[com.google.android.gms:play-services-maps:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\6284275c6f30e286bb6a70ce99a2e704\transformed\jetified-play-services-maps-11.0.4\AndroidManifest.xml:21:19-51
 23        android:required="true" />
-23-->[com.google.android.gms:play-services-maps:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/5f1705b360afe4288149dc6fe96a4456/transformed/play-services-maps-11.0.4/AndroidManifest.xml:21:52-75
+23-->[com.google.android.gms:play-services-maps:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\6284275c6f30e286bb6a70ce99a2e704\transformed\jetified-play-services-maps-11.0.4\AndroidManifest.xml:21:52-75
 24
 25    <permission
-25-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:24:5-109
+25-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:24:5-109
 26        android:name="com.google.maps.android.test.permission.C2D_MESSAGE"
-26-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:24:17-71
+26-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:24:17-71
 27        android:protectionLevel="signature" />
-27-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:24:72-107
+27-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:24:72-107
 28
 29    <uses-permission android:name="com.google.maps.android.test.permission.C2D_MESSAGE" />
-29-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:26:5-78
-29-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:26:22-76
+29-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:26:5-78
+29-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:26:22-76
 30
 31    <application
-31-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:7:5-9:19
-32        android:debuggable="true"
-33        android:extractNativeLibs="true" >
-34        <uses-library android:name="android.test.runner" />
-34-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:8:9-60
-34-->/Users/tanatov/Documents/studio_workspace/DriverSpa/clusterGoogleLib/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest13284331602535276601.xml:8:23-57
-35        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-36        <activity
-36-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:25:9-232
-37            android:name="com.google.android.gms.ads.AdActivity"
-37-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:25:19-71
-38            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-38-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:25:72-181
-39            android:theme="@android:style/Theme.Translucent" />
-39-->[com.google.android.gms:play-services-ads-lite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/cb2bbbffe2b7f6dfbf650d810e9d5251/transformed/play-services-ads-lite-11.0.4/AndroidManifest.xml:25:182-230
-40        <activity
-40-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:20:9-25:20
-41            android:name="com.google.android.gms.appinvite.PreviewActivity"
-41-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:20:19-50
-42            android:exported="true"
-42-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:20:51-74
-43            android:theme="@style/Theme.AppInvite.Preview" >
-43-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:20:75-121
-44            <intent-filter>
-44-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:21:13-24:29
-45                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW" />
-45-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:22:17-89
-45-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:22:25-87
-46
-47                <category android:name="android.intent.category.DEFAULT" />
-47-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:23:17-75
-47-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:23:27-73
-48            </intent-filter>
-49        </activity>
-50        <activity
-50-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:20:9-189
-51            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-51-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:20:19-68
-52            android:excludeFromRecents="true"
-52-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:20:129-162
-53            android:exported="false"
-53-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:20:163-187
-54            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-54-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:20:69-128
-55        <!--
-56Service handling Google Sign-In user revocation. For apps that do not integrate with
-57            Google Sign-In, this service will never be started.
-58        -->
-59        <service
-59-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:24:9-184
-60            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-60-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:24:18-63
-61            android:exported="true"
-61-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:24:64-87
-62            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-62-->[com.google.android.gms:play-services-auth:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/bc629623929aa8438835eea237232cd9/transformed/play-services-auth-11.0.4/AndroidManifest.xml:24:88-182
-63
-64        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
-64-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:5:9-99
-64-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:5:19-97
-65
-66        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
-66-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:6:9-103
-66-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:6:18-101
-67        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
-67-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:7:9-92
-67-->[com.google.android.gms:play-services-cast-framework:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/359145b732997cadd16b04eebcc2afa1/transformed/play-services-cast-framework-11.0.4/AndroidManifest.xml:7:18-90
-68
-69        <activity
-69-->[com.google.android.gms:play-services-base:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/9dfb69b6f3959120f699f5856d0fe479/transformed/play-services-base-11.0.4/AndroidManifest.xml:19:9-172
-70            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-70-->[com.google.android.gms:play-services-base:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/9dfb69b6f3959120f699f5856d0fe479/transformed/play-services-base-11.0.4/AndroidManifest.xml:19:19-85
-71            android:exported="false"
-71-->[com.google.android.gms:play-services-base:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/9dfb69b6f3959120f699f5856d0fe479/transformed/play-services-base-11.0.4/AndroidManifest.xml:19:146-170
-72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-72-->[com.google.android.gms:play-services-base:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/9dfb69b6f3959120f699f5856d0fe479/transformed/play-services-base-11.0.4/AndroidManifest.xml:19:86-145
-73        <!--
-74 FirebaseMessagingService performs security checks at runtime,
-75             no need for explicit permissions despite exported="true"
-76        -->
-77        <service
-77-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:23:9-27:19
-78            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-78-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:23:18-87
-79            android:exported="true" >
-79-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:23:88-111
-80            <intent-filter android:priority="-500" >
-80-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:24:13-26:29
-80-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:24:28-51
-81                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-81-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:25:17-77
-81-->[com.google.firebase:firebase-messaging:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/7cb85bd43356ac0cf3c31ab4b0cb4917/transformed/firebase-messaging-11.0.4/AndroidManifest.xml:25:25-75
-82            </intent-filter>
-83        </service>
-84        <service
-84-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:24:9-134
-85            android:name="com.google.android.gms.tagmanager.TagManagerService"
-85-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:24:18-84
-86            android:enabled="true"
-86-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:24:110-132
-87            android:exported="false" />
-87-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:24:85-109
-88
-89        <activity
-89-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:25:9-32:20
-90            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
-90-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:25:19-93
-91            android:exported="true"
-91-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:25:94-117
-92            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
-92-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:25:118-142
-93            <intent-filter>
-93-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:26:13-31:29
-94                <data android:scheme="tagmanager.c.com.google.maps.android.test" />
-94-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:27:17-71
-94-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:27:23-69
-95
-96                <action android:name="android.intent.action.VIEW" />
-96-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:28:17-68
-96-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:28:25-66
-97
-98                <category android:name="android.intent.category.DEFAULT" />
-98-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:23:17-75
-98-->[com.google.android.gms:play-services-appinvite:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ef423f62c11c660dc4abd8ca74aa4611/transformed/play-services-appinvite-11.0.4/AndroidManifest.xml:23:27-73
-99                <category android:name="android.intent.category.BROWSABLE" />
-99-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:30:17-77
-99-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/11fd43752df59ec80fc9f063de662ef6/transformed/play-services-tagmanager-api-11.0.4/AndroidManifest.xml:30:27-75
-100            </intent-filter>
-101        </activity>
-102
-103        <receiver
-103-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:25:7-26:18
-104            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-104-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:25:17-89
-105            android:enabled="true"
-105-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:25:90-112
-106            android:exported="false" >
-106-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:25:113-137
-107        </receiver>
-108        <receiver
-108-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:27:7-31:18
-109            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-109-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:27:17-104
-110            android:enabled="true"
-110-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:27:162-184
-111            android:exported="true"
-111-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:27:185-208
-112            android:permission="android.permission.INSTALL_PACKAGES" >
-112-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:27:105-161
-113            <intent-filter>
-113-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:28:11-30:27
-114                <action android:name="com.android.vending.INSTALL_REFERRER" />
-114-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:29:15-76
-114-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:29:23-74
-115            </intent-filter>
-116        </receiver>
-117
-118        <service
-118-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:32:7-137
-119            android:name="com.google.android.gms.measurement.AppMeasurementService"
-119-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:32:16-87
-120            android:enabled="true"
-120-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:32:88-110
-121            android:exported="false" />
-121-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:32:111-135
-122        <service
-122-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:33:7-197
-123            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-123-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:33:16-90
-124            android:enabled="true"
-124-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:33:148-170
-125            android:exported="false"
-125-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:33:171-195
-126            android:permission="android.permission.BIND_JOB_SERVICE" />
-126-->[com.google.firebase:firebase-analytics:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/29099865c541369dc545916972a758ef/transformed/firebase-analytics-11.0.4/AndroidManifest.xml:33:91-147
-127
-128        <receiver
-128-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:30:9-35:20
-129            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-129-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:30:19-84
-130            android:exported="true"
-130-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:30:85-108
-131            android:permission="com.google.android.c2dm.permission.SEND" >
-131-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:30:109-169
-132            <intent-filter>
-132-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:31:13-34:29
-133                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-133-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:32:17-80
-133-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:32:25-78
-134
-135                <category android:name="com.google.maps.android.test" />
-135-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:33:17-60
-135-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:33:27-58
-136            </intent-filter>
-137        </receiver>
-138        <!--
-139 Internal (not exported) receiver used by the app to start its own exported services
-140             without risk of being spoofed.
-141        -->
-142        <receiver
-142-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:39:9-119
-143            android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
-143-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:39:19-92
-144            android:exported="false" />
-144-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:39:93-117
-145        <!--
-146 FirebaseInstanceIdService performs security checks at runtime,
-147             no need for explicit permissions despite exported="true"
-148        -->
-149        <service
-149-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:43:9-47:19
-150            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-150-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:43:18-82
-151            android:exported="true" >
-151-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:43:83-106
-152            <intent-filter android:priority="-500" >
-152-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:44:13-46:29
-152-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:44:28-51
-153                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-153-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:45:17-79
-153-->[com.google.firebase:firebase-iid:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/0e6b65a88337e5e073859c740f2c5d8d/transformed/firebase-iid-11.0.4/AndroidManifest.xml:45:25-77
-154            </intent-filter>
-155        </service>
-156
-157        <provider
-157-->[com.google.firebase:firebase-common:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/b4dd14534b5587d4be08adeebb45fdc1/transformed/firebase-common-11.0.4/AndroidManifest.xml:6:9-194
-158            android:name="com.google.firebase.provider.FirebaseInitProvider"
-158-->[com.google.firebase:firebase-common:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/b4dd14534b5587d4be08adeebb45fdc1/transformed/firebase-common-11.0.4/AndroidManifest.xml:6:79-143
-159            android:authorities="com.google.maps.android.test.firebaseinitprovider"
-159-->[com.google.firebase:firebase-common:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/b4dd14534b5587d4be08adeebb45fdc1/transformed/firebase-common-11.0.4/AndroidManifest.xml:6:19-78
-160            android:exported="false"
-160-->[com.google.firebase:firebase-common:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/b4dd14534b5587d4be08adeebb45fdc1/transformed/firebase-common-11.0.4/AndroidManifest.xml:6:144-168
-161            android:initOrder="100" />
-161-->[com.google.firebase:firebase-common:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/b4dd14534b5587d4be08adeebb45fdc1/transformed/firebase-common-11.0.4/AndroidManifest.xml:6:169-192
-162
-163        <meta-data
-163-->[com.google.android.gms:play-services-basement:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/1f0495d42dd7c854618b01b0d47cd3fd/transformed/play-services-basement-11.0.4/AndroidManifest.xml:20:9-121
-164            android:name="com.google.android.gms.version"
-164-->[com.google.android.gms:play-services-basement:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/1f0495d42dd7c854618b01b0d47cd3fd/transformed/play-services-basement-11.0.4/AndroidManifest.xml:20:20-65
-165            android:value="@integer/google_play_services_version" />
-165-->[com.google.android.gms:play-services-basement:11.0.4] /Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/1f0495d42dd7c854618b01b0d47cd3fd/transformed/play-services-basement-11.0.4/AndroidManifest.xml:20:66-119
-166    </application>
-167
-168</manifest>
+31-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:7:5-9:19
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.0.0] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\07c7008a2d9761b0e5dc75563be0ced6\transformed\core-1.0.0\AndroidManifest.xml:22:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="false" >
+35        <uses-library android:name="android.test.runner" />
+35-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:8:9-60
+35-->C:\Users\yerzhant\Documents\studio_workspace\DriverSpa\clusterGoogleLib\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8731699425049791274.xml:8:23-57
+36        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+37        <activity
+37-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:25:9-232
+38            android:name="com.google.android.gms.ads.AdActivity"
+38-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:25:19-71
+39            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+39-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:25:72-181
+40            android:theme="@android:style/Theme.Translucent" />
+40-->[com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\55753fd1fe6432959be54b3cc8798263\transformed\jetified-play-services-ads-lite-11.0.4\AndroidManifest.xml:25:182-230
+41        <activity
+41-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:20:9-25:20
+42            android:name="com.google.android.gms.appinvite.PreviewActivity"
+42-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:20:19-50
+43            android:exported="true"
+43-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:20:51-74
+44            android:theme="@style/Theme.AppInvite.Preview" >
+44-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:20:75-121
+45            <intent-filter>
+45-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:21:13-24:29
+46                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW" />
+46-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:22:17-89
+46-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:22:25-87
+47
+48                <category android:name="android.intent.category.DEFAULT" />
+48-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:23:17-75
+48-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:23:27-73
+49            </intent-filter>
+50        </activity>
+51        <activity
+51-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:20:9-189
+52            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+52-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:20:19-68
+53            android:excludeFromRecents="true"
+53-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:20:129-162
+54            android:exported="false"
+54-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:20:163-187
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:20:69-128
+56        <!--
+57Service handling Google Sign-In user revocation. For apps that do not integrate with
+58            Google Sign-In, this service will never be started.
+59        -->
+60        <service
+60-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:24:9-184
+61            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+61-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:24:18-63
+62            android:exported="true"
+62-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:24:64-87
+63            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+63-->[com.google.android.gms:play-services-auth:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\1a29b18d7d75b413edd33c266c39d2d7\transformed\jetified-play-services-auth-11.0.4\AndroidManifest.xml:24:88-182
+64
+65        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
+65-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:5:9-99
+65-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:5:19-97
+66
+67        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
+67-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:6:9-103
+67-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:6:18-101
+68        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
+68-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:7:9-92
+68-->[com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\ea062c2d372115e85f07784d2b1b0d15\transformed\jetified-play-services-cast-framework-11.0.4\AndroidManifest.xml:7:18-90
+69
+70        <activity
+70-->[com.google.android.gms:play-services-base:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\45c71a76372fc1eda4ae913cf73d267d\transformed\jetified-play-services-base-11.0.4\AndroidManifest.xml:19:9-172
+71            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+71-->[com.google.android.gms:play-services-base:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\45c71a76372fc1eda4ae913cf73d267d\transformed\jetified-play-services-base-11.0.4\AndroidManifest.xml:19:19-85
+72            android:exported="false"
+72-->[com.google.android.gms:play-services-base:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\45c71a76372fc1eda4ae913cf73d267d\transformed\jetified-play-services-base-11.0.4\AndroidManifest.xml:19:146-170
+73            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+73-->[com.google.android.gms:play-services-base:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\45c71a76372fc1eda4ae913cf73d267d\transformed\jetified-play-services-base-11.0.4\AndroidManifest.xml:19:86-145
+74        <!--
+75 FirebaseMessagingService performs security checks at runtime,
+76             no need for explicit permissions despite exported="true"
+77        -->
+78        <service
+78-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:23:9-27:19
+79            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+79-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:23:18-87
+80            android:exported="true" >
+80-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:23:88-111
+81            <intent-filter android:priority="-500" >
+81-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:24:13-26:29
+81-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:24:28-51
+82                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+82-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:25:17-77
+82-->[com.google.firebase:firebase-messaging:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\a52c669900ef08ac2aa838c229f8f406\transformed\jetified-firebase-messaging-11.0.4\AndroidManifest.xml:25:25-75
+83            </intent-filter>
+84        </service>
+85        <service
+85-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:24:9-134
+86            android:name="com.google.android.gms.tagmanager.TagManagerService"
+86-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:24:18-84
+87            android:enabled="true"
+87-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:24:110-132
+88            android:exported="false" />
+88-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:24:85-109
+89
+90        <activity
+90-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:25:9-32:20
+91            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
+91-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:25:19-93
+92            android:exported="true"
+92-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:25:94-117
+93            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
+93-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:25:118-142
+94            <intent-filter>
+94-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:26:13-31:29
+95                <data android:scheme="tagmanager.c.com.google.maps.android.test" />
+95-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:27:17-71
+95-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:27:23-69
+96
+97                <action android:name="android.intent.action.VIEW" />
+97-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:28:17-68
+97-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:28:25-66
+98
+99                <category android:name="android.intent.category.DEFAULT" />
+99-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:23:17-75
+99-->[com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\358d566195e9d253276e89224f1633cf\transformed\jetified-play-services-appinvite-11.0.4\AndroidManifest.xml:23:27-73
+100                <category android:name="android.intent.category.BROWSABLE" />
+100-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:30:17-77
+100-->[com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\11288453654703f2a1aae83856ef79aa\transformed\jetified-play-services-tagmanager-api-11.0.4\AndroidManifest.xml:30:27-75
+101            </intent-filter>
+102        </activity>
+103
+104        <receiver
+104-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:25:7-26:18
+105            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+105-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:25:17-89
+106            android:enabled="true"
+106-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:25:90-112
+107            android:exported="false" >
+107-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:25:113-137
+108        </receiver>
+109        <receiver
+109-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:27:7-31:18
+110            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+110-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:27:17-104
+111            android:enabled="true"
+111-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:27:162-184
+112            android:exported="true"
+112-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:27:185-208
+113            android:permission="android.permission.INSTALL_PACKAGES" >
+113-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:27:105-161
+114            <intent-filter>
+114-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:28:11-30:27
+115                <action android:name="com.android.vending.INSTALL_REFERRER" />
+115-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:29:15-76
+115-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:29:23-74
+116            </intent-filter>
+117        </receiver>
+118
+119        <service
+119-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:32:7-137
+120            android:name="com.google.android.gms.measurement.AppMeasurementService"
+120-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:32:16-87
+121            android:enabled="true"
+121-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:32:88-110
+122            android:exported="false" />
+122-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:32:111-135
+123        <service
+123-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:33:7-197
+124            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+124-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:33:16-90
+125            android:enabled="true"
+125-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:33:148-170
+126            android:exported="false"
+126-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:33:171-195
+127            android:permission="android.permission.BIND_JOB_SERVICE" />
+127-->[com.google.firebase:firebase-analytics:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\c3f49a23a09a2050c93b6e9976b0718d\transformed\jetified-firebase-analytics-11.0.4\AndroidManifest.xml:33:91-147
+128
+129        <receiver
+129-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:30:9-35:20
+130            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+130-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:30:19-84
+131            android:exported="true"
+131-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:30:85-108
+132            android:permission="com.google.android.c2dm.permission.SEND" >
+132-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:30:109-169
+133            <intent-filter>
+133-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:31:13-34:29
+134                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+134-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:32:17-80
+134-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:32:25-78
+135
+136                <category android:name="com.google.maps.android.test" />
+136-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:33:17-60
+136-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:33:27-58
+137            </intent-filter>
+138        </receiver>
+139        <!--
+140 Internal (not exported) receiver used by the app to start its own exported services
+141             without risk of being spoofed.
+142        -->
+143        <receiver
+143-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:39:9-119
+144            android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+144-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:39:19-92
+145            android:exported="false" />
+145-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:39:93-117
+146        <!--
+147 FirebaseInstanceIdService performs security checks at runtime,
+148             no need for explicit permissions despite exported="true"
+149        -->
+150        <service
+150-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:43:9-47:19
+151            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+151-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:43:18-82
+152            android:exported="true" >
+152-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:43:83-106
+153            <intent-filter android:priority="-500" >
+153-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:44:13-46:29
+153-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:44:28-51
+154                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+154-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:45:17-79
+154-->[com.google.firebase:firebase-iid:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\8e586bb1de12dec00290461230eba8c3\transformed\jetified-firebase-iid-11.0.4\AndroidManifest.xml:45:25-77
+155            </intent-filter>
+156        </service>
+157
+158        <provider
+158-->[com.google.firebase:firebase-common:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\71530020ee098bc41678fcb6313263c2\transformed\jetified-firebase-common-11.0.4\AndroidManifest.xml:6:9-194
+159            android:name="com.google.firebase.provider.FirebaseInitProvider"
+159-->[com.google.firebase:firebase-common:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\71530020ee098bc41678fcb6313263c2\transformed\jetified-firebase-common-11.0.4\AndroidManifest.xml:6:79-143
+160            android:authorities="com.google.maps.android.test.firebaseinitprovider"
+160-->[com.google.firebase:firebase-common:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\71530020ee098bc41678fcb6313263c2\transformed\jetified-firebase-common-11.0.4\AndroidManifest.xml:6:19-78
+161            android:exported="false"
+161-->[com.google.firebase:firebase-common:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\71530020ee098bc41678fcb6313263c2\transformed\jetified-firebase-common-11.0.4\AndroidManifest.xml:6:144-168
+162            android:initOrder="100" />
+162-->[com.google.firebase:firebase-common:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\71530020ee098bc41678fcb6313263c2\transformed\jetified-firebase-common-11.0.4\AndroidManifest.xml:6:169-192
+163
+164        <meta-data
+164-->[com.google.android.gms:play-services-basement:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\5333aec7d19dcea57f360a2dc6f530f7\transformed\jetified-play-services-basement-11.0.4\AndroidManifest.xml:20:9-121
+165            android:name="com.google.android.gms.version"
+165-->[com.google.android.gms:play-services-basement:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\5333aec7d19dcea57f360a2dc6f530f7\transformed\jetified-play-services-basement-11.0.4\AndroidManifest.xml:20:20-65
+166            android:value="@integer/google_play_services_version" />
+166-->[com.google.android.gms:play-services-basement:11.0.4] C:\Users\yerzhant\Documents\studio_workspace\Abay\caches\8.9\transforms\5333aec7d19dcea57f360a2dc6f530f7\transformed\jetified-play-services-basement-11.0.4\AndroidManifest.xml:20:66-119
+167    </application>
+168
+169</manifest>

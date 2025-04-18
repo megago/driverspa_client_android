@@ -1,7 +1,7 @@
 package com.driverspa.client.activity;
 
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,7 +51,7 @@ public class ClientPriceDetailActivity extends ClientBaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-    	ButterKnife.inject(this);
+    	ButterKnife.bind(this);
     	
         washer = JsonUtil.deserializeToWasher(getIntent().getStringExtra(WASHER_DATA));
         TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);

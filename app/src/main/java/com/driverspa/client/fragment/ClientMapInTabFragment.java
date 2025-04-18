@@ -1,5 +1,7 @@
 package com.driverspa.client.fragment;
 
+import static androidx.core.content.ContextCompat.checkSelfPermission;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -13,11 +15,10 @@ import android.graphics.Rect;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.util.LruCache;
-import android.support.v7.app.AlertDialog;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.collection.LruCache;
+import androidx.core.app.ActivityCompat;
+
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
@@ -297,7 +298,7 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 	public boolean checkLocationPermission() {
-		if (ContextCompat.checkSelfPermission(getActivity(),
+		if (checkSelfPermission(getActivity(),
 				Manifest.permission.ACCESS_FINE_LOCATION)
 				!= PackageManager.PERMISSION_GRANTED) {
 
@@ -321,7 +322,7 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 					// permission was granted, yay! Do the
 					// location-related task you need to do.
-					if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
+					if (checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
 							== PackageManager.PERMISSION_GRANTED) {
 
 						if(gps == null)
@@ -339,7 +340,17 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 								public void onMapReady(GoogleMap googleMap) {
 									mMap = googleMap;
 									setUpMap();
-									mMap.setMyLocationEnabled(true);
+                                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                                        // TODO: Consider calling
+                                        //    ActivityCompat#requestPermissions
+                                        // here to request the missing permissions, and then overriding
+                                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                        //                                          int[] grantResults)
+                                        // to handle the case where the user grants the permission. See the documentation
+                                        // for ActivityCompat#requestPermissions for more details.
+                                        return;
+                                    }
+                                    mMap.setMyLocationEnabled(true);
 								}
 							});
 						}
@@ -393,7 +404,7 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 		if(progress!=null)
 		   progress.setVisibility(View.GONE);
 
-		if (ContextCompat.checkSelfPermission(getActivity(),
+		if (checkSelfPermission(getActivity(),
 				Manifest.permission.ACCESS_FINE_LOCATION)
 				== PackageManager.PERMISSION_GRANTED) {
 			mMap = null;
@@ -407,7 +418,7 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	@Override
 	public void onResume() {
 		super.onResume();
-		if (ContextCompat.checkSelfPermission(getActivity(),
+		if (checkSelfPermission(getActivity(),
 				Manifest.permission.ACCESS_FINE_LOCATION)
 				== PackageManager.PERMISSION_GRANTED) {
 
@@ -427,7 +438,17 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 					public void onMapReady(GoogleMap googleMap) {
 						mMap = googleMap;
 						setUpMap();
-						mMap.setMyLocationEnabled(true);
+                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            // TODO: Consider calling
+                            //    ActivityCompat#requestPermissions
+                            // here to request the missing permissions, and then overriding
+                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                            //                                          int[] grantResults)
+                            // to handle the case where the user grants the permission. See the documentation
+                            // for ActivityCompat#requestPermissions for more details.
+                            return;
+                        }
+                        mMap.setMyLocationEnabled(true);
 					}
 				});
 			}

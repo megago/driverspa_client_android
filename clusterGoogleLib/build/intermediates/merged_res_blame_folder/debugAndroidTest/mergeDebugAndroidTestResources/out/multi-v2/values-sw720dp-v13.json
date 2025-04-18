@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-19:/values-sw720dp-v13/values-sw720dp-v13.xml",
+            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-23:/values-sw720dp-v13/values-sw720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/e8b67b129c61c78a8698922a5e63d8e5/transformed/mediarouter-v7-25.2.0/res/values-sw720dp-v13/values-sw720dp-v13.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\Abay\\caches\\8.9\\transforms\\f6638bff53c01e66fcfe9ee29ca12fcc\\transformed\\mediarouter-1.0.0-alpha5\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

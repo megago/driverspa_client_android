@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class RobotoLight extends TextView {
+public class RobotoLight extends androidx.appcompat.widget.AppCompatTextView {
 
 	public RobotoLight(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);

@@ -16,16 +16,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.SearchView;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-//import android.support.v4.view.MenuItemCompat;
-//import android.support.v4.view.ViewPager;
-//import android.support.v4.widget.DrawerLayout;
-//import android.support.v7.widget.SearchView;
-//import android.widget.Toolbar;
-
+import androidx.viewpager.widget.ViewPager;
 
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -290,7 +285,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         Mint.initAndStartSession(this.getApplication(), "b054ddc0");
         Mint.setUserIdentifier(UserPreferences.getUserPhone(this));
         setContentView(R.layout.activity_client_home);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         gps = new GPSTracker(ClientHomeActivity.this);
@@ -301,8 +296,8 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
-        mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_drawer);
+        mNavigationDrawerFragment.setup(R.id.fragment_drawer, findViewById(R.id.drawer), mToolbar);
         titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
         titleView.setText(Functions.getCityDescription(localCity));
 
@@ -322,7 +317,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             }
         });
 
-        TabAdapter = new ClientTabPagerAdapter(getFragmentManager());
+        TabAdapter = new ClientTabPagerAdapter(getSupportFragmentManager());
         pagerTab.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -632,7 +627,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                     if(bookServiceClose.getVisibility() == View.GONE) {
                         serviceDialogFragment = ClientServiceDialogFragment.newInstance(washer, keysArray[0]);
                         serviceDialogFragment.setCancelable(false);
-                        serviceDialogFragment.show(getFragmentManager().beginTransaction(), "DialogFragment");
+                        serviceDialogFragment.show(getSupportFragmentManager().beginTransaction(), "DialogFragment");
                     }
                 }
             });
@@ -643,7 +638,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                     if(bookTimeClose.getVisibility() == View.GONE) {
                         timetableDialogFragment = ClientTimetableDialogFragment.newInstance(washer);
                         timetableDialogFragment.setCancelable(false);
-                        timetableDialogFragment.show(getFragmentManager().beginTransaction(), "DialogFragment");
+                        timetableDialogFragment.show(getSupportFragmentManager().beginTransaction(), "DialogFragment");
                     }
                 }
             });
@@ -1372,7 +1367,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     public void onFilterClicked() {
          filterDialogFragment = new ClientFilterFragment();
          filterDialogFragment.setCancelable(false);
-         filterDialogFragment.show(getFragmentManager().beginTransaction(),"DialogFragment");
+         filterDialogFragment.show(getSupportFragmentManager().beginTransaction(),"DialogFragment");
     }
 
     public void onMapFilterClicked() {

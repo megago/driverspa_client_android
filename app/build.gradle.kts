@@ -8,6 +8,11 @@ android {
     namespace = "com.driverspa"
     compileSdk = 34
 
+    // Correct way to enable ViewBinding in Kotlin DSL
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.driverspa"
         minSdk = 24
@@ -27,16 +32,25 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        // Switching to Java 8 compatibility
+        sourceCompatibility = JavaVersion.VERSION_1_9
+        targetCompatibility = JavaVersion.VERSION_1_9
     }
+
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    // Use addAll to avoid ambiguity in operator overloading
+    options.compilerArgs.addAll(listOf("--add-exports", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED"))
 }
 
 dependencies {
@@ -50,15 +64,15 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.gson)
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation (libs.pretty)
-    implementation (libs.viewpager)
-    implementation (libs.ripplebackground)
-    implementation (libs.drawerlayout)
+    implementation(libs.pretty)
+    implementation(libs.viewpager)
+    implementation(libs.ripplebackground)
+    implementation(libs.drawerlayout)
 
-    implementation ( project(":photoView"))
-    implementation (project(":ProgressWheel"))
-    implementation (project(":pullToRefresh_lib"))
-    implementation (project(":clusterGoogleLib"))
+    implementation(project(":photoView"))
+    implementation(project(":ProgressWheel"))
+    implementation(project(":pullToRefresh_lib"))
+    implementation(project(":clusterGoogleLib"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -69,6 +83,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("com.google.android.material:material:1.12.0")
-    implementation("com.google.firebase:firebase-messaging:23.0.0")
-}
+    implementation("com.google.android.gms:play-services-maps:18.0.0")
 
+    // If you still want to use ButterKnife, you can keep these lines
+    implementation("com.jakewharton:butterknife:10.2.3")
+    annotationProcessor("com.jakewharton:butterknife-compiler:10.2.3")
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+}

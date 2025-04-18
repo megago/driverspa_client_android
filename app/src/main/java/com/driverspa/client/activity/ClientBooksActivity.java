@@ -30,7 +30,7 @@ public class ClientBooksActivity extends BaseActivity implements ClientBooksFrag
         setTitle("");        
 
         if( savedInstanceState == null ) {
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientBooksFragment()).commitAllowingStateLoss();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientBooksFragment()).commitAllowingStateLoss();
 		}        
 	  }
 	  

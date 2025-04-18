@@ -1,8 +1,9 @@
 package com.driverspa.client.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,7 +27,8 @@ public class ClientWasherReviewActivity extends BaseActivity  implements ClientW
     	
 	Washer washer;
 	ClientWasherReviewFragment fragment;
-	@Override
+	@SuppressLint("SuspiciousIndentation")
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Mint.initAndStartSession(this.getApplication(), "b054ddc0");
@@ -41,7 +43,7 @@ public class ClientWasherReviewActivity extends BaseActivity  implements ClientW
 		if( savedInstanceState == null ) {
 			String washerStr = getIntent().getStringExtra(ClientWasherReviewFragment.WASHER_DATA);
 			washer = JsonUtil.deserializeToWasher(washerStr);
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, ClientWasherReviewFragment.newInstance(washer)).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, ClientWasherReviewFragment.newInstance(washer)).commit();
 		 }        
 	   }
 

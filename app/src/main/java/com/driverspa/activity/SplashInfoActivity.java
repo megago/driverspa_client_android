@@ -2,10 +2,11 @@ package com.driverspa.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.splunk.mint.Mint;
 
@@ -46,9 +47,9 @@ public class SplashInfoActivity extends BaseActivity implements SplashInfoFragme
 		Mint.initAndStartSession(this.getApplication(), "b054ddc0");
 		setContentView(R.layout.activity_splash_info);
 		BA.getEventBus().register(this);
-		ButterKnife.inject(this);
+		ButterKnife.bind(this);
 
-		viewPagerAdapter = new SplashInfoPagerAdapter(getFragmentManager());
+		viewPagerAdapter = new SplashInfoPagerAdapter(getSupportFragmentManager());
 		viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 			@Override
 			public void onPageSelected(int position) {

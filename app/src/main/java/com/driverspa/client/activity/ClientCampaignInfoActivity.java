@@ -1,8 +1,9 @@
 package com.driverspa.client.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -27,7 +28,8 @@ import static com.driverspa.util.Constants.WASHER_DATA_TO_BOOK;
 public class ClientCampaignInfoActivity extends BaseActivity implements CampaignInfoFragment.ActivityActions {
 
 	CampaignInfoFragment fragment;
-	  @Override
+	  @SuppressLint("SuspiciousIndentation")
+      @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		  Mint.initAndStartSession(this.getApplication(), "b054ddc0");
@@ -43,7 +45,7 @@ public class ClientCampaignInfoActivity extends BaseActivity implements Campaign
 			String washerId = getIntent().getStringExtra(EXTRA_WASHER_ID);
 			String washer = getIntent().getStringExtra(WASHER_DATA);
 			fragment = CampaignInfoFragment.newInstance(washerId, washer);
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 		}        
 	}
 

@@ -149,7 +149,7 @@ public class CarsGridAdapter extends BaseAdapter {
 		@InjectView(R.id.delete)
         ImageView delete;
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 

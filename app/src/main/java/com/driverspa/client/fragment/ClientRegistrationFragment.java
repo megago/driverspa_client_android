@@ -42,7 +42,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_client_registration, container, false);
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 //		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         try {
             MaskedWatcher maskedWatcher = new MaskedWatcher("### ###-##-##");

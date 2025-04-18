@@ -109,7 +109,7 @@ public class OfflineBoxesGridAdapter extends BaseAdapter {
 		View gridItem;			
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

@@ -2,7 +2,7 @@ package com.driverspa.client.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,7 +72,7 @@ public class ClientAddWasherReviewFragment extends ClientBaseFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 			Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 			TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
 			titleView.setText(washerName);

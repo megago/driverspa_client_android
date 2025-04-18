@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-19:/values-v23/values-v23.xml",
+            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-23:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/2a779a4f1bb26fe1554838bb4aeb2533/transformed/appcompat-v7-25.2.0/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\Abay\\caches\\8.9\\transforms\\50adb5ccf079165e1a22ee4c70ab576a\\transformed\\appcompat-1.0.0-rc01\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

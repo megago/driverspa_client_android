@@ -4,7 +4,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-mergeDebugAndroidTestResources-1:/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,10",
                         "startColumns": "4,4,4,4,4,4,4",

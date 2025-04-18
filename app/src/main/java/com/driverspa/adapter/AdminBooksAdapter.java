@@ -6,7 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +32,8 @@ import static com.driverspa.util.Constants.QUEUED_APPROVED;
 import static com.driverspa.util.Constants.QUEUED_FINISHED;
 import static com.driverspa.util.Constants.QUEUED_REJECTED;
 import static com.driverspa.util.Constants.bookStatus;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.BookInfoViewHolder>  {
@@ -189,19 +190,19 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 	public void add(BookInfo book, int position) {
 		position = position == -1 ? getItemCount() : position;
 		mData.add(position, book);
-		notifyItemInserted(position);
+//		notifyItemInserted(position);
 	}
 
 	public void remove(int position) {
 		if (position < getItemCount()) {
 			mData.remove(position);
-			notifyItemRemoved(position);
+//			notifyItemRemoved(position);
 		}
 	}
 
 	public void refreshData(List<BookInfo> data){
 		this.mData = data;
-		notifyDataSetChanged();
+//		notifyDataSetChanged();
 	}
 
 	public class BookInfoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
@@ -330,7 +331,7 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 
 		public BookInfoViewHolder(View view) {
 			super(view);
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 			parentView.setOnClickListener(this);
 			parentView.setOnLongClickListener(this);
 		}

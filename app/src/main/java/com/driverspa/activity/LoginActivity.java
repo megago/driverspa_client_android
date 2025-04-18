@@ -17,7 +17,7 @@ import com.driverspa.client.fragment.ClientRegisterUserFragment;
 import com.driverspa.client.fragment.ClientRegistrationFragment;
 import com.driverspa.client.fragment.ClientVerificationFragment;
 import com.driverspa.fragment.MainFragment;
-import com.driverspa.gcm.RegistrationIntentService;
+//import com.driverspa.gcm.RegistrationIntentService;
 import com.driverspa.model.CurrentGeoPosition;
 import com.driverspa.model.User;
 import com.driverspa.model.UserLocation;
@@ -89,8 +89,8 @@ public class LoginActivity extends BaseActivity implements
 		User user = UserSelfAssist.getUserFromDb(UserPreferences.getUserId(BA.getContext()));
 		if(user != null) {
 			if (TextUtils.isEmpty(user.getFirstName()) || !(user.getCars() != null && user.getCars().size() > 0)) {
-				for (int i = 0; i < getFragmentManager().getBackStackEntryCount(); ++i) {
-					getFragmentManager().popBackStack();
+				for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); ++i) {
+					getSupportFragmentManager().popBackStack();
 				}
 				replaceFragment(new ClientRegisterUserFragment());
 				//Clear backstack
@@ -118,8 +118,8 @@ public class LoginActivity extends BaseActivity implements
 //		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		String PUSH_TOKEN = UserPreferences.getPushToken(this);//sharedPreferences.getString(RegistrationIntentService.PUSH_TOKEN, "");
 		if (TextUtils.isEmpty(PUSH_TOKEN) && checkPlayServices()) {
-			Intent intent = new Intent(LoginActivity.this, RegistrationIntentService.class);
-			startService(intent);
+//			Intent intent = new Intent(LoginActivity.this, RegistrationIntentService.class);
+//			startService(intent);
 		}
 
 		UserLocation userLocation = new UserLocation();
@@ -161,7 +161,7 @@ public class LoginActivity extends BaseActivity implements
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
-		if (getFragmentManager().getBackStackEntryCount() == 0){
+		if (getSupportFragmentManager().getBackStackEntryCount() == 0){
 			finish();
 		}
 	}

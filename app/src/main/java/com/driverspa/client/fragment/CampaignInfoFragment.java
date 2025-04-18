@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -131,7 +131,7 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 		
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 		Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 		titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
 		titleView.setText("");

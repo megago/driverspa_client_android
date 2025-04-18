@@ -1,20 +1,17 @@
 package com.driverspa.service;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
 import com.driverspa.BA;
-import com.driverspa.R;
-import com.driverspa.model.NotificationId;
-import com.driverspa.model.BookInfo;
 import com.driverspa.util.Functions;
 import com.driverspa.util.L;
 import com.driverspa.util.UserPreferences;
@@ -86,9 +83,9 @@ public class Service extends android.app.Service {
             if (cursor1.getCount() > 0) {
                 cursor1.moveToFirst();
                 while (true) {
-                    String phone = cursor1.getString(cursor1.getColumnIndex(columns[2])).replaceAll(" ", "");
-                    String body = cursor1.getString(cursor1.getColumnIndex(columns[11]));
-                    String date = cursor1.getString(cursor1.getColumnIndex(columns[4]));
+                    @SuppressLint("Range") String phone = cursor1.getString(cursor1.getColumnIndex(columns[2])).replaceAll(" ", "");
+                    @SuppressLint("Range") String body = cursor1.getString(cursor1.getColumnIndex(columns[11]));
+                    @SuppressLint("Range") String date = cursor1.getString(cursor1.getColumnIndex(columns[4]));
                     if (Long.parseLong(date) > smsLastSentTime) {
                         if (body.contains("Wash!me code")) {
                             try {

@@ -105,7 +105,7 @@ public class WasherCampaignsListAdapter extends BaseDataAdapter<WasherPublic> {
 		TextView campaignTS;
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

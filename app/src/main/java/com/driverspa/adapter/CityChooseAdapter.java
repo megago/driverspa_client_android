@@ -50,7 +50,7 @@ public class CityChooseAdapter extends BaseDataAdapter<Reference.City> {
 		View checkBox;
 						
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 

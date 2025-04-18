@@ -167,7 +167,7 @@ public class AdminWasherTimeTableAdapter extends BaseAdapter {
 
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

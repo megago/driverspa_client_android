@@ -1,4 +1,4 @@
-#Wed Jan 08 12:53:02 ALMT 2025
-base.0=/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/dex/debugAndroidTest/mergeDexDebugAndroidTest/classes.dex
+#Fri Apr 18 17:47:59 QYZT 2025
+base.0=C\:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

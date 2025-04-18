@@ -3,8 +3,8 @@ package com.driverspa.client.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.FragmentManager;
-import android.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -60,7 +60,7 @@ public class ClientWasherInfoActivity extends BaseActivity implements ActivityAc
 		  setSupportActionBar(mToolbar);
 		  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		  getSupportActionBar().setDisplayShowTitleEnabled(false);
-		  fragmentManager = getFragmentManager();
+		  fragmentManager = getSupportFragmentManager();
          if (arg0 == null) {
 			fragment = new ClientWasherInfoFragment();
         	fragmentManager.beginTransaction().add(R.id.fragment_container, fragment).commitAllowingStateLoss();

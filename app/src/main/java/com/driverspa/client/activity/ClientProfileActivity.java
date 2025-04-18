@@ -4,9 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import com.splunk.mint.Mint;
 import com.driverspa.R;
@@ -22,7 +20,8 @@ public class ClientProfileActivity extends BaseActivity implements ClientProfile
 	@Override
 	public void onRequestPermissionsResult(int requestCode,
 										   String permissions[], int[] grantResults) {
-		switch (requestCode) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
 			case STORAGE_PERMISSION: {
 
 				// If request is cancelled, the result arrays are empty.
@@ -59,18 +58,18 @@ public class ClientProfileActivity extends BaseActivity implements ClientProfile
 	    getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         if( savedInstanceState == null ) {
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientProfileFragment()).commitAllowingStateLoss();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientProfileFragment()).commitAllowingStateLoss();
 		}
 
 		if(!checkIfAlreadyhavePermission()) {
-			ActivityCompat.requestPermissions(ClientProfileActivity.this,
+			requestPermissions(
 					new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
 					STORAGE_PERMISSION);
 		}
 	  }
 
 	private boolean checkIfAlreadyhavePermission() {
-		int result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+		int result = checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
 		if (result == PackageManager.PERMISSION_GRANTED) {
 			return true;
 		} else {

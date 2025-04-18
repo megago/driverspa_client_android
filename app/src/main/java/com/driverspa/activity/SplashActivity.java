@@ -58,7 +58,7 @@ public class SplashActivity extends BaseActivity implements AnimationListener{
 		super.onCreate(arg0);
 		Mint.initAndStartSession(this.getApplication(), "b054ddc0");
 		setContentView(R.layout.activity_splash);
-		ButterKnife.inject(this);
+		ButterKnife.bind(this);
 
 		animCircle1 = AnimationUtils.loadAnimation(this,R.anim.circle1_anim);
 		animCircle2 = AnimationUtils.loadAnimation(this,R.anim.circle2_anim);

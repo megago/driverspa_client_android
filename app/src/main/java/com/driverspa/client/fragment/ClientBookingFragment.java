@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -185,7 +185,7 @@ public class ClientBookingFragment extends ClientBaseFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
         selectedCarType = CarType.Sedan;
         serviceBtn.setSelected(true);
@@ -709,7 +709,7 @@ public class ClientBookingFragment extends ClientBaseFragment {
     public void openCarDefinition() {
         carDefinitionDialogFragment = new ClientUserCarDefinitionFragment();
         carDefinitionDialogFragment.setCancelable(false);
-        carDefinitionDialogFragment.show(getActivity().getFragmentManager().beginTransaction(), "DialogFragment");
+        carDefinitionDialogFragment.show(getActivity().getSupportFragmentManager().beginTransaction(), "DialogFragment");
     }
 
     @Subscribe

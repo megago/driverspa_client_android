@@ -2,11 +2,12 @@ package com.driverspa.client.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +48,7 @@ public class ClientBooksAndNotificationsFragment extends ClientBaseHomeFragment 
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
         titleView = (TextView) toolbar.findViewById(R.id.action_bar_title);
 

@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -93,7 +93,7 @@ public class ClientNotificationFragment extends ClientBaseHomeFragment {
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 
 		loginText.setPaintFlags(loginText.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 		toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);

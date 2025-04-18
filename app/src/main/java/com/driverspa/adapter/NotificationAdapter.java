@@ -55,7 +55,7 @@ public class NotificationAdapter extends BaseDataAdapter<Notification> {
 		TextView date;
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

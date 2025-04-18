@@ -150,7 +150,7 @@ public class WasherListAdapter extends BaseDataAdapter<WasherPublic> {
 		View priceLayout;
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

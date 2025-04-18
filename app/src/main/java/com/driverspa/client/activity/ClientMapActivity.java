@@ -7,10 +7,10 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
-import android.app.FragmentManager;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.SearchView;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.FragmentManager;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import com.google.android.gms.maps.GoogleMap;
 import com.splunk.mint.Mint;
@@ -77,7 +78,7 @@ public class ClientMapActivity extends BaseActivity implements ClientMapFragment
 				onActionBarTitleClicked();
 			}
 		});
-		fragmentManager = getFragmentManager();
+		fragmentManager = getSupportFragmentManager();
                 
         if( arg0 == null ) {
         	fragmentManager.beginTransaction().add(R.id.fragment_container,new ClientMapFragment()).commitAllowingStateLoss();
@@ -228,7 +229,7 @@ public class ClientMapActivity extends BaseActivity implements ClientMapFragment
 	public void onActionBarTitleClicked() {
 		filterDialogFragment = new ClientFilterFragment();
 		filterDialogFragment.setCancelable(false);
-		filterDialogFragment.show(getFragmentManager().beginTransaction(),"DialogFragment");
+		filterDialogFragment.show(getSupportFragmentManager().beginTransaction(),"DialogFragment");
 	}
 
 	@Override

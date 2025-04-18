@@ -3,12 +3,12 @@ apply plugin: 'com.android.library'
 
 android {
     namespace = "com.google.maps.android"
-    compileSdkVersion 26
+    compileSdkVersion 34
     buildToolsVersion '26.0.0'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion 23
+        targetSdkVersion 34
     }
 
     buildTypes {

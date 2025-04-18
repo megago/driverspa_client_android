@@ -3,10 +3,10 @@ package com.driverspa.activity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.FragmentManager;
-import android.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.Fragment;
 
 import android.view.View;
 import android.view.animation.Animation;
@@ -17,7 +17,7 @@ import com.driverspa.R;
 import com.driverspa.listener.OnActionbarTitleChange;
 
 @SuppressLint("NewApi")
-public class BaseActivity extends Activity implements OnActionbarTitleChange {
+public class BaseActivity extends AppCompatActivity implements OnActionbarTitleChange {
 
 	private final String TAG = "YERZHAN";
 	public static final String OPENING_ANIMATION = "OPENING_ANIMATION";
@@ -96,7 +96,7 @@ public class BaseActivity extends Activity implements OnActionbarTitleChange {
 	}
 
 	public void addFragmentContent(int resource,Fragment fragment){
-		FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		fragmentTransaction.addToBackStack(null);
 		fragmentTransaction.add(resource, fragment);
 		fragmentTransaction.commit();
@@ -104,7 +104,7 @@ public class BaseActivity extends Activity implements OnActionbarTitleChange {
 
 	public void replaceFragment(Fragment fragment){
 		String backStateName = fragment.getClass().getName();
-		FragmentManager manager = getFragmentManager();
+		FragmentManager manager = getSupportFragmentManager();
 		boolean fragmentPopped = manager.popBackStackImmediate (backStateName, 0);
 		if (!fragmentPopped){ //fragment not in back stack, create it.
 			FragmentTransaction ft = manager.beginTransaction();

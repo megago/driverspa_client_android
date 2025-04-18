@@ -1,9 +1,10 @@
 package com.driverspa.client.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -30,7 +31,8 @@ import static com.driverspa.util.Constants.WASHER_NAME;
 public class ClientBookingsActivity extends BaseActivity implements ActivityActions {
 
 	ClientBookingInfoFragment fragment;
-	  @Override
+	  @SuppressLint("SuspiciousIndentation")
+      @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		  Mint.initAndStartSession(this.getApplication(), "b054ddc0");
@@ -46,7 +48,7 @@ public class ClientBookingsActivity extends BaseActivity implements ActivityActi
 			String bookId = getIntent().getStringExtra(EXTRA_BOOKING_ID);
 			String bookInfoType = getIntent().getStringExtra(BOOKING_INFO_TYPE);
 			fragment = ClientBookingInfoFragment.newInstance(bookId, bookInfoType);
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 		}        
 	}
 

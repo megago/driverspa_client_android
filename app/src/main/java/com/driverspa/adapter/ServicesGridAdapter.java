@@ -95,7 +95,7 @@ public class ServicesGridAdapter extends BaseAdapter {
 		View gridItem;			
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

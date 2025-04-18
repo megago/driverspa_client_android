@@ -2,7 +2,7 @@ package com.driverspa.client.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -28,7 +28,7 @@ public class ClientAddWasherReviewActivity extends BaseActivity implements Clien
 		getSupportActionBar().setDisplayShowTitleEnabled(false);
         
         if( savedInstanceState == null ) {
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientAddWasherReviewFragment()).commitAllowingStateLoss();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientAddWasherReviewFragment()).commitAllowingStateLoss();
 		 }        
 	  }
 	  	  	  
@@ -62,6 +62,7 @@ public class ClientAddWasherReviewActivity extends BaseActivity implements Clien
 	
 	@Override
 	public void onBackPressed() {
+		super.onBackPressed();
     	setResult(RESULT_CANCELED, new Intent());
 		finish();
 		overridePendingTransitionWithCommonCloseTransition();

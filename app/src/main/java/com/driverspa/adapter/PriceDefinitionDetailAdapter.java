@@ -68,7 +68,7 @@ public class PriceDefinitionDetailAdapter extends BaseDataAdapter<Prices> {
 		EditText timeItem;
 						
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

@@ -153,7 +153,7 @@ public class GroupServicesGridAdapter extends BaseAdapter {
 		View dotDetail;
 
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

@@ -1,17 +1,21 @@
 package com.driverspa.client.fragment;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+
 import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -289,7 +293,7 @@ public class ClientWasherInfoFragment extends ClientBaseFragment {
 
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 			gps = new GPSTracker(getActivity());
 			mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 			titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
@@ -349,7 +353,17 @@ public class ClientWasherInfoFragment extends ClientBaseFragment {
 	        ui.setZoomControlsEnabled(false);
 	        ui.setMyLocationButtonEnabled(false);
 	        ui.setAllGesturesEnabled(false);
-	        mMap.setMyLocationEnabled(false);
+            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            mMap.setMyLocationEnabled(false);
 	        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 	            public void onMapClick(LatLng latLng) {
 	              activityActions.showMapMarker(washer);
@@ -1489,8 +1503,4 @@ public class ClientWasherInfoFragment extends ClientBaseFragment {
 		if(event!=null && event.getWantedWashers() != null)
 			wantedWashers = event.getWantedWashers();
 	}
-
-
-
-
 }

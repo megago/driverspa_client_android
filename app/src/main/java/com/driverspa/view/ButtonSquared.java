@@ -2,9 +2,9 @@ package com.driverspa.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.Button;
+import androidx.appcompat.widget.AppCompatButton;
 
-public class ButtonSquared extends Button {
+public class ButtonSquared extends AppCompatButton {
 
 	public ButtonSquared(Context context) {
 		super(context);

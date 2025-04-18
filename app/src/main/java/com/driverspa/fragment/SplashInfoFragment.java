@@ -52,7 +52,7 @@ public class SplashInfoFragment extends BaseFragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_splash_info_item, container, false);
-		ButterKnife.inject(this,view);
+		ButterKnife.bind(this,view);
 		switch (index){
 			case 0:
 				parentView.setVisibility(View.VISIBLE);

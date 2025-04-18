@@ -1,6 +1,6 @@
 package com.driverspa.listener;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 public interface OnSideFragmentSelected {
 

@@ -4,7 +4,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-debugAndroidTest-3:/values-v11_values-v11.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,7 +20,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-debugAndroidTest-3:/values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,7 +35,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-debugAndroidTest-3:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,10",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -51,7 +51,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-debugAndroidTest-3:/values-v14_values-v14.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values-v14/values-v14.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

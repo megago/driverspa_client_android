@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -104,7 +104,7 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 	
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {	       
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
 		if(gps == null){
 			gps = new GPSTracker(getActivity());

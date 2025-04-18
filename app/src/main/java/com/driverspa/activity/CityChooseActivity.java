@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +33,9 @@ import com.driverspa.util.otto.CityChangeEvent;
 import com.driverspa.util.otto.LocationRequestEndEvent;
 import com.driverspa.util.otto.TurnOnGPSRequestEvent;
 import android.widget.AdapterView.OnItemClickListener;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.splunk.mint.Mint;
 
@@ -66,7 +68,7 @@ public class CityChooseActivity extends BaseActivity {
         Mint.initAndStartSession(this.getApplication(), "b054ddc0");
         setContentView(R.layout.activity_city_choose);
         context = this;
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         gps = new GPSTracker(this);
         headerView = getLayoutInflater().inflate(R.layout.header_city_choose,null, false);
         myLocationCheckbox = headerView.findViewById(R.id.myLocationCheckbox);
@@ -92,6 +94,7 @@ public class CityChooseActivity extends BaseActivity {
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
         titleView.setText("Выберите город");
+
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

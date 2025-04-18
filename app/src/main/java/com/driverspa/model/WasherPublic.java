@@ -1,6 +1,7 @@
 package com.driverspa.model;
 
 import com.google.android.gms.maps.model.LatLng;
+
 import com.google.gson.Gson;
 import com.google.maps.android.clustering.ClusterItem;
 

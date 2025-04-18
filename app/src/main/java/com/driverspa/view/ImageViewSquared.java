@@ -8,7 +8,7 @@ import android.widget.ImageView;
  *  An image view which always remains square with respect to its width.
  *	@author - Square Inc.
  */
-public class ImageViewSquared extends ImageView {
+public class ImageViewSquared extends androidx.appcompat.widget.AppCompatImageView {
 	
 	public ImageViewSquared(Context context) {
 		super(context);

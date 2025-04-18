@@ -88,7 +88,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 		}
 
 	@Subscribe
@@ -195,7 +195,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 	public void openCarDefinition() {
 		carDefinitionDialogFragment = new ClientUserCarDefinitionFragment();
 		carDefinitionDialogFragment.setCancelable(false);
-		carDefinitionDialogFragment.show(getActivity().getFragmentManager().beginTransaction(), "DialogFragment");
+		carDefinitionDialogFragment.show(getActivity().getSupportFragmentManager().beginTransaction(), "DialogFragment");
 	}
 
 	@Subscribe

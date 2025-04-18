@@ -3,7 +3,6 @@ package com.driverspa.client.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -25,6 +24,8 @@ import static com.driverspa.util.Constants.WASHER_DATA_TO_BOOK;
 import static com.driverspa.util.Constants.WASHER_ID;
 import static com.driverspa.util.Constants.WASHER_NAME;
 
+import androidx.appcompat.widget.Toolbar;
+
 public class ClientActiveBookingInfoActivity extends BaseActivity implements ClientActiveBookingInfoFragment.ActivityActions {
 
 	ClientActiveBookingInfoFragment fragment;
@@ -45,7 +46,7 @@ public class ClientActiveBookingInfoActivity extends BaseActivity implements Cli
 			String bookId = getIntent().getStringExtra(EXTRA_BOOKING_ID);
 			String bookInfoType = getIntent().getStringExtra(BOOKING_INFO_TYPE);
 			fragment = ClientActiveBookingInfoFragment.newInstance(bookId, bookInfoType);
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 		}        
 	}
 
@@ -107,5 +108,7 @@ public class ClientActiveBookingInfoActivity extends BaseActivity implements Cli
 
 	@Override
 	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransitionWithCommonCloseTransition();
 	}
 }

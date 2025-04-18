@@ -2,7 +2,7 @@ package com.driverspa.client.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.splunk.mint.Mint;
@@ -44,7 +44,7 @@ public class ClientBookingTimeTableActivity extends BaseActivity implements Acti
 			int requestCode =  getIntent().getIntExtra(REQUEST_CODE,0);
 			Washer washer = JsonUtil.deserializeToWasher(washerStr);
 			BookingRequest request = JsonUtil.deserializeToBookingRequest(requestStr);
-        	getFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingTimeTableFragment.newInstance(washer, request, requestCode)).commit();
+        	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingTimeTableFragment.newInstance(washer, request, requestCode)).commit();
 		}        
 	}
 	  

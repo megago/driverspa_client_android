@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -117,7 +117,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 			Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 			TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
             titleView.setText("Профиль");
@@ -420,7 +420,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 	public void openCarDefinition() {
 		carDefinitionDialogFragment = new ClientUserCarDefinitionFragment();
 		carDefinitionDialogFragment.setCancelable(false);
-		carDefinitionDialogFragment.show(getActivity().getFragmentManager().beginTransaction(), "DialogFragment");
+		carDefinitionDialogFragment.show(getActivity().getSupportFragmentManager().beginTransaction(), "DialogFragment");
 	}
 
 	@Subscribe

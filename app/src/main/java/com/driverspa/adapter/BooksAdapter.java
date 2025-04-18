@@ -325,7 +325,7 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
         }
 
         public ViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

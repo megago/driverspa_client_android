@@ -11,7 +11,7 @@ import android.widget.Spinner;
 /**
  * Spinner extension that calls onItemSelected even when the selection is the same as its previous value
  */
-public class NDSpinner extends Spinner {
+public class NDSpinner extends androidx.appcompat.widget.AppCompatSpinner {
 
     public NDSpinner(Context context) {
         super(context);

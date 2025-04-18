@@ -3,8 +3,8 @@
     package="com.google.maps.android.test" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="26" />
+        android:minSdkVersion="23"
+        android:targetSdkVersion="34" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -29,8 +29,9 @@
     <uses-permission android:name="com.google.maps.android.test.permission.C2D_MESSAGE" />
 
     <application
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:extractNativeLibs="true" >
+        android:extractNativeLibs="false" >
         <uses-library android:name="android.test.runner" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity

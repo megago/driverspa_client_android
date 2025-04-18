@@ -3,7 +3,7 @@ package com.driverspa.client.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -130,7 +130,7 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 	        selectedDay = TODAY;
 	        buttonToday.setSelected(true);
 

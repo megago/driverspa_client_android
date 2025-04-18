@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-19:/values-en-rSG/values-en-rSG.xml",
+            "outputFile": "com.google.maps.android.test.clusterGoogleLib-mergeDebugAndroidTestResources-23:/values-en-rSG/values-en-rSG.xml",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/Android/gradle-3.3/bin/caches/8.9/transforms/ee19fbe5f105e36b437b0833fcc7bb57/transformed/play-services-wallet-11.0.4/res/values-en-rSG/values.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\Abay\\caches\\8.9\\transforms\\99009629f5ba35b7ffe2541a2738c3e3\\transformed\\jetified-play-services-wallet-11.0.4\\res\\values-en-rSG\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

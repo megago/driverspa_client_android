@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.app.Fragment;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -15,6 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+
+import androidx.fragment.app.Fragment;
 
 import com.driverspa.listener.OnActionbarTitleChange;
 

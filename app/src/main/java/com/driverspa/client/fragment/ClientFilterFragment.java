@@ -2,7 +2,6 @@ package com.driverspa.client.fragment;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
@@ -18,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import androidx.fragment.app.DialogFragment;
+
 import com.squareup.otto.Subscribe;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -150,7 +152,7 @@ public class ClientFilterFragment extends DialogFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         initialCity = UserPreferences.getCity(BA.getContext());
         localCity = UserPreferences.getCity(BA.getContext());
         txtCity.setText(Functions.getCityDescription(localCity));

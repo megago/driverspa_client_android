@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +55,9 @@ import static com.driverspa.util.Constants.SLOT_TIME_INTERVAL;
 import static com.driverspa.util.Constants.TODAY;
 import static com.driverspa.util.Constants.TOMORROW;
 import static com.driverspa.util.Constants.WASHER_DATA_TO_BOOK;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 
 
 public class ClientTimetableDialogFragment extends DialogFragment {
@@ -119,7 +120,7 @@ public class ClientTimetableDialogFragment extends DialogFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         request = new BookingRequest();
 
         selectedDay = TODAY;

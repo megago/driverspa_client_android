@@ -39,7 +39,7 @@ import com.driverspa.util.UserPreferences;
 public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 
 	private static final String DATABASE_NAME = "com.driverspa.db";
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 1;
 	
 	private Dao<User, String> userDao = null;
 	private RuntimeExceptionDao<User, String> userRuntimeDao;

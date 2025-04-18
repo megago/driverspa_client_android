@@ -5,8 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -59,6 +57,9 @@ import com.driverspa.view.ExpandableGridView;
 
 import static com.driverspa.util.Constants.WASHER_DATA_TO_BOOK;
 import static com.driverspa.util.Constants.CAR_TYPE;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 
 
 public class ClientServiceDialogFragment extends DialogFragment {
@@ -168,7 +169,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         otherSymbols.setDecimalSeparator('.');
         otherSymbols.setGroupingSeparator(',');
         decimalFormatter = new DecimalFormat("#,###.##", otherSymbols);

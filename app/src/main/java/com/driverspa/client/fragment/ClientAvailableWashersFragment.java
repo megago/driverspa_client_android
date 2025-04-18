@@ -71,7 +71,7 @@ public class ClientAvailableWashersFragment extends ClientBaseHomeFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         listAdapter = new WasherListAdapter(getActivity());
         ListView listView = pullToRefreshView.getRefreshableView();
         listView.setHeaderDividersEnabled(false);

@@ -2,7 +2,7 @@ package com.driverspa.client.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.splunk.mint.Mint;
@@ -47,10 +47,10 @@ public class ClientBookingActivity extends BaseActivity implements ActivityActio
 			if(!fromMap) {
 				Washer washer = JsonUtil.deserializeToWasher(washerStr);
 				BookingRequest request = JsonUtil.deserializeToBookingRequest(requestStr);
-				getFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingFragment.newInstance(washer, request)).commit();
+				getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingFragment.newInstance(washer, request)).commit();
 			}
 			else{
-				getFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingFragment.newInstance(washerId)).commit();
+				getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, ClientBookingFragment.newInstance(washerId)).commit();
 			}
 		}        
 	  }

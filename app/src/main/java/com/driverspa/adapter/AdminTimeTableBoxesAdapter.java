@@ -71,7 +71,7 @@ public class AdminTimeTableBoxesAdapter extends BaseDataAdapter {
 		TextView boxNumber;
 				
 		public ViewHolder(View view) {
-			ButterKnife.inject(this, view);
+			ButterKnife.bind(this, view);
 		}
 	}
 }

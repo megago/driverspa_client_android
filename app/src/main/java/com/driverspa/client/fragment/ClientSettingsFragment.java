@@ -52,7 +52,7 @@ public class ClientSettingsFragment extends ClientBaseFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 
 //	 	   check.setChecked(UserPreferences.isUserNotificationEnabled(getActivity()));
 //

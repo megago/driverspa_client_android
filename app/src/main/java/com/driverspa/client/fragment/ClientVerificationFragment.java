@@ -64,7 +64,7 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_client_verification, container, false);
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 		txtPhoneNo.setText(Functions.maskPhoneNumber(phone, Converters.PHONE_PATTERN));
 		activationTime = System.currentTimeMillis();
 		UserPreferences.putRecoverySmsSentTime(getActivity(), (new Date()).getTime());

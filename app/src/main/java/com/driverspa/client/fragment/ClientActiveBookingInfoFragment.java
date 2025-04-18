@@ -11,7 +11,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -207,7 +207,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 			handler = new Handler();
 			remainingTimeLayout.setVisibility(View.GONE);
 			Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);

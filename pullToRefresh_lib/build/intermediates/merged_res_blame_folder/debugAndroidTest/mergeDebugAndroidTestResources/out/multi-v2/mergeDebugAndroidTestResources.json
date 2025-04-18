@@ -4,7 +4,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ru_values-ru.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ru/values-ru.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -19,7 +19,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pt_values-pt.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pt/values-pt.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -34,7 +34,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-it_values-it.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-it/values-it.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -49,7 +49,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ko_values-ko.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ko/values-ko.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -64,7 +64,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-de_values-de.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-de/values-de.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -79,7 +79,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-es_values-es.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-es/values-es.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -94,7 +94,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-fi_values-fi.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-fi/values-fi.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-fi\\values-fi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -109,7 +109,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ja_values-ja.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ja/values-ja.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -124,7 +124,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-he_values-he.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-he/values-he.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-he\\values-he.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -139,7 +139,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-nl_values-nl.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-nl/values-nl.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -154,7 +154,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pt-rBR_values-pt-rBR.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pt-rBR/values-pt-rBR.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -169,7 +169,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-fr_values-fr.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-fr/values-fr.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -184,7 +184,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-cs_values-cs.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-cs/values-cs.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-cs\\values-cs.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -199,7 +199,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-pl_values-pl.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-pl/values-pl.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-pl\\values-pl.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -214,7 +214,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ar_values-ar.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ar/values-ar.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-ar\\values-ar.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -229,7 +229,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-ro_values-ro.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-ro/values-ro.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -244,7 +244,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-iw_values-iw.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-iw/values-iw.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-iw\\values-iw.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -259,7 +259,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values-zh_values-zh.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values-zh/values-zh.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -274,7 +274,7 @@
             "outputFile": "com.handmark.pulltorefresh.library.test.pullToRefresh_lib-debugAndroidTest-3:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/pullToRefresh_lib/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\pullToRefresh_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

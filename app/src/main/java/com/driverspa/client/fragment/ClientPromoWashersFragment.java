@@ -31,7 +31,7 @@ public class ClientPromoWashersFragment extends ClientBaseHomeFragment implement
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         ListView listView = pullToRefreshView.getRefreshableView();	       	        
         listView.setHeaderDividersEnabled(false);
         listView.setFooterDividersEnabled(false);	        	        

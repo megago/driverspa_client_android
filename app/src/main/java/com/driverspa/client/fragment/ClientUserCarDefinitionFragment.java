@@ -1,12 +1,13 @@
 package com.driverspa.client.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
+import androidx.fragment.app.DialogFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -97,7 +98,7 @@ public class ClientUserCarDefinitionFragment extends DialogFragment {
 		
 	    @Override
 	    public void onViewCreated(View view, Bundle savedInstanceState) {	       
-	        ButterKnife.inject(this, view);
+	        ButterKnife.bind(this, view);
 	         
 	        buttonSedan.setOnClickListener(buttonSelector);
 	        buttonJeep.setOnClickListener(buttonSelector);

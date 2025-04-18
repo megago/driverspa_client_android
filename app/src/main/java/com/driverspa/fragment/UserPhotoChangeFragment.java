@@ -64,7 +64,7 @@ public class UserPhotoChangeFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_user_photo_change, container, false);
-		ButterKnife.inject(this, view);
+		ButterKnife.bind(this, view);
 
 		gridView.setAdapter(photosAdapter);
 
@@ -119,7 +119,8 @@ public class UserPhotoChangeFragment extends BaseFragment {
 	@Override 
 	public void onDestroyView() {
 		super.onDestroyView();
-		ButterKnife.reset(this);
+		//TODO come here and check
+		//ButterKnife.reset(this);
 	}
 
 }

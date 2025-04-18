@@ -4,7 +4,7 @@
             "outputFile": "uk.co.senab.photoview.test.photoView-mergeDebugAndroidTestResources-1:/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/tanatov/Documents/studio_workspace/DriverSpa/photoView/build/intermediates/packaged_res/debug/packageDebugResources/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "source": "C:\\Users\\yerzhant\\Documents\\studio_workspace\\DriverSpa\\photoView\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

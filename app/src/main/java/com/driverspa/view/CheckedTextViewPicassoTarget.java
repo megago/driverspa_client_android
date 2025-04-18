@@ -5,12 +5,11 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.CheckedTextView;
 
 import com.squareup.picasso.Picasso.LoadedFrom;
 import com.squareup.picasso.Target;
 
-public class CheckedTextViewPicassoTarget extends CheckedTextView implements Target {
+public class CheckedTextViewPicassoTarget extends androidx.appcompat.widget.AppCompatCheckedTextView implements Target {
 
 	public CheckedTextViewPicassoTarget(Context context) {
 		super(context);
