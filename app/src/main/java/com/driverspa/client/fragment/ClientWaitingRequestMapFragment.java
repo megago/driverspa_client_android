@@ -107,33 +107,33 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 	Location currentLoc;
 	LatLngBounds bounds = null;
 
-	@InjectView (R.id.myCar)
+	@BindView (R.id.myCar)
 	TextView myCar;
-	@InjectView (R.id.services)
+	@BindView (R.id.services)
 	TextView services;
-	@InjectView (R.id.fare)
+	@BindView (R.id.fare)
 	TextView fare;
-	@InjectView (R.id.tempFare)
+	@BindView (R.id.tempFare)
 	TextView tempFare;
-	@InjectView (R.id.comment)
+	@BindView (R.id.comment)
 	TextView comment;
-	@InjectView (R.id.requestInfo)
+	@BindView (R.id.requestInfo)
 	TextView requestInfo;
-	@InjectView (R.id.btnChangeFare)
+	@BindView (R.id.btnChangeFare)
 	Button btnChangeFare;
-	@InjectView (R.id.plusPrice)
+	@BindView (R.id.plusPrice)
 	Button plusPrice;
-	@InjectView (R.id.minusPrice)
+	@BindView (R.id.minusPrice)
 	Button minusPrice;
-	@InjectView (R.id.rippleBackground)
+	@BindView (R.id.rippleBackground)
 	RippleBackground rippleBackground;
-	@InjectView (R.id.circle)
+	@BindView (R.id.circle)
 	ImageView circle;
-	@InjectView (R.id.listLayout)
+	@BindView (R.id.listLayout)
 	View listLayout;
-	@InjectView (R.id.list_view)
+	@BindView (R.id.list_view)
 	ListView listView;
-	@InjectView (R.id.durationLayout)
+	@BindView (R.id.durationLayout)
 	View durationLayout;
 	@BindView(R.id.txtWasherAddress)
 	TextView address;

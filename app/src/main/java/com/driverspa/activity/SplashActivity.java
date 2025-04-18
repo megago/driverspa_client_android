@@ -38,15 +38,15 @@ import com.driverspa.util.otto.ws.UserLocationUpdateEvent;
  */
 
 public class SplashActivity extends BaseActivity implements AnimationListener{
-	@InjectView (R.id.noConnectionLayout)
+	@BindView (R.id.noConnectionLayout)
 	View noConnectionLayout;
-	@InjectView (R.id.logo)
+	@BindView (R.id.logo)
 	View logo;
-	@InjectView (R.id.circle1)
+	@BindView (R.id.circle1)
 	ImageView circle1;
-	@InjectView (R.id.circle2)
+	@BindView (R.id.circle2)
 	ImageView circle2;
-	@InjectView (R.id.circle3)
+	@BindView (R.id.circle3)
 	ImageView circle3;
 
 	Animation animCircle1;
