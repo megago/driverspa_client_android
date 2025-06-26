@@ -7,7 +7,7 @@
         android:background="@android:color/transparent"
         android:icon="@drawable/ic_search"
         android:title="@android:string/search_go"
-        washme:actionViewClass="android.support.v7.widget.SearchView"
+        washme:actionViewClass="androidx.appcompat.widget.SearchView"
         washme:showAsAction="always|collapseActionView" />
 
     <item

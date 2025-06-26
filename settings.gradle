@@ -12,6 +12,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -25,5 +26,3 @@ include(":app")
 include(":photoView")
 include(":ProgressWheel")
 include(":pullToRefresh_lib")
-include(":clusterGoogleLib")
-

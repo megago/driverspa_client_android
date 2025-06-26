@@ -172,8 +172,8 @@
 
 <!--        <service android:name="com.driverspa.gcm.RegistrationIntentService" android:exported="false"></service>-->
 
-        <service android:name=".service.Service"
-            android:label="Сервис DriverSpa"/>
+<!--        <service android:name=".service.Service"-->
+<!--            android:label="Сервис DriverSpa"/>-->
 
 <!--        <meta-data-->
 <!--            android:name="com.google.android.gms.version"-->

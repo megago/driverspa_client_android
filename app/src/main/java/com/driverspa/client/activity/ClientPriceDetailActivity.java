@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
-import com.google.maps.android.MarkerManager;
 import com.splunk.mint.Mint;
 
 import java.util.ArrayList;

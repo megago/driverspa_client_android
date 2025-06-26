@@ -232,7 +232,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 		ui.setZoomControlsEnabled(false);
 		ui.setMyLocationButtonEnabled(false);
 		ui.setAllGesturesEnabled(false);
-		mMap.setOnCameraChangeListener(mClusterManager);
+		mMap.setOnCameraChangeListener((GoogleMap.OnCameraChangeListener) mClusterManager);
 		mMap.setOnMarkerClickListener(mClusterManager);
 		mMap.setOnInfoWindowClickListener(mClusterManager);
 		mMap.setInfoWindowAdapter(mClusterManager.getMarkerManager());

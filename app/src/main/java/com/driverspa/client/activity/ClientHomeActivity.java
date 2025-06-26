@@ -15,9 +15,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
-import android.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;

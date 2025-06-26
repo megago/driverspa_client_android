@@ -256,44 +256,52 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	 * is not null.
 	 */
 	private void setUpMap() {
-		mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-			@Override
-			public void onMapClick(LatLng latLng) {
-				((ClientHomeActivity) getActivity()).hideClusterItem();
-			}
+		mMap.setOnMapClickListener(latLng -> {
+			((ClientHomeActivity) getActivity()).hideClusterItem();
 		});
-		mClusterManager = new ClusterManager<WasherPublic>(getActivity(), mMap);
+
+		mClusterManager = new ClusterManager<>(getActivity(), mMap);
+		//mClusterManager.setRenderer(new WasherModelRenderer(getActivity(), mMap, mClusterManager));
 		mClusterManager.setRenderer(new WasherModelRenderer());
+
+		// Map UI settings
 		UiSettings ui = mMap.getUiSettings();
 		ui.setCompassEnabled(false);
 		ui.setZoomControlsEnabled(false);
 		ui.setMapToolbarEnabled(false);
 		ui.setMyLocationButtonEnabled(false);
 		ui.setAllGesturesEnabled(true);
-		mMap.setOnCameraChangeListener(mClusterManager);
-	    mMap.setOnMarkerClickListener(mClusterManager);
-	    mMap.setOnInfoWindowClickListener(mClusterManager);
-	    mMap.setInfoWindowAdapter(mClusterManager.getMarkerManager());
-		mMap.setPadding(0, 0, 0, 100);
-	    mClusterManager.setOnClusterClickListener(this);
-	    mClusterManager.setOnClusterItemClickListener(this);
-	    mClusterManager.setOnClusterItemInfoWindowClickListener(this);
 
-		if(washers != null && washers.size() > 0){
+		// Camera change listeners - modern way
+		mMap.setOnCameraIdleListener(mClusterManager);
+		mMap.setOnMarkerClickListener(mClusterManager);
+		mMap.setOnInfoWindowClickListener(mClusterManager);
+		mMap.setInfoWindowAdapter(mClusterManager.getMarkerManager());
+
+		mMap.setPadding(0, 0, 0, 100);
+
+		// Cluster item interaction callbacks
+		mClusterManager.setOnClusterClickListener(this);
+		mClusterManager.setOnClusterItemClickListener(this);
+		mClusterManager.setOnClusterItemInfoWindowClickListener(this);
+
+		// Add markers or fetch data
+		if (washers != null && !washers.isEmpty()) {
 			addMarkers(washers);
-		}
-		else{
-			if(gps != null && gps.canGetLocation()) {
+		} else {
+			if (gps != null && gps.canGetLocation()) {
 				currentLoc = gps.getLocation();
 			}
-			if(mMap != null) {
+			if (mMap != null) {
 				activityActions.showProgressBar(true);
 				getLocationAndUpdateListWithoutClear();
 			}
 		}
 
-//		mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(51.1801,71.44598) , 14.0f));
+		// Optional default camera move
+		// mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(51.1801, 71.44598), 14.0f));
 	}
+
 
 	public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 

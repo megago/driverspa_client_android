@@ -56,7 +56,7 @@ public class SplashActivity extends BaseActivity implements AnimationListener{
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
-		Mint.initAndStartSession(this.getApplication(), "b054ddc0");
+//		Mint.initAndStartSession(this.getApplication(), "b054ddc0");
 		setContentView(R.layout.activity_splash);
 		ButterKnife.bind(this);
 

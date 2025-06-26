@@ -139,14 +139,14 @@ public class ClientMapFragment extends BaseFragment implements GoogleMap.OnMyLoc
 		ui.setZoomControlsEnabled(true);
 		ui.setMyLocationButtonEnabled(false);
 		ui.setAllGesturesEnabled(true);
-	    mMap.setOnCameraChangeListener(mClusterManager);        
+	    mMap.setOnCameraChangeListener((GoogleMap.OnCameraChangeListener) mClusterManager);
 	    mMap.setOnMarkerClickListener(mClusterManager);
 	    mMap.setOnInfoWindowClickListener(mClusterManager);
 	    mMap.setInfoWindowAdapter(mClusterManager.getMarkerManager());        
 	    mClusterManager.setOnClusterClickListener(this);
 	    mClusterManager.setOnClusterItemClickListener(this);
 	    mClusterManager.setOnClusterItemInfoWindowClickListener(this);
-	    mClusterManager.getMarkerCollection().setOnInfoWindowAdapter(new CustomAdapterForClusterItems());
+	    mClusterManager.getMarkerCollection().setInfoWindowAdapter(new CustomAdapterForClusterItems());
 	}
 	
 	@Override
