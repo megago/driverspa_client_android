@@ -1,11 +1,13 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+}
 
 android {
     namespace = "uk.co.senab.photoview"
-    compileSdkVersion 19
-    buildToolsVersion '25.0.0'
+    compileSdk 34
 
     defaultConfig {
+        minSdk 10
     }
 
     buildTypes {

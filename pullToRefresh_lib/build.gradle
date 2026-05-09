@@ -1,15 +1,18 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+}
 
 android {
     namespace = "com.handmark.pulltorefresh.library"
-    compileSdkVersion 21
-    buildToolsVersion '25.0.0'
+    compileSdk 34
+
     defaultConfig {
-        minSdkVersion 1
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
+        minSdk 10
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {

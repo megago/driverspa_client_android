@@ -1,21 +1,13 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        google()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-    }
+plugins {
+    id 'com.android.library'
 }
-apply plugin: 'android-library'
+
 android {
     namespace = "com.todddavies.components.progressbar"
-    compileSdkVersion 17
-    buildToolsVersion '25.0.0'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 8
+        minSdk 8
     }
 
     sourceSets {
