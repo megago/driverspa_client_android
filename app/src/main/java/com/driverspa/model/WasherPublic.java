@@ -1,16 +1,9 @@
 package com.driverspa.model;
 
 import androidx.annotation.Nullable;
-
 import com.google.android.gms.maps.model.LatLng;
-
 import com.google.gson.Gson;
 import com.google.maps.android.clustering.ClusterItem;
-import androidx.annotation.Nullable;
-
-import com.google.android.gms.maps.model.LatLng;
-import com.google.maps.android.clustering.ClusterItem;
-import com.google.gson.Gson;
 
 public class WasherPublic extends WasherPublicBase implements ClusterItem {
 
