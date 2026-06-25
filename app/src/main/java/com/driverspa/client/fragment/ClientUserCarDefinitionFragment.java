@@ -93,7 +93,7 @@ public class ClientUserCarDefinitionFragment extends DialogFragment {
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setHasOptionsMenu(true);
-			setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Translucent_NoTitleBar);
+			setStyle(DialogFragment.STYLE_NO_TITLE, R.style.Theme_DriverSpa_TranslucentDialog);
 		}
 		
 	    @Override

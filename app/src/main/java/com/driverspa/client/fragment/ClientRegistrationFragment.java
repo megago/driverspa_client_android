@@ -6,13 +6,23 @@ package com.driverspa.client.fragment;
  */
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import com.squareup.otto.Subscribe;
@@ -25,31 +35,47 @@ import com.driverspa.R;
 import com.driverspa.model.api.request.AuthClientRegistrationRequest;
 import com.driverspa.util.MaskedWatcher;
 import com.driverspa.util.ToastUtil;
+import com.driverspa.util.UserPreferences;
 import com.driverspa.util.otto.ws.AuthClientRegistrationRequestEvent;
 import com.driverspa.util.otto.ws.AuthClientRegistrationResponseEvent;
 
 public class ClientRegistrationFragment extends ClientBaseFragment {
 
+	private static final String OFERTA_URL = "https://driverspa.kz/oferta.html";
+
 	public interface ActivityActions {
 		public void openClientVerification();
-	}	
-	private final String TAG = "RegistrationFragment";	
+	}
+	private final String TAG = "RegistrationFragment";
 	private ActivityActions activityActions;
-	
+	private String channel;
+	private String email;
+
 	@BindView(R.id.login_phone)
 	EditText phone;
-	
+	@BindView(R.id.login_email)
+	EditText loginEmail;
+	@BindView(R.id.channelGroup)
+	RadioGroup channelGroup;
+	@BindView(R.id.ofertaCheckbox)
+	CheckBox ofertaCheckbox;
+	@BindView(R.id.ofertaLink)
+	TextView ofertaLink;
+	@BindView(R.id.btnOk)
+	Button btnOk;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_client_registration, container, false);
 		ButterKnife.bind(this, view);
-//		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         try {
             MaskedWatcher maskedWatcher = new MaskedWatcher("### ###-##-##");
             phone.addTextChangedListener(maskedWatcher);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+		channelGroup.check(R.id.channelEmail);
+		phone.requestFocus();
         phone.setOnEditorActionListener(new OnEditorActionListener() {
 		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 		        if (actionId == EditorInfo.IME_ACTION_NEXT) {
@@ -58,46 +84,114 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		        }
 		        return false;
 		    }
-		});        
+		});
+
+		// Alpha-only dimming — keeps the button text readable when unchecked.
+		// setEnabled is intentionally not used (it triggers Android's gray tint).
+		ofertaCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			btnOk.setAlpha(isChecked ? 1f : 0.35f);
+		});
+
+		ofertaLink.setOnClickListener(v -> showOfertaDialog());
 
 		return view;
 	}
-	
+
+	/** Full-screen dialog that loads the offer page in a WebView. */
+	private void showOfertaDialog() {
+		if (getActivity() == null) return;
+		Dialog dialog = new Dialog(getActivity(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+		dialog.setContentView(R.layout.dialog_oferta);
+		dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+		WebView webView = dialog.findViewById(R.id.ofertaWebView);
+		View progress = dialog.findViewById(R.id.ofertaProgress);
+		Button btnClose = dialog.findViewById(R.id.ofertaClose);
+		Button btnAgree = dialog.findViewById(R.id.ofertaAgree);
+
+		WebSettings ws = webView.getSettings();
+		ws.setJavaScriptEnabled(true);
+		ws.setDefaultTextEncodingName("utf-8");
+
+		webView.setWebViewClient(new WebViewClient() {
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				super.onPageFinished(view, url);
+				if (progress != null) progress.setVisibility(View.GONE);
+				webView.setVisibility(View.VISIBLE);
+			}
+		});
+		webView.setVisibility(View.INVISIBLE);
+		webView.loadUrl(OFERTA_URL);
+
+		btnClose.setOnClickListener(v -> dialog.dismiss());
+		btnAgree.setOnClickListener(v -> {
+			ofertaCheckbox.setChecked(true);
+			dialog.dismiss();
+		});
+
+		dialog.show();
+	}
+
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		activityActions = (ActivityActions) activity;
 	}
-	
+
 	@Override
 	public void onDetach() {
 		super.onDetach();
 		activityActions = null;
 	}
-	
+
+	private String selectedChannel() {
+		int id = channelGroup.getCheckedRadioButtonId();
+		if (id == R.id.channelSms) return UserPreferences.CHANNEL_SMS;
+		if (id == R.id.channelWhatsapp) return UserPreferences.CHANNEL_WHATSAPP;
+		return UserPreferences.CHANNEL_EMAIL;
+	}
+
 	@OnClick(R.id.btnOk)
 	protected void processRegistrationRequest() {
+		if (!ofertaCheckbox.isChecked()) {
+			ToastUtil.display(getActivity(), "Пожалуйста, примите публичную оферту");
+			return;
+		}
 		String phoneStr = phone.getText().toString();
 		phoneStr = phoneStr.replaceAll("\\+", "").replaceAll("\\(", "").replaceAll("\\)", "").replaceAll("-", "").replaceAll(" ", "");
-		
-		if(phoneStr.length() > 0) {
-			
-			if(isPhoneValid(phoneStr) ) {
-				processRegistration("+7"+phoneStr);
-			} else {
-				phone.setError("Неправильный номер телефона");
-			}
-		} else {
+
+		if (TextUtils.isEmpty(phoneStr)) {
 			phone.setError("Введите номер телефона");
+			return;
 		}
+		if (!isPhoneValid(phoneStr)) {
+			phone.setError("Неправильный номер телефона");
+			return;
+		}
+
+		channel = selectedChannel();
+		email = loginEmail.getText().toString().trim();
+		if (UserPreferences.CHANNEL_EMAIL.equals(channel)
+				&& (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+			loginEmail.setError("Введите корректный email");
+			loginEmail.requestFocus();
+			return;
+		}
+
+		UserPreferences.putOtpChannel(BA.getContext(), channel);
+		UserPreferences.putOtpEmail(BA.getContext(), email);
+		processRegistration("+7" + phoneStr);
 	}
-	
+
 	private void processRegistration(String phone) {
 		setWaitScreen(true);
-		BA.getEventBus().post(new AuthClientRegistrationRequestEvent(new AuthClientRegistrationRequest(phone)));
+		String emailToSend = TextUtils.isEmpty(email) ? null : email;
+		BA.getEventBus().post(new AuthClientRegistrationRequestEvent(
+				new AuthClientRegistrationRequest(phone, channel, emailToSend)));
 	}
-	
-	
+
+
 	/**
 	 * Runs when user's just registration (Open Verification activity)
 	 * @param event
@@ -105,13 +199,13 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	@Subscribe
 	public void onAuthRegistrationResponseReceived(AuthClientRegistrationResponseEvent event) {
 		setWaitScreen(false);
-		 if(event.getAuthLoginResponse().getStatus() != null && !event.getAuthLoginResponse().getStatus().equals("error")){			
+		 if(event.getAuthLoginResponse().getStatus() != null && !event.getAuthLoginResponse().getStatus().equals("error")){
 		   activityActions.openClientVerification();
 		 }else{
 		   ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
 	   }
 	}
-	
+
 	/**
 	 * Check if provided fields are valid
 	 * @param phone - phone of user
@@ -123,13 +217,13 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		else
 	     return false;
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
 		BA.getEventBus().register(this);
 	}
-	
+
 	@Override
 	public void onPause() {
 		super.onPause();

@@ -80,12 +80,12 @@ public class RetrofitClient {
 //	public static String API_URL_IMAGES = "http://192.168.1.178:8000"; // api url
 
 
-	public static String API_URL = "http://192.168.31.177:8000/api/"; // api url
-	public static String API_URL_IMAGES = "http:// 192.168.31.177:8000"; // api url
+//	public static String API_URL = "http://192.168.31.177:8000/api/"; // api url
+//	public static String API_URL_IMAGES = "http:// 192.168.31.177:8000"; // api url
 
 //	/////prod
-//	public static String API_URL = "http://api.washme.kz/"; // api url
-//	public static String API_URL_IMAGES = "http://api.washme.kz"; // api url
+	public static String API_URL = "https://api.driverspa.kz/api/"; // api url
+	public static String API_URL_IMAGES = "https://api.driverspa.kz"; // api url
 
 	/////test
 //	public static String API_URL = "http://test.api.washme.kz/"; // api url
@@ -523,8 +523,8 @@ public class RetrofitClient {
 		.setConverter(new GsonConverter(Converters.gsonWithDate()))
 		.setExecutors(executor, executor)		
 		.setClient(new OkClient(BA.getHttpClient()))
-//		.setLogLevel(RestAdapter.LogLevel.FULL)
-		.setLogLevel(RestAdapter.LogLevel.NONE)
+		.setLogLevel(RestAdapter.LogLevel.FULL)
+//		.setLogLevel(RestAdapter.LogLevel.NONE)
 		.build();
 
 		return restAdapter.create(WashmeApi.class);

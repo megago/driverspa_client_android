@@ -34,6 +34,33 @@ public class UserPreferences extends Preferences {
 
 	private static final String ABOUT_US = "ABOUT_US";
 
+	// OTP delivery channel chosen on the phone-entry screen. Email is the
+	// default; SMS is the automatic backend fallback; WhatsApp is an alternative.
+	public static final String CHANNEL_EMAIL = "email";
+	public static final String CHANNEL_WHATSAPP = "whatsapp";
+	public static final String CHANNEL_SMS = "sms";
+	private static final String OTP_CHANNEL = "OTP_CHANNEL";
+	// Email entered on the phone-entry screen, kept so the "resend code" button
+	// can re-deliver over the email channel.
+	private static final String OTP_EMAIL = "OTP_EMAIL";
+
+	public static void putOtpChannel(Context context, String channel) {
+		putString(context, OTP_CHANNEL, channel);
+	}
+
+	public static String getOtpChannel(Context context) {
+		String channel = getString(context, OTP_CHANNEL);
+		return (channel == null || channel.isEmpty()) ? CHANNEL_EMAIL : channel;
+	}
+
+	public static void putOtpEmail(Context context, String email) {
+		putString(context, OTP_EMAIL, email);
+	}
+
+	public static String getOtpEmail(Context context) {
+		return getString(context, OTP_EMAIL);
+	}
+
 
 	private static void putLoggedInUserDataAppVersion(Context context) {
 		putAppVersion(context, USER_DATA_APP_VERSION);

@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.DriverSpa" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <!-- Translucent, title-less dialog theme based on AppCompat so Material
+         widgets (e.g. TextInputLayout) can resolve their theme attributes.
+         Replaces android:Theme.Translucent.NoTitleBar, which is not an
+         AppCompat theme and crashes when inflating Material views. -->
+    <style name="Theme.DriverSpa.TranslucentDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 </resources>

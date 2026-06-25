@@ -128,7 +128,13 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 		else {
 			activationTime = System.currentTimeMillis();
 			setWaitScreen(true);
-			BA.getEventBus().post(new AuthClientRegistrationRequestEvent(new AuthClientRegistrationRequest(phone)));
+			// Resend the OTP over the channel/email the user chose on the
+			// phone-entry screen (email by default).
+			String channel = UserPreferences.getOtpChannel(BA.getContext());
+			String email = UserPreferences.getOtpEmail(BA.getContext());
+			String emailToSend = (email == null || email.isEmpty()) ? null : email;
+			BA.getEventBus().post(new AuthClientRegistrationRequestEvent(
+					new AuthClientRegistrationRequest(phone, channel, emailToSend)));
 		}
 	}
 	
