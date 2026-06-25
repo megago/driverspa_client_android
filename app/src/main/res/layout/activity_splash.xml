@@ -5,13 +5,15 @@
     android:background="@drawable/background" >
 
     <!--android:background="@color/background_color" >-->
-    <ImageView
+    <TextView
         android:id="@+id/copy_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="@dimen/vertical_margin_double"
-        android:src="@drawable/copy_right" />
+        android:text="© 2026 DriverSpa"
+        android:textColor="@color/White"
+        android:textSize="@dimen/text_small" />
 
     <ImageView
         android:id="@+id/wash_me_logo_loading"
@@ -47,12 +49,15 @@
             android:layout_gravity="center"
             android:src="@drawable/transparent_circle" />
 
-        <ImageView
+        <TextView
             android:id="@+id/washme_logo"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_washme_main_logo" />
+            android:text="DriverSpa"
+            android:textColor="@color/White"
+            android:textSize="32sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
 
