@@ -683,6 +683,14 @@ public class DefaultClusterRenderer<T extends ClusterItem> implements ClusterRen
     }
 
     /**
+     * Returns the Marker currently representing the given cluster item on the
+     * map, or null if it is not individually rendered (e.g. inside a cluster).
+     */
+    public Marker getMarker(T clusterItem) {
+        return mMarkerCache.get(clusterItem);
+    }
+
+    /**
      * Called before the marker for a ClusterItem is added to the map.
      */
     protected void onBeforeClusterItemRendered(T item, MarkerOptions markerOptions) {

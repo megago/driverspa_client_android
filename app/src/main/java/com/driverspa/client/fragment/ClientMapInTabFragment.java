@@ -3,6 +3,7 @@ package com.driverspa.client.fragment;
 import static androidx.core.content.ContextCompat.checkSelfPermission;
 
 import android.Manifest;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -11,10 +12,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.OvershootInterpolator;
 import androidx.appcompat.widget.Toolbar;
 import androidx.collection.LruCache;
 import androidx.core.app.ActivityCompat;
@@ -143,6 +147,13 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	HashMap<String, String> wantedWashers;
 	private LruCache<String, Bitmap> mMemoryCache;
 
+	private WasherModelRenderer mRenderer;
+	private Marker selectedMarker;
+	private WasherPublic selectedItem;
+	private ValueAnimator markerAnimator;
+	private static final float SELECTED_MARKER_SCALE = 1.6f;
+	private static final int SELECTED_MARKER_DARKEN_ALPHA = 90; // ~35% black tint
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -257,12 +268,14 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	 */
 	private void setUpMap() {
 		mMap.setOnMapClickListener(latLng -> {
+			resetSelectedMarker();
 			((ClientHomeActivity) getActivity()).hideClusterItem();
 		});
 
 		mClusterManager = new ClusterManager<>(getActivity(), mMap);
 		//mClusterManager.setRenderer(new WasherModelRenderer(getActivity(), mMap, mClusterManager));
-		mClusterManager.setRenderer(new WasherModelRenderer());
+		mRenderer = new WasherModelRenderer();
+		mClusterManager.setRenderer(mRenderer);
 
 		// Map UI settings
 		UiSettings ui = mMap.getUiSettings();
@@ -634,6 +647,10 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	
 	private void addMarkers(List<WasherPublic> washers){
 		if(mMap != null) {
+			// Markers are about to be cleared/recreated; drop any selection state.
+			if (markerAnimator != null) markerAnimator.cancel();
+			selectedMarker = null;
+			selectedItem = null;
 			synchronized (mClusterManager) {
 				mMap.clear();
 				mClusterManager.clearItems();
@@ -695,10 +712,26 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	    }
 	
 	    @Override
+	    protected void onClusterItemRendered(WasherPublic clusterItem, Marker marker) {
+	        // Re-apply the selected (enlarged + darkened) icon if this item is the
+	        // currently selected one, so panning/re-rendering doesn't reset it.
+	        if (selectedItem != null && clusterItem != null && clusterItem.getId() != null
+	                && clusterItem.getId().equals(selectedItem.getId())) {
+	            selectedMarker = marker;
+	            Bitmap base = baseBitmapForItem(clusterItem);
+	            if (base != null) {
+	                marker.setIcon(BitmapDescriptorFactory.fromBitmap(
+	                        makeSelectedBitmap(base, SELECTED_MARKER_SCALE, SELECTED_MARKER_DARKEN_ALPHA)));
+	            }
+	            marker.setZIndex(10f);
+	        }
+	    }
+
+	    @Override
 	    protected void onBeforeClusterRendered(Cluster<WasherPublic> cluster, MarkerOptions markerOptions) {
 	             markerOptions.icon(getClusterIcon(cluster.getSize()));
 	    }
-	
+
 	    @Override
 	    protected boolean shouldRenderAsCluster(Cluster cluster) {
 	        // Always render clusters.
@@ -711,9 +744,90 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
         activityActions.openProfileWasher(item.getId());		
 	}
 	
+	/** Highlight the tapped carwash marker: enlarge it with a pop animation and a dark tint. */
+	private void selectMarker(final WasherPublic item) {
+		// Restore any previously selected marker first.
+		if (selectedMarker != null && selectedItem != null && (selectedItem.getId() == null || !selectedItem.getId().equals(item.getId()))) {
+			try {
+				selectedMarker.setIcon(normalDescriptorForItem(selectedItem));
+				selectedMarker.setZIndex(0f);
+			} catch (Exception ignored) {}
+		}
+		if (markerAnimator != null) {
+			markerAnimator.cancel();
+		}
+
+		selectedItem = item;
+		final Marker marker = (mRenderer != null) ? mRenderer.getMarker(item) : null;
+		selectedMarker = marker;
+		final Bitmap base = baseBitmapForItem(item);
+		if (marker == null || base == null) {
+			return;
+		}
+		marker.setZIndex(10f);
+
+		markerAnimator = ValueAnimator.ofFloat(1.0f, SELECTED_MARKER_SCALE);
+		markerAnimator.setDuration(240);
+		markerAnimator.setInterpolator(new OvershootInterpolator(2.5f));
+		markerAnimator.addUpdateListener(animation -> {
+			float scale = (float) animation.getAnimatedValue();
+			try {
+				marker.setIcon(BitmapDescriptorFactory.fromBitmap(
+						makeSelectedBitmap(base, scale, SELECTED_MARKER_DARKEN_ALPHA)));
+			} catch (Exception ignored) {}
+		});
+		markerAnimator.start();
+	}
+
+	/** Restore the currently selected marker back to its normal icon. */
+	public void resetSelectedMarker() {
+		if (markerAnimator != null) {
+			markerAnimator.cancel();
+		}
+		if (selectedMarker != null && selectedItem != null) {
+			try {
+				selectedMarker.setIcon(normalDescriptorForItem(selectedItem));
+				selectedMarker.setZIndex(0f);
+			} catch (Exception ignored) {}
+		}
+		selectedMarker = null;
+		selectedItem = null;
+	}
+
+	private Bitmap baseBitmapForItem(WasherPublic item) {
+		if (item.getStatus() != null && item.getStatus().equals("information"))
+			return getBitmapFromMemCache("info");
+		if (item.getActiveCampaign() != null)
+			return getBitmapFromMemCache("partnerDiscount");
+		return getBitmapFromMemCache("partner");
+	}
+
+	private BitmapDescriptor normalDescriptorForItem(WasherPublic item) {
+		if (item.getStatus() != null && item.getStatus().equals("information"))
+			return infoBitmapDescriptor;
+		if (item.getActiveCampaign() != null)
+			return partnerDiscountBitmapDescriptor;
+		return partnerBitmapDescriptor;
+	}
+
+	/** Build a scaled-up, darkened copy of the pin to mark it as selected. */
+	private Bitmap makeSelectedBitmap(Bitmap base, float scale, int darkenAlpha) {
+		int w = Math.max(1, Math.round(base.getWidth() * scale));
+		int h = Math.max(1, Math.round(base.getHeight() * scale));
+		Bitmap scaled = Bitmap.createScaledBitmap(base, w, h, true);
+		Bitmap result = scaled.copy(Bitmap.Config.ARGB_8888, true);
+		Canvas canvas = new Canvas(result);
+		Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		// SRC_ATOP tints only the opaque pin pixels, leaving the transparent area clear.
+		paint.setColorFilter(new PorterDuffColorFilter(Color.argb(darkenAlpha, 0, 0, 0), PorterDuff.Mode.SRC_ATOP));
+		canvas.drawBitmap(scaled, 0, 0, paint);
+		return result;
+	}
+
 	@Override
 	public boolean onClusterItemClick(final WasherPublic item) {
 		clickedClusterItem = item;
+		selectMarker(item);
 		final int dX = getResources().getDimensionPixelSize(R.dimen.map_dx);
 		// Calculate required vertical shift for current screen density
 		int dY = getResources().getDimensionPixelSize(R.dimen.map_dy_short);

@@ -25,61 +25,69 @@ public class ClientUserCarDefinitionFragment extends DialogFragment {
 
 	@BindView(R.id.btnSedan)
 	View buttonSedan;
-	@BindView(R.id.btnMoto)
-	View buttonMoto;
-	@BindView(R.id.btnJeep)
-	View buttonJeep;
+	@BindView(R.id.btnCrossover)
+	View buttonCrossover;
 	@BindView(R.id.btnBigJeep)
 	View buttonBigJeep;
 	@BindView(R.id.btnMinbus)
-	View buttonMinbus;		
+	View buttonMinbus;
+	@BindView(R.id.btnMini)
+	View buttonMini;
+	@BindView(R.id.btnUniversal)
+	View buttonUniversal;
+	@BindView(R.id.btnMiniJeep)
+	View buttonMiniJeep;
+	@BindView(R.id.btnMinivan)
+	View buttonMiniVan;
+	@BindView(R.id.btnMoto)
+	View buttonMoto;
 	@BindView(R.id.carMark)
-	EditText carMark;	
+	EditText carMark;
 	@BindView(R.id.carNo)
 	EditText carNo;
-	
+
+	private void selectOnly(View selected, CarType type) {
+		buttonMini.setSelected(selected == buttonMini);
+		buttonSedan.setSelected(selected == buttonSedan);
+		buttonUniversal.setSelected(selected == buttonUniversal);
+		buttonCrossover.setSelected(selected == buttonCrossover);
+		buttonMiniJeep.setSelected(selected == buttonMiniJeep);
+		buttonBigJeep.setSelected(selected == buttonBigJeep);
+		buttonMoto.setSelected(selected == buttonMoto);
+		buttonMiniVan.setSelected(selected == buttonMiniVan);
+		buttonMinbus.setSelected(selected == buttonMinbus);
+		selectedCarType = type;
+	}
+
 	private View.OnClickListener buttonSelector = new View.OnClickListener() {
 		@Override
-		public void onClick(View view) {					
+		public void onClick(View view) {
 			if ( view.getId() == buttonSedan.getId() && !buttonSedan.isSelected()){
-				buttonSedan.setSelected(true);
-				buttonJeep.setSelected(false);
-				buttonBigJeep.setSelected(false);
-				buttonMinbus.setSelected(false);
-				buttonMoto.setSelected(false);
-				selectedCarType = CarType.Sedan;
+				selectOnly(buttonSedan, CarType.Sedan);
 			}
-			else if ( view.getId() == buttonJeep.getId()  && !buttonJeep.isSelected()){
-				buttonSedan.setSelected(false);
-				buttonJeep.setSelected(true);
-				buttonBigJeep.setSelected(false);
-				buttonMinbus.setSelected(false);
-				buttonMoto.setSelected(false);
-				selectedCarType = CarType.Crossover;
+			else if ( view.getId() == buttonMini.getId()  && !buttonMini.isSelected()){
+				selectOnly(buttonMini, CarType.Mini);
+			}
+			else if ( view.getId() == buttonUniversal.getId()  && !buttonUniversal.isSelected()){
+				selectOnly(buttonUniversal, CarType.Universal);
+			}
+			else if ( view.getId() == buttonMiniJeep.getId()  && !buttonMiniJeep.isSelected()){
+				selectOnly(buttonMiniJeep, CarType.MiniJeep);
+			}
+			else if ( view.getId() == buttonMiniVan.getId()  && !buttonMiniVan.isSelected()){
+				selectOnly(buttonMiniVan, CarType.Minivan);
+			}
+			else if ( view.getId() == buttonCrossover.getId()  && !buttonCrossover.isSelected()){
+				selectOnly(buttonCrossover, CarType.Crossover);
 			}
 			else if ( view.getId() == buttonBigJeep.getId()  && !buttonBigJeep.isSelected()){
-				buttonSedan.setSelected(false);
-				buttonJeep.setSelected(false);
-				buttonBigJeep.setSelected(true);
-				buttonMinbus.setSelected(false);
-				buttonMoto.setSelected(false);
-				selectedCarType = CarType.Jeep;
+				selectOnly(buttonBigJeep, CarType.Jeep);
 			}
 			else if ( view.getId() == buttonMoto.getId()  && !buttonMoto.isSelected()){
-				buttonSedan.setSelected(false);
-				buttonJeep.setSelected(false);
-				buttonBigJeep.setSelected(false);
-				buttonMinbus.setSelected(false);
-				buttonMoto.setSelected(true);
-				selectedCarType = CarType.Moto;
+				selectOnly(buttonMoto, CarType.Moto);
 			}
 			else if ( view.getId() == buttonMinbus.getId()  && !buttonMinbus.isSelected()){
-				buttonSedan.setSelected(false);
-				buttonJeep.setSelected(false);
-				buttonBigJeep.setSelected(false);
-				buttonMinbus.setSelected(true);
-				buttonMoto.setSelected(false);
-				selectedCarType = CarType.Minibus;
+				selectOnly(buttonMinbus, CarType.Minibus);
 			}
 	    	}
 	};
@@ -101,17 +109,16 @@ public class ClientUserCarDefinitionFragment extends DialogFragment {
 	        ButterKnife.bind(this, view);
 	         
 	        buttonSedan.setOnClickListener(buttonSelector);
-	        buttonJeep.setOnClickListener(buttonSelector);
+	        buttonCrossover.setOnClickListener(buttonSelector);
 	        buttonBigJeep.setOnClickListener(buttonSelector);
-	        buttonMinbus.setOnClickListener(buttonSelector);	        
+	        buttonMinbus.setOnClickListener(buttonSelector);
 	        buttonMoto.setOnClickListener(buttonSelector);
+	        buttonMini.setOnClickListener(buttonSelector);
+	        buttonUniversal.setOnClickListener(buttonSelector);
+	        buttonMiniJeep.setOnClickListener(buttonSelector);
+	        buttonMiniVan.setOnClickListener(buttonSelector);
 
-			buttonSedan.setSelected(true);
-			buttonJeep.setSelected(false);
-			buttonBigJeep.setSelected(false);
-			buttonMinbus.setSelected(false);
-			buttonMoto.setSelected(false);
-			selectedCarType = CarType.Sedan;
+			selectOnly(buttonSedan, CarType.Sedan);
 	    }
 	    
 	    @OnClick(R.id.button_registration)

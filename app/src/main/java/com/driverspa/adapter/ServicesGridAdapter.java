@@ -66,10 +66,10 @@ public class ServicesGridAdapter extends BaseAdapter {
 
         final View gridLayoutView = view.findViewById(R.id.layoutGridItem);
         if(selectedPosition.get(position) != null && selectedPosition.get(position)) {
-            holder.gridItem.setBackgroundResource(R.drawable.button_grid_item_drawable_cars_pressed);
+            holder.gridItem.setBackgroundResource(R.drawable.bg_service_tile_selected);
         }
         else{
-            holder.gridItem.setBackgroundResource(R.drawable.background_button_grid_item_cars);
+            holder.gridItem.setBackgroundResource(R.drawable.bg_service_tile_normal);
         }
 
         ServiceItem item = gridList.get(position);
