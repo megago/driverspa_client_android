@@ -4,23 +4,21 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- DriverSPA car-wash mark (matches landing page logo), white line art -->
+    <!-- Themed (monochrome) layer: same car mark, system applies the tint -->
     <group
         android:translateX="22.8"
         android:translateY="28.5"
         android:scaleX="2.6"
         android:scaleY="2.6">
-        <!-- water spray -->
         <path
             android:pathData="M8,2 l-1.3,2.4 M12,1.6 l-1.3,2.6 M16,2 l-1.3,2.4"
-            android:strokeColor="#FFFFFFFF"
+            android:strokeColor="#FF000000"
             android:strokeWidth="1.6"
             android:strokeLineCap="round"
             android:strokeLineJoin="round" />
-        <!-- car body + wheels -->
         <path
             android:pathData="M5,14 l1.5,-4.5 A2,2 0 0 1 8.4,8 h7.2 a2,2 0 0 1 1.9,1.5 L19,14 m-14,0 h14 m-14,0 v4 m14,-4 v4 M7,18 h0.01 M17,18 h0.01"
-            android:strokeColor="#FFFFFFFF"
+            android:strokeColor="#FF000000"
             android:strokeWidth="1.6"
             android:strokeLineCap="round"
             android:strokeLineJoin="round" />
