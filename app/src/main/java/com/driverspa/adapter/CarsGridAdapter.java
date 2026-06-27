@@ -95,27 +95,32 @@ public class CarsGridAdapter extends BaseAdapter {
             holder.delete.setVisibility(View.VISIBLE);
             holder.carNumber.setText(item.getCarNumber());
             holder.gridItem.setLayoutParams(layoutParams);
-            switch (item.getCarType()){
-                case 1:
+            switch ((item.getCarType() != null ? item.getCarType() : 1)){
+                case 1:   // Седан
+                case 10:  // Мини
+                case 11:  // Универсал
                     holder.car.setBackgroundResource(R.drawable.background_button_sedan);
                     if(position == selectedPosition)
                         holder.car.setBackgroundResource(R.drawable.ic_sedan_selected);
                     break;
-                case 2:
+                case 2:   // Кроссовер
                     holder.car.setBackgroundResource(R.drawable.background_button_crossover);
                     if(position == selectedPosition)
                         holder.car.setBackgroundResource(R.drawable.ic_crossover_selected);
                     break;
-                case 3:
+                case 3:   // Джип
+                case 30:  // Мини джип
                     holder.car.setBackgroundResource(R.drawable.background_button_jeep);
                     if(position == selectedPosition)
                         holder.car.setBackgroundResource(R.drawable.ic_jeep_selected);
                     break;
-                case 4:
+                case 4:   // Минивэн
+                case 41:  // Микроавтобус
                     holder.car.setBackgroundResource(R.drawable.background_button_minbus);
                     if(position == selectedPosition)
                         holder.car.setBackgroundResource(R.drawable.ic_minbus_selected);
-                case 5:
+                    break;
+                case 5:   // Мотоцикл
                     holder.car.setBackgroundResource(R.drawable.background_button_moto);
                     if(position == selectedPosition)
                         holder.car.setBackgroundResource(R.drawable.ic_motorbike_selected);

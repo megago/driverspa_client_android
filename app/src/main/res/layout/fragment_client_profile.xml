@@ -24,37 +24,50 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7" >
+        android:layout_weight="7"
+        android:clipToPadding="false"
+        android:scrollbars="none" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/vertical_margin" >
+            android:paddingLeft="@dimen/horizontal_margin"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:paddingBottom="@dimen/vertical_margin_double" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical" >
+            <!-- ===== Avatar ===== -->
+            <FrameLayout
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/vertical_margin_double">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_avatar_ring" />
 
                 <FrameLayout
                     android:layout_width="@dimen/washer_profile_view_width"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/washer_profile_view_width"
                     android:layout_gravity="center">
+
                     <com.driverspa.view.ImageViewSquared
                         android:id="@+id/imgClientAvatar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:clickable="true"/>
+                        android:clickable="true" />
+
                     <ImageView
                         android:id="@+id/images_circle"
                         android:visibility="gone"
                         android:layout_width="@dimen/washer_profile_view_width"
                         android:layout_height="@dimen/washer_profile_view_width"
-                        android:src="@drawable/ic_circle_new_message"/>
+                        android:src="@drawable/ic_circle_new_message" />
+
                     <FrameLayout
                         android:id="@+id/images_count_rect"
                         android:layout_width="wrap_content"
@@ -71,136 +84,157 @@
                             android:text="12"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal"
-                            android:layout_gravity="center"/>
+                            android:layout_gravity="center" />
                     </FrameLayout>
                 </FrameLayout>
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom|right"
+                    android:clickable="false"
+                    android:src="@drawable/ic_camera_badge" />
+            </FrameLayout>
+
+            <!-- ===== Name + phone card ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_double"
+                android:background="@drawable/bg_profile_card"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/horizontal_margin"
+                android:paddingRight="@dimen/horizontal_margin"
+                android:paddingTop="@dimen/vertical_margin_half"
+                android:paddingBottom="@dimen/vertical_margin_half">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical_margin_third"
+                    android:text="Имя"
+                    android:textAllCaps="true"
+                    android:textColor="@color/BlueLight"
+                    android:textSize="@dimen/text_smaller" />
 
                 <EditText
                     android:id="@+id/clientName"
                     style="@style/EditText.Transparent"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:layout_marginTop="@dimen/vertical_margin_half"
-                    android:hint="Имя"
+                    android:background="@null"
+                    android:hint="Введите имя"
                     android:imeOptions="actionNext"
                     android:inputType="text"
+                    android:paddingTop="@dimen/vertical_margin_third"
+                    android:paddingBottom="@dimen/vertical_margin_third"
                     android:textColor="@color/White"
                     android:textColorHint="@color/BlueLight"
                     android:textCursorDrawable="@null"
                     android:textIsSelectable="false"
-                    android:textSize="@dimen/text_normal" />
+                    android:textSize="@dimen/text_medium" />
 
-                <FrameLayout
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
+                    android:layout_marginTop="@dimen/vertical_margin_third"
+                    android:background="@drawable/bg_profile_divider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/vertical_margin_half"
-                    android:background="@color/BlueTransparent" >
-                </FrameLayout>
+                    android:text="Телефон"
+                    android:textAllCaps="true"
+                    android:textColor="@color/BlueLight"
+                    android:textSize="@dimen/text_smaller" />
 
                 <TextView
                     android:id="@+id/txtPhoneNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:layout_marginTop="@dimen/vertical_margin_half"
-                    android:paddingLeft="@dimen/horizontal_margin_half"
+                    android:paddingTop="@dimen/vertical_margin_third"
+                    android:paddingBottom="@dimen/vertical_margin_third"
                     android:text="+7 707 674 4674"
                     android:textColor="@color/White"
+                    android:textSize="@dimen/text_medium" />
+            </LinearLayout>
+
+            <!-- ===== Cars section ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginLeft="@dimen/horizontal_margin_half"
+                android:text="Мои машины"
+                android:textAllCaps="true"
+                android:textColor="@color/BlueLight"
+                android:textSize="@dimen/text_smaller" />
+
+            <com.driverspa.view.ExpandableGridView
+                android:id="@+id/grid_cars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:horizontalSpacing="8dp"
+                android:isScrollContainer="false"
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="auto_fit"
+                android:padding="1dp"
+                android:stretchMode="none"
+                android:verticalSpacing="8dp" />
+
+            <LinearLayout
+                android:id="@+id/cityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_list_item_buttons"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/vertical_margin_half"
+                android:visibility="gone"
+                android:paddingTop="@dimen/vertical_margin_half" >
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Город"
+                    android:paddingLeft="@dimen/horizontal_margin_half"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/BlueLight"
+                    android:textIsSelectable="false"
                     android:textSize="@dimen/text_normal" />
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:layout_marginTop="@dimen/vertical_margin_half"
-                    android:background="@color/BlueTransparent" >
-                </FrameLayout>
-
-                <com.driverspa.view.ExpandableGridView
-                    android:id="@+id/grid_cars"
+                <ImageView
+                    android:id="@+id/imageView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:horizontalSpacing="5dp"
-                    android:isScrollContainer="false"
-                    android:layout_marginTop="@dimen/vertical_margin"
-                    android:listSelector="@drawable/background_button_grid_item_cars"
-                    android:numColumns="auto_fit"
-                    android:padding="1dp"
-                    android:stretchMode="none"
-                    android:verticalSpacing="5dp" />
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:layout_marginTop="@dimen/vertical_margin"
-                    android:background="@color/BlueTransparent"/>
-
-                <LinearLayout
-                    android:id="@+id/cityLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:background="@drawable/background_list_item_buttons"
-                    android:clickable="true"
-                    android:orientation="horizontal"
-                    android:paddingBottom="@dimen/vertical_margin_half"
-                    android:visibility="gone"
-                    android:paddingTop="@dimen/vertical_margin_half" >
-
-                    <TextView
-                        android:id="@+id/txtCity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:text="Город"
-                        android:paddingLeft="@dimen/horizontal_margin_half"
-                        android:textColor="@color/White"
-                        android:textColorHint="@color/BlueLight"
-                        android:textIsSelectable="false"
-                        android:textSize="@dimen/text_normal" />
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:visibility="invisible"
-                        android:src="@drawable/ic_arrow_right" />
-                </LinearLayout>
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="@dimen/horizontal_margin"
-                    android:layout_marginRight="@dimen/horizontal_margin"
-                    android:visibility="gone"
-                    android:background="@color/BlueTransparent"/>
-
-                <Button
-                    android:id="@+id/btnSave"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/vertical_margin_double"
-                    android:background="@drawable/background_button_border"
-                    android:padding="10dp"
-                    android:text="Сохранить"
-                    android:textColor="@drawable/button_state_color"
-                    android:textSize="22sp" />
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_arrow_right" />
             </LinearLayout>
+
+            <!-- ===== Save ===== -->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/vertical_margin_double"
+                android:background="@drawable/bg_btn_save"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:text="Сохранить"
+                android:textAllCaps="true"
+                android:textColor="@color/LightBlue"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
