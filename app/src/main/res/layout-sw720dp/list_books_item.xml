@@ -35,8 +35,7 @@
             <TextView
                 android:id="@+id/txtBookTime"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:text="10:30"
                 android:textColor="@color/Black"
                 android:textSize="@dimen/text_smaller" />
@@ -44,9 +43,8 @@
             <TextView
                 android:id="@+id/txtBookTS"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:lines="2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_third"
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:text="01.01.2016"
@@ -117,7 +115,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
@@ -151,7 +148,7 @@
                 android:id="@+id/txtBookKey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="@dimen/vertical_margin_third"
                 android:layout_gravity="left|center"
                 android:gravity="bottom"
                 android:text=""
@@ -160,9 +157,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_half"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
