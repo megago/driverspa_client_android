@@ -81,6 +81,27 @@ public class User{
 
     List<CarItem> cars;
 
+    // Present only on the activate response (new password flow). Not persisted.
+    @SerializedName("password_required")
+    private Boolean passwordRequired;
+
+    // Present only on the whatsapp_status response. false while the WhatsApp
+    // verification is pending; true (alongside a token) once matched. Not persisted.
+    @SerializedName("verified")
+    private Boolean verified;
+
+    public boolean isVerified() {
+        return verified != null && verified;
+    }
+
+    public boolean isPasswordRequired() {
+        return passwordRequired != null && passwordRequired;
+    }
+
+    public void setPasswordRequired(Boolean passwordRequired) {
+        this.passwordRequired = passwordRequired;
+    }
+
     public String getCity() {
         return city;
     }

@@ -153,6 +153,11 @@ public class ClientVerificationFragment extends ClientBaseFragment {
      if(event.getAuthLoginResponse() != null){
       if(BaseAssist.isSuccess(event.getAuthLoginResponse())){
 	    UserPreferences.putRecoverySmsSentTime(getActivity(), 0);
+	    // New users must set a password after activation. The flag is read by
+	    // LoginActivity to route through the Create Password screen.
+	    boolean passwordRequired = event.getAuthLoginResponse().getResponse() != null
+	        && event.getAuthLoginResponse().getResponse().isPasswordRequired();
+	    UserPreferences.putPasswordRequired(getActivity(), passwordRequired);
 		activityActions.openClientHomeActivity();
 
 	  }else{

@@ -13,9 +13,13 @@ import java.util.ArrayList;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.assist.UserSelfAssist;
+import com.driverspa.client.fragment.ClientCreatePasswordFragment;
+import com.driverspa.client.fragment.ClientPasswordLoginFragment;
 import com.driverspa.client.fragment.ClientRegisterUserFragment;
 import com.driverspa.client.fragment.ClientRegistrationFragment;
+import com.driverspa.client.fragment.ClientResetPasswordFragment;
 import com.driverspa.client.fragment.ClientVerificationFragment;
+import com.driverspa.client.fragment.ClientWhatsappFragment;
 import com.driverspa.fragment.MainFragment;
 //import com.driverspa.gcm.RegistrationIntentService;
 import com.driverspa.model.CurrentGeoPosition;
@@ -34,6 +38,9 @@ public class LoginActivity extends BaseActivity implements
 		MainFragment.ActivityActions,
 		ClientRegistrationFragment.ActivityActions,
 		ClientVerificationFragment.ActivityActions,
+		ClientPasswordLoginFragment.ActivityActions,
+		ClientCreatePasswordFragment.ActivityActions,
+		ClientResetPasswordFragment.ActivityActions,
         ClientRegisterUserFragment.ActivityActions{
 
 	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -87,21 +94,72 @@ public class LoginActivity extends BaseActivity implements
 	public void openClientHomeActivity() {
 		registerGCM();
 		User user = UserSelfAssist.getUserFromDb(UserPreferences.getUserId(BA.getContext()));
-		if(user != null) {
-			if (TextUtils.isEmpty(user.getFirstName()) || !(user.getCars() != null && user.getCars().size() > 0)) {
-				for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); ++i) {
-					getSupportFragmentManager().popBackStack();
-				}
-				replaceFragment(new ClientRegisterUserFragment());
-				//Clear backstack
-			} else {
-				finish();
-				overridePendingTransition(0, 0);
-			}
-		}
-		else{
+		if(user == null) {
 			ToastUtil.display(BA.getContext(),"Ошибка при входе");
+			return;
 		}
+
+		boolean profileIncomplete = TextUtils.isEmpty(user.getFirstName())
+				|| !(user.getCars() != null && user.getCars().size() > 0);
+
+		// New users (password_required) must finish the profile and then set a
+		// password before entering the app.
+		if (UserPreferences.isPasswordRequired(BA.getContext())) {
+			if (profileIncomplete) {
+				clearBackStack();
+				replaceFragment(new ClientRegisterUserFragment());
+			} else {
+				openClientCreatePassword();
+			}
+			return;
+		}
+
+		if (profileIncomplete) {
+			clearBackStack();
+			replaceFragment(new ClientRegisterUserFragment());
+		} else {
+			finish();
+			overridePendingTransition(0, 0);
+		}
+	}
+
+	private void clearBackStack() {
+		for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); ++i) {
+			getSupportFragmentManager().popBackStack();
+		}
+	}
+
+	@Override
+	public void openClientWhatsappRegistration(String phone, String email) {
+		ClientWhatsappFragment fragment = new ClientWhatsappFragment();
+		Bundle args = new Bundle();
+		args.putString(ClientWhatsappFragment.ARG_PHONE, phone);
+		args.putString(ClientWhatsappFragment.ARG_EMAIL, email);
+		fragment.setArguments(args);
+		replaceFragment(fragment);
+	}
+
+	@Override
+	public void openClientPasswordLogin(String phone) {
+		ClientPasswordLoginFragment fragment = new ClientPasswordLoginFragment();
+		Bundle args = new Bundle();
+		args.putString(ClientPasswordLoginFragment.ARG_PHONE, phone);
+		fragment.setArguments(args);
+		replaceFragment(fragment);
+	}
+
+	@Override
+	public void openClientResetPassword(String phone) {
+		ClientResetPasswordFragment fragment = new ClientResetPasswordFragment();
+		Bundle args = new Bundle();
+		args.putString(ClientResetPasswordFragment.ARG_PHONE, phone);
+		fragment.setArguments(args);
+		replaceFragment(fragment);
+	}
+
+	@Override
+	public void openClientCreatePassword() {
+		replaceFragment(new ClientCreatePasswordFragment());
 	}
 
 	@Override

@@ -25,6 +25,8 @@ import com.driverspa.util.otto.ws.AuthAdminVerificationRequestEvent;
 import com.driverspa.util.otto.ws.AuthAdminVerificationResponseEvent;
 import com.driverspa.util.otto.ws.AuthClientVerificationRequestEvent;
 import com.driverspa.util.otto.ws.AuthClientVerificationResponseEvent;
+import com.driverspa.util.otto.ws.LoginPasswordRequestEvent;
+import com.driverspa.util.otto.ws.ResetPasswordRequestEvent;
 import com.driverspa.util.otto.ws.WasherGetResponseEvent;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -76,7 +78,66 @@ public class AuthVerificationAssist extends BaseAssist {
 		});
 	}
 
-	
+	/**
+	 * Password login for a returning client (check_phone -> has_password == true).
+	 * Signs the user in and reuses the client verification response so the UI
+	 * routes to the client home exactly like the OTP path.
+	 */
+	@Subscribe
+	public void onLoginPasswordRequested(final LoginPasswordRequestEvent event) {
+		logD("onLoginPasswordRequested");
+		getApi().loginPassword(event.getRequest(), new Callback<AuthClientVerificationResponseHolder>() {
+			@Override
+			public void success(AuthClientVerificationResponseHolder data, Response response) {
+				if (isSuccess(data)) {
+					User user = data.getResponse();
+					UserPreferences.onUserLogin(BA.getContext(), user.getId(), user.getPhone(), user.getToken());
+					writeSelfToDb(user);
+					getEventsBus().post(new AuthClientVerificationResponseEvent(data));
+				} else {
+					getEventsBus().post(new AuthClientVerificationResponseEvent(data));
+					onDataError(data);
+				}
+			}
+
+			@Override
+			public void failure(RetrofitError error) {
+				getEventsBus().post(new AuthClientVerificationResponseEvent(null));
+				onRetrofitError(error);
+			}
+		});
+	}
+
+	/**
+	 * Forgot-password completion for a client (OTP code + new password). Signs
+	 * the user in with the new password, then routes like the OTP path.
+	 */
+	@Subscribe
+	public void onResetPasswordRequested(final ResetPasswordRequestEvent event) {
+		logD("onResetPasswordRequested");
+		getApi().resetPassword(event.getRequest(), new Callback<AuthClientVerificationResponseHolder>() {
+			@Override
+			public void success(AuthClientVerificationResponseHolder data, Response response) {
+				if (isSuccess(data)) {
+					User user = data.getResponse();
+					UserPreferences.onUserLogin(BA.getContext(), user.getId(), user.getPhone(), user.getToken());
+					writeSelfToDb(user);
+					getEventsBus().post(new AuthClientVerificationResponseEvent(data));
+				} else {
+					getEventsBus().post(new AuthClientVerificationResponseEvent(data));
+					onDataError(data);
+				}
+			}
+
+			@Override
+			public void failure(RetrofitError error) {
+				getEventsBus().post(new AuthClientVerificationResponseEvent(null));
+				onRetrofitError(error);
+			}
+		});
+	}
+
+
 	@Subscribe
 	public void onAuthVerificationRequested(final AuthAdminVerificationRequestEvent event) {
 		

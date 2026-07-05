@@ -33,11 +33,17 @@ import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.model.api.request.AuthClientRegistrationRequest;
+import com.driverspa.model.api.request.CheckPhoneRequest;
+import com.driverspa.model.api.request.ResendActivationRequest;
 import com.driverspa.util.MaskedWatcher;
 import com.driverspa.util.ToastUtil;
 import com.driverspa.util.UserPreferences;
 import com.driverspa.util.otto.ws.AuthClientRegistrationRequestEvent;
 import com.driverspa.util.otto.ws.AuthClientRegistrationResponseEvent;
+import com.driverspa.util.otto.ws.CheckPhoneRequestEvent;
+import com.driverspa.util.otto.ws.CheckPhoneResponseEvent;
+import com.driverspa.util.otto.ws.ResendActivationRequestEvent;
+import com.driverspa.util.otto.ws.ResendActivationResponseEvent;
 
 public class ClientRegistrationFragment extends ClientBaseFragment {
 
@@ -45,11 +51,14 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 
 	public interface ActivityActions {
 		public void openClientVerification();
+		public void openClientPasswordLogin(String phone);
+		public void openClientWhatsappRegistration(String phone, String email);
 	}
 	private final String TAG = "RegistrationFragment";
 	private ActivityActions activityActions;
 	private String channel;
 	private String email;
+	private String fullPhone;
 
 	@BindView(R.id.login_phone)
 	EditText phone;
@@ -172,6 +181,18 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 
 		channel = selectedChannel();
 		email = loginEmail.getText().toString().trim();
+		fullPhone = "+7" + phoneStr;
+
+		// WhatsApp registration is a separate flow: it skips check_phone and the
+		// OTP code entirely, handing off to ClientWhatsappFragment which calls
+		// whatsapp_request and waits for the verification. Email is optional.
+		if (UserPreferences.CHANNEL_WHATSAPP.equals(channel)) {
+			UserPreferences.putOtpChannel(BA.getContext(), channel);
+			activityActions.openClientWhatsappRegistration(fullPhone,
+					TextUtils.isEmpty(email) ? null : email);
+			return;
+		}
+
 		if (UserPreferences.CHANNEL_EMAIL.equals(channel)
 				&& (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
 			loginEmail.setError("Введите корректный email");
@@ -181,16 +202,41 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 
 		UserPreferences.putOtpChannel(BA.getContext(), channel);
 		UserPreferences.putOtpEmail(BA.getContext(), email);
-		processRegistration("+7" + phoneStr);
-	}
-
-	private void processRegistration(String phone) {
+		fullPhone = "+7" + phoneStr;
 		setWaitScreen(true);
-		String emailToSend = TextUtils.isEmpty(email) ? null : email;
-		BA.getEventBus().post(new AuthClientRegistrationRequestEvent(
-				new AuthClientRegistrationRequest(phone, channel, emailToSend)));
+		BA.getEventBus().post(new CheckPhoneRequestEvent(new CheckPhoneRequest(fullPhone)));
 	}
 
+	/**
+	 * Branch on the check_phone result: returning users with a password go to the
+	 * password-login screen, brand-new users are registered (OTP sent), and known
+	 * users without a password yet get a fresh OTP (resend_activation).
+	 */
+	@Subscribe
+	public void onCheckPhoneResponse(CheckPhoneResponseEvent event) {
+		if (event.getData() == null || event.getData().getResponse() == null
+				|| !"success".equals(event.getData().getStatus())) {
+			setWaitScreen(false);
+			ToastUtil.display(getActivity(), event.getData() != null && event.getData().getMessage() != null
+					? event.getData().getMessage() : "Ошибка, попробуйте еще раз");
+			return;
+		}
+
+		if (event.getData().getResponse().isHasPassword()) {
+			setWaitScreen(false);
+			activityActions.openClientPasswordLogin(fullPhone);
+		} else if (!event.getData().getResponse().isExists()) {
+			String emailToSend = TextUtils.isEmpty(email) ? null : email;
+			BA.getEventBus().post(new AuthClientRegistrationRequestEvent(
+					new AuthClientRegistrationRequest(fullPhone, channel, emailToSend)));
+		} else {
+			// Phone known but no password yet — keep the phone for the verification
+			// screen (the registration assist won't store it on this path).
+			UserPreferences.putAuthPhone(BA.getContext(), fullPhone);
+			BA.getEventBus().post(new ResendActivationRequestEvent(
+					new ResendActivationRequest(fullPhone, channel)));
+		}
+	}
 
 	/**
 	 * Runs when user's just registration (Open Verification activity)
@@ -204,6 +250,17 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		 }else{
 		   ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
 	   }
+	}
+
+	@Subscribe
+	public void onResendActivationResponse(ResendActivationResponseEvent event) {
+		setWaitScreen(false);
+		if (event.getData() != null && "success".equals(event.getData().getStatus())) {
+			activityActions.openClientVerification();
+		} else {
+			ToastUtil.display(getActivity(), event.getData() != null && event.getData().getMessage() != null
+					? event.getData().getMessage() : "Ошибка, попробуйте еще раз");
+		}
 	}
 
 	/**

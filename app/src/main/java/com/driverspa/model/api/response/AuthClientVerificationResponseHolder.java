@@ -13,4 +13,8 @@ public class AuthClientVerificationResponseHolder extends BaseResponseHolder {
 		return response;
 	}
 
+	public void setResponse(User response) {
+		this.response = response;
+	}
+
 }

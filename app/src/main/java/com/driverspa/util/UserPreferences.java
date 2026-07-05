@@ -11,6 +11,7 @@ public class UserPreferences extends Preferences {
 	private static final String USER_TOKEN = "USER_TOKEN";
 	private static final String USER_ID = "USER_ID";
 	private static final String USER_PHONE = "USER_PHONE";
+	private static final String PASSWORD_REQUIRED = "PASSWORD_REQUIRED";
 	private static final String LANG = "lang";
 	private static final String LOCATION = "LOCATION";
 	private static final String NOTIFICATION = "NOTIFICATION";
@@ -183,9 +184,26 @@ public class UserPreferences extends Preferences {
 	private static void putUserPhone(Context context, String phone) {
 		putString(context, USER_PHONE, phone);
 	}
-	
+
+	// Used by the check_phone / resend-activation branch, where the registration
+	// assist hasn't stored the phone yet, so the verification screen can read it.
+	public static void putAuthPhone(Context context, String phone) {
+		putUserPhone(context, phone);
+	}
+
 	public static String getUserPhone(Context context) {
 		return getString(context, USER_PHONE);
+	}
+
+	// Pending "create password" step after OTP activation (new password flow).
+	// Set when the activate response carries password_required; cleared after
+	// set_password completes.
+	public static void putPasswordRequired(Context context, boolean required) {
+		putBoolean(context, PASSWORD_REQUIRED, required);
+	}
+
+	public static boolean isPasswordRequired(Context context) {
+		return getBoolean(context, PASSWORD_REQUIRED, false);
 	}
 	
 	public static boolean isUserLoggedIn(Context context) {

@@ -27,6 +27,16 @@
     <!--<permission android:name="com.driverspa.permission.C2D_MESSAGE" />-->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
+    <!-- Android 11+ package visibility: needed so Intent.setPackage("com.whatsapp")
+         resolves when deep-linking into WhatsApp for registration. -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" android:host="wa.me" />
+        </intent>
+    </queries>
+
     <application
         android:name="com.driverspa.BA"
         android:allowBackup="true"

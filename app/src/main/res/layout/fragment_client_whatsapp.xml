@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:text="DriverSpa"
+        android:textColor="@color/White"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold" />
+
+    <!-- Useful content centered in the space left below the title. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtWhatsappInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:gravity="center"
+            android:text="@string/whatsapp_register_info"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_medium" />
+
+        <Button
+            android:id="@+id/btnSendWhatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:alpha="0.35"
+            android:background="@drawable/bg_btn_save"
+            android:drawableLeft="@drawable/ic_whatsapp"
+            android:drawablePadding="@dimen/horizontal_margin_third"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="@string/whatsapp_send_button"
+            android:textAllCaps="true"
+            android:textColor="@color/LightBlue"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/waitLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/whatsappProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleSmall" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin_half"
+                android:text="@string/whatsapp_waiting"
+                android:textColor="@color/BlueLight"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTimeout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:gravity="center"
+            android:textColor="@color/White"
+            android:textSize="@dimen/text_small"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/vertical_margin_half"
+            android:background="@drawable/background_button_borderless"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="@string/whatsapp_retry"
+            android:textColor="@drawable/button_state_color"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

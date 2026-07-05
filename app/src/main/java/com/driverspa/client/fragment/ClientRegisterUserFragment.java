@@ -48,6 +48,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 
 	public interface ActivityActions {
 		public void openClientHomeActivity();
+		public void openClientCreatePassword();
 	}
 
 	public static ClientRegisterUserFragment newInstance(Washer washer, BookingRequest request) {
@@ -185,7 +186,12 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 	public void onUserSelfResponseReceived(UserUpdateSelfResponseEvent event){
 		if(event != null && event.getData() != null && event.getData().getResponse() != null){
 			setWaitScreen(false);
-			activityActions.openClientHomeActivity();
+			// New users set their password right after filling in the profile.
+			if (UserPreferences.isPasswordRequired(BA.getContext())) {
+				activityActions.openClientCreatePassword();
+			} else {
+				activityActions.openClientHomeActivity();
+			}
 		}
 		else{
 			ToastUtil.displayAtTop(getActivity(),"Повторите еще раз");

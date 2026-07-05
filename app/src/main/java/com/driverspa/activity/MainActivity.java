@@ -19,6 +19,7 @@ import com.driverspa.client.activity.ClientHomeActivity;
 import com.driverspa.client.fragment.ClientRegisterUserFragment;
 import com.driverspa.client.fragment.ClientRegistrationFragment;
 import com.driverspa.client.fragment.ClientVerificationFragment;
+import com.driverspa.client.fragment.ClientWhatsappFragment;
 import com.driverspa.db.WashmeOrmLiteSqlHelper;
 import com.driverspa.fragment.MainFragment;
 //import com.driverspa.gcm.RegistrationIntentService;
@@ -108,6 +109,26 @@ public class MainActivity extends BaseActivity implements
 		finish();
 		overridePendingTransition(0,0);
 		startActivity(new Intent(this, ClientHomeActivity.class).putExtra(OPENING_ANIMATION, false));
+	}
+
+	@Override
+	public void openClientPasswordLogin(String phone) {
+		openClientHomeActivity();
+	}
+
+	@Override
+	public void openClientWhatsappRegistration(String phone, String email) {
+		ClientWhatsappFragment fragment = new ClientWhatsappFragment();
+		Bundle args = new Bundle();
+		args.putString(ClientWhatsappFragment.ARG_PHONE, phone);
+		args.putString(ClientWhatsappFragment.ARG_EMAIL, email);
+		fragment.setArguments(args);
+		replaceFragment(fragment);
+	}
+
+	@Override
+	public void openClientCreatePassword() {
+		openClientHomeActivity();
 	}
 
 	//TODO Administration registration

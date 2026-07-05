@@ -15,6 +15,14 @@ import com.driverspa.model.api.request.AddReviewRequest;
 import com.driverspa.model.api.request.AuthAdminRegistrationRequest;
 import com.driverspa.model.api.request.AuthClientRegistrationRequest;
 import com.driverspa.model.api.request.AuthVerificationRequest;
+import com.driverspa.model.api.request.CheckPhoneRequest;
+import com.driverspa.model.api.request.ForgotPasswordRequest;
+import com.driverspa.model.api.request.LoginPasswordRequest;
+import com.driverspa.model.api.request.ResetPasswordRequest;
+import com.driverspa.model.api.request.ResendActivationRequest;
+import com.driverspa.model.api.request.SetPasswordRequest;
+import com.driverspa.model.api.request.WhatsappRequest;
+import com.driverspa.model.api.request.WhatsappStatusRequest;
 import com.driverspa.model.api.request.BookingRequest;
 import com.driverspa.model.api.request.BoxOperationRequest;
 import com.driverspa.model.api.request.InitialWasherCreateRequest;
@@ -27,6 +35,10 @@ import com.driverspa.model.api.response.AuthAdminRegistrationResponseHolder;
 import com.driverspa.model.api.response.AuthAdminVerificationResponseHolder;
 import com.driverspa.model.api.response.AuthClientRegistrationResponseHolder;
 import com.driverspa.model.api.response.AuthClientVerificationResponseHolder;
+import com.driverspa.model.api.response.CheckPhoneResponseHolder;
+import com.driverspa.model.api.response.OkResponseHolder;
+import com.driverspa.model.api.response.WhatsappRequestResponseHolder;
+import com.driverspa.model.api.response.WhatsappStatusResponseHolder;
 import com.driverspa.model.api.response.BaseResponseHolder;
 import com.driverspa.model.api.response.BookInfoResponseHolder;
 import com.driverspa.model.api.response.BookResponseHolder;
@@ -107,11 +119,57 @@ public class RetrofitClient {
 		void getAboutUS(
 				Callback<AboutUSResponseHolder> callback);
 		
+		@POST("/v1/account/check_phone")
+		void checkPhone(
+				@Body CheckPhoneRequest body,
+				Callback<CheckPhoneResponseHolder> callback);
+
+		@POST("/v1/account/set_password")
+		void setPassword(
+				@Body SetPasswordRequest body,
+				Callback<OkResponseHolder> callback);
+
+		@POST("/v1/account/login_password")
+		void loginPassword(
+				@Body LoginPasswordRequest body,
+				Callback<AuthClientVerificationResponseHolder> callback);
+
+		@POST("/v1/account/forgot_password")
+		void forgotPassword(
+				@Body ForgotPasswordRequest body,
+				Callback<OkResponseHolder> callback);
+
+		@POST("/v1/account/reset_password")
+		void resetPassword(
+				@Body ResetPasswordRequest body,
+				Callback<AuthClientVerificationResponseHolder> callback);
+
+		@POST("/v1/account/resend_activation")
+		void resendActivation(
+				@Body ResendActivationRequest body,
+				Callback<OkResponseHolder> callback);
+
+		// WhatsApp registration: request a short token + wa_link to deep-link
+		// into WhatsApp. The user isn't logged in yet, so push_token is passed
+		// in the body so the backend can push {type:"wa_verified"}.
+		@POST("/v1/account/whatsapp_request/")
+		void whatsappRequest(
+				@Body WhatsappRequest body,
+				Callback<WhatsappRequestResponseHolder> callback);
+
+		// Poll for the result of the WhatsApp verification using the SHORT token
+		// from whatsapp_request. Returns {verified:false} until the message is
+		// matched, then the full account + token (= api_key).
+		@POST("/v1/account/whatsapp_status/")
+		void whatsappStatus(
+				@Body WhatsappStatusRequest body,
+				Callback<WhatsappStatusResponseHolder> callback);
+
 		@POST("/v1/account/register")
 		void authClientRegistration(
 				@Body AuthClientRegistrationRequest body,
 				Callback<AuthClientRegistrationResponseHolder> callback);
-		
+
 		@POST("/v1/account/activate/")
 		void authClientVerify(
 				@Body AuthVerificationRequest body,
