@@ -1,6 +1,9 @@
 package com.driverspa.client.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
@@ -60,6 +63,7 @@ public class ClientWasherInfoActivity extends BaseActivity implements ActivityAc
 		  setSupportActionBar(mToolbar);
 		  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		  getSupportActionBar().setDisplayShowTitleEnabled(false);
+		  tintToolbarIconsWhite();
 		  fragmentManager = getSupportFragmentManager();
          if (arg0 == null) {
 			fragment = new ClientWasherInfoFragment();
@@ -77,7 +81,26 @@ public class ClientWasherInfoActivity extends BaseActivity implements ActivityAc
 		//Initially hide add button
 		MenuItem item = menu.findItem(R.id.menu_add);
 		item.setVisible(false);
+		tintToolbarIconsWhite();
 		return true;
+	}
+
+	private void tintToolbarIconsWhite() {
+		if (mToolbar == null) {
+			return;
+		}
+		Drawable nav = mToolbar.getNavigationIcon();
+		if (nav != null) {
+			nav = nav.mutate();
+			nav.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+			mToolbar.setNavigationIcon(nav);
+		}
+		Drawable overflow = mToolbar.getOverflowIcon();
+		if (overflow != null) {
+			overflow = overflow.mutate();
+			overflow.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+			mToolbar.setOverflowIcon(overflow);
+		}
 	}
 
 	@Override

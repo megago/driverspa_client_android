@@ -191,15 +191,20 @@
 
                 <Button
                     android:id="@+id/btnSave"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/horizontal_margin"
+                    android:layout_marginRight="@dimen/horizontal_margin"
                     android:layout_marginTop="@dimen/vertical_margin_double"
-                    android:background="@drawable/background_button_border"
-                    android:padding="10dp"
+                    android:background="@drawable/bg_btn_save"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
                     android:text="Сохранить"
-                    android:textColor="@drawable/button_state_color"
-                    android:textSize="22sp" />
+                    android:textAllCaps="true"
+                    android:textColor="@color/LightBlue"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

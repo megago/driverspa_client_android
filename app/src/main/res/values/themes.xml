@@ -13,4 +13,10 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
+
+    <!-- Theme overlay for toolbars with a colored background: tints control
+         icons (e.g. the ActionBarDrawerToggle hamburger) white. -->
+    <style name="ToolbarTheme.WhiteControls" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
 </resources>
