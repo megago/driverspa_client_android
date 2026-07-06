@@ -2,10 +2,13 @@ package com.driverspa.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.splunk.mint.Mint;
 
 import java.util.ArrayList;
@@ -21,12 +24,13 @@ import com.driverspa.client.fragment.ClientResetPasswordFragment;
 import com.driverspa.client.fragment.ClientVerificationFragment;
 import com.driverspa.client.fragment.ClientWhatsappFragment;
 import com.driverspa.fragment.MainFragment;
-//import com.driverspa.gcm.RegistrationIntentService;
 import com.driverspa.model.CurrentGeoPosition;
+import com.driverspa.model.Device;
 import com.driverspa.model.User;
 import com.driverspa.model.UserLocation;
 import com.driverspa.util.ToastUtil;
 import com.driverspa.util.UserPreferences;
+import com.driverspa.util.otto.ws.PushRequestEvent;
 import com.driverspa.util.otto.ws.UserLocationUpdateEvent;
 
 /**
@@ -173,12 +177,7 @@ public class LoginActivity extends BaseActivity implements
 	}
 
 	public void registerGCM() {
-//		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		String PUSH_TOKEN = UserPreferences.getPushToken(this);//sharedPreferences.getString(RegistrationIntentService.PUSH_TOKEN, "");
-		if (TextUtils.isEmpty(PUSH_TOKEN) && checkPlayServices()) {
-//			Intent intent = new Intent(LoginActivity.this, RegistrationIntentService.class);
-//			startService(intent);
-		}
+		registerFcm();
 
 		UserLocation userLocation = new UserLocation();
 		ArrayList<Double> lonLat;
@@ -196,6 +195,32 @@ public class LoginActivity extends BaseActivity implements
 			userLocation.setCity(city);
 		}
 		BA.getEventBus().post(new UserLocationUpdateEvent(userLocation));
+	}
+
+	/**
+	 * Fetches the current FCM registration token, caches it, and registers this
+	 * device with the backend so a freshly-logged-in client starts receiving
+	 * pushes immediately. onNewToken in MyFirebaseMessagingService covers rotation.
+	 */
+	private void registerFcm() {
+		if (!checkPlayServices()) {
+			return;
+		}
+		FirebaseMessaging.getInstance().getToken()
+				.addOnCompleteListener(task -> {
+					if (!task.isSuccessful()) {
+						Log.w("FCM", "getToken failed", task.getException());
+						return;
+					}
+					String token = task.getResult();
+					if (TextUtils.isEmpty(token) || !UserPreferences.isUserLoggedIn(this)) {
+						return;
+					}
+					UserPreferences.putPushToken(this, token);
+					String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+					BA.getEventBus().post(new PushRequestEvent(deviceId,
+							new Device(android.os.Build.MODEL, "android", token, "fcm")));
+				});
 	}
 
 	/**

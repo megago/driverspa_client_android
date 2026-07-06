@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modern switch, checked state: solid white track with deep-blue thumb on the right -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:width="48dp"
+        android:height="28dp"
+        android:gravity="center_vertical">
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="@color/White" />
+        </shape>
+    </item>
+
+    <item
+        android:width="20dp"
+        android:height="20dp"
+        android:right="4dp"
+        android:gravity="center_vertical|right">
+        <shape android:shape="oval">
+            <solid android:color="@color/statusbarColor" />
+        </shape>
+    </item>
+
+</layer-list>

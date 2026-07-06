@@ -3,12 +3,15 @@ package com.driverspa.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.splunk.mint.Mint;
 import com.squareup.otto.Subscribe;
 
@@ -22,6 +25,7 @@ import com.driverspa.R;
 import com.driverspa.assist.UserSelfAssist;
 import com.driverspa.client.activity.ClientHomeActivity;
 import com.driverspa.model.CurrentGeoPosition;
+import com.driverspa.model.Device;
 import com.driverspa.model.User;
 import com.driverspa.model.UserLocation;
 import com.driverspa.util.ToastUtil;
@@ -29,6 +33,7 @@ import com.driverspa.util.UserPreferences;
 import com.driverspa.util.otto.ws.AboutUSRequestEvent;
 import com.driverspa.util.otto.ws.InitRequestEvent;
 import com.driverspa.util.otto.ws.InitResponseEvent;
+import com.driverspa.util.otto.ws.PushRequestEvent;
 import com.driverspa.util.otto.ws.UserGetSelfRequestEvent;
 import com.driverspa.util.otto.ws.UserLocationUpdateEvent;
 
@@ -97,7 +102,34 @@ public class SplashActivity extends BaseActivity implements AnimationListener{
 					BA.getEventBus().post(new UserGetSelfRequestEvent(userId));
 				}
 			}
+
+			// Refresh the FCM token and (re)register this device on every launch of
+			// an already-logged-in client, so the backend always has a live token.
+			registerFcm();
 		}
+	}
+
+	/**
+	 * Fetches the current FCM registration token and registers this device with
+	 * the backend. Runs only for an already-signed-in client (guarded by the
+	 * caller). onNewToken in MyFirebaseMessagingService covers token rotation.
+	 */
+	private void registerFcm() {
+		FirebaseMessaging.getInstance().getToken()
+				.addOnCompleteListener(task -> {
+					if (!task.isSuccessful()) {
+						Log.w("FCM", "getToken failed", task.getException());
+						return;
+					}
+					String token = task.getResult();
+					if (TextUtils.isEmpty(token) || !UserPreferences.isUserLoggedIn(this)) {
+						return;
+					}
+					UserPreferences.putPushToken(this, token);
+					String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+					BA.getEventBus().post(new PushRequestEvent(deviceId,
+							new Device(android.os.Build.MODEL, "android", token, "fcm")));
+				});
 	}
 
 	@Override

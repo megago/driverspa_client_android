@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279306161387",
+    "project_id": "driverspa-client",
+    "storage_bucket": "driverspa-client.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279306161387:android:1d4197ba9c817b24c542ae",
+        "android_client_info": {
+          "package_name": "com.driverspa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Lac99L62Ee-_-UOIZF6-3mYJBE8K9iw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

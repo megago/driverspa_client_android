@@ -181,6 +181,10 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
             }
         };
 
+        // Tint the hamburger / drawer-arrow icon white so it's visible on the toolbar.
+        mActionBarDrawerToggle.getDrawerArrowDrawable()
+                .setColor(getResources().getColor(R.color.White));
+
 //        if (!mUserLearnedDrawer && !mFromSavedInstanceState)
 //            mDrawerLayout.openDrawer(mFragmentContainerView);
 

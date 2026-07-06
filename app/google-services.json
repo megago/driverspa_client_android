@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "693899870275",
+    "project_id": "driverspa-503ed",
+    "storage_bucket": "driverspa-503ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693899870275:android:fb3a98367f913e525454f6",
+        "android_client_info": {
+          "package_name": "com.driverspa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKq82vttXzMwkSENYrMQM9H_nFqmH8odo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693899870275:android:e9008eae114a782f5454f6",
+        "android_client_info": {
+          "package_name": "com.driverspaAdmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKq82vttXzMwkSENYrMQM9H_nFqmH8odo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

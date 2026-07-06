@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -77,6 +78,14 @@ dependencies {
 
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
     implementation 'com.google.android.material:material:1.12.0'
+
+    // Firebase Cloud Messaging (push notifications). Requires the real
+    // app/google-services.json for package com.driverspa, downloaded from the
+    // Firebase Console (project driverspa-503ed). Until that file is in place
+    // the google-services plugin will fail the build.
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.messaging
+
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
 

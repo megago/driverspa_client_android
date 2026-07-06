@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selected-value view for the filter sorting spinner: white text on the blue background -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:singleLine="true"
+    android:textColor="@color/White"
+    android:textSize="@dimen/text_normal" />

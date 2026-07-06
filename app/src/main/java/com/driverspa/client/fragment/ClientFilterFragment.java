@@ -131,7 +131,7 @@ public class ClientFilterFragment extends DialogFragment {
     private void createSpinner(){
         if(spinner != null) {
             final String[] valuesArray =  {"Ближайшие","По рейтингу","Самые дешевые", "Самые дорогие"};
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, valuesArray);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item_filter, valuesArray);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

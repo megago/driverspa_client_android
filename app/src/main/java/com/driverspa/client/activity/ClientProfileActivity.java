@@ -3,8 +3,11 @@ package com.driverspa.client.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import android.view.MenuItem;
 import com.splunk.mint.Mint;
 import com.driverspa.R;
@@ -56,6 +59,13 @@ public class ClientProfileActivity extends BaseActivity implements ClientProfile
 	    setSupportActionBar(mToolbar);
 	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	    getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+	    // Tint the back (up) arrow white so it stays visible on the toolbar.
+	    Drawable navIcon = mToolbar.getNavigationIcon();
+	    if (navIcon != null) {
+	        navIcon.setColorFilter(ContextCompat.getColor(this, R.color.White), PorterDuff.Mode.SRC_ATOP);
+	        mToolbar.setNavigationIcon(navIcon);
+	    }
 
         if( savedInstanceState == null ) {
         	getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ClientProfileFragment()).commitAllowingStateLoss();
