@@ -64,6 +64,8 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	EditText phone;
 	@BindView(R.id.login_email)
 	EditText loginEmail;
+	@BindView(R.id.emailContainer)
+	View emailContainer;
 	@BindView(R.id.channelGroup)
 	RadioGroup channelGroup;
 	@BindView(R.id.ofertaCheckbox)
@@ -83,7 +85,11 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-		channelGroup.check(R.id.channelEmail);
+		// WhatsApp is the default (and only) channel. The email field is only
+		// relevant for the Email channel, so toggle it with the selection.
+		channelGroup.check(R.id.channelWhatsapp);
+		channelGroup.setOnCheckedChangeListener((group, checkedId) -> updateEmailVisibility());
+		updateEmailVisibility();
 		phone.requestFocus();
         phone.setOnEditorActionListener(new OnEditorActionListener() {
 		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -159,6 +165,12 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		if (id == R.id.channelSms) return UserPreferences.CHANNEL_SMS;
 		if (id == R.id.channelWhatsapp) return UserPreferences.CHANNEL_WHATSAPP;
 		return UserPreferences.CHANNEL_EMAIL;
+	}
+
+	/** Email is only collected for the Email channel; hide it for WhatsApp. */
+	private void updateEmailVisibility() {
+		boolean isEmail = UserPreferences.CHANNEL_EMAIL.equals(selectedChannel());
+		emailContainer.setVisibility(isEmail ? View.VISIBLE : View.GONE);
 	}
 
 	@OnClick(R.id.btnOk)

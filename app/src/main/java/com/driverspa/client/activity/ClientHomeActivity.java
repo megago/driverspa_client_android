@@ -390,6 +390,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 menu.findItem(R.id.action_list).setVisible(true);
                 mSearchView = (SearchView) searchMenuItem.getActionView();
                 mSearchView.setOnQueryTextListener(this);
+                styleSearchViewWhite(mSearchView);
                 MenuItemCompat.setOnActionExpandListener(searchMenuItem, this);
                 break;
             case 1: //Map
@@ -409,6 +410,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 menu.findItem(R.id.action_list).setVisible(false);
                 mSearchView = (SearchView) searchMenuItem.getActionView();
                 mSearchView.setOnQueryTextListener(this);
+                styleSearchViewWhite(mSearchView);
                 MenuItemCompat.setOnActionExpandListener(searchMenuItem, this);
                 break;
             case 2: //Books
@@ -1329,6 +1331,12 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             searchQuery("");
         }
             isSearchable = false;
+        // The toolbar lazily creates its collapse (back) arrow when the search
+        // action view expands, and it defaults to a dark tint. Post so it exists,
+        // then white it to match the toolbar.
+        if (mToolbar != null) {
+            mToolbar.post(this::whiteCollapseIcon);
+        }
         return true;
     }
 
@@ -1339,6 +1347,51 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             searchQuery("");
         innerQuery = "";
         return true;
+    }
+
+    /**
+     * The appcompat SearchView's magnifier / close icons and its input text
+     * default to dark colors, which are barely visible on the blue toolbar.
+     * Tint them white to match the rest of the action bar.
+     */
+    private void styleSearchViewWhite(SearchView searchView) {
+        if (searchView == null) {
+            return;
+        }
+        int white = getResources().getColor(R.color.White);
+
+        EditText searchText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+        if (searchText != null) {
+            searchText.setTextColor(white);
+            searchText.setHintTextColor(getResources().getColor(R.color.BlueLight));
+        }
+
+        int[] iconIds = {
+                androidx.appcompat.R.id.search_mag_icon,
+                androidx.appcompat.R.id.search_button,
+                androidx.appcompat.R.id.search_close_btn,
+                androidx.appcompat.R.id.search_go_btn,
+                androidx.appcompat.R.id.search_voice_btn
+        };
+        for (int id : iconIds) {
+            ImageView icon = searchView.findViewById(id);
+            if (icon != null) {
+                icon.setColorFilter(white, PorterDuff.Mode.SRC_IN);
+            }
+        }
+    }
+
+    /** White-tints the toolbar's collapse (back) arrow shown while search is expanded. */
+    private void whiteCollapseIcon() {
+        if (mToolbar == null) {
+            return;
+        }
+        Drawable collapseIcon = mToolbar.getCollapseIcon();
+        if (collapseIcon != null) {
+            collapseIcon = collapseIcon.mutate();
+            collapseIcon.setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_IN);
+            mToolbar.setCollapseIcon(collapseIcon);
+        }
     }
 
     @Override
