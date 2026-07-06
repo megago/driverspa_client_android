@@ -9,7 +9,17 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+build/
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+
+# Build outputs
+/app/release/
+*.aab
+*.apk
+
+# Python compiled files (play_store scripts)
+*.pyc
+__pycache__/
