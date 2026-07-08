@@ -195,16 +195,6 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		email = loginEmail.getText().toString().trim();
 		fullPhone = "+7" + phoneStr;
 
-		// WhatsApp registration is a separate flow: it skips check_phone and the
-		// OTP code entirely, handing off to ClientWhatsappFragment which calls
-		// whatsapp_request and waits for the verification. Email is optional.
-		if (UserPreferences.CHANNEL_WHATSAPP.equals(channel)) {
-			UserPreferences.putOtpChannel(BA.getContext(), channel);
-			activityActions.openClientWhatsappRegistration(fullPhone,
-					TextUtils.isEmpty(email) ? null : email);
-			return;
-		}
-
 		if (UserPreferences.CHANNEL_EMAIL.equals(channel)
 				&& (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
 			loginEmail.setError("Введите корректный email");
@@ -221,8 +211,10 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 
 	/**
 	 * Branch on the check_phone result: returning users with a password go to the
-	 * password-login screen, brand-new users are registered (OTP sent), and known
-	 * users without a password yet get a fresh OTP (resend_activation).
+	 * password-login screen (regardless of the selected channel), WhatsApp users
+	 * without a password go to the WhatsApp verification flow, brand-new users are
+	 * registered (OTP sent), and known users without a password yet get a fresh OTP
+	 * (resend_activation).
 	 */
 	@Subscribe
 	public void onCheckPhoneResponse(CheckPhoneResponseEvent event) {
@@ -235,8 +227,16 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		}
 
 		if (event.getData().getResponse().isHasPassword()) {
+			// Backend says a password is set — always log in with the password
+			// instead of the WhatsApp/OTP flow.
 			setWaitScreen(false);
 			activityActions.openClientPasswordLogin(fullPhone);
+		} else if (UserPreferences.CHANNEL_WHATSAPP.equals(channel)) {
+			// No password yet and WhatsApp was chosen: hand off to the WhatsApp
+			// verification flow (whatsapp_request + poll). Email is optional.
+			setWaitScreen(false);
+			activityActions.openClientWhatsappRegistration(fullPhone,
+					TextUtils.isEmpty(email) ? null : email);
 		} else if (!event.getData().getResponse().isExists()) {
 			String emailToSend = TextUtils.isEmpty(email) ? null : email;
 			BA.getEventBus().post(new AuthClientRegistrationRequestEvent(
