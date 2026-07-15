@@ -142,4 +142,13 @@
 -dontwarn org.apache.http.**
 -dontwarn javax.inject.**
 -dontwarn com.squareup.javawriter.**
+
+# =====================================================================
+# PrettyTime — its per-locale i18n classes (org.ocpsoft.prettytime.i18n.
+# Resources, Resources_ru, …) are loaded by fully-qualified name via
+# ResourceBundle.getBundle(). R8 must not rename or strip them or the
+# lookup throws MissingResourceException at runtime.
+# =====================================================================
+-keep class org.ocpsoft.prettytime.** { *; }
+-keep class org.ocpsoft.prettytime.i18n.** { *; }
 -dontwarn org.ocpsoft.prettytime.**

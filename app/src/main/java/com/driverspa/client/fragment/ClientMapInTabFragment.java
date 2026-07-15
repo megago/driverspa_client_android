@@ -483,6 +483,13 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 	@Subscribe
 	public void onLocationResponseEvent(LocationResponseEvent event){
 		currentLoc = event.getLocation();
+		// The map may not be ready yet (getMapAsync callback not fired) or may have
+		// been torn down in onPause() (mMap set to null). Keep the location — the
+		// "my location" marker is re-added from mapCameraAdjust()/addMarkers() once
+		// the map is ready — but never touch a null map here.
+		if (mMap == null) {
+			return;
+		}
 		if(myMarker != null){
 			myMarker.remove();
 		}

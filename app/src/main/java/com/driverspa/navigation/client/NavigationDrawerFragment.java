@@ -129,7 +129,14 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
-            adapter.selectPosition(mCurrentSelectedPosition);
+            // NOTE: the adapter is only created in onCreateView(), which Android
+            // always calls after onCreate(), so it is still null here. Touching it
+            // now NPEs whenever the fragment is restored (savedInstanceState != null).
+            // onCreateView() re-applies the restored position via
+            // selectItem(mCurrentSelectedPosition), so nothing is lost.
+            if (adapter != null) {
+                adapter.selectPosition(mCurrentSelectedPosition);
+            }
         }
     }
 

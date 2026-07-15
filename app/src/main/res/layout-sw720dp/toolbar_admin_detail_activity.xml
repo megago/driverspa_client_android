@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     app:layout_scrollFlags="scroll|enterAlways|snap"
     android:background="@android:color/transparent"
+    android:theme="@style/ToolbarTheme.WhiteControls"
     android:minHeight="@dimen/abc_action_bar_default_height_material"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +13,18 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.squareup.otto.Subscribe;
+
 import butterknife.ButterKnife;
 import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.util.UserPreferences;
+import com.driverspa.util.otto.ws.AboutUSRequestEvent;
+import com.driverspa.util.otto.ws.AboutUSResponseEvent;
 import butterknife.BindView;
 
 public class ClientAboutUSFragment extends ClientBaseFragment {
-    String aboutUs = UserPreferences.getAboutUs(BA.getContext());
+    private String aboutUs = UserPreferences.getAboutUs(BA.getContext());
 
     public interface ActivityActions {
     }
@@ -67,8 +72,7 @@ public class ClientAboutUSFragment extends ClientBaseFragment {
             }
         }, "btnPlayMarket");
 
-        webView.loadData(aboutUs, "text/html; charset=utf-8", null);
-
+        // Set the client BEFORE loading so onPageFinished reliably hides the cover.
         webView.setWebViewClient(new WebViewClient(){
 
             @Override
@@ -91,8 +95,38 @@ public class ClientAboutUSFragment extends ClientBaseFragment {
             }
 
         });
+
+        renderAboutUs();
+
+        // Cache may be empty (initial fetch at splash failed/hasn't run yet) —
+        // fetch it now; onAboutUSReceived() re-renders when it arrives.
+        if (TextUtils.isEmpty(aboutUs)) {
+            BA.getEventBus().post(new AboutUSRequestEvent());
+        }
         return view;
 
+    }
+
+    /**
+     * Renders the cached About Us HTML. Uses loadDataWithBaseURL (not loadData):
+     * the HTML is full of '#' hex colors, and plain loadData treats '#'/'%' as
+     * data-URL syntax, truncating the document at the first '#' and leaving the
+     * screen blank.
+     */
+    private void renderAboutUs() {
+        if (TextUtils.isEmpty(aboutUs)) {
+            return;
+        }
+        webView.loadDataWithBaseURL(null, aboutUs, "text/html", "utf-8", null);
+    }
+
+    @Subscribe
+    public void onAboutUSReceived(AboutUSResponseEvent event) {
+        if (event != null && event.getData() != null && event.getData().getResponse() != null
+                && !TextUtils.isEmpty(event.getData().getResponse().getAboutUS())) {
+            aboutUs = event.getData().getResponse().getAboutUS();
+            renderAboutUs();
+        }
     }
 
     @Override
