@@ -155,7 +155,7 @@ public class SplashActivity extends BaseActivity implements AnimationListener{
 			//control for old washme applications user is logged in
 			if(isLoggedIn){
 				try {
-					Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.driverspabox");
+					Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.driverspaAdmin");
 					if (launchIntent != null) {
 						startActivity(launchIntent);//null pointer check in case package name was not found
 					}
@@ -226,7 +226,7 @@ public class SplashActivity extends BaseActivity implements AnimationListener{
 
 	public void openAdminMarket() {
 		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setData(Uri.parse("market://details?id=com.driverspabox"));
+		intent.setData(Uri.parse("market://details?id=com.driverspaAdmin"));
 		startActivity(intent);
 	}
 }
