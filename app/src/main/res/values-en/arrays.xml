@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="astrology_names">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Gemini</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
+    </string-array>
+
+    <string-array name="photo_options">
+        <item>Add photo</item>
+        <item>Open photo</item>
+    </string-array>
+
+    <string-array name="admin_approved_book_options">
+        <item>Yes, service provided</item>
+        <item>Client didn\'t show up</item>
+        <item>Cancel booking</item>
+        <item>Details</item>
+    </string-array>
+
+    <string-array name="admin_pending_book_options">
+        <item>Accept booking</item>
+        <item>Decline booking</item>
+        <item>Details</item>
+    </string-array>
+    <string-array name="admin_approved_queue_options">
+        <item>Extend by 10 minutes</item>
+        <item>Finish manually</item>
+        <item>Decline</item>
+        <item>Details</item>
+    </string-array>
+    <string-array name="admin_approved_queue_not_paid_options">
+        <item>Client paid for the wash</item>
+        <item>Extend by 10 minutes</item>
+        <item>Finish manually</item>
+        <item>Decline</item>
+        <item>Details</item>
+    </string-array>
+    <string-array name="admin_not_paid_options">
+        <item>Client paid for the wash</item>
+        <item>Details</item>
+    </string-array>
+    <string-array name="add_to_favs">
+        <item>Add to favorites</item>
+        <item>Car wash details</item>
+    </string-array>
+
+
+    <string-array name="campaign_info_options">
+        <item>Book</item>
+    </string-array>
+
+
+    <string-array name="approved_washer_info_options">
+        <item>Book</item>
+        <item>Call</item>
+        <item>Get directions</item>
+        <item>Leave a review</item>
+        <item>Report</item>
+    </string-array>
+
+    <string-array name="information_washer_info_options">
+        <item>Call</item>
+        <item>Get directions</item>
+        <item>Leave a review</item>
+        <item>Report</item>
+    </string-array>
+
+    <string-array name="cancel_washer_book_options">
+        <item>Cancel booking</item>
+        <item>Call</item>
+        <item>Get directions</item>
+        <item>Leave a review</item>
+        <item>Report</item>
+    </string-array>
+
+
+    <array name="day">
+        <item>day</item>
+        <item>days</item>
+        <item>days</item>
+    </array>
+    <array name="hour">
+        <item>hour</item>
+        <item>hours</item>
+        <item>hours</item>
+    </array>
+    <array name="minute">
+        <item>minute</item>
+        <item>minutes</item>
+        <item>minutes</item>
+    </array>
+    <array name="second">
+        <item>second</item>
+        <item>seconds</item>
+        <item>seconds</item>
+    </array>
+
+</resources>

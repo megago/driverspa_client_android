@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="astrology_names">
+        <item>Тоқты</item>
+        <item>Торпақ</item>
+        <item>Егіздер</item>
+        <item>Шаян</item>
+        <item>Арыстан</item>
+        <item>Егіздер</item>
+        <item>Бикеш</item>
+        <item>Таразы</item>
+        <item>Сарышаян</item>
+        <item>Мерген</item>
+        <item>Тауешкі</item>
+        <item>Суқұйғыш</item>
+        <item>Балықтар</item>
+    </string-array>
+
+    <string-array name="photo_options">
+        <item>Фото қосу</item>
+        <item>Фотоны ашу</item>
+    </string-array>
+
+    <string-array name="admin_approved_book_options">
+        <item>Иә, қызмет көрсетілді</item>
+        <item>Клиент келмеді</item>
+        <item>Брондауды болдырмау</item>
+        <item>Мәліметтер</item>
+    </string-array>
+
+    <string-array name="admin_pending_book_options">
+        <item>Брондауды қабылдау</item>
+        <item>Брондаудан бас тарту</item>
+        <item>Мәліметтер</item>
+    </string-array>
+    <string-array name="admin_approved_queue_options">
+        <item>10 минутқа ұзарту</item>
+        <item>Қолмен аяқтау</item>
+        <item>Бас тарту</item>
+        <item>Мәліметтер</item>
+    </string-array>
+    <string-array name="admin_approved_queue_not_paid_options">
+        <item>Клиент жуу үшін төледі</item>
+        <item>10 минутқа ұзарту</item>
+        <item>Қолмен аяқтау</item>
+        <item>Бас тарту</item>
+        <item>Мәліметтер</item>
+    </string-array>
+    <string-array name="admin_not_paid_options">
+        <item>Клиент жуу үшін төледі</item>
+        <item>Мәліметтер</item>
+    </string-array>
+    <string-array name="add_to_favs">
+        <item>Таңдаулыларға қосу</item>
+        <item>Автожуу мәліметтері</item>
+    </string-array>
+
+
+    <string-array name="campaign_info_options">
+        <item>Брондау</item>
+    </string-array>
+
+
+    <string-array name="approved_washer_info_options">
+        <item>Брондау</item>
+        <item>Қоңырау шалу</item>
+        <item>Маршрут жасау</item>
+        <item>Пікір қалдыру</item>
+        <item>Шағымдану</item>
+    </string-array>
+
+    <string-array name="information_washer_info_options">
+        <item>Қоңырау шалу</item>
+        <item>Маршрут жасау</item>
+        <item>Пікір қалдыру</item>
+        <item>Шағымдану</item>
+    </string-array>
+
+    <string-array name="cancel_washer_book_options">
+        <item>Брондауды болдырмау</item>
+        <item>Қоңырау шалу</item>
+        <item>Маршрут жасау</item>
+        <item>Пікір қалдыру</item>
+        <item>Шағымдану</item>
+    </string-array>
+
+
+    <array name="day">
+        <item>күн</item>
+        <item>күн</item>
+        <item>күн</item>
+    </array>
+    <array name="hour">
+        <item>сағат</item>
+        <item>сағат</item>
+        <item>сағат</item>
+    </array>
+    <array name="minute">
+        <item>минут</item>
+        <item>минут</item>
+        <item>минут</item>
+    </array>
+    <array name="second">
+        <item>секунд</item>
+        <item>секунд</item>
+        <item>секунд</item>
+    </array>
+
+</resources>
