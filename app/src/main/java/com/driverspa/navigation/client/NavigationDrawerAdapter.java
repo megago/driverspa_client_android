@@ -85,14 +85,16 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     }
 
     private void touchPosition(int position) {
+        // Touch handling is only for the pressed-state highlight. Selection is
+        // dispatched from the click listener; firing the callback here too made
+        // every tap fire onNavigationDrawerItemSelected twice (harmless for
+        // screens that just switch tabs, but it opened the language sheet twice).
         int lastPosition = mTouchedPosition;
         mTouchedPosition = position;
         if (lastPosition >= 0)
             notifyItemChanged(lastPosition);
         if (position >= 0) {
             notifyItemChanged(position);
-            if (mNavigationDrawerCallbacks != null)
-                mNavigationDrawerCallbacks.onNavigationDrawerItemSelected(position);
         }
     }
 
