@@ -53,7 +53,7 @@
                 android:layout_marginRight="@dimen/horizontal_margin"
                 android:gravity="center"
                 android:visibility="gone"
-                android:text="Вы можете повторить попытку через 30 сек"
+                android:text="@string/retry_in_30s"
                 android:textColor="@color/White"
                 android:textSize="@dimen/text_medium" />
 

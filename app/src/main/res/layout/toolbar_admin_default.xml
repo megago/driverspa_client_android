@@ -27,7 +27,7 @@
         android:layout_gravity="center"
         android:clickable="true"
         android:gravity="center"
-        android:text="Заказы"
+        android:text="@string/orders"
         android:textColor="@drawable/button_state_color"
         android:textSize="@dimen/text_medium"
         android:visibility="gone"

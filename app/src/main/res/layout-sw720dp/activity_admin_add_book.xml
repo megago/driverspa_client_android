@@ -26,7 +26,7 @@
         android:drawablePadding="@dimen/horizontal_margin_third"
         android:gravity="center"
         android:paddingLeft="@dimen/horizontal_margin_half"
-        android:text="0 мин"
+        android:text="@string/zero_min"
         android:textColor="@color/White"
         android:textSize="@dimen/text_normal" />
 
@@ -66,7 +66,7 @@
                 android:layout_marginLeft="@dimen/horizontal_margin"
                 android:layout_marginRight="@dimen/horizontal_margin"
                 android:gravity="center"
-                android:text="Бронь на 08:00"
+                android:text="@string/booking_at_0800"
                 android:textColor="@color/White"
                 android:textSize="@dimen/text_medium"
                 android:visibility="gone" />
@@ -119,7 +119,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_third"
                             android:gravity="center"
-                            android:text="Седан"
+                            android:text="@string/sedan"
                             android:textColor="@drawable/button_state_color_cars"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
@@ -148,7 +148,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_third"
                             android:gravity="center"
-                            android:text="Кроссовер"
+                            android:text="@string/crossover"
                             android:textColor="@drawable/button_state_color_cars"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
@@ -177,7 +177,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_third"
                             android:gravity="center"
-                            android:text="Джип"
+                            android:text="@string/jeep"
                             android:textColor="@drawable/button_state_color_cars"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
@@ -206,7 +206,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_third"
                             android:gravity="center"
-                            android:text="Мотоцикл"
+                            android:text="@string/motorcycle"
                             android:textColor="@drawable/button_state_color_cars"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
@@ -235,7 +235,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_third"
                             android:gravity="center"
-                            android:text="Микроавтобус"
+                            android:text="@string/minibus"
                             android:textColor="@drawable/button_state_color_cars"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
@@ -263,7 +263,7 @@
                     style="@style/EditText.Transparent"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Гос. номер*"
+                    android:hint="@string/plate_required"
                     android:imeOptions="actionNext"
                     android:inputType="textCapCharacters"
                     android:textColor="@color/White"
@@ -295,7 +295,7 @@
                     style="@style/EditText.Transparent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Имя клиента"
+                    android:hint="@string/client_name"
                     android:imeOptions="actionNext"
                     android:inputType="textCapWords"
                     android:textColor="@color/White"
@@ -325,7 +325,7 @@
                     style="@style/EditText.Transparent"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Номер телефона"
+                    android:hint="@string/login_phone"
                     android:imeOptions="actionNext"
                     android:inputType="phone"
                     android:textColor="@color/White"
@@ -357,7 +357,7 @@
                     style="@style/EditText.Transparent"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Марка автомобиля"
+                    android:hint="@string/car_brand"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:textColor="@color/White"
@@ -400,7 +400,7 @@
                 android:layout_marginTop="@dimen/vertical_margin_half"
                 android:layout_weight="5"
                 android:paddingLeft="@dimen/horizontal_margin_half"
-                android:text="Нет доступных услуг"
+                android:text="@string/no_available_services"
                 android:textColor="@color/White"
                 android:textColorHint="@color/BlueLight"
                 android:textIsSelectable="false"
@@ -422,7 +422,7 @@
                 android:layout_marginTop="@dimen/vertical_margin_double"
                 android:background="@drawable/background_button_border"
                 android:padding="10dp"
-                android:text="Забронировать"
+                android:text="@string/book_verb"
                 android:textColor="@drawable/button_state_color"
                 android:textSize="22sp" />
         </LinearLayout>

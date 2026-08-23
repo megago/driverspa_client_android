@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:layout_marginTop="@dimen/vertical_margin_half"
                 android:layout_marginLeft="@dimen/horizontal_margin_half"
-                android:text="Войти"
+                android:text="@string/login_word"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -104,7 +104,7 @@
         android:layout_marginLeft="@dimen/horizontal_margin_double"
         android:drawableLeft="@drawable/ic_logout"
         android:drawablePadding="@dimen/horizontal_margin"
-        android:text="Выйти"
+        android:text="@string/logout"
         android:textColor="@drawable/button_state_color"
         android:textSize="@dimen/text_normal" />
 

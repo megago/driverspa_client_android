@@ -128,7 +128,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="от 500 ₸"
+                                    android:text="@string/from_500"
                                     android:textColor="@color/Black"
                                     android:textSize="@dimen/text_small" />
 
@@ -157,7 +157,7 @@
                                             android:layout_gravity="center"
                                             android:layout_marginLeft="@dimen/horizontal_margin_third"
                                             android:clickable="true"
-                                            android:text="Круглосуточно"
+                                            android:text="@string/around_clock"
                                             android:textColor="@color/Black"
                                             android:textColorLink="@color/White"
                                             android:textSize="@dimen/text_small" />
@@ -346,7 +346,7 @@
                                         android:layout_gravity="center"
                                         android:layout_marginLeft="@dimen/horizontal_margin_half"
                                         android:clickable="true"
-                                        android:text="3 отзывов"
+                                        android:text="@string/reviews_count_example"
                                         android:textColor="@color/Black"
                                         android:textColorLink="@color/White"
                                         android:textSize="@dimen/text_small" />
@@ -393,7 +393,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/horizontal_margin_half"
                                     android:maxLines="3"
-                                    android:text="Данная автомойка не сотрудничает с DriverSpa, хотите чтобы она стала принимать заказы и брони?"
+                                    android:text="@string/wash_not_partner"
                                     android:textColor="@color/Black"
                                     android:textSize="@dimen/text_normal"
                                     android:textStyle="italic" />
@@ -410,7 +410,7 @@
                                 android:layout_marginTop="@dimen/vertical_margin_half"
                                 android:background="@drawable/background_blue_button"
                                 android:padding="10dp"
-                                android:text="Хочу"
+                                android:text="@string/want_yes"
                                 android:textAllCaps="false"
                                 android:textColor="@color/White"
                                 android:textSize="@dimen/text_normal" />
@@ -459,7 +459,7 @@
                                     android:layout_marginRight="@dimen/horizontal_margin_half"
                                     android:layout_weight="1"
                                     android:maxLines="2"
-                                    android:text="Нужно войти, ввести данные о машине"
+                                    android:text="@string/need_login_car_data"
                                     android:textColor="@color/Black"
                                     android:textSize="@dimen/text_normal"
                                     android:visibility="gone" />
@@ -518,7 +518,7 @@
                                         android:layout_gravity="center"
                                         android:layout_marginRight="@dimen/horizontal_margin_half"
                                         android:layout_weight="1"
-                                        android:text="Выберите услугу"
+                                        android:text="@string/select_service"
                                         android:textColor="@color/Black"
                                         android:textSize="@dimen/text_normal" />
 
@@ -580,7 +580,7 @@
                                         android:layout_marginLeft="@dimen/horizontal_margin_third"
                                         android:layout_marginRight="@dimen/horizontal_margin_half"
                                         android:layout_weight="1"
-                                        android:text="Выберите время"
+                                        android:text="@string/choose_time"
                                         android:textColor="@color/Black"
                                         android:textSize="@dimen/text_normal" />
 
@@ -634,7 +634,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="@dimen/horizontal_margin_third"
-                                    android:hint="Предложите цену"
+                                    android:hint="@string/offer_price"
                                     android:imeOptions="actionNext"
                                     android:inputType="number"
                                     android:lines="1"
@@ -680,7 +680,7 @@
                                     android:layout_marginRight="@dimen/horizontal_margin_half"
                                     android:layout_weight="1"
                                     android:ems="10"
-                                    android:hint="Комментарий"
+                                    android:hint="@string/comment"
                                     android:imeOptions="actionNext"
                                     android:inputType="textCapSentences|textMultiLine"
                                     android:lines="2"
@@ -716,7 +716,7 @@
                             android:layout_marginTop="@dimen/vertical_margin_half"
                             android:background="@drawable/background_blue_button"
                             android:padding="10dp"
-                            android:text="Предложить свою цену"
+                            android:text="@string/offer_your_price2"
                             android:textAllCaps="false"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal" />
@@ -732,7 +732,7 @@
                             android:layout_marginTop="@dimen/vertical_margin_half"
                             android:background="@drawable/background_green_button"
                             android:padding="10dp"
-                            android:text="Забронировать"
+                            android:text="@string/book_verb"
                             android:textAllCaps="false"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal"

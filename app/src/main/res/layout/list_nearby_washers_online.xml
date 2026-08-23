@@ -67,7 +67,7 @@
                 android:id="@+id/txtWasherName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Автомойка "
+                android:text="@string/car_wash_label_sp"
                 android:textColor="@color/Black"
                 android:textSize="@dimen/text_normal" />
 
@@ -132,7 +132,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/horizontal_margin_third"
                     android:clickable="true"
-                    android:text="3 отзывов"
+                    android:text="@string/reviews_count_example"
                     android:textColor="@color/DarkGray"
                     android:textColorLink="@color/White"
                     android:textSize="@dimen/text_small" />
@@ -161,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="кузов + салон от 1500"
+                    android:text="@string/body_interior_from_1500"
                     android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
@@ -251,7 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Скидка клиенту от мойки"
+                    android:text="@string/discount_from_wash"
                     android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
@@ -277,7 +277,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Начислено бонусов"
+                    android:text="@string/bonuses_accrued"
                     android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
@@ -310,7 +310,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Депозит"
+                    android:text="@string/deposit"
                     android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 

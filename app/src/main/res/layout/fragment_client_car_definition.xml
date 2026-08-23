@@ -22,7 +22,7 @@
             android:gravity="center"
             android:paddingTop="@dimen/vertical_margin"
             android:paddingBottom="@dimen/vertical_margin"
-            android:text="Добавить машину"
+            android:text="@string/add_car"
             android:textColor="@color/White"
             android:textSize="@dimen/text_medium"
             android:textStyle="bold" />
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_half"
                 android:layout_marginLeft="@dimen/horizontal_margin_half"
-                android:text="Тип кузова"
+                android:text="@string/body_type"
                 android:textAllCaps="true"
                 android:textColor="@color/BlueLight"
                 android:textSize="@dimen/text_smaller" />
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Мини"
+                        android:text="@string/mini"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Седан"
+                        android:text="@string/sedan"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Универсал"
+                        android:text="@string/wagon"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Кроссовер"
+                        android:text="@string/crossover"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -204,7 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Мини джип"
+                        android:text="@string/mini_jeep"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -232,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Джип"
+                        android:text="@string/jeep"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -260,7 +260,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Мотоцикл"
+                        android:text="@string/motorcycle"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -288,7 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Минивэн"
+                        android:text="@string/minivan"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -316,7 +316,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:gravity="center"
-                        android:text="Микроавтобус"
+                        android:text="@string/minibus"
                         android:textColor="@drawable/button_state_color_cars"
                         android:textSize="@dimen/text_smaller" />
                 </LinearLayout>
@@ -345,7 +345,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:hint="Гос. номер авто*"
+                        android:hint="@string/car_plate_required"
                         android:imeOptions="actionNext"
                         android:inputType="textCapCharacters"
                         android:textColor="@color/White"
@@ -375,7 +375,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:hint="Марка авто*"
+                        android:hint="@string/car_brand_required"
                         android:imeOptions="actionNext"
                         android:textColor="@color/White"
                         android:maxLines="1"
@@ -399,7 +399,7 @@
                 android:background="@drawable/bg_btn_save"
                 android:paddingTop="14dp"
                 android:paddingBottom="14dp"
-                android:text="Добавить"
+                android:text="@string/add"
                 android:textAllCaps="true"
                 android:textColor="@color/LightBlue"
                 android:textSize="@dimen/text_medium"

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Моя бронь"
+            android:text="@string/my_booking"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/White"
             android:textSize="@dimen/text_medium" />
@@ -111,7 +111,7 @@
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingTop="10dp"
-            android:text="Оставить отзыв"
+            android:text="@string/leave_review"
             android:textColor="@drawable/button_state_color"
             android:textSize="@dimen/text_normal" />
 

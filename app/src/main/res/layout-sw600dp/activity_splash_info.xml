@@ -49,7 +49,7 @@
             android:background="@null"
             android:paddingLeft="@dimen/horizontal_margin_double"
             android:paddingRight="@dimen/horizontal_margin_double"
-            android:text="ДАЛЕЕ"
+            android:text="@string/next_caps"
             android:visibility="gone"
             android:textColor="@drawable/button_state_color"
             android:textSize="16sp" />

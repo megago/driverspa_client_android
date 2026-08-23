@@ -129,7 +129,7 @@
                                     android:layout_below="@id/tab_orders"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="@dimen/vertical_margin_half"
-                                    android:text="ЗАКАЗЫ"
+                                    android:text="@string/orders_caps"
                                     android:visibility="gone"
                                     android:textSize="@dimen/text_smaller" />
 
@@ -195,7 +195,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="@dimen/vertical_margin_half"
                                 android:gravity="center"
-                                android:text="ТАБЛИЦА"
+                                android:text="@string/table_caps"
                                 android:visibility="gone"
                                 android:textSize="@dimen/text_smaller" />
                         </RelativeLayout>
@@ -239,7 +239,7 @@
                                 android:layout_below="@id/tab_reviews"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="@dimen/vertical_margin_half"
-                                android:text="ОТЗЫВЫ"
+                                android:text="@string/reviews_caps"
                                 android:visibility="gone"
                                 android:textSize="@dimen/text_smaller" />
                         </RelativeLayout>
@@ -276,7 +276,7 @@
                             android:layout_below="@id/tab_statistics"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/vertical_margin_half"
-                            android:text="СТАТИСТИКА"
+                            android:text="@string/statistics_caps"
                             android:textSize="@dimen/text_smaller" />
                     </RelativeLayout>
                 </LinearLayout>

@@ -9,7 +9,7 @@
         android:id="@+id/txtReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Качество радует! Одна из моих любимых автомоек!"
+        android:text="@string/review_example"
         android:textColor="@color/White"
         android:layout_alignParentTop="true"
         android:textSize="@dimen/text_small" />

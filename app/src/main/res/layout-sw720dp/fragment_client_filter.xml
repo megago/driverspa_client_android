@@ -38,7 +38,7 @@
                     android:layout_gravity="center_vertical|left"
                     android:clickable="true"
                     android:gravity="center_vertical"
-                    android:text="Фильтры"
+                    android:text="@string/filters"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_large"
                     android:textStyle="bold" />
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Астана"
+                        android:text="@string/astana"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -143,7 +143,7 @@
                 android:layout_marginBottom="14dp"
                 android:layout_marginLeft="8dp"
                 android:letterSpacing="0.08"
-                android:text="УДОБСТВА"
+                android:text="@string/amenities_caps"
                 android:textColor="@color/BlueLight"
                 android:textSize="@dimen/text_normal"
                 android:textStyle="bold" />
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Кафе"
+                        android:text="@string/cafe"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -223,7 +223,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Кофе"
+                        android:text="@string/coffee"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -315,7 +315,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Зона отдыха"
+                        android:text="@string/rest_area"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -361,7 +361,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Игровые приставки"
+                        android:text="@string/game_consoles"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -407,7 +407,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Оплата по карте"
+                        android:text="@string/card_payment"
                         android:textColor="@color/White"
                         android:textSize="@dimen/text_medium" />
 
@@ -432,7 +432,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/background_filter_apply"
-                android:text="ПРИМЕНИТЬ"
+                android:text="@string/apply_caps"
                 android:textColor="@color/background_main"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold" />
@@ -450,7 +450,7 @@
                     android:id="@+id/distance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4 км"
+                    android:text="@string/distance_4km"
                     android:textColor="@color/White" />
 
                 <SeekBar

@@ -20,7 +20,7 @@
             android:layout_marginLeft="@dimen/horizontal_margin"
             android:layout_marginRight="@dimen/horizontal_margin"
             android:gravity="center"
-            android:text="Тап таза автомойка"
+            android:text="@string/demo_washer_taptaza"
             android:textColor="@color/White"
             android:visibility="gone"
             android:textSize="@dimen/text_medium" />
@@ -53,7 +53,7 @@
                     android:padding="@dimen/horizontal_margin_third"
                     android:background="#0257a7"
                     android:layout_weight="5"
-                    android:text="Выберите автомобиль:"
+                    android:text="@string/choose_car"
                     android:textColor="@color/White"
                     android:textColorHint="@color/BlueLight"
                     android:textIsSelectable="false"
@@ -106,7 +106,7 @@
                         android:layout_weight="1"
                         android:gravity="center|left"
                         android:padding="@dimen/horizontal_margin_third"
-                        android:text="Комплексные"
+                        android:text="@string/complex_word"
                         android:textStyle="bold"
                         android:textColor="@drawable/button_bar_state_color"
                         android:textColorHint="@color/BlueLight"
@@ -124,7 +124,7 @@
                         android:padding="@dimen/horizontal_margin_third"
                         android:paddingLeft="@dimen/horizontal_margin_half"
                         android:textStyle="bold"
-                        android:text="Услуги"
+                        android:text="@string/services"
                         android:textColor="@drawable/button_bar_state_color"
                         android:textColorHint="@color/BlueLight"
                         android:textIsSelectable="false"
@@ -171,7 +171,7 @@
                     android:layout_marginTop="@dimen/vertical_margin_half"
                     android:layout_weight="5"
                     android:paddingLeft="@dimen/horizontal_margin_half"
-                    android:text="Нет доступных услуг"
+                    android:text="@string/no_available_services"
                     android:textColor="@color/White"
                     android:textColorHint="@color/BlueLight"
                     android:textIsSelectable="false"
@@ -196,7 +196,7 @@
                     android:paddingLeft="40dp"
                     android:paddingRight="40dp"
                     android:paddingTop="10dp"
-                    android:text="Выбрать время"
+                    android:text="@string/select_time"
                     android:textColor="@drawable/button_state_color"
                     android:textSize="@dimen/text_normal"
                     android:visibility="gone" />
@@ -240,7 +240,7 @@
                     android:gravity="center"
                     android:paddingBottom="@dimen/vertical_margin_third"
                     android:paddingTop="@dimen/vertical_margin_third"
-                    android:text="Наличн.:"
+                    android:text="@string/cash_short_colon"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_small" />
 
@@ -284,7 +284,7 @@
                     android:gravity="center"
                     android:paddingBottom="@dimen/vertical_margin_third"
                     android:paddingTop="@dimen/vertical_margin_third"
-                    android:text="Бонусы:   "
+                    android:text="@string/bonuses_colon_sp"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_small" />
 
@@ -318,7 +318,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingLeft="@dimen/horizontal_margin_half"
-                    android:text="из 0 ₸"
+                    android:text="@string/of_zero_tenge"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_smaller" />
 
@@ -348,7 +348,7 @@
                     android:gravity="center"
                     android:paddingBottom="@dimen/vertical_margin_third"
                     android:paddingTop="@dimen/vertical_margin_third"
-                    android:text="Картой.: "
+                    android:text="@string/by_card_colon_sp"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_small" />
 
@@ -392,7 +392,7 @@
                     android:gravity="center"
                     android:paddingBottom="@dimen/vertical_margin_third"
                     android:paddingTop="@dimen/vertical_margin_third"
-                    android:text="Перечис.:"
+                    android:text="@string/transfer_colon"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_small" />
 
@@ -426,7 +426,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingLeft="@dimen/horizontal_margin_half"
-                    android:text="из 0 ₸"
+                    android:text="@string/of_zero_tenge"
                     android:textColor="@color/White"
                     android:textSize="@dimen/text_smaller" />
             </LinearLayout>
@@ -470,7 +470,7 @@
                             android:layout_gravity="top|left"
                             android:gravity="top|left"
                             android:paddingLeft="@dimen/horizontal_margin_half"
-                            android:text="Время:"
+                            android:text="@string/time_colon"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal" />
 
@@ -482,7 +482,7 @@
                             android:layout_marginRight="@dimen/horizontal_margin"
                             android:gravity="top|left"
                             android:paddingLeft="@dimen/horizontal_margin_half"
-                            android:text="0 мин"
+                            android:text="@string/zero_min"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal" />
                     </LinearLayout>
@@ -496,7 +496,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="@dimen/horizontal_margin_half"
-                            android:text="Стоимость:"
+                            android:text="@string/cost_colon"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal" />
 
@@ -520,7 +520,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="@dimen/horizontal_margin_half"
-                            android:text="Остаток:"
+                            android:text="@string/balance_colon"
                             android:textColor="@color/White"
                             android:textSize="@dimen/text_normal" />
 
@@ -556,7 +556,7 @@
                     android:paddingRight="20dp"
                     android:textStyle="normal"
                     android:typeface="normal"
-                    android:text="Выбрать время"
+                    android:text="@string/select_time"
                     android:textColor="@drawable/button_state_color"
                     android:textSize="@dimen/text_small" />
             </FrameLayout>

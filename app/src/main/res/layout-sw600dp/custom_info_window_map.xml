@@ -45,7 +45,7 @@
                         android:id="@+id/price"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="от 500 ₸"
+                        android:text="@string/from_500"
                         android:layout_weight="1"
                         android:textColor="@color/Black"
                         android:textSize="@dimen/text_small" />
@@ -75,7 +75,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="@dimen/horizontal_margin_third"
                                 android:clickable="true"
-                                android:text="Круглосуточно"
+                                android:text="@string/around_clock"
                                 android:textColor="@color/Black"
                                 android:textColorLink="@color/White"
                                 android:textSize="@dimen/text_small" />
@@ -265,7 +265,7 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/horizontal_margin_half"
                             android:clickable="true"
-                            android:text="3 отзывов"
+                            android:text="@string/reviews_count_example"
                             android:textColor="@color/Black"
                             android:textColorLink="@color/White"
                             android:textSize="@dimen/text_small" />
@@ -283,7 +283,7 @@
                     android:background="@drawable/background_blue_button"
                     android:paddingLeft="@dimen/horizontal_margin"
                     android:paddingRight="@dimen/horizontal_margin"
-                    android:text="ЗАБРОНИРОВАТЬ"
+                    android:text="@string/book_caps"
                     android:textColor="@drawable/button_state_color"
                     android:textSize="@dimen/text_small" />
             </LinearLayout>

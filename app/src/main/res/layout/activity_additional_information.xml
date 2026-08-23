@@ -23,7 +23,7 @@
         android:layout_marginRight="@dimen/horizontal_margin"
         android:layout_marginTop="@dimen/vertical_margin_half"
         android:gravity="center"
-        android:text="Дополнительно"
+        android:text="@string/additional"
         android:visibility="gone"
         android:textColor="@color/White"
         android:textSize="@dimen/text_normal" />
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_half"
-            android:text="Телефон"
+            android:text="@string/phone"
             android:textColor="@color/White"
             android:textSize="@dimen/text_normal" />
 
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_half"
             android:layout_marginTop="@dimen/vertical_margin_third"
-            android:text="Веб"
+            android:text="@string/web"
             android:textColor="@color/White"
             android:textSize="@dimen/text_normal" />
 
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:paddingLeft="@dimen/horizontal_margin_half"
-                android:text="Чаcы работы"
+                android:text="@string/work_hours_typo"
                 android:textColor="@color/White"
                 android:textColorHint="@color/BlueLight"
                 android:textIsSelectable="false"
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:paddingLeft="@dimen/horizontal_margin_half"
-                android:text="Вид оплаты"
+                android:text="@string/payment_type"
                 android:textColor="@color/White"
                 android:textColorHint="@color/BlueLight"
                 android:textIsSelectable="false"
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:paddingLeft="@dimen/horizontal_margin_half"
-                android:text="Доп. информация"
+                android:text="@string/additional_info"
                 android:textColor="@color/White"
                 android:textColorHint="@color/BlueLight"
                 android:textIsSelectable="false"

@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="На дату"
+            android:text="@string/on_date"
             android:layout_marginLeft="@dimen/horizontal_margin"
             android:textColor="@color/AntiqueWhite" />
 

@@ -17,7 +17,7 @@
         android:layout_weight="0.5"
         android:visibility="gone"
         android:gravity="center"
-        android:text="Профиль"
+        android:text="@string/profile_title"
         android:textColor="@color/White"
         android:textSize="@dimen/text_normal" />
 
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/vertical_margin_third"
-                    android:text="Имя"
+                    android:text="@string/name_label"
                     android:textAllCaps="true"
                     android:textColor="@color/BlueLight"
                     android:textSize="@dimen/text_smaller" />
@@ -123,7 +123,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="Введите имя"
+                    android:hint="@string/enter_name"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:paddingTop="@dimen/vertical_margin_third"
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/vertical_margin_half"
-                    android:text="Телефон"
+                    android:text="@string/phone"
                     android:textAllCaps="true"
                     android:textColor="@color/BlueLight"
                     android:textSize="@dimen/text_smaller" />
@@ -167,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:layout_marginLeft="@dimen/horizontal_margin_half"
-                android:text="Мои машины"
+                android:text="@string/my_cars"
                 android:textAllCaps="true"
                 android:textColor="@color/BlueLight"
                 android:textSize="@dimen/text_smaller" />
@@ -203,7 +203,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
-                    android:text="Город"
+                    android:text="@string/city"
                     android:paddingLeft="@dimen/horizontal_margin_half"
                     android:textColor="@color/White"
                     android:textColorHint="@color/BlueLight"
@@ -230,7 +230,7 @@
                 android:background="@drawable/bg_btn_save"
                 android:paddingTop="14dp"
                 android:paddingBottom="14dp"
-                android:text="Сохранить"
+                android:text="@string/save"
                 android:textAllCaps="true"
                 android:textColor="@color/LightBlue"
                 android:textSize="@dimen/text_medium"
