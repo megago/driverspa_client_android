@@ -3,7 +3,7 @@ package com.driverspa.dialog;
 import android.app.Activity;
 import android.content.DialogInterface;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import androidx.appcompat.app.AlertDialog;
 
 import com.driverspa.BA;
 import com.driverspa.R;
@@ -32,7 +32,7 @@ public final class LanguageDialog {
             if (tags[i].equals(current)) checked = i;
         }
 
-        new MaterialAlertDialogBuilder(activity)
+        new AlertDialog.Builder(activity)
                 .setTitle(R.string.settings_language)
                 .setSingleChoiceItems(names, checked, new DialogInterface.OnClickListener() {
                     @Override
