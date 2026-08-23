@@ -32,6 +32,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
+import com.driverspa.dialog.LanguageDialog;
 import com.driverspa.model.api.request.AuthClientRegistrationRequest;
 import com.driverspa.model.api.request.CheckPhoneRequest;
 import com.driverspa.model.api.request.ResendActivationRequest;
@@ -171,6 +172,11 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	private void updateEmailVisibility() {
 		boolean isEmail = UserPreferences.CHANNEL_EMAIL.equals(selectedChannel());
 		emailContainer.setVisibility(isEmail ? View.VISIBLE : View.GONE);
+	}
+
+	@OnClick(R.id.btnLanguage)
+	protected void onLanguageClicked() {
+		LanguageDialog.show(getActivity());
 	}
 
 	@OnClick(R.id.btnOk)
