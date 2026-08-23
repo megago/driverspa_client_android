@@ -111,7 +111,7 @@ public class GroupServicesGridAdapter extends BaseAdapter {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(context,AlertDialog.THEME_HOLO_LIGHT);
                 dialog.setTitle(item.getName());
                 dialog.setMessage(dialogServiceNames);
-                dialog.setPositiveButton("Ок", null);
+                dialog.setPositiveButton(BA.str(R.string.ok_word), null);
                 dialog.show();
             }
         });

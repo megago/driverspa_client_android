@@ -130,7 +130,7 @@ public class ClientFilterFragment extends DialogFragment {
 
     private void createSpinner(){
         if(spinner != null) {
-            final String[] valuesArray =  {"Ближайшие","По рейтингу","Самые дешевые", "Самые дорогие"};
+            final String[] valuesArray =  {BA.str(R.string.nearest),BA.str(R.string.by_rating),BA.str(R.string.cheapest), BA.str(R.string.most_expensive)};
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item_filter, valuesArray);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -169,7 +169,7 @@ public class ClientFilterFragment extends DialogFragment {
         seekDistance.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                distance.setText(progress + " км");
+                distance.setText(progress + BA.str(R.string.km_suffix));
             }
 
             @Override
@@ -237,7 +237,7 @@ public class ClientFilterFragment extends DialogFragment {
 
                spinner.setSelection(selectedSortingType);
 
-               distance.setText(((Integer.parseInt(searchFilter.getMaxDistance())) / 1000) + " км");
+               distance.setText(((Integer.parseInt(searchFilter.getMaxDistance())) / 1000) + BA.str(R.string.km_suffix));
                seekDistance.setProgress((Integer.parseInt(searchFilter.getMaxDistance()) / 1000));
 
                if(!TextUtils.isEmpty(searchFilter.getRating())) {

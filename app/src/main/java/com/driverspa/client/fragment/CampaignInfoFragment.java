@@ -167,7 +167,7 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 	}
 	private void setData(Campaign campaign){
 		if(campaign != null) {
-			titleView.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():"Автомойка "+washer.getName());
+			titleView.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():BA.str(R.string.car_wash_label_sp)+washer.getName());
 //			titleView.setCompoundDrawablePadding((int)Functions.dipToPixels(getActivity(),5f));
 //			titleView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_discount_list, 0);
 			if (campaign.getEndTime() != null) {
@@ -195,11 +195,11 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 			description.setText(campaign.getDescription());
 			discount.setText("-"+campaign.getCampaignDiscount() + "%");
 			if (campaign.getCampaignType() == CampaignType.Both) {
-				campaignType.setText("Распространяется на все виды мойки (Онлайн бронирование, живая очередь)");
+				campaignType.setText(BA.str(R.string.applies_all_wash));
 			} else if (campaign.getCampaignType() == CampaignType.Online) {
-				campaignType.setText("Распространяется только на онлайн бронирования");
+				campaignType.setText(BA.str(R.string.applies_online_only));
 			} else if (campaign.getCampaignType() == CampaignType.Offline) {
-				campaignType.setText("Распространяется только на живую очередь");
+				campaignType.setText(BA.str(R.string.applies_live_only));
 			}
 		}			else{
 			activityActions.noCampaign();
@@ -311,14 +311,14 @@ public class CampaignInfoFragment extends ClientBaseFragment{
 
 	private void showLoginWarning(){
 		AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(), AlertDialog.THEME_HOLO_LIGHT);
-		dialog.setTitle("Необходимо войти");
-		dialog.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+		dialog.setTitle(BA.str(R.string.login_required));
+		dialog.setPositiveButton(BA.str(R.string.login_word), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				activityActions.login();
 			}
 		});
-		dialog.setNegativeButton("Отмена",null);
+		dialog.setNegativeButton(BA.str(R.string.cancel_word),null);
 		dialog.show();
 	}
 

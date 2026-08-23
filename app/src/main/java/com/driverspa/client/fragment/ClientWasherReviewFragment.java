@@ -132,7 +132,7 @@ public class ClientWasherReviewFragment extends ClientBaseFragment {
 	         listAdapter.notifyDataSetChanged();
 	        }
 			else{				
-				addEmptyTextView(listView, "Нет отзывов");
+				addEmptyTextView(listView, BA.str(R.string.no_reviews));
 		    }
 		}
 		
@@ -203,14 +203,14 @@ public class ClientWasherReviewFragment extends ClientBaseFragment {
 
 	private void showLoginWarning(){
 		AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(), AlertDialog.THEME_HOLO_LIGHT);
-		dialog.setTitle("Необходимо войти");
-		dialog.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+		dialog.setTitle(BA.str(R.string.login_required));
+		dialog.setPositiveButton(BA.str(R.string.login_word), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				activityActions.login();
 			}
 		});
-		dialog.setNegativeButton("Отмена",null);
+		dialog.setNegativeButton(BA.str(R.string.cancel_word),null);
 		dialog.show();
 	}
 

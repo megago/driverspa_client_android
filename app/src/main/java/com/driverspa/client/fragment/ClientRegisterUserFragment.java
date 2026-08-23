@@ -136,12 +136,12 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 			String clientNameStr = clientName.getText().toString();
 			if (TextUtils.isEmpty(clientNameStr)){
 				clientName.requestFocus();
-				clientName.setError("Введите имя");
+				clientName.setError(BA.str(R.string.enter_name));
 				return;
 			}
 
 			if(!(user.getCars() != null && user.getCars().size() > 0)){
-				ToastUtil.displayAtTop(getActivity(), "Добавьте хотя бы одну машину");
+				ToastUtil.displayAtTop(getActivity(), BA.str(R.string.add_one_car));
 				return;
 			}
 
@@ -194,7 +194,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 			}
 		}
 		else{
-			ToastUtil.displayAtTop(getActivity(),"Повторите еще раз");
+			ToastUtil.displayAtTop(getActivity(),BA.str(R.string.try_again2));
 		}
  	}
 
@@ -209,7 +209,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 		if(user.getCars() != null && user.getCars().size() > 0)
 			for(CarItem car : user.getCars()) {
 				if (car.getCarNumber().toLowerCase().equals(event.getCar().getCarNumber().toLowerCase())) {
-					ToastUtil.displayAtTop(getActivity(), "С таким номером у вас уже есть автомобиль");
+					ToastUtil.displayAtTop(getActivity(), BA.str(R.string.car_number_exists_you));
 					return;
 				}
 			}
@@ -240,7 +240,7 @@ public class ClientRegisterUserFragment extends ClientBaseFragment {
 				cityMapList.add(cityMap);
 			}
 
-			cityDialog = new SingleSelectDialog(getActivity(), cityMapList, "Выберите город", selectedCityMapList) {
+			cityDialog = new SingleSelectDialog(getActivity(), cityMapList, BA.str(R.string.select_city), selectedCityMapList) {
 				@Override
 				public void onDismiss(HashMap<Integer, String> namesSelectedItm) {
 					cityDialogShown = false;

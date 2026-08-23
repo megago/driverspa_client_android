@@ -164,11 +164,11 @@ public class ClientAddWasherReviewFragment extends ClientBaseFragment {
 		@OnClick(R.id.btnAddReview)
 		public void onAddReviewPressed(){			
 			if(mark == 0){
-				ToastUtil.display(getActivity(), "Пожалуйста, дайте оценку!");
+				ToastUtil.display(getActivity(), BA.str(R.string.please_rate));
 				return;
 			}
 			if(TextUtils.isEmpty(feedBackText.getText().toString())){
-				ToastUtil.display(getActivity(), "Пожалуйста, напишите что думаете о мойке");
+				ToastUtil.display(getActivity(), BA.str(R.string.please_write_opinion));
 				return;
 			}
 			setWaitScreen(true);

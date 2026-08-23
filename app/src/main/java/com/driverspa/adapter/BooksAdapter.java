@@ -133,13 +133,13 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
 //            holder.bookTS.setText(p.format(bookTS));
 //        } else {
         HashMap<String, String> timeTSMap = Functions.formatTZDate(item.getTs(),item.getTimeZone());
-        holder.bookTS.setText(timeTSMap.get(Functions.DATE) + "\nв " + timeTSMap.get(Functions.TIME));
+        holder.bookTS.setText(timeTSMap.get(Functions.DATE) + BA.str(R.string.nl_at) + timeTSMap.get(Functions.TIME));
 //        }
 
         //For tomorrow or different date bookings
         if (!DateUtils.isToday(bookDateTime.getTime()) && (new Date()).getTime() < bookDateTime.getTime()) {
             holder.bookTS.setText("" + timeMap.get(Functions.TIME));
-            holder.bookTime.setText("Завтра");
+            holder.bookTime.setText(BA.str(R.string.tomorrow));
         }
 
         holder.bookStatus.setText("" + bookStatus.get(item.getStatus()));
@@ -162,18 +162,18 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
             holder.layoutQueue.setVisibility(View.GONE);
             holder.arrowRight.setVisibility(View.VISIBLE);
             holder.bookStatus.setVisibility(View.VISIBLE);
-            holder.carwashName.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():"Автомойка "+item.getCarwashName());
+            holder.carwashName.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():BA.str(R.string.car_wash_label_sp)+item.getCarwashName());
 //            holder.carwashName.setText(item.getCarwashName());
             holder.bookKey.setText(item.getClientKey().replaceAll("\\(", "").replaceAll("\\)", ""));
             if(TextUtils.isEmpty(item.getClientKey()))
-                holder.bookKey.setText("номер не указан");
+                holder.bookKey.setText(BA.str(R.string.number_not_specified));
 
             if (!item.getStatus().equals(PENDING)) {
                 holder.remainingTime.setVisibility(View.GONE);
             }
 
         } else {
-            holder.carwashName.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():"Автомойка "+item.getCarwashName());
+            holder.carwashName.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():BA.str(R.string.car_wash_label_sp)+item.getCarwashName());
             holder.onlineBook.setVisibility(View.GONE);
 //            holder.layoutQueue.setVisibility(View.VISIBLE);
             holder.remainingTime.setVisibility(View.GONE);
@@ -185,14 +185,14 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
 
             holder.bookKey.setText(item.getClientKey().replaceAll("\\(", "").replaceAll("\\)", ""));
             if(TextUtils.isEmpty(item.getClientKey()))
-                holder.bookKey.setText("номер не указан");
+                holder.bookKey.setText(BA.str(R.string.number_not_specified));
             if (item.getStatus().equals(QUEUED_APPROVED)) {
                 holder.bookKey.setVisibility(View.VISIBLE);
-                holder.bookKey.setText("Автозавершение через ");
+                holder.bookKey.setText(BA.str(R.string.auto_finish_after));
             } else if (item.getStatus().equals(QUEUED_REJECTED)) {
-                holder.bookKey.setText("Очередь отменен");
+                holder.bookKey.setText(BA.str(R.string.queue_cancelled));
             } else if (item.getStatus().equals(QUEUED_FINISHED)) {
-                holder.bookKey.setText("Очередь завершен");
+                holder.bookKey.setText(BA.str(R.string.queue_finished));
             }
         }
 
@@ -302,7 +302,7 @@ public class BooksAdapter extends BaseDataAdapter<BookInfo> {
                     if (bookInfo.getStatus().equals(QUEUED_APPROVED) //&& minutes > 0
 ) {
                         bookKey.setVisibility(View.VISIBLE);
-                        bookKey.setText("Автозавершение через " + String.format("%02d", (minutes)) + ":" + String.format("%02d", (seconds)));
+                        bookKey.setText(BA.str(R.string.auto_finish_after) + String.format("%02d", (minutes)) + ":" + String.format("%02d", (seconds)));
                         bookStatus.setText(Constants.bookStatus.get(QUEUED_APPROVED));
                     } else if(!(bookInfo.getStatus().equals(QUEUED))) {
 //                        if (bookInfo.getStatus().equals(QUEUED_REJECTED))

@@ -86,12 +86,12 @@ public class BidsAdapter extends BaseDataAdapter<FareRequest.BidObject> {
         view.setTag(holder);
         final FareRequest.BidObject item = this.getItem(position);
         holder.review.setRating((float)item.getCarwashRating().doubleValue());
-        holder.name.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():"Автомойка "+item.getCarwashName());
+        holder.name.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():BA.str(R.string.car_wash_label_sp)+item.getCarwashName());
         if(!TextUtils.isEmpty(item.getCarwashAddress())){
             holder.address.setText(item.getCarwashAddress());
         }
         if(TextUtils.isEmpty(item.getCarwashAddress()))
-            holder.address.setText(Functions.getCityDescription("адрес не указан"));
+            holder.address.setText(Functions.getCityDescription(BA.str(R.string.address_not_specified)));
 
         try{
             Location washerLocation = new Location("A");
@@ -102,13 +102,13 @@ public class BidsAdapter extends BaseDataAdapter<FareRequest.BidObject> {
             requestLocationB.setLongitude(Double.parseDouble(requestLonLat.get(0).toString()));
 
             float dist = requestLocationB.distanceTo(washerLocation);
-            holder.distance.setText(String.format("%s км", formatter.format(dist/1000).replaceAll(",", " ")));
+            holder.distance.setText(String.format(BA.str(R.string.km_format), formatter.format(dist/1000).replaceAll(",", " ")));
         }
         catch(Exception e){
-            holder.distance.setText("- км");
+            holder.distance.setText(BA.str(R.string.dash_km));
         }
 
-        holder.buttonAcceptBid.setText(item.getPrice()+" ₸. Принять");
+        holder.buttonAcceptBid.setText(item.getPrice()+BA.str(R.string.tenge_accept));
         holder.buttonAcceptBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

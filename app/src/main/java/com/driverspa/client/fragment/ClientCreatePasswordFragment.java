@@ -82,7 +82,7 @@ public class ClientCreatePasswordFragment extends ClientBaseFragment {
 			activityActions.openClientHomeActivity();
 		} else {
 			ToastUtil.display(getActivity(), event.getData() != null && event.getData().getMessage() != null
-					? event.getData().getMessage() : "Ошибка, попробуйте еще раз");
+					? event.getData().getMessage() : BA.str(R.string.err_try_again));
 		}
 	}
 

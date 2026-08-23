@@ -85,7 +85,7 @@ public class ClientCampaignInfoActivity extends BaseActivity implements Campaign
 
 	@Override
 	public void noCampaign() {
-		ToastUtil.display(BA.getContext(),"Нет активных акции");
+		ToastUtil.display(BA.getContext(),BA.str(R.string.no_active_promos));
 		finish();
 		overridePendingTransitionWithCommonCloseTransition();
 	}

@@ -135,9 +135,9 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 				activityActions.openProfileWasher(washer.getId());
 			}
 		});
-		pullToRefreshView.getLoadingLayoutProxy().setPullLabel("Тяни еще смелее");
-		pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel("Обновление...");
-		pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel("Теперь можно отпустить");
+		pullToRefreshView.getLoadingLayoutProxy().setPullLabel(BA.str(R.string.pull_more));
+		pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel(BA.str(R.string.refreshing));
+		pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel(BA.str(R.string.release_now));
 
 		pullToRefreshView.setOnScrollListener(new OnScrollListener() {
 
@@ -239,7 +239,7 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 		  pullToRefreshView.onRefreshComplete();
 		  progressBar.setVisibility(View.GONE);
 		  pullToRefreshView.setVisibility(View.VISIBLE);
-		  ToastUtil.display(getActivity(), "Выберите город");
+		  ToastUtil.display(getActivity(), BA.str(R.string.select_city));
 		}
 	}
 
@@ -309,7 +309,7 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 			pullToRefreshView.setVisibility(View.VISIBLE);
 			noInternetLayout.setVisibility(View.VISIBLE);
 			progressBar.setVisibility(View.GONE);
-			ToastUtil.display(getActivity(),"Ошибка при получении данных с сервера");
+			ToastUtil.display(getActivity(),BA.str(R.string.err_server_data));
 		}
 	}
 	
@@ -410,11 +410,11 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 	public void showSettingsAlert(){
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
 		// Setting Dialog Title
-		alertDialog.setTitle("Настройки GPS");
+		alertDialog.setTitle(BA.str(R.string.gps_settings));
 		// Setting Dialog Message
-		alertDialog.setMessage("GPS отключен. Хотите включить?");
+		alertDialog.setMessage(BA.str(R.string.gps_off_enable));
 		// On pressing the Settings button.
-		alertDialog.setPositiveButton("Настройки", new DialogInterface.OnClickListener() {
+		alertDialog.setPositiveButton(BA.str(R.string.settings_title), new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog,int which) {
 //            	mContext.startActivity(new Intent(mContext, ClientSettingsActivity.class).putExtra(ClientBaseActivity.OPENING_ANIMATION, false));
@@ -426,7 +426,7 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 		});
 
 		// On pressing the cancel button
-		alertDialog.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+		alertDialog.setNegativeButton(BA.str(R.string.cancel_word), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 				useNoGPSOption = true;
@@ -442,11 +442,11 @@ public class ClientNearByWashersFragment extends ClientBaseHomeFragment {
 	private void setEmptyView(){
 		localCity = UserPreferences.getCity(BA.getContext());
 		if(filter.isDefaultValues()){
-			noRecords.setText("Нет зарегестрированных моек в '"+Functions.getCityDescription(localCity)+"'");
+			noRecords.setText(BA.str(R.string.no_washes_in_city)+Functions.getCityDescription(localCity)+"'");
 			noRecords.setVisibility(View.VISIBLE);
 		}
 		else{
-			noRecords.setText("Не найдено не одной мойки,\nсоответсвующего параметрам поиска\nВведите другие параметры поиска");
+			noRecords.setText(BA.str(R.string.no_wash_matches_search));
 			noRecords.setVisibility(View.VISIBLE);
 		}
 		noRecords.setVisibility(View.VISIBLE);

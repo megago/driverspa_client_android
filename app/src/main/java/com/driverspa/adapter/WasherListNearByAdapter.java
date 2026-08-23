@@ -1,4 +1,5 @@
 package com.driverspa.adapter;
+import com.driverspa.BA;
 
 import android.content.Context;
 import android.location.Location;
@@ -85,7 +86,7 @@ public class WasherListNearByAdapter extends BaseDataAdapter<WasherPublic> {
 			holder.discountText.setText("-"+item.getActiveCampaign().getCampaignDiscount()+"%");
 		}
 
-		holder.name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():"Автомойка "+item.getName());
+		holder.name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():BA.str(R.string.car_wash_label_sp)+item.getName());
 		
 	   if(!isCompany){
 		holder.price.setVisibility(View.VISIBLE);
@@ -95,7 +96,7 @@ public class WasherListNearByAdapter extends BaseDataAdapter<WasherPublic> {
 		holder.address.setVisibility(View.VISIBLE);
 
 		if(item.getPrice()!=null) {
-			holder.price.setText("Кузов-салон от " + (item.getPrice() != null ? formatter.format(item.getPrice()).replaceAll(",", " ") + "" : ""));
+			holder.price.setText(BA.str(R.string.body_interior_from_pre) + (item.getPrice() != null ? formatter.format(item.getPrice()).replaceAll(",", " ") + "" : ""));
 			holder.tenge.setVisibility(View.VISIBLE);
 		}
 		else {
@@ -106,7 +107,7 @@ public class WasherListNearByAdapter extends BaseDataAdapter<WasherPublic> {
 		holder.review.setRating((float)item.getRating().doubleValue());
 		if(item.getReviewCount() != null && item.getReviewCount() > 0) {
 			holder.reviewCount.setVisibility(View.VISIBLE);
-			holder.reviewCount.setText(item.getReviewCount() + " отзывов");
+			holder.reviewCount.setText(item.getReviewCount() + BA.str(R.string.reviews_suffix));
 		}
 		else{
 			holder.reviewCount.setVisibility(View.GONE);
@@ -117,7 +118,7 @@ public class WasherListNearByAdapter extends BaseDataAdapter<WasherPublic> {
 			holder.address.setText(Functions.getCityDescription(item.getCity())+", "+item.getAddress());
 		}
 		if(TextUtils.isEmpty(item.getAddress()))
-			holder.address.setText(Functions.getCityDescription(item.getCity())+", "+"адрес не указан");
+			holder.address.setText(Functions.getCityDescription(item.getCity())+", "+BA.str(R.string.address_not_specified));
 
 	   holder.distance.setVisibility(View.GONE);
 

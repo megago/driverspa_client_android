@@ -137,14 +137,14 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 			Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 			TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
 			titleView.setVisibility(View.VISIBLE);
-			washerTitleName.setText("Выбрать время");
+			washerTitleName.setText(BA.str(R.string.select_time));
 			if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
 					||washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Online.getValue()))){
 				titleView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_discount_list, 0);
 				titleView.setCompoundDrawablePadding((int) Functions.dipToPixels(getActivity(), 5f));
 			}
 
-			titleView.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():"Автомойка "+washer.getName());
+			titleView.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():BA.str(R.string.car_wash_label_sp)+washer.getName());
 
 			ViewGroup.LayoutParams layoutParams = gridview.getLayoutParams();			
 			WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
@@ -159,12 +159,12 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 			buttonNext.setVisibility(View.GONE);
 			loadData();
 			if(requestCode == ActivityForResult.ACTIVITY_TIMETABLE_INFO){
-				washerNoTime.setText("Нет доступных расписаний");
+				washerNoTime.setText(BA.str(R.string.no_schedules));
 				txtTime.setVisibility(View.GONE);
 			}
 			else{
 				txtPrice.setText(request.getServicePrice()+" ₸");
-				txtTime.setText(request.getServiceTotalTime()+" мин.");
+				txtTime.setText(request.getServiceTotalTime()+BA.str(R.string.min_dot_sp));
 //				try {
 //					if (washer != null && washer.getActiveCampaign() != null) {
 //						int discnt = washer.getActiveCampaign().getCampaignDiscount();
@@ -262,7 +262,7 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 	    	  setWaitScreen(true);
 	      }
 			else{
-			  ToastUtil.display(getActivity(),"Выберите время начала мойки");
+			  ToastUtil.display(getActivity(),BA.str(R.string.select_wash_start));
 		  }
 	    }
 
@@ -277,7 +277,7 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 	    			ToastUtil.display(getActivity(), event.getResult().getMessage());
 	    	}
 	    	else{
-	    		ToastUtil.display(getActivity(), "Ошибка при брони");
+	    		ToastUtil.display(getActivity(), BA.str(R.string.err_booking));
 	    	}
 	    }
 	    
@@ -339,7 +339,7 @@ public class ClientBookingTimeTableFragment extends ClientBaseFragment {
 			   gridview.setVisibility(View.GONE);
 			   washerNoTime.setVisibility(View.VISIBLE);
 			   buttonRepeat.setVisibility(View.GONE);
-			   washerNoTime.setText("Нет доступных расписаний!");
+			   washerNoTime.setText(BA.str(R.string.no_schedules_excl));
 		   }
 		   
 		   int time = 0;		

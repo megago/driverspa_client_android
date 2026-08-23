@@ -1,4 +1,6 @@
 package com.driverspa.client.fragment;
+import com.driverspa.R;
+import com.driverspa.BA;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -109,7 +111,7 @@ public abstract class ClientBaseFragment extends Fragment {
 			pd = new ProgressDialog(getActivity(), ProgressDialog.THEME_HOLO_LIGHT);
 			pd.setTitle("");
 			pd.setIndeterminate(true);
-			pd.setMessage("Загрузка...");
+			pd.setMessage(BA.str(R.string.loading_dots));
 		}
 
 	  try {

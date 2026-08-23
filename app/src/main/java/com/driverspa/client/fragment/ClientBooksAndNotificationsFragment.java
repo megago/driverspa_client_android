@@ -166,9 +166,9 @@ public class ClientBooksAndNotificationsFragment extends ClientBaseHomeFragment 
         if(fragmentVisible){
             if(titleView != null) {
                 if(selectedTab == 0)
-                titleView.setText("Брони/мойки");
+                titleView.setText(BA.str(R.string.bookings_washes));
                 else
-                    titleView.setText("Уведомления");
+                    titleView.setText(BA.str(R.string.notifications));
             }
         }
     }

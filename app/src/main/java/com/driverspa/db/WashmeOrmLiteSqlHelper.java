@@ -168,7 +168,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				final HashMap<Integer, String> allCarTypes = BA.getReference().getCarType();
 				Statistic statistic = new Statistic();
 				List<Statistic.StatisticDetail> statisticDetails = new ArrayList<Statistic.StatisticDetail>();
-				statistic.setTitle("Общие показатели");
+				statistic.setTitle(BA.str(R.string.general_metrics));
 
 				//Total count of booked and queued items
 				Cursor c = null;
@@ -177,7 +177,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Количество машин", c.getString(c.getColumnIndex("cnt")));
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.cars_count_label), c.getString(c.getColumnIndex("cnt")));
 						statisticDetails.add(statisticDetail);
 						L.d("getting "+c.getString(c.getColumnIndex("cnt")));
 					}
@@ -206,7 +206,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Общая сумма", (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.total_amount), (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
 						statisticDetails.add(statisticDetail);
 					}
 				}
@@ -215,7 +215,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 
 				statistic = new Statistic();
 				statisticDetails = new ArrayList<Statistic.StatisticDetail>();
-				statistic.setTitle("Живая очередь");
+				statistic.setTitle(BA.str(R.string.live_queue));
 				//Total count of booked items
 				c = null;
 				c = this.getWritableDatabase().rawQuery("SELECT count(*) as cnt FROM bookinfo where status in ('finished','queued_finished') and queued=1", null);
@@ -223,7 +223,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Количество машин", c.getString(c.getColumnIndex("cnt")));
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.cars_count_label), c.getString(c.getColumnIndex("cnt")));
 						statisticDetails.add(statisticDetail);
 					}
 				}
@@ -251,7 +251,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Общая сумма", (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.total_amount), (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
 						statisticDetails.add(statisticDetail);
 					}
 				}
@@ -261,7 +261,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 
 				statistic = new Statistic();
 				statisticDetails = new ArrayList<Statistic.StatisticDetail>();
-				statistic.setTitle("Брони");
+				statistic.setTitle(BA.str(R.string.bookings));
 				//Total count of booked items
 				c = null;
 				c = this.getWritableDatabase().rawQuery("SELECT count(*) as cnt FROM bookinfo where status in ('finished','queued_finished') and queued=0", null);
@@ -269,7 +269,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Количество машин", c.getString(c.getColumnIndex("cnt")));
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.cars_count_label), c.getString(c.getColumnIndex("cnt")));
 						statisticDetails.add(statisticDetail);
 					}
 				}
@@ -297,7 +297,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 				if (c != null && c.getCount() != 0) {
 					for (int i = 0; i < c.getCount(); i++) {
 						c.moveToPosition(i);
-						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail("Общая сумма", (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
+						Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(BA.str(R.string.total_amount), (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸");
 						statisticDetails.add(statisticDetail);
 					}
 				}
@@ -307,7 +307,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 
 				statistic = new Statistic();
 				statisticDetails = new ArrayList<Statistic.StatisticDetail>();
-				statistic.setTitle("По боксам");
+				statistic.setTitle(BA.str(R.string.by_boxes));
 				//Total count of booked items
 				c = null;
 				c = this.getWritableDatabase().rawQuery("SELECT count(*) as cnt FROM bookinfo where status in ('finished','queued_finished')", null);
@@ -323,7 +323,7 @@ public class WashmeOrmLiteSqlHelper extends OrmLiteSqliteOpenHelper {
 								Statistic.StatisticDetail statisticDetail = new Statistic.StatisticDetail(Functions.getBoxName(washer, bs.getUid())
 																										  +"("+bs.getBookingType()+")"+(TextUtils.isEmpty(bs.getWasherPerson())?"":" - "+bs.getWasherPerson())
 																											, c.getString(c.getColumnIndex("cnt"))
-										+ " на сумму " + (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸"
+										+ BA.str(R.string.for_amount_sp) + (TextUtils.isEmpty(c.getString(c.getColumnIndex("sum"))) ? "0" : c.getString(c.getColumnIndex("sum"))) + " ₸"
 								);
 								statisticDetails.add(statisticDetail);
 							}

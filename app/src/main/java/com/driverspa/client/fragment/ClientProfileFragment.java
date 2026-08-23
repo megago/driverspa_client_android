@@ -120,7 +120,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 	        ButterKnife.bind(this, view);
 			Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_actionbar);
 			TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
-            titleView.setText("Профиль");
+            titleView.setText(BA.str(R.string.profile_title));
 			titleView.setVisibility(View.VISIBLE);
 	        setWaitScreen(true);
 //			BA.getEventBus().post(new UserGetSelfRequestEvent(userId));
@@ -249,9 +249,9 @@ public class ClientProfileFragment extends ClientBaseFragment {
 //						v.setSelected(true);
 
 						AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(), AlertDialog.THEME_HOLO_LIGHT);
-						dialog.setTitle("Удалить машину?");
-						dialog.setNegativeButton("Нет", null);
-						dialog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+						dialog.setTitle(BA.str(R.string.delete_car_q));
+						dialog.setNegativeButton(BA.str(R.string.no_word), null);
+						dialog.setPositiveButton(BA.str(R.string.yes_word), new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 
@@ -282,7 +282,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 		String clientNameStr = clientName.getText().toString();
 
 		if(!(user.getCars() != null && user.getCars().size() > 0)){
-			ToastUtil.display(getActivity(), "Добавьте хотя бы одну машину");
+			ToastUtil.display(getActivity(), BA.str(R.string.add_one_car));
 			return;
 		}
 		UserUpdateRequest userRequest =  new UserUpdateRequest();
@@ -297,10 +297,10 @@ public class ClientProfileFragment extends ClientBaseFragment {
 	public void onUserSelfResponseReceived(UserUpdateSelfResponseEvent event){
 		setWaitScreen(false);
 		if(event != null && event.getData() != null && event.getData().getResponse() != null){
-			ToastUtil.display(getActivity(),"Данные успешно сохранены");
+			ToastUtil.display(getActivity(),BA.str(R.string.data_saved_ok));
 		}
 		else{
-			ToastUtil.display(getActivity(),"Повторите еще раз");
+			ToastUtil.display(getActivity(),BA.str(R.string.try_again2));
 		}
 	}
 	  private boolean validateProfileInfo(String str, View view, String warningMessage){
@@ -368,7 +368,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 			  setWaitScreen(false);
 			  if(event.getResponse() != null){
 				  if(BaseAssist.isSuccess(event.getResponse())){
-					  ToastUtil.display(getActivity(), "Успешно загрузили фото");
+					  ToastUtil.display(getActivity(), BA.str(R.string.photo_uploaded_ok));
 				       setWaitScreen(true);
 				       BA.getEventBus().post(new UserGetSelfRequestEvent(userId));
 				  }
@@ -406,7 +406,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
                         		startActivityForResult(GalleryPhotosActivity.newIntent(getActivity(), profilePhotos, 0, true), ActivityForResult.ACTIVITY_GALLERY_PHOTOS);
 	                  		  }
 	                  		  else{
-	                  			  ToastUtil.display(getActivity(), "Загрузите 1 и более фото для просмотра!");
+	                  			  ToastUtil.display(getActivity(), BA.str(R.string.upload_photo_hint));
 	                  		  }                        	
                             break;
                     }
@@ -457,7 +457,7 @@ public class ClientProfileFragment extends ClientBaseFragment {
 				cityMapList.add(cityMap);
 			}
 
-			cityDialog = new SingleSelectDialog(getActivity(), cityMapList, "Выберите город", selectedCityMapList) {
+			cityDialog = new SingleSelectDialog(getActivity(), cityMapList, BA.str(R.string.select_city), selectedCityMapList) {
 				@Override
 				public void onDismiss(HashMap<Integer, String> namesSelectedItm) {
 					cityDialogShown = false;

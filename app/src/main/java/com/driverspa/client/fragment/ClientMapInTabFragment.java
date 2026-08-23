@@ -917,7 +917,7 @@ public class ClientMapInTabFragment extends ClientBaseHomeFragment implements Cl
 				layout = inflater.inflate(R.layout.custom_info_window_map_in_tab,null);
 				TextView name = (TextView) layout.findViewById(R.id.infoWindowTitle);
 				TextView address = (TextView) layout.findViewById(R.id.infoWindowAddress);
-				name.setText(clickedClusterItem.getName().toLowerCase().contains("автомойка")?clickedClusterItem.getName():"Автомойка "+clickedClusterItem.getName());
+				name.setText(clickedClusterItem.getName().toLowerCase().contains("автомойка")?clickedClusterItem.getName():BA.str(R.string.car_wash_label_sp)+clickedClusterItem.getName());
 				address.setText(clickedClusterItem.getAddress());
 			}
 			return layout;

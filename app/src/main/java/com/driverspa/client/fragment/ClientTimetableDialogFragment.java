@@ -155,7 +155,7 @@ public class ClientTimetableDialogFragment extends DialogFragment {
         gridview.setVisibility(View.GONE);
         loadData();
         if(requestCode == ActivityForResult.ACTIVITY_TIMETABLE_INFO){
-            washerNoTime.setText("Нет доступных расписаний");
+            washerNoTime.setText(BA.str(R.string.no_schedules));
 //            txtTime.setVisibility(View.GONE);
         }
         else{
@@ -303,7 +303,7 @@ public class ClientTimetableDialogFragment extends DialogFragment {
 //            setWaitScreen(true);
         }
         else{
-            ToastUtil.display(getActivity(),"Выберите время начала мойки");
+            ToastUtil.display(getActivity(),BA.str(R.string.select_wash_start));
         }
     }
 
@@ -380,7 +380,7 @@ public class ClientTimetableDialogFragment extends DialogFragment {
                 gridview.setVisibility(View.GONE);
                 washerNoTime.setVisibility(View.VISIBLE);
                 buttonRepeat.setVisibility(View.GONE);
-                washerNoTime.setText("Нет доступных расписаний!");
+                washerNoTime.setText(BA.str(R.string.no_schedules_excl));
             }
 
             int time = 0;

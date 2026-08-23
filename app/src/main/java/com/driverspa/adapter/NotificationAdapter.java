@@ -1,4 +1,5 @@
 package com.driverspa.adapter;
+import com.driverspa.BA;
 
 import android.content.Context;
 import android.text.format.DateUtils;
@@ -40,7 +41,7 @@ public class NotificationAdapter extends BaseDataAdapter<Notification> {
 		if(DateUtils.isToday(Functions.getUTCDate(item.getTS()).getTime()))
 		   holder.date.setText(p.format(Functions.getUTCDate(item.getTS())));
 		else
-		   holder.date.setText(p.format(Functions.getUTCDate(item.getTS()))+" ("+timeTSMap.get(Functions.DATE)+" в "+timeTSMap.get(Functions.TIME)+")");
+		   holder.date.setText(p.format(Functions.getUTCDate(item.getTS()))+" ("+timeTSMap.get(Functions.DATE)+BA.str(R.string.space_at_space)+timeTSMap.get(Functions.TIME)+")");
 
 		holder.text.setText(item.getText());
 

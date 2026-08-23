@@ -222,13 +222,13 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     public List<NavigationItem> getMenu() {
         List<NavigationItem> items = new ArrayList<NavigationItem>();
         String city = UserPreferences.getCity(getActivity())!=null?Functions.getCityDescription(UserPreferences.getCity(getActivity())):"";
-        items.add(new NavigationItem(""+(TextUtils.isEmpty(city)?"Автомойки":"Автомойки ("+city+")"), getResources().getDrawable(R.drawable.ic_business_white_24dp)));
-        items.add(new NavigationItem("Мои брони", getResources().getDrawable(R.drawable.ic_timer_white_24dp)));
-        items.add(new NavigationItem("Уведомления", getResources().getDrawable(R.drawable.ic_tab_notification_normal)));
-        items.add(new NavigationItem("Избранные", getResources().getDrawable(R.drawable.ic_favourite)));
+        items.add(new NavigationItem(""+(TextUtils.isEmpty(city)?BA.str(R.string.car_washes):BA.str(R.string.car_washes_paren)+city+")"), getResources().getDrawable(R.drawable.ic_business_white_24dp)));
+        items.add(new NavigationItem(BA.str(R.string.my_bookings), getResources().getDrawable(R.drawable.ic_timer_white_24dp)));
+        items.add(new NavigationItem(BA.str(R.string.notifications), getResources().getDrawable(R.drawable.ic_tab_notification_normal)));
+        items.add(new NavigationItem(BA.str(R.string.favorites), getResources().getDrawable(R.drawable.ic_favourite)));
 //        items.add(new NavigationItem("История посещений", getResources().getDrawable(R.drawable.ic_history_white_24dp)));
 //        items.add(new NavigationItem("Бонусы", getResources().getDrawable(R.drawable.ic_local_offer_white_18dp)));
-        items.add(new NavigationItem("О нас", getResources().getDrawable(R.drawable.ic_about_us)));
+        items.add(new NavigationItem(BA.str(R.string.about_us), getResources().getDrawable(R.drawable.ic_about_us)));
 //        items.add(new NavigationItem("Поделиться", getResources().getDrawable(R.drawable.ic_share_white_24dp)));
         return items;
     }
@@ -368,7 +368,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         else{
            if(loggedIn && event != null && event.getUser() == null) UserPreferences.onUserLogout(BA.getContext());
            logoutView.setVisibility(View.GONE);
-           profileName.setText("Войти");
+           profileName.setText(BA.str(R.string.login_word));
            profilePhone.setText("");
            profileAvatar.setImageResource(R.drawable.ic_no_image);
            profileName.setPaintFlags(profileName.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -411,9 +411,9 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     @OnClick(R.id.logout)
     public void onLogoutButtonClicked(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
-        dialog.setTitle("Вы действительно хотите выйти?");
-        dialog.setNegativeButton("Отмена", null);
-        dialog.setPositiveButton("Ок", new DialogInterface.OnClickListener() {
+        dialog.setTitle(BA.str(R.string.confirm_logout));
+        dialog.setNegativeButton(BA.str(R.string.cancel_word), null);
+        dialog.setPositiveButton(BA.str(R.string.ok_word), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 BA.getEventBus().post(new DeleteDeviceRequestEvent());
@@ -443,7 +443,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
           }
       }
         else{
-          ToastUtil.display(BA.getContext(),"Ошибка при выходе, проверьте интернет соединение");
+          ToastUtil.display(BA.getContext(),BA.str(R.string.err_logout));
       }
     }
 }

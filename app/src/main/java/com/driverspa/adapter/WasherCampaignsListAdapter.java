@@ -1,4 +1,5 @@
 package com.driverspa.adapter;
+import com.driverspa.BA;
 
 import android.content.Context;
 import android.location.Location;
@@ -85,7 +86,7 @@ public class WasherCampaignsListAdapter extends BaseDataAdapter<WasherPublic> {
 
 		PrettyTime p = new PrettyTime(new Locale("ru"));
 		holder.campaignTS.setText(p.format(new Date(tsTimestamp)));
-		holder.name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():"Автомойка "+item.getName());
+		holder.name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():BA.str(R.string.car_wash_label_sp)+item.getName());
 		holder.campaignDescription.setText(item.getActiveCampaign().getDescription());
 
 		return view;

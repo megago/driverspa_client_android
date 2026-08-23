@@ -119,16 +119,16 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
 	        listView.setHeaderDividersEnabled(false);
 	        listView.setFooterDividersEnabled(false);	        	        
 	        TextView emptyView = new TextView(this.getActivity());
-	        emptyView.setText("Нет брони");
+	        emptyView.setText(BA.str(R.string.no_bookings));
 			emptyView.setTextColor(Color.BLACK);
 	        emptyView.setGravity(Gravity.CENTER);
 	        emptyView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 	        listView.setEmptyView(emptyView);
 	        pullToRefreshView.setVisibility(View.GONE);
 	        noInternetLayout.setVisibility(View.GONE);
-			pullToRefreshView.getLoadingLayoutProxy().setPullLabel("Тяни еще смелее");
-			pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel("Обновление...");
-			pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel("Теперь можно отпустить");
+			pullToRefreshView.getLoadingLayoutProxy().setPullLabel(BA.str(R.string.pull_more));
+			pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel(BA.str(R.string.refreshing));
+			pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel(BA.str(R.string.release_now));
 
 	        pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
 	            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -280,12 +280,12 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
 								PushData data = new PushData(item.getId());
 								data.setType("booking_"+item.getStatus());
 								if(item.getStatus().equals(APPROVED))
-								  data.setText("Ваша бронь подтверждена!");
+								  data.setText(BA.str(R.string.booking_confirmed_excl));
 								else if(item.getStatus().equals(FINISHED)){
-								  data.setText("Ваша машина помыта!");
+								  data.setText(BA.str(R.string.car_washed_excl));
 								}
 								else if(item.getStatus().equals(REJECTED)){
-								  data.setText("Ваша бронь отклонена.");
+								  data.setText(BA.str(R.string.booking_rejected_dot));
 								}
 								else
 									data.setText("");
@@ -301,12 +301,12 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
 								PushData data = new PushData(item.getId());
 								data.setType("booking_"+item.getStatus());
 								if(item.getStatus().equals(APPROVED))
-									data.setText("Ваша бронь подтверждена!");
+									data.setText(BA.str(R.string.booking_confirmed_excl));
 								else if(item.getStatus().equals(FINISHED)){
-									data.setText("Ваша машина помыта!");
+									data.setText(BA.str(R.string.car_washed_excl));
 								}
 								else if(item.getStatus().equals(REJECTED)){
-									data.setText("Ваша бронь отклонена.");
+									data.setText(BA.str(R.string.booking_rejected_dot));
 								}
 								else
 									data.setText("");
@@ -335,7 +335,7 @@ public class ClientBooksFragment extends ClientBaseHomeFragment {
 				pullToRefreshView.setVisibility(View.VISIBLE);
 				noInternetLayout.setVisibility(View.GONE);
 				progressBar.setVisibility(View.GONE);
-				ToastUtil.display(getActivity(),"Ошибка при получении данных с сервера");
+				ToastUtil.display(getActivity(),BA.str(R.string.err_server_data));
 			}
 		}
 		

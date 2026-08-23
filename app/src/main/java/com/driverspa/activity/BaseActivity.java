@@ -127,7 +127,7 @@ public class BaseActivity extends AppCompatActivity implements OnActionbarTitleC
 			pd = new ProgressDialog(this, ProgressDialog.THEME_HOLO_LIGHT);
 			pd.setTitle("");
 			pd.setIndeterminate(true);
-			pd.setMessage("Загрузка...");
+			pd.setMessage(BA.str(R.string.loading_dots));
 		}
 
 		try {

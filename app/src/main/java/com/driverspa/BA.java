@@ -42,9 +42,9 @@ public class BA extends BaseApplication {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 			NotificationChannel channel = new NotificationChannel(
 					MyFirebaseMessagingService.DEFAULT_CHANNEL_ID,
-					"DriverSpa уведомления",
+					BA.str(R.string.notif_channel_name),
 					NotificationManager.IMPORTANCE_HIGH);
-			channel.setDescription("Push-уведомления от DriverSpa");
+			channel.setDescription(BA.str(R.string.notif_channel_desc));
 			NotificationManager nm = getSystemService(NotificationManager.class);
 			if (nm != null) {
 				nm.createNotificationChannel(channel);
@@ -82,7 +82,7 @@ public class BA extends BaseApplication {
 
 	@Subscribe
 	public void onApiError(ApiErrorEvent event) {
-		ToastUtil.displayShort(this, "Ошибка соединения");
+		ToastUtil.displayShort(this, BA.str(R.string.connection_error));
 		event.getRetrofitError().printStackTrace();
 	}
 

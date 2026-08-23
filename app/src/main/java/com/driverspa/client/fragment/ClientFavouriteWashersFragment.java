@@ -98,15 +98,15 @@ public class ClientFavouriteWashersFragment extends ClientBaseHomeFragment {
 	        listView.setHeaderDividersEnabled(false);
 	        listView.setFooterDividersEnabled(false);	        	        
 	        TextView emptyView = new TextView(this.getActivity());
-	        emptyView.setText("У вас еще нет избранных моек");
+	        emptyView.setText(BA.str(R.string.no_favorite_washes));
 	        emptyView.setGravity(Gravity.CENTER);
 			emptyView.setTextColor(Color.BLACK);
 	        emptyView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 	        listView.setEmptyView(emptyView);
 	        pullToRefreshView.setVisibility(View.GONE);
-			pullToRefreshView.getLoadingLayoutProxy().setPullLabel("Тяни еще смелее");
-			pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel("Обновление...");
-			pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel("Теперь можно отпустить");
+			pullToRefreshView.getLoadingLayoutProxy().setPullLabel(BA.str(R.string.pull_more));
+			pullToRefreshView.getLoadingLayoutProxy().setRefreshingLabel(BA.str(R.string.refreshing));
+			pullToRefreshView.getLoadingLayoutProxy().setReleaseLabel(BA.str(R.string.release_now));
 
 	        noInternetLayout.setVisibility(View.GONE);
 	        pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {

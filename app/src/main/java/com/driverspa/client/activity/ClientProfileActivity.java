@@ -1,4 +1,5 @@
 package com.driverspa.client.activity;
+import com.driverspa.BA;
 
 import android.Manifest;
 import android.content.Intent;
@@ -37,7 +38,7 @@ public class ClientProfileActivity extends BaseActivity implements ClientProfile
 
 					// permission denied, boo! Disable the
 					// functionality that depends on this permission.
-					ToastUtil.display(ClientProfileActivity.this,"Доступ запрещен");
+					ToastUtil.display(ClientProfileActivity.this,BA.str(R.string.access_denied));
 //					Toast.makeText(ClientProfileActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
 				}
 				return;

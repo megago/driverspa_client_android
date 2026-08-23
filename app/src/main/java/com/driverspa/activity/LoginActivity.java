@@ -99,7 +99,7 @@ public class LoginActivity extends BaseActivity implements
 		registerGCM();
 		User user = UserSelfAssist.getUserFromDb(UserPreferences.getUserId(BA.getContext()));
 		if(user == null) {
-			ToastUtil.display(BA.getContext(),"Ошибка при входе");
+			ToastUtil.display(BA.getContext(),BA.str(R.string.err_login));
 			return;
 		}
 

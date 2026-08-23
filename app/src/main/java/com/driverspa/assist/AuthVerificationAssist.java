@@ -1,4 +1,5 @@
 package com.driverspa.assist;
+import com.driverspa.R;
 
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
@@ -55,7 +56,7 @@ public class AuthVerificationAssist extends BaseAssist {
 					
 //					if(isAdmin){
 					if(1!=1){
-					  displayToast("Ошибка! Ранее этот номер использыван при регистрации мойки. Свяжитесь с тех. поддержкой DriverSpa");
+					  displayToast(BA.str(R.string.err_number_used_wash));
 					  getEventsBus().post(new AuthClientVerificationResponseEvent(null));
 					}
 					else{
@@ -234,7 +235,7 @@ public class AuthVerificationAssist extends BaseAssist {
 											ArrayList<Washer.BoxSettings> boxSettings = new ArrayList<Washer.BoxSettings>();
 											for (int i = 0; i < 1; i++) {
 												Washer.BoxSettings boxSetting = new Washer.BoxSettings();
-												boxSetting.setBoxName("Бокс 1");
+												boxSetting.setBoxName(BA.str(R.string.box_1));
 												boxSetting.setBookingType(BookingType.Online);
 												boxSettings.add(boxSetting);
 											}

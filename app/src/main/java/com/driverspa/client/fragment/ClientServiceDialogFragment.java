@@ -179,8 +179,8 @@ public class ClientServiceDialogFragment extends DialogFragment {
         depositAmount.setEnabled(false);
         bonusAmount.setEnabled(false);
         cardAmount.setEnabled(false);
-        clientDepositAmount.setText("из 0");
-        clientBonusAmount.setText("из 0");
+        clientDepositAmount.setText(BA.str(R.string.of_0));
+        clientBonusAmount.setText(BA.str(R.string.of_0));
         depositAmount.setText("0");
         bonusAmount.setText("0");
         bonusAmount.setSelection(bonusAmount.getText().length());
@@ -252,10 +252,10 @@ public class ClientServiceDialogFragment extends DialogFragment {
             if(!TextUtils.isEmpty(washer.getCompanyClientId())) {
                 if (washer.getCompanyClientDeposit() != null && washer.getCompanyClientDeposit() > 0) {
                     depositLayout.setVisibility(View.VISIBLE);
-                    clientDepositAmount.setText("из " + washer.getCompanyClientDeposit());
+                    clientDepositAmount.setText(BA.str(R.string.of_sp) + washer.getCompanyClientDeposit());
                 }
                 if (washer.getCompanyClientBonus() != null && washer.getCompanyClientBonus() > 0) {
-                    clientBonusAmount.setText("из " + washer.getCompanyClientBonus());
+                    clientBonusAmount.setText(BA.str(R.string.of_sp) + washer.getCompanyClientBonus());
                     bonusLayout.setVisibility(View.VISIBLE);
                     bonusLayoutLine.setVisibility(View.VISIBLE);
                 }
@@ -364,7 +364,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
                                     Washer.GroupMenu selectedGroup = null;
 
                                     if (selectedGroup != null && selectedGroup.getServices() != null && selectedGroup.getServices().contains(serviceAdapter.getData().get(position).getServiceId())) {
-                                        ToastUtil.display(BA.getContext(), "Данная услуга уже содержится в выбранном комплексе услуг");
+                                        ToastUtil.display(BA.getContext(), BA.str(R.string.service_already_in_complex));
                                     } else {
                                         serviceAdapter.setSelectedPosition(position, true);
                                         serviceAdapter.notifyDataSetChanged();
@@ -375,7 +375,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
                                     serviceAdapter.notifyDataSetChanged();
                                 }
                             } else {
-                                ToastUtil.display(BA.getContext(), "Для данного типа авто и услуги - не указана цена");
+                                ToastUtil.display(BA.getContext(), BA.str(R.string.err_no_price_for_type));
                             }
                         }
 
@@ -409,7 +409,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
                                 boolean found = false;
 
                                 if (found) {
-                                    ToastUtil.display(BA.getContext(), "Вы уже выбрали услугу которая содержится в данном комплексе");
+                                    ToastUtil.display(BA.getContext(), BA.str(R.string.service_already_selected_complex));
                                 } else {
                                     groupServiceAdapter.setSelectedPosition(position, true);
                                     groupServiceAdapter.notifyDataSetChanged();
@@ -502,7 +502,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
         finalPrice = 0d;
         cashAmount.setText(decimalFormatter.format((int)finalPrice) + "");
         cashAmount.setSelection(cashAmount.getText().toString().length());
-        txtTime.setText("0 мин");
+        txtTime.setText(BA.str(R.string.zero_min));
         request.setServices(new ArrayList<Integer>());
         request.setGroupServices(new ArrayList<String>());
         cashAmount.setText("0");
@@ -520,14 +520,14 @@ public class ClientServiceDialogFragment extends DialogFragment {
         depositAmount.setText("0");
         txtPrice.setText("0 ₸");
         finalPrice = 0d;
-        txtTime.setText("0 мин");
+        txtTime.setText(BA.str(R.string.zero_min));
 
         txtPrice.setText("0 ₸");
         if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
                 ||washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Online.getValue()))){
             txtPrice.setText("0 - "+washer.getActiveCampaign().getCampaignDiscount()+"% = 0 ₸");
         }
-        txtTime.setText("0 мин");
+        txtTime.setText(BA.str(R.string.zero_min));
         Double totalPrice = 0d;
         totalTime = 0;
         for (int i = 0; i < data.size(); i++) {
@@ -579,7 +579,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
         }
 
         if (totalTime > 0) {
-            txtTime.setText(Math.round(totalTime) + " мин");
+            txtTime.setText(Math.round(totalTime) + BA.str(R.string.space_min));
             if (request != null)
                 request.setServiceTotalTime(totalTime);
         }
@@ -874,7 +874,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
     @OnClick(R.id.btnApply)
     public void onApplyClicked(){
         if (finalPriceDifference != 0) {
-            ToastUtil.displayAtTop(getActivity(), "Остаток не равен нулю! Распределите суммы правильно!");
+            ToastUtil.displayAtTop(getActivity(), BA.str(R.string.balance_not_zero));
             return;
         }
 
@@ -883,7 +883,7 @@ public class ClientServiceDialogFragment extends DialogFragment {
             activityActions.setSelectedServices(washer, request.getPriceDetails(), request.getServices(), request.getGroupServices(), finalPrice, totalTime);
         }
         else{
-            ToastUtil.display(getActivity(),"Выберите хотя бы одну услугу");
+            ToastUtil.display(getActivity(),BA.str(R.string.select_one_service));
             return;
         }
         onBackClicked();

@@ -182,18 +182,18 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 	@OnClick(R.id.btnOk)
 	protected void processRegistrationRequest() {
 		if (!ofertaCheckbox.isChecked()) {
-			ToastUtil.display(getActivity(), "Пожалуйста, примите публичную оферту");
+			ToastUtil.display(getActivity(), BA.str(R.string.accept_offer_please));
 			return;
 		}
 		String phoneStr = phone.getText().toString();
 		phoneStr = phoneStr.replaceAll("\\+", "").replaceAll("\\(", "").replaceAll("\\)", "").replaceAll("-", "").replaceAll(" ", "");
 
 		if (TextUtils.isEmpty(phoneStr)) {
-			phone.setError("Введите номер телефона");
+			phone.setError(BA.str(R.string.enter_phone));
 			return;
 		}
 		if (!isPhoneValid(phoneStr)) {
-			phone.setError("Неправильный номер телефона");
+			phone.setError(BA.str(R.string.invalid_phone));
 			return;
 		}
 
@@ -203,7 +203,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 
 		if (UserPreferences.CHANNEL_EMAIL.equals(channel)
 				&& (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
-			loginEmail.setError("Введите корректный email");
+			loginEmail.setError(BA.str(R.string.enter_valid_email));
 			loginEmail.requestFocus();
 			return;
 		}
@@ -228,7 +228,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 				|| !"success".equals(event.getData().getStatus())) {
 			setWaitScreen(false);
 			ToastUtil.display(getActivity(), event.getData() != null && event.getData().getMessage() != null
-					? event.getData().getMessage() : "Ошибка, попробуйте еще раз");
+					? event.getData().getMessage() : BA.str(R.string.err_try_again));
 			return;
 		}
 
@@ -266,7 +266,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 		 if(event.getAuthLoginResponse().getStatus() != null && !event.getAuthLoginResponse().getStatus().equals("error")){
 		   activityActions.openClientVerification();
 		 }else{
-		   ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
+		   ToastUtil.display(getActivity(), BA.str(R.string.err_try_again));
 	   }
 	}
 
@@ -277,7 +277,7 @@ public class ClientRegistrationFragment extends ClientBaseFragment {
 			activityActions.openClientVerification();
 		} else {
 			ToastUtil.display(getActivity(), event.getData() != null && event.getData().getMessage() != null
-					? event.getData().getMessage() : "Ошибка, попробуйте еще раз");
+					? event.getData().getMessage() : BA.str(R.string.err_try_again));
 		}
 	}
 

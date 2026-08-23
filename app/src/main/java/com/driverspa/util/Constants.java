@@ -2,6 +2,8 @@
  * 
  */
 package com.driverspa.util;
+import com.driverspa.R;
+import com.driverspa.BA;
 
 import android.graphics.Typeface;
 
@@ -107,22 +109,22 @@ public class Constants {
 
         //Book status map
 		bookStatus = new HashMap<String,String>();
-		bookStatus.put(QUEUED, "В очереди");
-		bookStatus.put(QUEUED_APPROVED, "В боксе");
-		bookStatus.put(QUEUED_REJECTED, "Удалено с очереди");
-		bookStatus.put(QUEUED_FINISHED, "Услуга оказана");
-		bookStatus.put(PENDING, "Ожидает");
-		bookStatus.put(FINISHED, "Услуга оказана");
-		bookStatus.put(APPROVED, "Одобрено");
-		bookStatus.put(REJECTED, "Не одобрено");
-		bookStatus.put(STARTED, "Начато");
-		bookStatus.put(NOCOME, "Клиент не пришел");
-		bookStatus.put(CANCELED, "Отменено клиентом");
+		bookStatus.put(QUEUED, BA.str(R.string.in_queue));
+		bookStatus.put(QUEUED_APPROVED, BA.str(R.string.in_box));
+		bookStatus.put(QUEUED_REJECTED, BA.str(R.string.removed_from_queue));
+		bookStatus.put(QUEUED_FINISHED, BA.str(R.string.service_provided));
+		bookStatus.put(PENDING, BA.str(R.string.pending_status));
+		bookStatus.put(FINISHED, BA.str(R.string.service_provided));
+		bookStatus.put(APPROVED, BA.str(R.string.approved));
+		bookStatus.put(REJECTED, BA.str(R.string.not_approved));
+		bookStatus.put(STARTED, BA.str(R.string.started_status));
+		bookStatus.put(NOCOME, BA.str(R.string.client_no_show_status));
+		bookStatus.put(CANCELED, BA.str(R.string.cancelled_by_client));
 
         //Box type map
-        boxTypeMap.put(HYBRID,"Гибрид");
-        boxTypeMap.put(ONLINE,"Онлайн");
-        boxTypeMap.put(OFFLINE,"Оффлайн");
+        boxTypeMap.put(HYBRID,BA.str(R.string.hybrid));
+        boxTypeMap.put(ONLINE,BA.str(R.string.online_word));
+        boxTypeMap.put(OFFLINE,BA.str(R.string.offline_word));
     }
 
 }

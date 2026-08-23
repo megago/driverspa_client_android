@@ -107,7 +107,7 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 		if( verificationCode.length() > 0) {					
 			processVerify(verificationCodeStr);			
 		} else {
-			verificationCode.setError("Обязательное поле");
+			verificationCode.setError(BA.str(R.string.required_field));
 		}
 	}
 	
@@ -120,9 +120,9 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 
 		if (seconds < TIMER_SECONDS){
 			AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
-			dialog.setTitle("Подождите немного");
-            dialog.setMessage("Мы можем отправить смс каждые 30 секунд");
-			dialog.setPositiveButton("Ок",null);
+			dialog.setTitle(BA.str(R.string.wait_a_bit));
+            dialog.setMessage(BA.str(R.string.sms_every_30s));
+			dialog.setPositiveButton(BA.str(R.string.ok_word),null);
 			dialog.show();
 		}
 		else {
@@ -161,7 +161,7 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 		activityActions.openClientHomeActivity();
 
 	  }else{
-		  ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
+		  ToastUtil.display(getActivity(), BA.str(R.string.err_try_again));
 	   }
       }
 	}	
@@ -172,7 +172,7 @@ public class ClientVerificationFragment extends ClientBaseFragment {
 		 if(event.getAuthLoginResponse().getStatus() != null && !event.getAuthLoginResponse().getStatus().equals("error")){
 			 UserPreferences.putRecoverySmsSentTime(getActivity(), (new Date()).getTime());
 		 }else{
-		   ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
+		   ToastUtil.display(getActivity(), BA.str(R.string.err_try_again));
 	   }
 	}
 

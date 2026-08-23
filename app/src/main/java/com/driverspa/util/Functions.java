@@ -61,19 +61,19 @@ public class Functions {
 				if(i==0) result += "(";
 				switch(p.getPaymentType()){
 					case "C":
-						result += "налич. ";
+						result += BA.str(R.string.cash_short_pre);
 						break;
 					case "DA":
-						result += "переч. ";
+						result += BA.str(R.string.transfer_short_pre);
 						break;
 					case "T":
-						result += "переч. ";
+						result += BA.str(R.string.transfer_short_pre);
 						break;
 					case "B":
-						result += "бон. ";
+						result += BA.str(R.string.bonus_short_pre);
 						break;
 					case "CD":
-						result += "карт. ";
+						result += BA.str(R.string.card_short_pre);
 						break;
 				}
 				result += decimalFormatter.format(p.getAmount())+" ₸"+", ";
@@ -84,7 +84,7 @@ public class Functions {
 			}
 		}
 		else{
-			result = "(налич.: "+ decimalFormatter.format(price)+")";
+			result = BA.str(R.string.cash_short_paren)+ decimalFormatter.format(price)+")";
 		}
 		return result;
 	}
@@ -162,13 +162,13 @@ public class Functions {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
         // Setting Dialog Title
-        alertDialog.setTitle("Настройки GPS");
+        alertDialog.setTitle(BA.str(R.string.gps_settings));
 
         // Setting Dialog Message
-        alertDialog.setMessage("GPS отключен. Хотите включить?");
+        alertDialog.setMessage(BA.str(R.string.gps_off_enable));
 
         // On pressing the Settings button.
-        alertDialog.setPositiveButton("Настройки", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(BA.str(R.string.settings_title), new DialogInterface.OnClickListener() {
         	
             public void onClick(DialogInterface dialog,int which) {
 //            	mContext.startActivity(new Intent(mContext, ClientSettingsActivity.class).putExtra(ClientBaseActivity.OPENING_ANIMATION, false));
@@ -178,7 +178,7 @@ public class Functions {
         });
 
         // On pressing the cancel button
-        alertDialog.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton(BA.str(R.string.cancel_word), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
             dialog.cancel();
             }

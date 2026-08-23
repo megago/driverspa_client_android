@@ -1,4 +1,5 @@
 package com.driverspa.client.activity;
+import com.driverspa.BA;
 
 import android.Manifest;
 import android.content.Intent;
@@ -65,7 +66,7 @@ public class ClientAddressMapActivity extends ClientBaseActivity implements Goog
         double lon = getIntent().getDoubleExtra(LOC_LON, LON);
         latLng = new LatLng(lat, lon);
         TextView action = (TextView) mToolbar.findViewById(R.id.action_done);
-        action.setText("Проложить маршрут");
+        action.setText(BA.str(R.string.route_build));
         action.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

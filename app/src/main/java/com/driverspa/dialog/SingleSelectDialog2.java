@@ -1,5 +1,7 @@
 
 package com.driverspa.dialog;
+import com.driverspa.R;
+import com.driverspa.BA;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -71,7 +73,7 @@ public abstract class SingleSelectDialog2 {
 
 		dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_LIGHT);
 		dialogBuilder.setTitle(title);
-		dialogBuilder.setPositiveButton("Ок",
+		dialogBuilder.setPositiveButton(BA.str(R.string.ok_word),
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 					HashMap<Integer,String> selectedMap = new HashMap<Integer,String>();

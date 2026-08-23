@@ -1,4 +1,5 @@
 package com.driverspa.adapter;
+import com.driverspa.BA;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -83,7 +84,7 @@ public class OfflineBoxesGridAdapter extends BaseAdapter {
         if(!TextUtils.isEmpty(item.getWasherPerson()))
            holder.itemBookingType.setText(item.getWasherPerson()+" ("+Constants.boxTypeMap.get(item.getBookingType().getValue())+")");
         else
-           holder.itemBookingType.setText("Мойщик не указан ("+Constants.boxTypeMap.get(item.getBookingType().getValue())+")");
+           holder.itemBookingType.setText(BA.str(R.string.washer_not_specified_paren)+Constants.boxTypeMap.get(item.getBookingType().getValue())+")");
 
 //        holder.itemBookingType.setText(Constants.boxTypeMap.get(item.getBookingType().getValue()));
 

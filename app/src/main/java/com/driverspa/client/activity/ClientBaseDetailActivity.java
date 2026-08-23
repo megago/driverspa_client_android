@@ -1,4 +1,5 @@
 package com.driverspa.client.activity;
+import com.driverspa.BA;
 
 import android.annotation.SuppressLint;
 
@@ -114,7 +115,7 @@ public class ClientBaseDetailActivity extends AppCompatActivity implements OnAct
 
     protected void setWaitScreen(boolean set) {    	
     	if(pd == null) 
-    		pd = ProgressDialog.show(this, "","Загрузка", true);
+    		pd = ProgressDialog.show(this, "",BA.str(R.string.loading_word), true);
         if(set) pd.show();
         else  pd.dismiss();
      }

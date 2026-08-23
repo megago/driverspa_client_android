@@ -1,4 +1,5 @@
 package com.driverspa.client.activity;
+import com.driverspa.BA;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -115,7 +116,7 @@ public class ClientBaseActivity extends AppCompatActivity implements OnActionbar
 			  pd = new ProgressDialog(this, ProgressDialog.THEME_HOLO_LIGHT);
 			  pd.setTitle("");
 			  pd.setIndeterminate(true);
-			  pd.setMessage("Загрузка...");
+			  pd.setMessage(BA.str(R.string.loading_dots));
 		  }
 		  try {
 			  if (set) pd.show();

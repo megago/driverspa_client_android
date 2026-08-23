@@ -250,13 +250,13 @@ public class ClientMapFragment extends BaseFragment implements GoogleMap.OnMyLoc
 				currentLoc = gps.getLocation();
   			    loadData();
 				if(currentLoc != null){
-				  myMarker.position(new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude())).title("Это я!");
+				  myMarker.position(new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude())).title(BA.str(R.string.its_me));
 					myMarker.icon(BitmapDescriptorFactory.fromBitmap(bMMap));
 					mMap.addMarker(myMarker);
 
 				}
 				else{
-					ToastUtil.display(getActivity(), "Не могу определить местоположение");
+					ToastUtil.display(getActivity(), BA.str(R.string.cant_determine_location));
 					activityActions.showProgressBar(false);		
 				}
 		   }
@@ -275,7 +275,7 @@ public class ClientMapFragment extends BaseFragment implements GoogleMap.OnMyLoc
 //				BA.getEventBus().post(new WashersNearRequestEvent(currentLoc.getLatitude(), currentLoc.getLongitude(), filter));
 			}
 			else
-			  ToastUtil.display(getActivity(), "Не могу определить местоположение");
+			  ToastUtil.display(getActivity(), BA.str(R.string.cant_determine_location));
 		}
 	
 	/**
@@ -318,7 +318,7 @@ public class ClientMapFragment extends BaseFragment implements GoogleMap.OnMyLoc
 		mMap.clear();
 		mClusterManager.clearItems();
 		if(currentLoc != null) {
-			myMarker.position(new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude())).title("Это я!");
+			myMarker.position(new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude())).title(BA.str(R.string.its_me));
 			myMarker.icon(BitmapDescriptorFactory.fromBitmap(bMMap));
 			mMap.addMarker(myMarker);
 		}
@@ -438,7 +438,7 @@ public class ClientMapFragment extends BaseFragment implements GoogleMap.OnMyLoc
 				ImageView avatar = (ImageView) layout.findViewById(R.id.imgWasherAvatar);
 				name.setText(clickedClusterItem.getName());
 				address.setText(clickedClusterItem.getAddress());
-				price.setText("от " + clickedClusterItem.getPrice() + " ₸");
+				price.setText(BA.str(R.string.from_pre) + clickedClusterItem.getPrice() + " ₸");
 				ArrayList<Reference.City> allCities = BA.getReference().getCities();
 				city.setVisibility(View.GONE);
 				for(Reference.City c:allCities){

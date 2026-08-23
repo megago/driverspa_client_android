@@ -57,18 +57,18 @@ public class SplashInfoFragment extends BaseFragment {
 			case 0:
 				parentView.setVisibility(View.VISIBLE);
 				image.setImageResource(R.drawable.ic_splash_info_1);
-				mainText.setText("Находите ближайшие автомойки и бронируйте удобное для вас время");
+				mainText.setText(BA.str(R.string.onboarding_find_wash));
 				break;
 			case 1:
 				parentView.setVisibility(View.VISIBLE);
 				image.setImageResource(R.drawable.ic_splash_info_2);
-				mainText.setText("Сравнивайте цены и качество обслуживания в автомойках вашего города");
+				mainText.setText(BA.str(R.string.onboarding_compare));
 				break;
 			case 2:
 				parentView.setVisibility(View.VISIBLE);
-				title.setText("Владельцам автомоек");
+				title.setText(BA.str(R.string.for_wash_owners));
 				image.setImageResource(R.drawable.ic_splash_info_3);
-				mainText.setText("Привлекайте дополнительных клиентов, сообщайте об акциях и новостях!");
+				mainText.setText(BA.str(R.string.onboarding_attract));
 				break;
 		}
         return view;

@@ -351,7 +351,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 		if(fareRequest.getFare() < 500){
 			requestInfo.setText("Возможно #AMOUNT# ₸. не заинтересует автомоек, рекомендуем поднять цену".replace("#AMOUNT#",decimalFormatter.format(fareRequest.getFare())));
 		}else{
-			requestInfo.setText("Предлагаем вашу цену автомойкам, пожалуйста подождите");
+			requestInfo.setText(BA.str(R.string.offering_price_wait));
 		}
 		myCar.setText(fareRequest.getClientKey());
 		String servicesTxt = "";
@@ -419,9 +419,9 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 	@OnClick(R.id.cancelRequest)
 	public void onButtoncancelRequestClicked(){
 		AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
-		dialog.setTitle("Отменить предложение?");
-		dialog.setNeutralButton("Нет", null);
-		dialog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+		dialog.setTitle(BA.str(R.string.cancel_offer_q));
+		dialog.setNeutralButton(BA.str(R.string.no_word), null);
+		dialog.setPositiveButton(BA.str(R.string.yes_word), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				setWaitScreen(true);
@@ -437,7 +437,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 		setWaitScreen(false);
 		if(event.getData() != null){
 			if(BaseAssist.isSuccess(event.getData())) {
-				ToastUtil.display(getActivity(), "Предложение отменено");
+				ToastUtil.display(getActivity(), BA.str(R.string.offer_cancelled));
 				UserPreferences.putActiveFareRequestBooking(BA.getContext(),null);
 				getActivity().finish();
 			}
@@ -445,7 +445,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 				ToastUtil.display(getActivity(), event.getData().getMessage());
 		}
 		else{
-			ToastUtil.display(getActivity(), "Ошибка");
+			ToastUtil.display(getActivity(), BA.str(R.string.error_word));
 		}
 	}
 
@@ -460,7 +460,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 				ToastUtil.display(getActivity(), event.getData().getMessage());
 		}
 		else{
-			ToastUtil.display(getActivity(), "Ошибка");
+			ToastUtil.display(getActivity(), BA.str(R.string.error_word));
 		}
 	}
 
@@ -672,12 +672,12 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 			FareRequest.BidObject item = event.getBidObject();
 			acceptedBid = item;
 			review.setRating((float)item.getCarwashRating().doubleValue());
-			name.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():"Автомойка "+item.getCarwashName());
+			name.setText(item.getCarwashName().toLowerCase().contains("автомойка")?item.getCarwashName():BA.str(R.string.car_wash_label_sp)+item.getCarwashName());
 			if(!TextUtils.isEmpty(item.getCarwashAddress())){
 				address.setText(item.getCarwashAddress());
 			}
 			if(TextUtils.isEmpty(item.getCarwashAddress()))
-				address.setText(Functions.getCityDescription("адрес не указан"));
+				address.setText(Functions.getCityDescription(BA.str(R.string.address_not_specified)));
 
 			try{
 				Location washerLocation = new Location("A");
@@ -688,10 +688,10 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 				requestLocationB.setLongitude(Double.parseDouble(fareRequest.getLonLat().get(0).toString()));
 
 				float dist = requestLocationB.distanceTo(washerLocation);
-				distance.setText(String.format("%s км", decimalFormatter.format(dist/1000).replaceAll(",", " ")));
+				distance.setText(String.format(BA.str(R.string.km_format), decimalFormatter.format(dist/1000).replaceAll(",", " ")));
 			}
 			catch(Exception e){
-				distance.setText("- км");
+				distance.setText(BA.str(R.string.dash_km));
 			}
 		}
 	}
@@ -741,7 +741,7 @@ public class ClientWaitingRequestMapFragment extends ClientBaseFragment implemen
 				ToastUtil.display(getActivity(),event.getData().getMessage());
 			}
 		}else{
-			ToastUtil.display(getActivity(),"Ошибка");
+			ToastUtil.display(getActivity(),BA.str(R.string.error_word));
 		}
 	}
 

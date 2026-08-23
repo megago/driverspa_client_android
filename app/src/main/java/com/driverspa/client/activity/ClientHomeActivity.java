@@ -607,7 +607,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             carSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                     if (!isSpinnerTouched) return;
-                     services.setText("Выберите услугу");
+                     services.setText(BA.str(R.string.select_service));
                      bookServiceClose.setVisibility(View.GONE);
                      bookServiceRightArrow.setVisibility(View.VISIBLE);
                      if(request != null) {
@@ -750,7 +750,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             int i = 0;
             String[] valuesArray = new String[size+1];
             final String[] keysArray = new String[size+1];
-            valuesArray[i] = "Популярные услуги мойки";
+            valuesArray[i] = BA.str(R.string.popular_services);
             keysArray[i] = "";
             for (i = 1; i < valuesArray.length; i++){
                 if(groupServiceItems.size() >= i+1) {
@@ -763,13 +763,13 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                         }
                     }
 
-                    valuesArray[i] = groupServiceItems.get(i).getName()+" за "+price+"₸.";//+time+" мин.";
+                    valuesArray[i] = groupServiceItems.get(i).getName()+BA.str(R.string.for_sp)+price+"₸.";//+time+BA.str(R.string.min_dot_sp);
                     keysArray[i] = groupServiceItems.get(i).getId();
                 }
                 if(size > 0 && (groupServiceItems.size() - (i + 1) < 0) && serviceItems.size() > 0 && j < serviceItems.size()){
                     double price = serviceItems.get(j).getPrice();
                     int time = serviceItems.get(j).getTime();
-                    valuesArray[i] = BA.getReference().getServices().get(serviceItems.get(j).getServiceId())+" за "+price+"₸.";//+time+" мин.";
+                    valuesArray[i] = BA.getReference().getServices().get(serviceItems.get(j).getServiceId())+BA.str(R.string.for_sp)+price+"₸.";//+time+BA.str(R.string.min_dot_sp);
                     keysArray[i] = serviceItems.get(j).getServiceId()+"";
                     j++;
                 }
@@ -976,7 +976,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             imgAvailability.setVisibility(View.VISIBLE);
             informationLayout.setVisibility(View.GONE);
             serviceSpinner.setVisibility(View.GONE);
-            mainButton.setText("Забронировать");
+            mainButton.setText(BA.str(R.string.book_verb));
             createCarwashCarsSpinner(user, item);
             Handler mHandler = new Handler();
             mHandler.postDelayed(new Runnable(){
@@ -992,15 +992,15 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                     boolean loggedIn = UserPreferences.isUserLoggedIn(BA.getContext());
                     if(loggedIn) {
                         if(request != null && request.getCarType()==-1) {
-                            ToastUtil.display(ClientHomeActivity.this, "Выберите машину");
+                            ToastUtil.display(ClientHomeActivity.this, BA.str(R.string.select_car));
                             return;
                         }
                         if (!(request.getServices() != null && request.getServices().size() > 0) && !(request.getGroupServices() != null && request.getGroupServices().size() > 0)) {
-                            ToastUtil.displayAtTop(ClientHomeActivity.this, "Выберите услуги");
+                            ToastUtil.displayAtTop(ClientHomeActivity.this, BA.str(R.string.select_services));
                             return;
                         }
                         if ((request.getTime() == null)) {
-                            ToastUtil.displayAtTop(ClientHomeActivity.this, "Выберите время");
+                            ToastUtil.displayAtTop(ClientHomeActivity.this, BA.str(R.string.choose_time));
                             return;
                         }
                         setWaitScreen(true);
@@ -1013,16 +1013,16 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         }
         else {
             if(item.getUserWanted()) {
-                if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони");
+                if(item.getWantsCount() > 0) reqireWashmeText.setText(BA.str(R.string.wash_not_partner_prefix)+item.getWantsCount()+BA.str(R.string.people_want_suffix));
                 requireWashmeButton.setVisibility(View.GONE);
             }
             else if(wantedWashers !=null && wantedWashers.get(item.getId())!=null){
-                reqireWashmeText.setText("Ваша заявка принята");
+                reqireWashmeText.setText(BA.str(R.string.request_accepted));
                 requireWashmeButton.setVisibility(View.GONE);
             }
             else{
-                if(item.getWantsCount() > 0) reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, "+item.getWantsCount()+" человек хочет чтобы она стала принимать заказы и брони, хотите ли вы тоже?");
-                else reqireWashmeText.setText("Данная автомойка не сотрудничает с DriverSpa, хотите чтобы она стала принимать заказы и брони?");
+                if(item.getWantsCount() > 0) reqireWashmeText.setText(BA.str(R.string.wash_not_partner_prefix)+item.getWantsCount()+BA.str(R.string.people_want_suffix_q));
+                else reqireWashmeText.setText(BA.str(R.string.wash_not_partner));
                 requireWashmeButton.setVisibility(View.VISIBLE);
             }
 
@@ -1034,7 +1034,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                         wantedWashers.put(item.getId(),item.getId());
                         UserPreferences.putWantedWashers(BA.getContext(),(new WantedWashers(wantedWashers)).serialize());
                         requireWashmeButton.setVisibility(View.GONE);
-                        reqireWashmeText.setText("Спасибо, ваша заявка принята.");
+                        reqireWashmeText.setText(BA.str(R.string.thanks_request_accepted));
                         AddReviewRequest request = new AddReviewRequest();
                         request.setCarwash(URL_PREFIX+item.getId());
                         request.setReviewType("wanted");
@@ -1049,7 +1049,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             mainFieldsLayout.setVisibility(View.GONE);
             informationLayout.setVisibility(View.VISIBLE);
             imgAvailability.setVisibility(View.GONE);
-            mainButton.setText("Проложить маршрут");
+            mainButton.setText(BA.str(R.string.route_build));
             mainButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1082,9 +1082,9 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             washerTime.setText(time);
         }
         else
-            washerTime.setText("Не указано");
+            washerTime.setText(BA.str(R.string.not_specified));
 
-        reviewCount.setText(item.getReviewCount()+" отзывов");
+        reviewCount.setText(item.getReviewCount()+BA.str(R.string.reviews_suffix));
         if(item.getImages() != null &&  item.getImages().size() > 0){
 
             ImageDetail firstImage = item.getImages().get(0).getThumb1();
@@ -1121,10 +1121,10 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 }
         }
         else
-            washerPhone.setText("Не указано");
+            washerPhone.setText(BA.str(R.string.not_specified));
 
-        name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():"Автомойка "+item.getName());
-        price.setText("Кузов-салон от " + (item.getPrice()!=null?formatter.format(item.getPrice()).replaceAll(",", " ")+" ₸.":""));
+        name.setText(item.getName().toLowerCase().contains("автомойка")?item.getName():BA.str(R.string.car_wash_label_sp)+item.getName());
+        price.setText(BA.str(R.string.body_interior_from_pre) + (item.getPrice()!=null?formatter.format(item.getPrice()).replaceAll(",", " ")+" ₸.":""));
         review.setRating((float)item.getRating().doubleValue());
 
 //		holder.address.setText(item.getAddress());
@@ -1132,7 +1132,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             address.setText(Functions.getCityDescription(item.getCity())+", "+item.getAddress());
         }
         if(TextUtils.isEmpty(item.getAddress()))
-            address.setText(Functions.getCityDescription(item.getCity())+", "+"адрес не указан");
+            address.setText(Functions.getCityDescription(item.getCity())+", "+BA.str(R.string.address_not_specified));
 
         requestButton.setVisibility(View.GONE);
         fareLayout.setVisibility(View.GONE);
@@ -1142,14 +1142,14 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
 
     private void showLoginWarning(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT);
-        dialog.setTitle("Необходимо войти");
-        dialog.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+        dialog.setTitle(BA.str(R.string.login_required));
+        dialog.setPositiveButton(BA.str(R.string.login_word), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 login();
             }
         });
-        dialog.setNegativeButton("Отмена",null);
+        dialog.setNegativeButton(BA.str(R.string.cancel_word),null);
         dialog.show();
     }
 
@@ -1214,7 +1214,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 break;
             case 1: //books
                 if(titleView != null) {
-                   titleView.setText("Мои брони");
+                   titleView.setText(BA.str(R.string.my_bookings));
                 }
                 pagerTab.setCurrentItem(2,false);
                 hideClusterItem();
@@ -1222,7 +1222,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 break;
             case 2: //notification
                 if(titleView != null) {
-                    titleView.setText("Уведомления");
+                    titleView.setText(BA.str(R.string.notifications));
                 }
                 pagerTab.setCurrentItem(3,false);
                 hideClusterItem();
@@ -1230,7 +1230,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 break;
             case 3: //favourite
                 if(titleView != null) {
-                    titleView.setText("Избранные");
+                    titleView.setText(BA.str(R.string.favorites));
                 }
                 pagerTab.setCurrentItem(4,false);
                 hideClusterItem();
@@ -1265,14 +1265,14 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
 
             if(TextUtils.isEmpty(fare.getText().toString())){
                 fare.requestFocus();
-                ToastUtil.display(this,"Введите цену");
+                ToastUtil.display(this,BA.str(R.string.enter_price));
                 return;
             }
             fareRequest.setFare(Double.parseDouble(fare.getText().toString()));
 
             if(!TextUtils.isEmpty(comment.getText().toString()) && comment.getText().length() < 3){
                 comment.requestFocus();
-                ToastUtil.display(this,"Введите более подробный коммент");
+                ToastUtil.display(this,BA.str(R.string.enter_detailed_comment));
                 return;
             }
 
@@ -1579,7 +1579,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         else
             services.append(servicesText);
 
-        services.append("\r\nза "+price + " ₸");//+" "+minutes+" мин.");
+        services.append(BA.str(R.string.nl_for)+price + " ₸");//+" "+minutes+BA.str(R.string.min_dot_sp));
         bookServiceClose.setVisibility(View.VISIBLE);
         bookServiceRightArrow.setVisibility(View.GONE);
         if(request != null) {
@@ -1598,8 +1598,8 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         String dateStr = dateFormatter.format(bookTimeDt);
         String timeStr = timeFormatter.format(bookTimeDt);
         if(DateUtils.isToday(bookTimeDt.getTime()))
-            bookTime.setText("Сегодня ("+dateStr+") в "+timeStr);
-        else bookTime.setText(dateStr+" в "+timeStr);
+            bookTime.setText(BA.str(R.string.today_paren)+dateStr+BA.str(R.string.paren_at)+timeStr);
+        else bookTime.setText(dateStr+BA.str(R.string.space_at_space)+timeStr);
         if(request != null)
             request.setTime(bookTimeDt);
     }
@@ -1608,7 +1608,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     public void resetSelectedServices(){
         bookServiceClose.setVisibility(View.GONE);
         bookServiceRightArrow.setVisibility(View.VISIBLE);
-        services.setText("Выберите услуги");
+        services.setText(BA.str(R.string.select_services));
         if(request != null) {
             request.setServices(null);
             request.setGroupServices(null);
@@ -1620,7 +1620,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     public void resetSelectedTime(){
         bookTimeClose.setVisibility(View.GONE);
         bookTimeRightArrow.setVisibility(View.VISIBLE);
-        bookTime.setText("Выберите время");
+        bookTime.setText(BA.str(R.string.choose_time));
         if(request != null)
           request.setTime(null);
     }
@@ -1636,7 +1636,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 ToastUtil.display(this, event.getResult().getMessage());
         }
         else{
-            ToastUtil.display(this, "Ошибка при брони");
+            ToastUtil.display(this, BA.str(R.string.err_booking));
         }
     }
 
@@ -1652,7 +1652,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 ToastUtil.display(this, event.getData().getMessage());
         }
         else{
-            ToastUtil.display(this, "Ошибка при предложении цену");
+            ToastUtil.display(this, BA.str(R.string.err_offer_price));
         }
     }
 

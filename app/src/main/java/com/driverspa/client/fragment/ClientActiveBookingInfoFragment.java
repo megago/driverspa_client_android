@@ -233,9 +233,9 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 				}
 
 				if (!book.isQueued())
-			    	subTitle.setText("Бронь на имя");
+			    	subTitle.setText(BA.str(R.string.booking_on_name));
 				else {
-					subTitle.setText("Мойка на имя");
+					subTitle.setText(BA.str(R.string.wash_on_name));
 
 					if(book.getStatus().equals(QUEUED)){
 						subTitle.setVisibility(View.GONE);
@@ -252,7 +252,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 				titleView.setText(bookStatus.get(book.getStatus()));
 
 				 if(book.getStatus().equals(PENDING)) {
-					titleView.setText("Бронь отправлена");
+					titleView.setText(BA.str(R.string.booking_sent));
 					startUpdateTimer();
 				}
 				else{
@@ -267,7 +267,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 					}
 				});
 				washerTitleName.setPaintFlags(washerTitleName.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-				washerTitleName.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():"Автомойка "+washer.getName());
+				washerTitleName.setText(washer.getName().toLowerCase().contains("автомойка")?washer.getName():BA.str(R.string.car_wash_label_sp)+washer.getName());
 	    		washerAddress.setText(washer.getAddress());
 				if(!TextUtils.isEmpty(book.getMobile())) {
 					washerPhone.setText(book.getMobile());
@@ -275,10 +275,10 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 //					washerPhone.setText(Functions.formatPhoneNumber("+7 ### ### ## ##",book.getMobile()));
 				}
 				else{
-			       washerPhone.setText("Не указано");
+			       washerPhone.setText(BA.str(R.string.not_specified));
 			    }
 				txtBookingStatus.setText(bookStatus.get(book.getStatus()));
-				txtDuration.setText(book.getDuration()+" минут");
+				txtDuration.setText(book.getDuration()+BA.str(R.string.space_minutes));
 				txtDiscount.setText((book.getDiscount()!=null?book.getDiscount():"0")+" %");
 				if(TextUtils.isEmpty(book.getComment())){
 					commentLayout.setVisibility(View.GONE);
@@ -329,7 +329,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 
 				Date bookTimeUTC = Functions.getTZDate(book.getTime(),book.getTimeZone());
 				if(DateUtils.isToday(bookTimeUTC.getTime()))
-					clientServiceDate.setText("Сегодня ("+timeMap.get(Functions.DATE)+")");
+					clientServiceDate.setText(BA.str(R.string.today_paren)+timeMap.get(Functions.DATE)+")");
 				else clientServiceDate.setText(timeMap.get(Functions.DATE));
 
 				clientServiceTime.setText(timeMap.get(Functions.TIME));
@@ -356,7 +356,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 						activityActions.goToHome();
 						break;
 					case REJECTED:
-						ToastUtil.display(getActivity(),"Ваш бронь отклонен");
+						ToastUtil.display(getActivity(),BA.str(R.string.booking_rejected2));
 						activityActions.goToHome();
 						break;
 					case FINISHED:
@@ -364,7 +364,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 						activityActions.goToHome();
 						break;
 					case QUEUED_REJECTED:
-						ToastUtil.display(getActivity(),"Ваш заказ отменен");
+						ToastUtil.display(getActivity(),BA.str(R.string.order_cancelled2));
 						activityActions.goToHome();
 						break;
 					case QUEUED_APPROVED:
@@ -427,9 +427,9 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 
 		public void onCancelBooking(){
 			Builder dialog = new Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
-			dialog.setTitle("Отменить бронь?");
-			dialog.setNeutralButton("Нет", null);
-			dialog.setPositiveButton("Да", new OnClickListener() {
+			dialog.setTitle(BA.str(R.string.cancel_booking_q));
+			dialog.setNeutralButton(BA.str(R.string.no_word), null);
+			dialog.setPositiveButton(BA.str(R.string.yes_word), new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					setWaitScreen(true);
@@ -462,9 +462,9 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 //		@OnClick(R.id.btnEditBooking)
 		public void onBookingEdit(){
 			Builder dialog = new Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
-			dialog.setTitle("Изменить бронь?");
-			dialog.setNeutralButton("Нет", null);
-			dialog.setPositiveButton("Да", new OnClickListener() {
+			dialog.setTitle(BA.str(R.string.edit_booking_q));
+			dialog.setNeutralButton(BA.str(R.string.no_word), null);
+			dialog.setPositiveButton(BA.str(R.string.yes_word), new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 		            BookingRequest request = new BookingRequest();
@@ -483,7 +483,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 			setWaitScreen(false);
 			if(event.getData() != null){
 				if(BaseAssist.isSuccess(event.getData())) {
-					ToastUtil.display(getActivity(), "Ваша бронь отменена");
+					ToastUtil.display(getActivity(), BA.str(R.string.your_booking_cancelled));
 					activityActions.goToHome();
 				}
 				else{
@@ -492,7 +492,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 				}
 			}
 			else{
-				ToastUtil.display(getActivity(), "Ошибка при отмене брони");
+				ToastUtil.display(getActivity(), BA.str(R.string.err_cancel_booking));
 			}
 	}
 
@@ -590,7 +590,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 									break;
 								case 4:
 									String email = "info@washme.kz";
-									String title = "Пожаловаться на автомойку " + washer.getName().toLowerCase().replace("автомойка", "");
+									String title = BA.str(R.string.report_wash) + washer.getName().toLowerCase().replace("автомойка", "");
 									activityActions.writeToWashme(email, title);
 									break;
 							}
@@ -616,7 +616,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 									break;
 								case 3:
 									String email = "info@washme.kz";
-									String title = "Пожаловаться на автомойку " + washer.getName().toLowerCase().replace("автомойка", "");
+									String title = BA.str(R.string.report_wash) + washer.getName().toLowerCase().replace("автомойка", "");
 									activityActions.writeToWashme(email, title);
 									break;
 							}
@@ -639,7 +639,7 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 				if(client!=null){
 					if(client.getFinishedBooksCount() != null){
 						countsLayout.setVisibility(View.VISIBLE);
-						finishedBooksCount.setText(client.getFinishedBooksCount()+" раз(а)");
+						finishedBooksCount.setText(client.getFinishedBooksCount()+BA.str(R.string.times_no_dot));
 						if(client.getRegistered())
 							finishedBooksCount.setPaintFlags(finishedBooksCount.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 						if(client.getLastFinishedBookDate() != null){

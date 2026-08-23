@@ -102,7 +102,7 @@ public class ClientWasherCampaignsFragment extends ClientBaseHomeFragment {
 		titleView = (TextView) toolbar.findViewById(R.id.action_bar_title);
 
 		localCity = UserPreferences.getCity(BA.getContext());
-		titleView.setText("Акции "+(localCity!=null?"("+Functions.getCityDescription(localCity)+")":""));
+		titleView.setText(BA.str(R.string.promos_sp)+(localCity!=null?"("+Functions.getCityDescription(localCity)+")":""));
 //		filter.setMobile(UserPreferences.getUserPhone(BA.getContext()));
 
 		listView = pullToRefreshView.getRefreshableView();
@@ -270,7 +270,7 @@ public class ClientWasherCampaignsFragment extends ClientBaseHomeFragment {
 			pullToRefreshView.setVisibility(View.VISIBLE);
 			noInternetLayout.setVisibility(View.VISIBLE);
 			progressBar.setVisibility(View.GONE);
-			ToastUtil.display(getActivity(),"Ошибка при получении данных с сервера");
+			ToastUtil.display(getActivity(),BA.str(R.string.err_server_data));
 		}
 	}
 	
@@ -338,12 +338,12 @@ public class ClientWasherCampaignsFragment extends ClientBaseHomeFragment {
 			activityActions.hideShowFilterButton(4);
 		}
 		if(titleView != null)
-			titleView.setText("Акции "+(localCity!=null?"("+Functions.getCityDescription(localCity)+")":""));
+			titleView.setText(BA.str(R.string.promos_sp)+(localCity!=null?"("+Functions.getCityDescription(localCity)+")":""));
 	}
 
 	private void setEmptyView(){
 		localCity = UserPreferences.getCity(BA.getContext());
-		noRecords.setText("Акцию еще не объявили в городе '"+Functions.getCityDescription(localCity)+"'");
+		noRecords.setText(BA.str(R.string.no_promo_in_city)+Functions.getCityDescription(localCity)+"'");
 		noRecords.setVisibility(View.VISIBLE);
 	}
 

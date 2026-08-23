@@ -76,7 +76,7 @@ public class ClientResetPasswordFragment extends ClientBaseFragment {
 	protected void processReset() {
 		String code = verificationCode.getText().toString().replaceAll("-", "").replaceAll(" ", "");
 		if (TextUtils.isEmpty(code)) {
-			verificationCode.setError("Введите код");
+			verificationCode.setError(BA.str(R.string.enter_code));
 			return;
 		}
 		String pass = password.getText().toString();
@@ -99,10 +99,10 @@ public class ClientResetPasswordFragment extends ClientBaseFragment {
 				activityActions.openClientHomeActivity();
 			} else {
 				String message = event.getAuthLoginResponse().getMessage();
-				ToastUtil.display(getActivity(), TextUtils.isEmpty(message) ? "Неверный код" : message);
+				ToastUtil.display(getActivity(), TextUtils.isEmpty(message) ? BA.str(R.string.invalid_code) : message);
 			}
 		} else {
-			ToastUtil.display(getActivity(), "Ошибка, попробуйте еще раз");
+			ToastUtil.display(getActivity(), BA.str(R.string.err_try_again));
 		}
 	}
 

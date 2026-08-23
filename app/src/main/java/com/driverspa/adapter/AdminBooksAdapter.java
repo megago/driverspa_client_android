@@ -1,4 +1,5 @@
 package com.driverspa.adapter;
+import com.driverspa.BA;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -163,13 +164,13 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 			holder.queueCarNo.setText(""+item.getClientKey().replaceAll("\\(","").replaceAll("\\)",""));
 
 			if(item.getStatus().equals(QUEUED_APPROVED)){
-				holder.bookKey.setText("Автозавершение через ");
+				holder.bookKey.setText(BA.str(R.string.auto_finish_after));
 			}
 			else if(item.getStatus().equals(QUEUED_REJECTED)){
-				holder.bookKey.setText("Очередь отменена");
+				holder.bookKey.setText(BA.str(R.string.queue_cancelled_f));
 			}
 			else if(item.getStatus().equals(QUEUED_FINISHED)){
-				holder.bookKey.setText("Очередь завершена");
+				holder.bookKey.setText(BA.str(R.string.queue_finished_f));
 			}
 
 		}
@@ -288,7 +289,7 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 						  }
 
 							if(bookInfo.getStatus().equals(Constants.APPROVED) && bookInfo.getServerTime().getTime() > bookInfo.getEndTime().getTime()){
-								bookStatus.setText("Время мойки вышло");
+								bookStatus.setText(BA.str(R.string.wash_time_up));
 							}
 						}
 						else {
@@ -307,18 +308,18 @@ public class AdminBooksAdapter extends  RecyclerViewAdapter<AdminBooksAdapter.Bo
 					int minutes = (int) ((timeDiff / (1000 * 60)) % 60);
 					int hours = (int) ((timeDiff / (1000 * 60 * 60)) % 24);
 					if (bookInfo.getStatus().equals(QUEUED_APPROVED) && minutes > 0) {
-						bookKey.setText("Автозавершение через "+String.format("%02d", (minutes)) + ":" + String.format("%02d", (seconds)));
+						bookKey.setText(BA.str(R.string.auto_finish_after)+String.format("%02d", (minutes)) + ":" + String.format("%02d", (seconds)));
 						bookStatus.setText(Constants.bookStatus.get(QUEUED_APPROVED));
 					}
 					else{
-						if(bookInfo.getStatus().equals(QUEUED_REJECTED)) bookKey.setText("Очередь отменена");
-						else bookKey.setText("Очередь завершена");
+						if(bookInfo.getStatus().equals(QUEUED_REJECTED)) bookKey.setText(BA.str(R.string.queue_cancelled_f));
+						else bookKey.setText(BA.str(R.string.queue_finished_f));
 					}
 				}
 				else{
-					if(bookInfo.getStatus().equals(QUEUED_REJECTED)) bookKey.setText("Очередь отменена");
+					if(bookInfo.getStatus().equals(QUEUED_REJECTED)) bookKey.setText(BA.str(R.string.queue_cancelled_f));
 					else {
-						bookKey.setText("Очередь завершена");
+						bookKey.setText(BA.str(R.string.queue_finished_f));
 						bookStatus.setText(Constants.bookStatus.get(QUEUED_FINISHED));
 					}
 				}

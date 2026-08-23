@@ -54,7 +54,7 @@ public class ClientPriceDetailActivity extends ClientBaseActivity {
     	
         washer = JsonUtil.deserializeToWasher(getIntent().getStringExtra(WASHER_DATA));
         TextView titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
-        titleView.setText("Цены");
+        titleView.setText(BA.str(R.string.prices));
         titleView.setVisibility(View.VISIBLE);
         titleView.setText(washer.getName());
         textTitle.setVisibility(View.GONE);

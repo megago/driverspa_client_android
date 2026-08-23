@@ -1,4 +1,5 @@
 package com.driverspa.assist;
+import com.driverspa.R;
 
 import android.net.Uri;
 import android.os.Handler;
@@ -118,7 +119,7 @@ public abstract class BaseAssist {
 			insertPhotos(photos);
 		}
 		catch(Exception e){
-			displayToast("Ошибка при входе");
+			displayToast(BA.str(R.string.err_login));
 			e.printStackTrace();
 		}
 		dbHelper.close();
