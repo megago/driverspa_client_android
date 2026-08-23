@@ -60,6 +60,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
+import com.driverspa.dialog.LanguageDialog;
 import com.driverspa.activity.CityChooseActivity;
 import com.driverspa.activity.LoginActivity;
 import com.driverspa.adapter.ClientTabPagerAdapter;
@@ -1240,6 +1241,11 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 startActivity(new Intent(this,ClientAboutUSActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                         .putExtra(OPENING_ANIMATION,false)
                 );
+                break;
+            case 5: //language
+                if (mNavigationDrawerFragment != null && mNavigationDrawerFragment.isDrawerOpen())
+                    mNavigationDrawerFragment.closeDrawer();
+                LanguageDialog.show(this);
                 break;
 
 

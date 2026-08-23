@@ -230,6 +230,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 //        items.add(new NavigationItem("Бонусы", getResources().getDrawable(R.drawable.ic_local_offer_white_18dp)));
         items.add(new NavigationItem(BA.str(R.string.about_us), getResources().getDrawable(R.drawable.ic_about_us)));
 //        items.add(new NavigationItem("Поделиться", getResources().getDrawable(R.drawable.ic_share_white_24dp)));
+        items.add(new NavigationItem(BA.str(R.string.settings_language), getResources().getDrawable(R.drawable.ic_language)));
         return items;
     }
 
