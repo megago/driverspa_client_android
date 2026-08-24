@@ -119,7 +119,19 @@ public class ClientFilterFragment extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_client_filter, container, false);
+        View view = inflater.inflate(R.layout.fragment_client_filter, container, false);
+        // This is a DialogFragment with its own window, so it doesn't get the host
+        // activity's system-bar inset padding. On edge-to-edge (Android 15+) that
+        // draws the top of the filter under the status bar ("cut off"). Pad the
+        // root by the system-bar insets so the content clears the status bar.
+        androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
+            androidx.core.graphics.Insets bars =
+                    insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars());
+            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+            return androidx.core.view.WindowInsetsCompat.CONSUMED;
+        });
+        androidx.core.view.ViewCompat.requestApplyInsets(view);
+        return view;
     }
 
     @Override
