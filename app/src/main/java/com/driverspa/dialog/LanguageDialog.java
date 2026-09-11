@@ -2,6 +2,7 @@ package com.driverspa.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
@@ -9,16 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.driverspa.BA;
 import com.driverspa.R;
 import com.driverspa.util.LocaleManager;
-import com.driverspa.util.otto.ws.AboutUSRequestEvent;
-import com.driverspa.util.otto.ws.InitRequestEvent;
 
 /**
  * Bottom-sheet language picker: one row per supported language (native name +
@@ -60,12 +57,8 @@ public final class LanguageDialog {
                 public void onClick(View v) {
                     dialog.dismiss();
                     if (!selected.equals(LocaleManager.current())) {
-                        // Apply first so the stored language (used by the request
-                        // interceptor) is updated, then refresh the server-provided
-                        // reference dictionary so it comes back localized.
                         LocaleManager.apply(selected);
-                        BA.getEventBus().post(new InitRequestEvent(LocaleManager.backendCode(selected)));
-                        BA.getEventBus().post(new AboutUSRequestEvent());
+                        restartApp(activity);
                     }
                 }
             });
@@ -73,5 +66,20 @@ public final class LanguageDialog {
         }
 
         dialog.show();
+    }
+
+    /**
+     * Fully restarts the app process so every context (including the Application) is rebuilt in
+     * the newly chosen language, and the splash re-fetches the reference dictionary in it. A
+     * process restart is required because {@code Application.attachBaseContext} — where the locale
+     * is applied — only runs once per process.
+     */
+    private static void restartApp(Activity activity) {
+        Intent launch = activity.getPackageManager()
+                .getLaunchIntentForPackage(activity.getPackageName());
+        if (launch != null && launch.getComponent() != null) {
+            activity.startActivity(Intent.makeRestartActivityTask(launch.getComponent()));
+        }
+        Runtime.getRuntime().exit(0);
     }
 }
