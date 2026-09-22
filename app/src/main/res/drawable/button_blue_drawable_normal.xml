@@ -8,6 +8,6 @@
     <corners android:radius="35dp" />
 
 
-    <solid android:color="#00abef" />
+    <solid android:color="@color/actionbar_color" />
 
 </shape>
