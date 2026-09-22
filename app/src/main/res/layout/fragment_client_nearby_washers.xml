@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/WhiteSmoke">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,10 +12,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:cacheColorHint="#f3efd3"
-            android:divider="@drawable/line_divider_gray"
+            android:divider="@color/list_divider"
             android:dividerHeight="1dp"
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
-            ptr:ptrHeaderTextColor="@color/Black"
+            ptr:ptrHeaderTextColor="@color/White"
             android:fadingEdge="vertical"
             android:fadingEdgeLength="30dp"
             android:scrollbars="none" />

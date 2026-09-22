@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/WhiteSmoke"
+
     android:orientation="vertical">
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView
@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
-        ptr:ptrHeaderTextColor="@color/Black"
-        android:divider="@drawable/line_divider_gray"
+        ptr:ptrHeaderTextColor="@color/White"
+        android:divider="@color/list_divider"
         android:dividerHeight="1dp" />
 
     <LinearLayout
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/connection_error"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/Black"
+            android:textColor="@color/White"
             android:textSize="@dimen/text_small" />
 
         <Button
@@ -42,7 +42,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/retry"
-            android:textColor="@color/Black" />
+            android:textColor="@color/White" />
     </LinearLayout>
 
 
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:text="@string/login_required"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/Black"
+            android:textColor="@color/White"
             android:textSize="@dimen/text_normal" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:textStyle="bold"
             android:padding="@dimen/vertical_margin_half"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/Black"
+            android:textColor="@color/White"
             android:textSize="@dimen/text_normal" />
 
     </LinearLayout>
@@ -85,7 +85,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/no_records"
-        android:textColor="@color/Black"
+        android:textColor="@color/White"
         android:textSize="@dimen/text_small"
         android:visibility="gone" />
 
