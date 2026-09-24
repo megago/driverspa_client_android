@@ -850,6 +850,8 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     }
 
     public void hideClusterItem(){
+        // Dismissing a washer returns to the map only; the generic offer never opens on its own.
+        requestWindow.setVisibility(View.GONE);
         fareRequest = new FareRequest();
         if(washerWindow.getVisibility() == View.VISIBLE) {
             Handler mHandler = new Handler();
@@ -945,6 +947,8 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
 
     @Override
     public void showClusterItem(final WasherPublic item, GoogleMap map, Location currentLoc) {
+        // The request/offer panel is hidden by default; a car-wash marker tap reveals it.
+        requestWindow.setVisibility(View.VISIBLE);
         request = new BookingRequest();
         request.setCarwash(URL_PREFIX+item.getId());
 

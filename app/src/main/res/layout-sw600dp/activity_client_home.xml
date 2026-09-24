@@ -74,7 +74,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="@dimen/vertical_margin_half">
+                android:layout_marginTop="@dimen/vertical_margin_half"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:id="@+id/mainLayout"
