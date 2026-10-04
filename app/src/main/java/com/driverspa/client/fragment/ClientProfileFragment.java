@@ -213,10 +213,14 @@ public class ClientProfileFragment extends ClientBaseFragment {
 			ViewGroup.LayoutParams layoutParamsCar = gridCars.getLayoutParams();
 			WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
 			Display display = wm.getDefaultDisplay();
-			int width = display.getWidth()-(int) Functions.dipToPixels(getActivity(), 20);
+			// Fit the grid inside the parent's padding so the first column isn't clipped
+			View gridParent = (View) gridCars.getParent();
+			int parentPadding = gridParent.getPaddingLeft() + gridParent.getPaddingRight();
+			int width = display.getWidth() - Math.max(parentPadding, (int) Functions.dipToPixels(getActivity(), 20));
 			layoutParamsCar.width = width; //this is in pixels
 			gridCars.setLayoutParams(layoutParamsCar);
-			gridCars.setColumnWidth((display.getWidth() - (int) Functions.dipToPixels(getActivity(), 45)) / 4);
+			int gridInner = width - gridCars.getPaddingLeft() - gridCars.getPaddingRight() - 3 * gridCars.getHorizontalSpacing();
+			gridCars.setColumnWidth(gridInner / 4);
 
 			final List<CarItem> carItemList = new ArrayList<CarItem>();
 			carItemList.add(new CarItem());
