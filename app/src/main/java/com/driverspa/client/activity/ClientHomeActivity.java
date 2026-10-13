@@ -1,5 +1,6 @@
 package com.driverspa.client.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import butterknife.BindView;
 
@@ -8,16 +9,20 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import androidx.appcompat.widget.SearchView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
@@ -280,6 +285,28 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     FareRequest fareRequest;
     SearchFilter filter;
 
+    private static final int REQUEST_POST_NOTIFICATIONS = 3001;
+    private boolean notificationPermissionAsked = false;
+
+    /**
+     * Android 13+ blocks notifications until POST_NOTIFICATIONS is granted at
+     * runtime. Ask once a client is signed in (pushes are dropped for guests),
+     * at most once per screen instance so a denial isn't re-prompted on every
+     * resume.
+     */
+    private void requestNotificationPermissionIfNeeded() {
+        if (notificationPermissionAsked || !UserPreferences.isUserLoggedIn(this))
+            return;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED) {
+            notificationPermissionAsked = true;
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                    REQUEST_POST_NOTIFICATIONS);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -471,6 +498,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         BA.setNotificationType(NotificationType.HOME);
         BA.getEventBus().register(this);
         super.onResume();
+        requestNotificationPermissionIfNeeded();
         localCity = UserPreferences.getCity(BA.getContext());
         if(TextUtils.isEmpty(localCity)){
             showChooseCity();
