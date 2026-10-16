@@ -846,7 +846,7 @@
                 android:paddingRight="@dimen/horizontal_margin_half"
                 android:paddingTop="0dp">
 
-                <!-- Modern drag handle: tap to expand/collapse the booking sheet -->
+                <!-- Arrow hints that the booking sheet can be expanded; rotated on toggle -->
                 <ImageView
                     android:id="@+id/btnExpand"
                     android:layout_width="match_parent"
@@ -854,10 +854,10 @@
                     android:clickable="true"
                     android:contentDescription="@null"
                     android:focusable="true"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="2dp"
                     android:scaleType="center"
-                    android:src="@drawable/bg_sheet_handle" />
+                    android:src="@drawable/ic_expand" />
 
                 <LinearLayout
                     android:id="@+id/informationLayout"
