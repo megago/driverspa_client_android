@@ -367,7 +367,11 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         pagerTab.setCurrentItem(selectedTab);
         setTabButtons(selectedTab);
 
-        String pushType = getIntent().getStringExtra(PUSH_TYPE);
+        // Handle the notification intent only once: Android re-delivers the original
+        // intent on recreation and when relaunching from recents.
+        boolean launchedFromHistory = (getIntent().getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != 0;
+        String pushType = (arg0 == null && !launchedFromHistory) ? getIntent().getStringExtra(PUSH_TYPE) : null;
+        getIntent().removeExtra(PUSH_TYPE);
         if(!TextUtils.isEmpty(pushType)){
             if(pushType.equals("carwash_info")){
                selectedTab = 0;

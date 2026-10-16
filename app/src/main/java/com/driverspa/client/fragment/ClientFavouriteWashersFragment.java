@@ -100,7 +100,7 @@ public class ClientFavouriteWashersFragment extends ClientBaseHomeFragment {
 	        TextView emptyView = new TextView(this.getActivity());
 	        emptyView.setText(BA.str(R.string.no_favorite_washes));
 	        emptyView.setGravity(Gravity.CENTER);
-			emptyView.setTextColor(Color.WHITE);
+			emptyView.setTextColor(Color.BLACK);
 	        emptyView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 	        listView.setEmptyView(emptyView);
 	        pullToRefreshView.setVisibility(View.GONE);
