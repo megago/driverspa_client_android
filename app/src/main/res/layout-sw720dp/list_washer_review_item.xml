@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/review_example"
-        android:textColor="@color/White"
+        android:textColor="@color/Black"
         android:layout_alignParentTop="true"
         android:textSize="@dimen/text_small" />
 
@@ -25,35 +25,35 @@
             android:id="@+id/star1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"            
-            android:src="@drawable/background_image_star_small" />
+            android:src="@drawable/background_image_star_small_yellow" />
 
         <ImageView
             android:id="@+id/star2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_third"
-            android:src="@drawable/background_image_star_small" />
+            android:src="@drawable/background_image_star_small_yellow" />
 
         <ImageView
             android:id="@+id/star3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_third"
-            android:src="@drawable/background_image_star_small" />
+            android:src="@drawable/background_image_star_small_yellow" />
 
         <ImageView
             android:id="@+id/star4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_third"
-            android:src="@drawable/background_image_star_small" />
+            android:src="@drawable/background_image_star_small_yellow" />
 
         <ImageView
             android:id="@+id/star5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/horizontal_margin_third"
-            android:src="@drawable/background_image_star_small" />
+            android:src="@drawable/background_image_star_small_yellow" />
     </LinearLayout>
 
 </RelativeLayout>

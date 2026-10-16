@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/WhiteSmoke"
     android:orientation="vertical">
 
     <FrameLayout
@@ -20,7 +21,7 @@
             android:layout_gravity="center"
             android:text="@string/my_booking"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/White"
+            android:textColor="@color/Black"
             android:textSize="@dimen/text_medium" />
     </FrameLayout>
 
@@ -33,7 +34,7 @@
         android:layout_marginRight="@dimen/horizontal_margin"
         android:scrollbars="none"
         android:layout_above="@+id/bottomLayout"
-        android:divider="@color/list_divider"
+        android:divider="@drawable/line_divider_gray"
         android:dividerHeight="1dp" />
 
     <LinearLayout
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="@string/connection_error"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/White"
+            android:textColor="@color/Black"
             android:textSize="@dimen/text_small" />
 
         <Button
@@ -63,7 +64,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/retry"
-            android:textColor="#fff" />
+            android:textColor="@color/Black" />
     </LinearLayout>
 
     <TextView
@@ -73,7 +74,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/no_records"
-        android:textColor="@color/White"
+        android:textColor="@color/Black"
         android:textSize="@dimen/text_small"
         android:visibility="gone" />
 
@@ -97,7 +98,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/BlueTransparent" />
+            android:background="@color/LightGrey" />
 
         <Button
             android:id="@+id/btnAddReview"
@@ -106,13 +107,13 @@
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/vertical_margin"
             android:layout_marginTop="@dimen/vertical_margin"
-            android:background="@drawable/background_button_border"
+            android:background="@drawable/background_blue_button"
             android:paddingBottom="10dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingTop="10dp"
             android:text="@string/leave_review"
-            android:textColor="@drawable/button_state_color"
+            android:textColor="@color/White"
             android:textSize="@dimen/text_normal" />
 
     </LinearLayout>
