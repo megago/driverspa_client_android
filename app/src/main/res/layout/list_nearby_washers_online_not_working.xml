@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/car_wash_label_sp"
-                android:textColor="@color/White"
+                android:textColor="@color/Black"
                 android:textSize="@dimen/text_normal" />
 
             <FrameLayout
@@ -108,7 +108,7 @@
                 android:layout_weight="1"
                 android:gravity="left|top"
                 android:text="Address"
-                android:textColor="@color/White"
+                android:textColor="@color/Black"
                 android:textSize="@dimen/text_small" />
 
 
@@ -135,7 +135,7 @@
                     android:clickable="true"
                     android:text="@string/reviews_count_example"
                     android:textColor="@color/BlueLight"
-                    android:textColorLink="@color/White"
+                    android:textColorLink="@color/Black"
                     android:textSize="@dimen/text_small" />
             </LinearLayout>
 
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/body_interior_from_1500"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <ImageView
@@ -172,7 +172,7 @@
                     android:layout_height="10dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="2dp"
-                    android:src="@drawable/ic_tenge" />
+                    android:src="@drawable/ic_tenge_black" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/discount_from_wash"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <TextView
@@ -263,7 +263,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/horizontal_margin_third"
                     android:text="0%"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
             </LinearLayout>
 
@@ -279,7 +279,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/bonuses_accrued"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <TextView
@@ -289,7 +289,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/horizontal_margin_third"
                     android:text="0"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <ImageView
@@ -297,7 +297,7 @@
                     android:layout_height="10dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="2dp"
-                    android:src="@drawable/ic_tenge" />
+                    android:src="@drawable/ic_tenge_black" />
             </LinearLayout>
 
             <LinearLayout
@@ -312,7 +312,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/deposit"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <TextView
@@ -322,7 +322,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/horizontal_margin_third"
                     android:text="0"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="@dimen/text_smaller" />
 
                 <ImageView
@@ -330,7 +330,7 @@
                     android:layout_height="10dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="2dp"
-                    android:src="@drawable/ic_tenge" />
+                    android:src="@drawable/ic_tenge_black" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

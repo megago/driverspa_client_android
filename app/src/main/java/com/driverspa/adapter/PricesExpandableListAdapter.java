@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
 
+import com.driverspa.BA;
 import com.driverspa.R;
+import com.driverspa.model.CarType;
 import com.driverspa.model.ServiceMenuModel;
 import com.driverspa.model.Washer.Prices;
 
@@ -53,7 +56,10 @@ public class PricesExpandableListAdapter extends BaseExpandableListAdapter {
                            
         Prices item = carItems.get(groupPosition).getPrices().get(childPosition);
         childTextTitle.setText(services.get(item.getType()));
-        childTextPrice.setText(Math.round(item.getPrice())+" ₸.");
+        String value = Math.round(item.getPrice()) + " ₸";
+        if(item.getTime() != null && item.getTime() > 0)
+            value += " · " + item.getTime() + BA.str(R.string.space_min);
+        childTextPrice.setText(value);
         return convertView;
     }
  
@@ -89,11 +95,31 @@ public class PricesExpandableListAdapter extends BaseExpandableListAdapter {
 //        eLV.expandGroup(groupPosition);
                 
         TextView parentTextTitle = (TextView) convertView.findViewById(R.id.text_car_type);
-        parentTextTitle.setText(cars.get(carItems.get(groupPosition).getCarType()));
+        ImageView carTypeIcon = (ImageView) convertView.findViewById(R.id.car_type_icon);
+        int carType = carItems.get(groupPosition).getCarType();
+        parentTextTitle.setText(cars.get(carType));
+        carTypeIcon.setImageResource(iconForCarType(carType));
          
         return convertView;
     }
  
+    private int iconForCarType(int carTypeId) {
+        CarType type = CarType.toEnum(carTypeId);
+        if (type == null)
+            return R.drawable.background_button_sedan;
+        switch (type) {
+            case Mini:
+            case Universal:
+            case Crossover: return R.drawable.background_button_crossover;
+            case MiniJeep:
+            case Jeep:      return R.drawable.background_button_jeep;
+            case Moto:      return R.drawable.background_button_moto;
+            case Minivan:
+            case Minibus:   return R.drawable.background_button_minbus;
+            default:        return R.drawable.background_button_sedan;
+        }
+    }
+
     @Override
     public boolean hasStableIds() {
         return false;

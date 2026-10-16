@@ -116,6 +116,8 @@ public class ClientPriceDetailActivity extends ClientBaseActivity {
 		adapter = new PricesExpandableListAdapter(this, carListMenu, cars, services);
 		listView.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
+		for (int i = 0; i < adapter.getGroupCount(); i++)
+			listView.expandGroup(i);
 
     } 
     	

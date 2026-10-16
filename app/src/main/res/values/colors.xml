@@ -94,6 +94,7 @@
 	<color name="BlueTransparent">#84afd8</color>
 	<color name="BlueLight">#84afd8</color>
 	<color name="BlueLight2">#70a0ce</color>
+	<color name="PriceLabel">#8BA3C7</color>
 	<color name="Ivory">#FFFFF0</color>
 	<color name="LightYellow">#FFFFE0</color>
 	<color name="Yellow">#FFFF00</color>

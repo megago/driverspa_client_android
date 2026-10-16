@@ -2,33 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:gravity="center_vertical"
+    android:minHeight="44dp"
+    android:orientation="horizontal"
+    android:paddingLeft="32dp"
+    android:paddingRight="20dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/text_service"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical" >
+        android:text="Body wash"
+        android:textColor="@color/PriceLabel"
+        android:textSize="@dimen/text_small" />
 
-        <TextView
-            android:id="@+id/text_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/horizontal_margin"
-            android:layout_marginRight="@dimen/horizontal_margin_half"
-            android:text="Samsung galaxy s5"
-            android:textColor="@color/White"
-            android:textSize="@dimen/text_normal" />
-
-        <TextView
-            android:id="@+id/text_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/horizontal_margin"
-            android:layout_marginRight="@dimen/horizontal_margin_half"
-            android:text="1.600 rublei"
-            android:textColor="@color/White"
-            android:textSize="@dimen/text_small" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text="1500 ₸ · 30 min"
+        android:textColor="@color/White"
+        android:textSize="@dimen/text_small"
+        android:textStyle="bold" />
 
 </LinearLayout>

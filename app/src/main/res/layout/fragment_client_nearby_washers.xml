@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/WhiteSmoke"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,11 +12,11 @@
             android:id="@+id/pull_to_refresh_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:cacheColorHint="#f3efd3"
-            android:divider="@color/list_divider"
+            android:cacheColorHint="@color/WhiteSmoke"
+            android:divider="@drawable/line_divider_gray"
             android:dividerHeight="1dp"
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
-            ptr:ptrHeaderTextColor="@color/White"
+            ptr:ptrHeaderTextColor="@color/Black"
             android:fadingEdge="vertical"
             android:fadingEdgeLength="30dp"
             android:scrollbars="none" />
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/connection_error"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/White"
+            android:textColor="@color/Black"
             android:textSize="@dimen/text_small" />
 
         <Button
@@ -47,7 +48,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/retry"
-            android:textColor="#fff" />
+            android:textColor="@color/Black" />
     </LinearLayout>
 
     <TextView
@@ -59,7 +60,7 @@
         android:layout_marginRight="@dimen/horizontal_margin_double"
         android:gravity="center"
         android:text="@string/no_records"
-        android:textColor="@color/White"
+        android:textColor="@color/Black"
         android:textSize="@dimen/text_normal"
         android:visibility="gone" />
 

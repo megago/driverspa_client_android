@@ -3,21 +3,31 @@
     android:id="@+id/txtLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true"
-    android:background="#0257a7"
-    android:orientation="horizontal" >
+    android:gravity="center_vertical"
+    android:minHeight="64dp"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/car_type_icon"
+        android:layout_width="40dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="12dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/text_car_type"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_weight="1"
         android:text="@string/passenger_car"
-        android:gravity="center"
-        android:paddingTop="@dimen/vertical_margin_third"
-        android:paddingBottom="@dimen/vertical_margin_third"
         android:textColor="@color/White"
-        android:textSize="@dimen/text_normal" />
+        android:textSize="@dimen/text_normal"
+        android:textStyle="bold" />
 
 </LinearLayout>
