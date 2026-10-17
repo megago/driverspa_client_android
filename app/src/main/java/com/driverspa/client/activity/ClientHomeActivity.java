@@ -28,7 +28,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -1637,9 +1636,12 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         bookTimeRightArrow.setVisibility(View.GONE);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
         SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
+        // The slot was picked in the carwash zone: show it in that zone, not the phone's
+        dateFormatter.setTimeZone(Functions.getCarwashTimeZone(washer.getCarwashTimeZone()));
+        timeFormatter.setTimeZone(dateFormatter.getTimeZone());
         String dateStr = dateFormatter.format(bookTimeDt);
         String timeStr = timeFormatter.format(bookTimeDt);
-        if(DateUtils.isToday(bookTimeDt.getTime()))
+        if(dateStr.equals(dateFormatter.format(new Date())))
             bookTime.setText(BA.str(R.string.today_paren)+dateStr+BA.str(R.string.paren_at)+timeStr);
         else bookTime.setText(dateStr+BA.str(R.string.space_at_space)+timeStr);
         if(request != null)

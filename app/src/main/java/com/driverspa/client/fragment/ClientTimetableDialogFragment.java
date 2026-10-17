@@ -23,7 +23,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
@@ -287,7 +286,7 @@ public class ClientTimetableDialogFragment extends DialogFragment {
             int hour = Integer.parseInt(selectedTimeMap.get(GRID_ID))/60;
             int minut = Integer.parseInt(selectedTimeMap.get(GRID_ID))%60;
             Calendar cal = Calendar.getInstance();
-            cal.setTimeZone(TimeZone.getTimeZone(washer.getCarwashTimeZone()));
+            cal.setTimeZone(Functions.getCarwashTimeZone(washer.getCarwashTimeZone()));
             if(selectedDay.equals(TOMORROW)) cal.add(Calendar.DATE, 1);
             cal.set(Calendar.HOUR_OF_DAY,hour);
             cal.set(Calendar.MINUTE,minut);

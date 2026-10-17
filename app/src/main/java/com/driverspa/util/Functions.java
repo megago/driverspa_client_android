@@ -235,6 +235,15 @@ public class Functions {
       return returnMap;
 	}
 
+	/**
+	 * Zone of a carwash for booking times. The backend sends it as a fixed UTC offset
+	 * ("GMT+05:00") instead of "Asia/Almaty": phones that missed the 2024 tzdata update
+	 * still put Almaty at UTC+6, which shifted every booking by an hour.
+	 */
+	public static TimeZone getCarwashTimeZone(String timeZone){
+		return TextUtils.isEmpty(timeZone) ? TimeZone.getDefault() : TimeZone.getTimeZone(timeZone);
+	}
+
 	public static HashMap<String,String> formatTZDate(Date date, String timeZone){
 		HashMap<String,String> returnMap = new HashMap<String,String>();
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -245,9 +254,9 @@ public class Functions {
 		try {
 			utcDate = df.parse(utcTimeStr);
 			SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
-			dateFormatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+			dateFormatter.setTimeZone(getCarwashTimeZone(timeZone));
 			SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
-			timeFormatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+			timeFormatter.setTimeZone(getCarwashTimeZone(timeZone));
 
 			String dateStr = dateFormatter.format(utcDate);
 			String timeStr = timeFormatter.format(utcDate);
@@ -283,7 +292,7 @@ public class Functions {
 	public static Date getTZDate(Date date,String timeZone){
 		HashMap<String,String> returnMap = new HashMap<String,String>();
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+		formatter.setTimeZone(getCarwashTimeZone(timeZone));
 		String utcTimeStr = formatter.format(date.getTime());
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		df.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -291,7 +300,7 @@ public class Functions {
 		try {
 			utcDate = df.parse(utcTimeStr);
 			SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-			dateFormatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+			dateFormatter.setTimeZone(getCarwashTimeZone(timeZone));
 			String dateTimeStr = dateFormatter.format(utcDate);
 			utcDate = dateFormatter.parse(dateTimeStr);
 		} catch (ParseException e) {
