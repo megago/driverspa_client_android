@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Profile tab of the home screen: everything the left menu used to hold. ClientAccountFragment. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/profile_background"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Signed in: opens the profile; signed out: opens login -->
+            <LinearLayout
+                android:id="@+id/accountHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp">
+
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp">
+
+                    <TextView
+                        android:id="@+id/accountAvatarInitial"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_profile_avatar"
+                        android:gravity="center"
+                        android:textColor="@color/White"
+                        android:textSize="28sp" />
+
+                    <ImageView
+                        android:id="@+id/accountAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/accountName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/profile_text"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/accountDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/profile_text_secondary"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <ImageView style="@style/ProfileRowChevron" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/ProfileSectionLabel"
+                android:text="@string/profile_my_activity" />
+
+            <LinearLayout
+                style="@style/ProfileCard">
+
+                <LinearLayout
+                    android:id="@+id/accountNotifications"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_notifications" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/notifications" />
+
+                    <ImageView style="@style/ProfileRowChevron" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+
+                <LinearLayout
+                    android:id="@+id/accountFavorites"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_favorites" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/favorites" />
+
+                    <ImageView style="@style/ProfileRowChevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/ProfileSectionLabel"
+                android:text="@string/profile_settings" />
+
+            <LinearLayout
+                style="@style/ProfileCard">
+
+                <LinearLayout
+                    android:id="@+id/accountLanguage"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_language" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/settings_language" />
+
+                    <TextView
+                        android:id="@+id/accountLanguageValue"
+                        style="@style/ProfileRowValue" />
+
+                    <ImageView style="@style/ProfileRowChevron" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+
+                <LinearLayout
+                    android:id="@+id/accountCity"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_city" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/city" />
+
+                    <TextView
+                        android:id="@+id/accountCityValue"
+                        style="@style/ProfileRowValue" />
+
+                    <ImageView style="@style/ProfileRowChevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ProfileCard"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/accountAbout"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_about" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/about_us" />
+
+                    <ImageView style="@style/ProfileRowChevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ProfileCard"
+                android:id="@+id/accountLogout"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/accountLogoutRow"
+                    style="@style/ProfileRow">
+
+                    <ImageView
+                        style="@style/ProfileRowIcon"
+                        android:src="@drawable/ic_row_logout"
+                        app:tint="@color/profile_logout" />
+
+                    <TextView
+                        style="@style/ProfileRowTitle"
+                        android:text="@string/logout"
+                        android:textColor="@color/profile_logout" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Pinned to the bottom centre, above the bottom navigation -->
+    <TextView
+        android:id="@+id/accountVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/profile_section_label"
+        android:textSize="12sp" />
+</LinearLayout>

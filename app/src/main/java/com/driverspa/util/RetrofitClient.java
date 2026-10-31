@@ -580,8 +580,8 @@ public class RetrofitClient {
 		.setConverter(new GsonConverter(Converters.gsonWithDate()))
 		.setExecutors(executor, executor)		
 		.setClient(new OkClient(BA.getHttpClient()))
-		.setLogLevel(RestAdapter.LogLevel.FULL)
-//		.setLogLevel(RestAdapter.LogLevel.NONE)
+//		.setLogLevel(RestAdapter.LogLevel.FULL)
+		.setLogLevel(RestAdapter.LogLevel.NONE)
 		.build();
 
 		return restAdapter.create(WashmeApi.class);
