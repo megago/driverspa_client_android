@@ -505,4 +505,13 @@
     <string name="password_one_letter">Құпиясөзде кемінде бір әріп болуы керек</string>
     <string name="password_one_digit">Құпиясөзде кемінде бір сан болуы керек</string>
     <string name="passwords_dont_match">Құпиясөздер сәйкес келмейді</string>
+    <!-- Bottom navigation and the Profile tab -->
+    <string name="tab_explore">Шолу</string>
+    <string name="tab_map">Карта</string>
+    <string name="tab_bookings">Брондар</string>
+    <string name="tab_profile">Профиль</string>
+    <string name="profile_my_activity">Менің белсенділігім</string>
+    <string name="profile_settings">Баптаулар</string>
+    <string name="profile_login_hint">Брондар мен таңдаулыларды көру үшін кіріңіз</string>
+
 </resources>

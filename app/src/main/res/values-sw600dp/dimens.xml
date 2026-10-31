@@ -68,4 +68,5 @@
     <dimen name="user_stripe_image_width">100dp</dimen>
     <dimen name="user_stripe_image_online_margin_left">84.35dp</dimen>
     <dimen name="user_stripe_image_online_margin_top">14.64dp</dimen>
+    <dimen name="home_nav_height">66dp</dimen>
 </resources>

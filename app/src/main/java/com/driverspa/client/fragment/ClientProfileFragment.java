@@ -5,10 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Display;
@@ -25,6 +23,10 @@ import com.squareup.otto.Subscribe;
 import com.squareup.picasso.Callback;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -329,23 +331,39 @@ public class ClientProfileFragment extends ClientBaseFragment {
 			startActivityForResult(intent, ActivityForResult.CLIENT_PHOTO_UPLOAD);
 		}
 		
+		/**
+		 * Copies the picked image into the app cache. Reading the picker's Uri needs no
+		 * storage permission (granted per Uri), unlike its file path, which Android 13+
+		 * never allows; READ_EXTERNAL_STORAGE is not grantable there at all.
+		 */
+		private File copyToCache(Uri uri) {
+			if (uri == null || getActivity() == null) return null;
+			File file = new File(getActivity().getCacheDir(), "avatar_upload.jpg");
+			try (InputStream in = getActivity().getContentResolver().openInputStream(uri);
+				 OutputStream out = new FileOutputStream(file)) {
+				if (in == null) return null;
+				byte[] buffer = new byte[8192];
+				int read;
+				while ((read = in.read(buffer)) != -1) out.write(buffer, 0, read);
+				return file;
+			} catch (IOException e) {
+				e.printStackTrace();
+				return null;
+			}
+		}
+
 		@Override
 		public void onActivityResult (int requestCode, int resultCode, Intent data) {					
 			super.onActivityResult(requestCode, resultCode, data);
 			if (requestCode == ActivityForResult.CLIENT_PHOTO_UPLOAD) {
 				if (resultCode == Activity.RESULT_OK) {		
-					String selectedImagePath = null;
-					Uri selectedImageUri = data.getData();
-					Cursor cursor = getActivity().getContentResolver().query(selectedImageUri, null, null, null, null);
-					if (cursor == null) { 
-						selectedImagePath = selectedImageUri.getPath();
-					} else {
-						cursor.moveToFirst();
-						int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-						selectedImagePath = cursor.getString(idx);
+					File photo = copyToCache(data.getData());
+					if (photo == null) {
+						ToastUtil.display(getActivity(), BA.str(R.string.access_denied));
+						return;
 					}
 					setWaitScreen(true);
-					BA.getEventBus().post(new ClientPhotoPostRequestEvent(new File(selectedImagePath)));
+					BA.getEventBus().post(new ClientPhotoPostRequestEvent(photo));
 				}
 		    }
 			else if ( requestCode == ActivityForResult.ACTIVITY_PHOTO_CHANGE ) {

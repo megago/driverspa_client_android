@@ -16,6 +16,8 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.view.MenuItem;
 import androidx.appcompat.widget.SearchView;
@@ -24,7 +26,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.text.TextUtils;
@@ -64,12 +65,12 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.driverspa.BA;
 import com.driverspa.R;
-import com.driverspa.dialog.LanguageDialog;
 import com.driverspa.activity.CityChooseActivity;
 import com.driverspa.activity.LoginActivity;
 import com.driverspa.adapter.ClientTabPagerAdapter;
 import com.driverspa.adapter.WasherListAdapter;
 import com.driverspa.assist.BaseAssist;
+import com.driverspa.client.fragment.ClientAccountFragment;
 import com.driverspa.client.fragment.ClientAvailableWashersFragment;
 import com.driverspa.client.fragment.ClientBaseHomeFragment;
 import com.driverspa.client.fragment.ClientBooksFragment;
@@ -100,8 +101,6 @@ import com.driverspa.model.Washer;
 import com.driverspa.model.WasherPublic;
 import com.driverspa.model.api.request.AddReviewRequest;
 import com.driverspa.model.api.request.BookingRequest;
-import com.driverspa.navigation.client.NavigationDrawerCallbacks;
-import com.driverspa.navigation.client.NavigationDrawerFragment;
 import com.driverspa.util.Constants;
 import com.driverspa.util.Functions;
 import com.driverspa.util.GPSTracker;
@@ -147,7 +146,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         ClientAvailableWashersFragment.ActivityActions,
         ClientFavouriteWashersFragment.ActivityActions,
         ClientPromoWashersFragment.ActivityActions,
-        NavigationDrawerCallbacks,
+        ClientAccountFragment.ActivityActions,
         SearchView.OnQueryTextListener,
         MenuItemCompat.OnActionExpandListener,
         ClientBooksFragment.ActivityActions,
@@ -162,7 +161,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     private ClientTabPagerAdapter TabAdapter;
     @BindView(R.id.pager)
     CustomViewPager pagerTab;
-    int selectedTab = 0;
+    int selectedTab = PAGE_EXPLORE;
 
     @BindView(R.id.toolbar_actionbar)
     View toolbarActionBar;
@@ -256,7 +255,26 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
 
     private boolean isSpinnerTouched = false;
     private Toolbar mToolbar;
-    private NavigationDrawerFragment mNavigationDrawerFragment;
+
+    // Bottom navigation: Explore | Map | Bookings | Profile. Pager pages, see ClientTabPagerAdapter;
+    // notifications and favorites have no tab and open from Profile.
+    public static final int PAGE_MAP = 0;
+    public static final int PAGE_EXPLORE = 1;
+    public static final int PAGE_BOOKINGS = 2;
+    public static final int PAGE_NOTIFICATIONS = 3;
+    public static final int PAGE_FAVORITES = 4;
+    public static final int PAGE_PROFILE = 5;
+
+    @BindView(R.id.appbar)
+    View appBar;
+    @BindView(R.id.tabExplore)
+    View tabExplore;
+    @BindView(R.id.tabMap)
+    View tabMap;
+    @BindView(R.id.tabBookings)
+    View tabBookings;
+    @BindView(R.id.tabProfile)
+    View tabProfile;
 
     //Search menu
     Menu menu;
@@ -268,7 +286,6 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     MenuItem filteredMenuItem;
     private SearchView mSearchView;
     String localCity = UserPreferences.getCity(BA.getContext());
-    private int selectedMenu;
     ClientFilterFragment filterDialogFragment;
     ClientServiceDialogFragment serviceDialogFragment;
     ClientTimetableDialogFragment timetableDialogFragment;
@@ -322,9 +339,6 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         localCity = UserPreferences.getCity(BA.getContext());
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_drawer);
-        mNavigationDrawerFragment.setup(R.id.fragment_drawer, findViewById(R.id.drawer), mToolbar);
         titleView = (TextView) mToolbar.findViewById(R.id.action_bar_title);
         titleView.setText(Functions.getCityDescription(localCity));
 
@@ -361,7 +375,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             }
         });
 
-        pagerTab.setOffscreenPageLimit(5);
+        pagerTab.setOffscreenPageLimit(PAGE_PROFILE);
         pagerTab.setAdapter(TabAdapter);
         pagerTab.setCurrentItem(selectedTab);
         setTabButtons(selectedTab);
@@ -373,7 +387,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         getIntent().removeExtra(PUSH_TYPE);
         if(!TextUtils.isEmpty(pushType)){
             if(pushType.equals("carwash_info")){
-               selectedTab = 0;
+               selectedTab = PAGE_EXPLORE;
                setTabButtons(selectedTab);
                pagerTab.setCurrentItem(selectedTab);
                String washerId = getIntent().getStringExtra(EXTRA_WASHER_ID);
@@ -418,7 +432,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                     filterMenuItem.setVisible(true);
                 }
                 menu.findItem(R.id.action_map).setVisible(false);
-                menu.findItem(R.id.action_list).setVisible(true);
+                menu.findItem(R.id.action_list).setVisible(false);
                 mSearchView = (SearchView) searchMenuItem.getActionView();
                 mSearchView.setOnQueryTextListener(this);
                 styleSearchViewWhite(mSearchView);
@@ -437,7 +451,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                     filteredMenuItem.setVisible(false);
                     filterMenuItem.setVisible(true);
                 }
-                menu.findItem(R.id.action_map).setVisible(true);
+                menu.findItem(R.id.action_map).setVisible(false);
                 menu.findItem(R.id.action_list).setVisible(false);
                 mSearchView = (SearchView) searchMenuItem.getActionView();
                 mSearchView.setOnQueryTextListener(this);
@@ -450,14 +464,16 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
             case 3: //Notifications
                 getMenuInflater().inflate(R.menu.menu_main_empty, menu);
                 break;
-            case 4: //Favourite
+            default: //Favourite, profile
                 getMenuInflater().inflate(R.menu.menu_main_empty, menu);
                 break;
         }
 
         if(filter != null && filteredMenuItem != null) {
             localCity = UserPreferences.getCity(BA.getContext());
-            if (titleView != null) titleView.setText(Functions.getCityDescription(localCity));
+            // Only the car wash tabs are titled with the city.
+            if (titleView != null && (selectedTab == PAGE_EXPLORE || selectedTab == PAGE_MAP))
+                titleView.setText(Functions.getCityDescription(localCity));
             if (!filter.isMapDefaultValues()) {
                 filtered = true;
                 filteredMenuItem.setVisible(true);
@@ -490,6 +506,10 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
                 pagerTab.setCurrentItem(1);
                 hideClusterItem();
                 hideRequestItem();
+                break;
+            case android.R.id.home:
+                // Up from notifications / favorites, which open from Profile.
+                pagerTab.setCurrentItem(PAGE_PROFILE);
                 break;
         }
         return true;
@@ -536,6 +556,70 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
 
     private void setTabButtons(int position){
         this.invalidateOptionsMenu();
+        // Notifications and favorites belong to the Profile tab.
+        boolean profile = position == PAGE_PROFILE || position == PAGE_NOTIFICATIONS || position == PAGE_FAVORITES;
+        selectTab(tabExplore, position == PAGE_EXPLORE);
+        selectTab(tabMap, position == PAGE_MAP);
+        selectTab(tabBookings, position == PAGE_BOOKINGS);
+        selectTab(tabProfile, profile);
+
+        // Profile draws its own header; its sub pages get a back arrow to it.
+        appBar.setVisibility(position == PAGE_PROFILE ? View.GONE : View.VISIBLE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(position == PAGE_NOTIFICATIONS || position == PAGE_FAVORITES);
+        Drawable upArrow = mToolbar.getNavigationIcon();
+        if (upArrow != null) {
+            upArrow.mutate().setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_IN);
+        }
+        if (titleView != null) {
+            switch (position) {
+                case PAGE_BOOKINGS: titleView.setText(BA.str(R.string.my_bookings)); break;
+                case PAGE_NOTIFICATIONS: titleView.setText(BA.str(R.string.notifications)); break;
+                case PAGE_FAVORITES: titleView.setText(BA.str(R.string.favorites)); break;
+                default:
+                    localCity = UserPreferences.getCity(BA.getContext());
+                    titleView.setText(Functions.getCityDescription(localCity));
+            }
+            titleView.setVisibility(View.VISIBLE);
+        }
+
+        // The booking panel belongs to the map.
+        if (position == PAGE_MAP) {
+            showRequestItem();
+        } else {
+            hideClusterItem();
+            hideRequestItem();
+        }
+    }
+
+    private void selectTab(View tab, boolean selected) {
+        tab.setSelected(selected);
+        TextView label = (TextView) ((ViewGroup) tab).getChildAt(1);
+        label.setTypeface(null, selected ? Typeface.BOLD : Typeface.NORMAL);
+    }
+
+    @OnClick(R.id.tabExplore)
+    public void onExploreTabClicked() {
+        pagerTab.setCurrentItem(PAGE_EXPLORE);
+    }
+
+    @OnClick(R.id.tabMap)
+    public void onMapTabClicked() {
+        pagerTab.setCurrentItem(PAGE_MAP);
+    }
+
+    @OnClick(R.id.tabBookings)
+    public void onBookingsTabClicked() {
+        pagerTab.setCurrentItem(PAGE_BOOKINGS);
+    }
+
+    @OnClick(R.id.tabProfile)
+    public void onProfileTabClicked() {
+        pagerTab.setCurrentItem(PAGE_PROFILE);
+    }
+
+    @Override
+    public void openHomePage(int page) {
+        pagerTab.setCurrentItem(page);
     }
 
     private void createCarsSpinner(final User user){
@@ -1224,69 +1308,6 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
         startActivity(intent);
     }
 
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        selectedMenu = position;
-        switch (position){
-            case 0: //Home
-
-                if(homeContainer != null)
-                    homeContainer.setVisibility(View.VISIBLE);
-                if(fragmentContainer != null)
-                   fragmentContainer.setVisibility(View.GONE);
-
-                localCity = UserPreferences.getCity(BA.getContext());
-                if(titleView != null) {
-                    if(!TextUtils.isEmpty(localCity)) {
-                        titleView.setText(Functions.getCityDescription(localCity));
-                    }
-//                    titleView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_arrow_drop_down_white_24dp, 0);
-                    titleView.setVisibility(View.VISIBLE);
-                }
-                if(pagerTab!= null) {
-                    pagerTab.setCurrentItem(0,false);
-                    showRequestItem();
-                }
-                break;
-            case 1: //books
-                if(titleView != null) {
-                   titleView.setText(BA.str(R.string.my_bookings));
-                }
-                pagerTab.setCurrentItem(2,false);
-                hideClusterItem();
-                hideRequestItem();
-                break;
-            case 2: //notification
-                if(titleView != null) {
-                    titleView.setText(BA.str(R.string.notifications));
-                }
-                pagerTab.setCurrentItem(3,false);
-                hideClusterItem();
-                hideRequestItem();
-                break;
-            case 3: //favourite
-                if(titleView != null) {
-                    titleView.setText(BA.str(R.string.favorites));
-                }
-                pagerTab.setCurrentItem(4,false);
-                hideClusterItem();
-                hideRequestItem();
-                break;
-            case 4: //about us
-                startActivity(new Intent(this,ClientAboutUSActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                        .putExtra(OPENING_ANIMATION,false)
-                );
-                break;
-            case 5: //language
-                if (mNavigationDrawerFragment != null && mNavigationDrawerFragment.isDrawerOpen())
-                    mNavigationDrawerFragment.closeDrawer();
-                LanguageDialog.show(this);
-                break;
-
-
-        }
-    }
-
     @OnClick(R.id.btnRequest)
     public void onButtonFareRequestClicked() {
         loggedIn = UserPreferences.isUserLoggedIn(BA.getContext());
@@ -1327,8 +1348,10 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     }
     @Override
     public void onBackPressed() {
-        if (mNavigationDrawerFragment.isDrawerOpen())
-            mNavigationDrawerFragment.closeDrawer();
+        if (selectedTab == PAGE_NOTIFICATIONS || selectedTab == PAGE_FAVORITES)
+            pagerTab.setCurrentItem(PAGE_PROFILE);
+        else if (selectedTab != PAGE_EXPLORE)
+            pagerTab.setCurrentItem(PAGE_EXPLORE);
         else
             super.onBackPressed();
     }
@@ -1484,7 +1507,7 @@ public class ClientHomeActivity extends ClientBaseActivity implements ClientNear
     public void onFilterReceived(FilterGetResponseEvent event){
         SearchFilter filter = event.getSearchFilter().clone();
         localCity = UserPreferences.getCity(BA.getContext());
-        if(titleView != null) titleView.setText(Functions.getCityDescription(localCity));
+        if(titleView != null && (selectedTab == PAGE_EXPLORE || selectedTab == PAGE_MAP)) titleView.setText(Functions.getCityDescription(localCity));
         if(!filter.isMapDefaultValues()){
             filtered = true;
             filteredMenuItem.setVisible(true);

@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.driverspa.client.fragment.ClientAccountFragment;
 import com.driverspa.client.fragment.ClientBooksFragment;
 import com.driverspa.client.fragment.ClientFavouriteWashersFragment;
 import com.driverspa.client.fragment.ClientMapInTabFragment;
@@ -37,11 +38,14 @@ public class ClientTabPagerAdapter extends FragmentStatePagerAdapter {
             case 4:
                 //Fragment favourite washers
                 return new ClientFavouriteWashersFragment();
+            case 5:
+                //Profile tab: what the left menu used to hold
+                return new ClientAccountFragment();
         }
         return null;
     }
     @Override
     public int getCount() {
-        return 5; //No of Tabs
+        return 6; //No of Tabs
     }
 }

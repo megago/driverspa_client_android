@@ -499,4 +499,13 @@
     <string name="password_one_letter">The password must contain at least one letter</string>
     <string name="password_one_digit">The password must contain at least one digit</string>
     <string name="passwords_dont_match">The passwords don\'t match</string>
+    <!-- Bottom navigation and the Profile tab -->
+    <string name="tab_explore">Explore</string>
+    <string name="tab_map">Map</string>
+    <string name="tab_bookings">Bookings</string>
+    <string name="tab_profile">Profile</string>
+    <string name="profile_my_activity">My activity</string>
+    <string name="profile_settings">Settings</string>
+    <string name="profile_login_hint">Log in to see your bookings and favorites</string>
+
 </resources>

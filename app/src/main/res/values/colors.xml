@@ -237,4 +237,18 @@
 	<color name="Black">#000000</color>
 	<color name="LightBlue">#3c82c4</color>
 
+	<!-- Bottom navigation and the Profile tab -->
+	<color name="nav_bar_background">#FFFFFF</color>
+	<color name="nav_bar_divider">#E6E8EB</color>
+	<color name="nav_item_selected">#111418</color>
+	<color name="nav_item_normal">#9AA0A6</color>
+	<color name="profile_background">#F6F7F9</color>
+	<color name="profile_card_stroke">#E6E8EB</color>
+	<color name="profile_divider">#EEF0F2</color>
+	<color name="profile_text">#111418</color>
+	<color name="profile_text_secondary">#6B7280</color>
+	<color name="profile_section_label">#9AA0A6</color>
+	<color name="profile_avatar">#E83E74</color>
+	<color name="profile_logout">#E5484D</color>
+
 </resources>

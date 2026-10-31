@@ -516,4 +516,13 @@
     <string name="password_one_letter">Пароль должен содержать хотя бы одну букву</string>
     <string name="password_one_digit">Пароль должен содержать хотя бы одну цифру</string>
     <string name="passwords_dont_match">Пароли не совпадают</string>
+    <!-- Bottom navigation and the Profile tab -->
+    <string name="tab_explore">Обзор</string>
+    <string name="tab_map">Карта</string>
+    <string name="tab_bookings">Брони</string>
+    <string name="tab_profile">Профиль</string>
+    <string name="profile_my_activity">Моя активность</string>
+    <string name="profile_settings">Настройки</string>
+    <string name="profile_login_hint">Войдите, чтобы видеть брони и избранное</string>
+
 </resources>
