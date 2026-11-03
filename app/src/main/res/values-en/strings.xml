@@ -499,6 +499,9 @@
     <string name="password_one_letter">The password must contain at least one letter</string>
     <string name="password_one_digit">The password must contain at least one digit</string>
     <string name="passwords_dont_match">The passwords don\'t match</string>
+    <!-- A company car (docs/corporate-clients.md) -->
+    <string name="corp_paid_by_company">Paid by %1$s · agreement discount %2$d%%</string>
+    <string name="corp_paid_by">Paid by %1$s</string>
     <!-- Bottom navigation and the Profile tab -->
     <string name="tab_explore">Explore</string>
     <string name="tab_map">Map</string>

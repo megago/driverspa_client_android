@@ -57,6 +57,18 @@ public class BookInfo {
 
 	@DatabaseField
 	private String price;
+	/** A company car's order (docs/corporate-clients.md): the company pays. */
+	@com.google.gson.annotations.SerializedName("corporate")
+	private Corporate corporate;
+
+	public Corporate getCorporate() {
+		return corporate;
+	}
+
+	public static class Corporate {
+		@com.google.gson.annotations.SerializedName("name")
+		public String name;
+	}
 
 	@DatabaseField
 	@SerializedName("end_time")

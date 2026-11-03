@@ -110,6 +110,12 @@ public class RetrofitClient {
 	 * Interface for connecting to Washme API
 	 */
 	public interface WashmeApi {
+
+		// The driver's company cars at a car wash (docs/corporate-clients.md).
+		@GET("/v1/corporate_client/mine")
+		void corporateMine(
+				@Query("carwash") String carwashId,
+				Callback<com.driverspa.model.CorporateMine> callback);
 		@GET("/v1/public_carwash/ref")
 		void getReference(
 				@Header("Accept-Language") String lang,

@@ -338,6 +338,8 @@ public class ClientActiveBookingInfoFragment extends ClientBaseFragment {
 
 				txtPriceDetail.setVisibility(View.VISIBLE);
 				txtPriceDetail.setText(Functions.formatPriceDetail(book.getPriceDetails(),Double.parseDouble(book.getPrice())));
+				if (book.getCorporate() != null) // the company pays
+					txtPriceDetail.setText(BA.str(R.string.corp_paid_by, book.getCorporate().name));
 
 
 				AdminSearchFilter filter = new AdminSearchFilter();

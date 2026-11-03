@@ -505,6 +505,9 @@
     <string name="password_one_letter">Құпиясөзде кемінде бір әріп болуы керек</string>
     <string name="password_one_digit">Құпиясөзде кемінде бір сан болуы керек</string>
     <string name="passwords_dont_match">Құпиясөздер сәйкес келмейді</string>
+    <!-- A company car (docs/corporate-clients.md) -->
+    <string name="corp_paid_by_company">«%1$s» компаниясы төлейді · келісімшарт жеңілдігі %2$d%%</string>
+    <string name="corp_paid_by">«%1$s» компаниясы төлейді</string>
     <!-- Bottom navigation and the Profile tab -->
     <string name="tab_explore">Шолу</string>
     <string name="tab_map">Карта</string>

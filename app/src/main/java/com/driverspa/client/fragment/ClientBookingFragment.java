@@ -21,6 +21,11 @@ import android.widget.TextView;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
+import com.driverspa.model.CorporateMine;
+import com.driverspa.util.RetrofitClient;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -143,6 +148,15 @@ public class ClientBookingFragment extends ClientBaseFragment {
     TextView clientDepositAmount;
     @BindView(R.id.txtPriceDifference)
     TextView txtPriceDifference;
+    /** The driver's choice of payment; for a company car the company pays instead. */
+    @BindView(R.id.paymentLayout)
+    View paymentLayout;
+    @BindView(R.id.corporatePayNote)
+    TextView corporatePayNote;
+    /** The driver's company cars at this car wash, by plate (CorporateMine.key). */
+    private final Map<String, CorporateMine.Item> companyCars = new HashMap<>();
+    /** The selected car when it is a company car here, else null. */
+    private CorporateMine.Item companyCar;
 
     ClientInfo selectedClient;
     double finalPrice;
@@ -314,10 +328,11 @@ public class ClientBookingFragment extends ClientBaseFragment {
             if (user.getCars() != null && user.getCars().size() > 0) {
                 carAdapter.setSelectedPosition(user.getCars().size());
                 CarItem item = carAdapter.getCarList().get(user.getCars().size());
-                createService(item.getCarType());
                 selectedCarItem = item;
+                createService(carTypeOf(item));
                 carAdapter.notifyDataSetChanged();
             }
+            loadCompanyCars();
 
             gridCars.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -331,8 +346,8 @@ public class ClientBookingFragment extends ClientBaseFragment {
                         carAdapter.getSelectedView().setSelected(false);
                         v.setSelected(true);
                         CarItem item = carAdapter.getCarList().get(position);
-                        createService(item.getCarType());
                         selectedCarItem = item;
+                        createService(carTypeOf(item));
                         carAdapter.notifyDataSetChanged();
                     }
                 }
@@ -647,7 +662,10 @@ public class ClientBookingFragment extends ClientBaseFragment {
 
         if (totalPrice > 0) {
             int discnt = 0;
-            if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
+            if (companyCar != null) {
+                // a company car: the agreement's discount only (as the server)
+                discnt = companyCar.company.discount;
+            } else if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
                     ||washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Online.getValue()))){
                 discnt = washer.getActiveCampaign().getCampaignDiscount();
                 txtPrice.setText(totalPrice+" - "+washer.getActiveCampaign().getCampaignDiscount()+"% =  ₸");
@@ -659,7 +677,9 @@ public class ClientBookingFragment extends ClientBaseFragment {
             cashAmount.setSelection(cashAmount.getText().toString().length());
 
 
-            if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
+            if (companyCar != null) {
+                if (discnt > 0) txtPrice.setText(((int)totalPrice.longValue())+" - "+discnt+"% = "+totalPriceWithDiscount+" ₸");
+            } else if(washer != null && washer.getActiveCampaign() != null && (washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Both.getValue())
             ||washer.getActiveCampaign().getCampaignType().getValue().equals(CampaignType.Online.getValue()))){
                 txtPrice.setText(((int)totalPrice.longValue())+" - "+washer.getActiveCampaign().getCampaignDiscount()+"% = "+totalPriceWithDiscount+" ₸");
             }
@@ -698,12 +718,54 @@ public class ClientBookingFragment extends ClientBaseFragment {
         request.setCarNo(selectedCarItem.getCarNumber());
         request.setClientName(user.getFirstName());
         request.setClientKey(selectedCarItem.getCarNumber() + " (" + user.getFirstName() + ")");
-        request.setCarType(selectedCarItem.getCarType());
+        request.setCarType(carTypeOf(selectedCarItem));
         if (initialRequest != null && initialRequest.isEditRequest()) {
             request.setRequestType(initialRequest.getRequestType());
             request.setBookId(initialRequest.getBookId());
         }
         activityActions.showTimeGrid(washer, request);
+    }
+
+    // ---- company cars (docs/corporate-clients.md) ----
+
+    /** Asks which of the driver's cars are company cars at this car wash. */
+    private void loadCompanyCars() {
+        if (washer == null) return;
+        final String carwashId = washer.getId();
+        RetrofitClient.getRestAdapterWithBody().corporateMine(carwashId, new Callback<CorporateMine>() {
+            @Override
+            public void success(CorporateMine data, Response response) {
+                if (!isAdded() || washer == null || !carwashId.equals(washer.getId())) return;
+                companyCars.clear();
+                if (data != null && data.getObjects() != null)
+                    for (CorporateMine.Item item : data.getObjects())
+                        if (item.car != null && item.company != null) companyCars.put(CorporateMine.key(item.car.plate), item);
+                if (selectedCarItem != null) createService(carTypeOf(selectedCarItem));
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                // an older server: every car is the driver's own
+            }
+        });
+    }
+
+    /**
+     * The car type to price: a company car's from the company's list (when this car wash has
+     * prices for it), else the car's own. Also marks the screen for a company car.
+     */
+    private Integer carTypeOf(CarItem car) {
+        companyCar = car == null ? null : companyCars.get(CorporateMine.key(car.getCarNumber()));
+        if (paymentLayout != null) paymentLayout.setVisibility(companyCar != null ? View.GONE : View.VISIBLE);
+        if (corporatePayNote != null) {
+            corporatePayNote.setVisibility(companyCar != null ? View.VISIBLE : View.GONE);
+            if (companyCar != null)
+                corporatePayNote.setText(BA.str(R.string.corp_paid_by_company, companyCar.company.name, companyCar.company.discount));
+        }
+        if (companyCar != null && companyCar.car.carType != null && washer != null && washer.getMenu() != null
+                && washer.getMenu().get(companyCar.car.carType) != null)
+            return companyCar.car.carType;
+        return car == null ? null : car.getCarType();
     }
 
     public void openCarDefinition() {
@@ -734,8 +796,8 @@ public class ClientBookingFragment extends ClientBaseFragment {
         if (user.getCars() != null && user.getCars().size() > 0) {
             carAdapter.setSelectedPosition(user.getCars().size());
             CarItem item = carAdapter.getCarList().get(user.getCars().size());
-            createService(item.getCarType());
             selectedCarItem = item;
+            createService(carTypeOf(item));
             carAdapter.notifyDataSetChanged();
         }
 
@@ -750,6 +812,14 @@ public class ClientBookingFragment extends ClientBaseFragment {
 
     protected void calculatePaymentTypesTransactionAmount() {
         double cash = 0, card = 0, bonus = 0, deposit = 0, price = 0;
+        if (companyCar != null) {
+            // the company pays: no split to send, nothing left to pay
+            finalPriceDifference = 0;
+            txtPriceDifference.setText("0 ₸");
+            priceDetails.clear();
+            request.setPriceDetails(priceDetails);
+            return;
+        }
 
         try {
             cash = Double.parseDouble(cashAmount.getText().toString());

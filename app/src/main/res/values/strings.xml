@@ -516,6 +516,9 @@
     <string name="password_one_letter">Пароль должен содержать хотя бы одну букву</string>
     <string name="password_one_digit">Пароль должен содержать хотя бы одну цифру</string>
     <string name="passwords_dont_match">Пароли не совпадают</string>
+    <!-- A company car (docs/corporate-clients.md) -->
+    <string name="corp_paid_by_company">Оплачивает компания «%1$s» · скидка по договору %2$d%%</string>
+    <string name="corp_paid_by">Оплачивает компания «%1$s»</string>
     <!-- Bottom navigation and the Profile tab -->
     <string name="tab_explore">Обзор</string>
     <string name="tab_map">Карта</string>
