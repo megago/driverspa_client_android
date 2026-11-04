@@ -734,13 +734,17 @@ public class ClientBookingFragment extends ClientBaseFragment {
         final String carwashId = washer.getId();
         RetrofitClient.getRestAdapterWithBody().corporateMine(carwashId, new Callback<CorporateMine>() {
             @Override
-            public void success(CorporateMine data, Response response) {
-                if (!isAdded() || washer == null || !carwashId.equals(washer.getId())) return;
-                companyCars.clear();
-                if (data != null && data.getObjects() != null)
-                    for (CorporateMine.Item item : data.getObjects())
-                        if (item.car != null && item.company != null) companyCars.put(CorporateMine.key(item.car.plate), item);
-                if (selectedCarItem != null) createService(carTypeOf(selectedCarItem));
+            public void success(final CorporateMine data, Response response) {
+                // the app's callbacks run on a worker thread (RetrofitClient's executor)
+                if (getActivity() == null) return;
+                getActivity().runOnUiThread(() -> {
+                    if (!isAdded() || washer == null || !carwashId.equals(washer.getId())) return;
+                    companyCars.clear();
+                    if (data != null && data.getObjects() != null)
+                        for (CorporateMine.Item item : data.getObjects())
+                            if (item.car != null && item.company != null) companyCars.put(CorporateMine.key(item.car.plate), item);
+                    if (selectedCarItem != null) createService(carTypeOf(selectedCarItem));
+                });
             }
 
             @Override
